@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
-@Table(name = "Livros")
+@Table(name = "livros")
 public class Livro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
