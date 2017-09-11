@@ -11,11 +11,11 @@ public class Aluno {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name="nome")
+	@Column(name="nome", nullable = false)
 	private String nome;
-	@Column(name="numero")
+	@Column(name="numero", nullable = false)
 	private int numero;
-	@Column(name="matricula")
+	@Column(name="matricula", nullable = false)
 	private Long matricula;
 	public Long getId() {
 		return id;
