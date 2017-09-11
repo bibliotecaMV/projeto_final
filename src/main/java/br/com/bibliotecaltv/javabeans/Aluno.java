@@ -17,6 +17,7 @@ public class Aluno {
 	private int numero;
 	@Column(name="matricula", nullable = false)
 	private Long matricula;
+	
 	public Long getId() {
 		return id;
 	}
