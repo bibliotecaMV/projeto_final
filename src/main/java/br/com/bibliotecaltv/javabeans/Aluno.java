@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,7 +21,16 @@ public class Aluno {
 	private int numero;
 	@Column(name="matricula", nullable = false)
 	private Long matricula;
+	@ManyToOne
+	@JoinColumn(name="id")
+	private Turma turma;
 	
+	public Turma getTurma() {
+		return turma;
+	}
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
 	public Long getId() {
 		return id;
 	}
