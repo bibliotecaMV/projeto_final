@@ -47,6 +47,13 @@ public class Livro {
 	@ManyToOne
 	private Genero genero;
 	
+	
+	public Genero getGenero() {
+		return genero;
+	}
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
 	public Long getVolume() {
 		return volume;
 	}
