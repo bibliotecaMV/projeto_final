@@ -1,5 +1,45 @@
 package br.com.bibliotecaltv.javabeans;
 
-public class Aluno {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Aluno {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	@Column(name="nome")
+	private String nome;
+	@Column(name="numero")
+	private int numero;
+	@Column(name="matricula")
+	private Long matricula;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public Long getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(Long matricula) {
+		this.matricula = matricula;
+	}
+	
 }
