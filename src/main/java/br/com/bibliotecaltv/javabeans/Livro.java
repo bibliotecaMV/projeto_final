@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "Livros")
@@ -13,24 +16,36 @@ public class Livro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long tombo;
+	
 	@Column(nullable = false)
 	private String CDD;
+	
 	@Column(nullable = false)
 	private String forma_arquisicao;
+	
 	@Column(nullable = false)
 	private String titulo;
+	
 	@Column(nullable = false)
 	private String autor;
+	
 	@Column(nullable = false)
 	private Long volume;
+	
 	@Column(nullable = false)
 	private Long exemplares;
+	
 	@Column(nullable = false)
 	private String editora;
+	
 	@Column(nullable = false)
 	private String local_edicao;
+	
 	@Column(nullable = false)
 	private Long ano_editado;
+	
+	@ManyToOne
+	private Genero id_genero;
 	
 	public Long getVolume() {
 		return volume;
