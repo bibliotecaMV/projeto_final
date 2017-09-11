@@ -16,7 +16,7 @@ public class Administrador {
 	private Long id;
 	@Column(nullable = false)
 	private String usuario;
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String senha;
 	
 	public Long getId() {
