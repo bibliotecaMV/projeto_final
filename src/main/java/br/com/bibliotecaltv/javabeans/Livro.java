@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
-@Table(name = "Livros")
+@Table(name = "livros")
 public class Livro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,8 +45,15 @@ public class Livro {
 	private Long ano_editado;
 	
 	@ManyToOne
-	private Genero id_genero;
+	private Genero genero;
 	
+	
+	public Genero getGenero() {
+		return genero;
+	}
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
 	public Long getVolume() {
 		return volume;
 	}
