@@ -45,7 +45,7 @@ public class Livro {
 	private Long ano_editado;
 	
 	@ManyToOne
-	private Genero id_genero;
+	private Genero genero;
 	
 	public Long getVolume() {
 		return volume;
