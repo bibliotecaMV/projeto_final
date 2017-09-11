@@ -13,8 +13,10 @@ public class Monitores {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	@Column(name = "nome", nullable = false)
 	private String nome;
+	
 	@Column(name = "senha", nullable = false)
 	private String senha;
 
