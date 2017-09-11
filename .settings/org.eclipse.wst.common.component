@@ -4,6 +4,10 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
+        <property name="context-root" value="projeto_final"/>
+=======
+>>>>>>> 1867c6b5703fbceaae7dd519817916ac5b7522b1
         <property name="java-output-path" value="/projeto_final/target/classes"/>
         <property name="context-root" value="projeto_final"/>
     </wb-module>
