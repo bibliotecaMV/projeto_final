@@ -3,6 +3,7 @@ package br.com.bibliotecaltv.javabeans;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -40,6 +41,7 @@ public class Livro {
 	private Long ano_editado;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Genero genero;
 	
 	

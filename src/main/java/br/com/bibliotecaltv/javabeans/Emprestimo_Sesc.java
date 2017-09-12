@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -31,12 +32,15 @@ public class Emprestimo_Sesc {
 	private Calendar data_devolucao;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Professor professor;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Aluno aluno;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Turma turma;
 
 	public Long getTombo() {

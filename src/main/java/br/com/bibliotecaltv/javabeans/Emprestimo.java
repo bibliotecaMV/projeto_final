@@ -3,6 +3,7 @@ package br.com.bibliotecaltv.javabeans;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -19,18 +20,24 @@ public class Emprestimo {
 	@Column(nullable = false)
 	private String dataDevolucao;
 	
+	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Aluno aluno;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Turma turma;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Livro livro;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Genero genero;
 	
 	@ManyToOne
+	@JoinColumn(nullable = false)
 	private Professor professor;
 
 	public Aluno getAluno() {
