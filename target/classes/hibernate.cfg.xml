@@ -31,15 +31,15 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="br.com.bibliotecaltv.javabeans.Livro"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Administrador"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Aluno"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Emprestimo_Sesc"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Emprestimo"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Genero"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Monitores"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Professor"/>
-		<mapping class="br.com.bibliotecaltv.javabeans.Turma"/>
+        <mapping class="br.com.bibliotecaltv.controller.javabeans.Livro"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Administrador"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Aluno"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Emprestimo"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Genero"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Monitores"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Professor"/>
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Turma"/>
     </session-factory>
 
 </hibernate-configuration>
