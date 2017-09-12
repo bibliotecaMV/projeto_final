@@ -2,10 +2,7 @@ package br.com.bibliotecaltv.javabeans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -14,7 +11,6 @@ import javax.persistence.Table;
 public class Emprestimo {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long tombo;
 
 	@Column(nullable = false)
@@ -23,41 +19,63 @@ public class Emprestimo {
 	@Column(nullable = false)
 	private String dataDevolucao;
 	
-	@ManyToOne
-	@JoinColumn(name = "id_aluno")
-	private Aluno alunos;
+	private Aluno aluno;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_livro")
-	private Livro livros;
+	private Turma turma;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_professor")
-	private Professor professores;
+	private Livro livro;
 	
-	public Aluno getAlunos() {
-		return alunos;
+	@ManyToOne
+	private Genero genero;
+	
+	@ManyToOne
+	private Professor professor;
+	
+	
+	
+	public Aluno getAluno() {
+		return aluno;
 	}
 
-	public void setAlunos(Aluno alunos) {
-		this.alunos = alunos;
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
 
-	public Livro getLivros() {
-		return livros;
+	public Turma getTurma() {
+		return turma;
 	}
 
-	public void setLivros(Livro livros) {
-		this.livros = livros;
+	public void setTurma(Turma turma) {
+		this.turma = turma;
 	}
 
-	public Professor getProfessores() {
-		return professores;
+	public Livro getLivro() {
+		return livro;
 	}
 
-	public void setProfessores(Professor professores) {
-		this.professores = professores;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+
 	public Long getTombo() {
 		return tombo;
 	}
