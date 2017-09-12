@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.javabeans;
+package br.com.bibliotecaltv.controller.javabeans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
