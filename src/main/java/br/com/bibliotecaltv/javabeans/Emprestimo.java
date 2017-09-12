@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "emprestimos")
 public class Emprestimo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long tombo;

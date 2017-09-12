@@ -14,8 +14,10 @@ public class Administrador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
 	@Column(nullable = false)
 	private String usuario;
+	
 	@Column(nullable = true)
 	private String senha;
 	

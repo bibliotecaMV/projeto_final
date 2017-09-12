@@ -2,19 +2,14 @@ package br.com.bibliotecaltv.javabeans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 @Table(name = "livros")
 public class Livro {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long tombo;
 	
 	@Column(nullable = false)
@@ -45,8 +40,15 @@ public class Livro {
 	private Long ano_editado;
 	
 	@ManyToOne
-	private Genero id_genero;
+	private Genero genero;
 	
+	
+	public Genero getGenero() {
+		return genero;
+	}
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
 	public Long getVolume() {
 		return volume;
 	}
