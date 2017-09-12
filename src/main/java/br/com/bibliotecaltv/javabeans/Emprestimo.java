@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +13,6 @@ import javax.persistence.Table;
 public class Emprestimo {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long tombo;
 
 	@Column(nullable = false)
@@ -20,6 +20,21 @@ public class Emprestimo {
 	
 	@Column(nullable = false)
 	private String dataDevolucao;
+	
+	@ManyToOne
+	private Aluno aluno;
+	
+	@ManyToOne
+	private Turma turma;
+	
+	@ManyToOne
+	private Livro livro;
+	
+	@ManyToOne
+	private Genero genero;
+	
+	@ManyToOne
+	private Professor professor;
 	
 	public Long getTombo() {
 		return tombo;
