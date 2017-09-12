@@ -3,9 +3,14 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+<<<<<<< HEAD
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <property name="java-output-path" value="/projeto_final/target/classes"/>
         <property name="context-root" value="projeto_final"/>
+=======
+        <property name="context-root" value="projeto_final"/>
+        <property name="java-output-path" value="/projeto_final/target/classes"/>
+>>>>>>> 55dc177e7a0db462d778edbcf2f047a5183a83bc
     </wb-module>
 </project-modules>
