@@ -5,10 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="generos")
+@NamedQueries({@NamedQuery(name = "Genero.pegarId", query = "select id from Genero genero where genero.descricao = :descricao"),
+	@NamedQuery(name = "Genero.buscarGenero", query = "select genero from Genero genero where genero.id = :id")})
 public class Genero {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
