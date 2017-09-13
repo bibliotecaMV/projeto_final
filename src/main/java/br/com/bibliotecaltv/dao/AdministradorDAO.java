@@ -17,18 +17,6 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 @Repository
 public class AdministradorDAO {
-	public void inserirAdministrador (Administrador administrador) {
-		Session sessao = HibernateUtil.getSessionFactory().openSession();
-
-		try {
-			sessao.save(administrador);
-		} catch(RuntimeException e) {
-			
-		}finally {
-			sessao.close();
-		}
-
-	}
 	
 	//Listando Todos As Classes//
 	@SuppressWarnings("unchecked")
