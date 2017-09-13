@@ -5,9 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({	
+	@NamedQuery(name="Emprestimo.listarEmprestimo", query="SELECT emprestimo FROM Emprestimo emprestimo"),
+})
 @Table(name = "emprestimos")
 public class Emprestimo {
 	
