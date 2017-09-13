@@ -1,5 +1,8 @@
 package br.com.bibliotecaltv.dao;
 
-public class AdministradorDAO {
+import org.springframework.stereotype.Repository;
 
+@Repository
+public class AdministradorDAO {
+	
 }
