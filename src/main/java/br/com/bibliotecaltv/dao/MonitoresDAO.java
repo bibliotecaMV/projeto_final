@@ -6,6 +6,7 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
+import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
@@ -42,5 +43,21 @@ public class MonitoresDAO {
 			session.close();
 		}
 		return tarefa;
+	}
+
+	
+	public Long buscarIdLivro(String titulo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = 0L;
+		try{
+			Query consulta = session.getNamedQuery("livros.buscarLivro");
+			consulta.setString("CDD", titulo );
+			id = (Long) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return id;
 	}
 }
