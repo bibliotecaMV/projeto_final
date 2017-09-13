@@ -1,11 +1,11 @@
 package br.com.bibliotecaltv.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
-<<<<<<< HEAD
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
@@ -14,14 +14,10 @@ import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
 import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
-=======
-import br.com.bibliotecaltv.controller.javabeans.Monitores;
->>>>>>> 1ea8bf171bfa5288e0eecc4dabedd965700857c0
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 @Repository
 public class AdministradorDAO {
-<<<<<<< HEAD
 
 
 	//Métodos de excluir dados
@@ -186,7 +182,6 @@ public class AdministradorDAO {
 	}
 
 	//Fim dos métodos de excluir dados
-=======
 	
 	public void adicionarAdministrador(Administrador administrador){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -214,5 +209,58 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
->>>>>>> 1ea8bf171bfa5288e0eecc4dabedd965700857c0
+	public void adicionarGenero(Genero genero){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(genero);
+			transaction.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}	
+	}
+	public Long buscarIdGenero(String descricao){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = 0L;
+		try{
+			Query consulta = session.getNamedQuery("Genero.pegarId");
+			consulta.setString("descricao", descricao);
+			id = (Long) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+	public Genero buscarGeneroPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Genero genero = null;
+		try{
+			Query consulta = session.getNamedQuery("Genero.buscarGenero");
+			consulta.setLong("id", id);
+			genero = (Genero) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return genero;
+	}
+	public void adicionarLivro(Livro livro){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(livro);
+			transaction.commit();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}	
+	}
 }
