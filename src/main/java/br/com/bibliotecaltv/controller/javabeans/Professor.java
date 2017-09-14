@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @NamedQueries({	
-	@NamedQuery(name="professor.listarProfessor", query="SELECT professor FROM Professor professor"),
+	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor"),
 })
 @Table(name="professores")
 public class Professor {
