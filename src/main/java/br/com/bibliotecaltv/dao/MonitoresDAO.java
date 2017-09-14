@@ -16,21 +16,17 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 @Repository
 public class MonitoresDAO {
 	@SuppressWarnings("unchecked")
+
 	public List<Aluno> listarAluno() {
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Aluno> aluno = null;
-
 		try {
-
 			Query consulta = sessao.getNamedQuery("Aluno.listarAluno");
 			aluno = consulta.list();
-
 		} catch (RuntimeException e) {
 			throw e;
-
 		} finally {
 			sessao.close();
-
 		}
 		return aluno;
 
@@ -42,7 +38,6 @@ public class MonitoresDAO {
 		List<Emprestimo_Sesc> emprestimo_sesc = null;
 
 		try {
-
 			Query consulta = sessao.getNamedQuery("Emprestimo_Sesc.listarEmprestimo_Sesc");
 			emprestimo_sesc = consulta.list();
 
@@ -51,7 +46,6 @@ public class MonitoresDAO {
 
 		} finally {
 			sessao.close();
-
 		}
 		return emprestimo_sesc;
 
@@ -63,7 +57,6 @@ public class MonitoresDAO {
 		List<Emprestimo> emprestimo = null;
 
 		try {
-
 			Query consulta = sessao.getNamedQuery("Emprestimo.listarEmprestimo");
 			emprestimo = consulta.list();
 
@@ -71,6 +64,7 @@ public class MonitoresDAO {
 			throw e;
 
 		} finally {
+
 			sessao.close();
 
 		}
@@ -134,6 +128,7 @@ public class MonitoresDAO {
 			throw e;
 
 		} finally {
+
 			sessao.close();
 
 		}
@@ -155,6 +150,7 @@ public class MonitoresDAO {
 			throw e;
 
 		} finally {
+
 			sessao.close();
 
 		}
