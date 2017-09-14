@@ -110,7 +110,7 @@ public class MonitoresDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Turma turma = null;
 		try {
-			Query consulta = session.getNamedQuery("turmas.buscarId");
+			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
 			consulta.setLong("id", id);
 			turma = (Turma) consulta.uniqueResult(); 
 			
@@ -127,7 +127,7 @@ public class MonitoresDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = 0L;
 		try{
-			Query consulta = session.getNamedQuery("turmas.buscarTurma");
+			Query consulta = session.getNamedQuery("Turma.buscarTurmaPorId");
 			consulta.setString("turma", turma );
 			id = (Long) consulta.uniqueResult();
 		}catch(Exception e){
