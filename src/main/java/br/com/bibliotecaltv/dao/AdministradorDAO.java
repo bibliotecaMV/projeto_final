@@ -4,7 +4,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
