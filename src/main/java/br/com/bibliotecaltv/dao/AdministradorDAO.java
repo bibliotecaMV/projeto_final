@@ -504,8 +504,36 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
-	
 	//Fim do método turma
+	public Long buscarIdTurma(String turma){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
+			consulta.setString("turma", turma);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+	public Turma buscarTurmaPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Turma turma = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarTurmaPorId");
+			consulta.setLong("id", id);
+			turma = (Turma) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return turma;
+	}
+	
 	
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
