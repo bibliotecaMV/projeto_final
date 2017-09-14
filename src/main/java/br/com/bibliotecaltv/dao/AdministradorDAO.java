@@ -458,6 +458,20 @@ public class AdministradorDAO {
 		}
 		return genero;
 	}
+	public void adicionarAluno(Aluno aluno){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(aluno);
+			transaction.commit();
+		}catch(Exception e){
+			if(transaction != null){
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
 	public void adicionarLivro(Livro livro){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
