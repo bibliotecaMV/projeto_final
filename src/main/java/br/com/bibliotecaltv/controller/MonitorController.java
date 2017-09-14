@@ -17,11 +17,11 @@ public class MonitorController {
 		this.dao = dao;
 	}
 	
-	
+	/*
 	@RequestMapping("realizarEmprestimo")
 	public String realizaEmprestimo(Emprestimo emprestimo){
 		dao.realizaEmprestimo(emprestimo);
 		return "";
 	}
-	
+	*/
 }

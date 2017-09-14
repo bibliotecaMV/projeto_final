@@ -10,11 +10,10 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({	
-	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor"),
-})
 @Table(name="professores")
-@NamedQueries({ @NamedQuery(name = "professor.buscarId", query = "select id from Professor professor where professor.id = :id"),
+@NamedQueries({ 
+	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor"),
+	@NamedQuery(name = "professor.buscarId", query = "select id from Professor professor where professor.id = :id"),
 	@NamedQuery(name = "professor.buscarProfessor", query = "select nome_completo from Professor professor where professor.nome_completo = :nome_completo")})
 public class Professor {
 	@Id

@@ -10,12 +10,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({	
-	@NamedQuery(name="Turma.listarTurma", query="SELECT turma FROM Turma turma"),
-})
 @Table(name = "turmas")
-@NamedQueries({ @NamedQuery(name = "turmas.buscarId", query = "select turmas from Turma turma where turma.id = :id"),
-        @NamedQuery(name = "turmas.buscarTurma", query = "select turmas from Turma turma where turma.turma = :turma")})
+@NamedQueries({ 
+	    @NamedQuery(name="Turma.listarTurma", query="SELECT turma FROM Turma turma"),
+	    @NamedQuery(name = "turmas.buscarId", query = "select turma from Turma turma where turma.id = :id"),
+        @NamedQuery(name = "turmas.buscarTurma", query = "select turma from Turma turma where turma.turma = :turma")})
 public class Turma {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

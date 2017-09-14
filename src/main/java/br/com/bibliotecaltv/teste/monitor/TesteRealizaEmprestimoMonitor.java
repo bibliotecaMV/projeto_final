@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.teste;
+package br.com.bibliotecaltv.teste.monitor;
 
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
@@ -9,7 +9,7 @@ import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
-public class TesteRealizaEmprestimo {
+public class TesteRealizaEmprestimoMonitor {
 
 	public static void main(String[] args) {
 		MonitoresDAO dao = new MonitoresDAO();
@@ -40,14 +40,15 @@ public class TesteRealizaEmprestimo {
 		Professor professor = dao.buscarProfessorPorId(id_professor);
 		
 	    Emprestimo emp = new Emprestimo();
-	   
+	    emp.setTurma(turma);
 	    emp.setLivro(livro);
-	    emp.setDataDevolucao("222222");
-	    emp.setDataEmprestimo("222222");
+	    emp.setDataDevolucao("22/22/1222");
+	    emp.setDataEmprestimo("25/22/1222");
 	    emp.setProfessor(professor);
 	    emp.setAluno(aluno);
 	    emp.setGenero(genero);
 	    
+	    dao.realizaEmprestimo(emp);
 	    
 
 

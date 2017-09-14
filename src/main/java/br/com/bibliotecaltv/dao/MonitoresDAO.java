@@ -1,14 +1,12 @@
 package br.com.bibliotecaltv.dao;
 
-<<<<<<< HEAD
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-=======
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
->>>>>>> 1977d7cc39a650684b8a56172cb6d79ea64a7d02
 import org.springframework.stereotype.Repository;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
@@ -29,23 +27,23 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 @Repository
 public class MonitoresDAO {
-<<<<<<< HEAD
-	
-	public void realizaEmprestimo(Emprestimo emprestimo) {
-		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Transaction transacao = null;
-		try {
-		    transacao = sessao.beginTransaction();
-		    sessao.save(emprestimo);
-			transacao.commit();
-		} catch(RuntimeException e) {
-			if(transacao != null){
-				transacao.rollback();
-			}
-		}finally {
-			sessao.close();
-		}
 
+	
+	public void realizaEmprestimo(Emprestimo emprestimo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(emprestimo);
+			transaction.commit();
+		}catch(Exception e){
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
+		}finally{
+			session.close();
+		}
 	}
 	
 	public Livro buscarLivroPorId(Long id){
@@ -79,12 +77,6 @@ public class MonitoresDAO {
 		}
 		return id;
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -215,7 +207,7 @@ public class MonitoresDAO {
 			session.close();
 		}
 		return professor;
-=======
+	}
 	@SuppressWarnings("unchecked")
 
 	public List<Aluno> listarAluno() {
@@ -356,6 +348,6 @@ public class MonitoresDAO {
 
 		}
 		return turma;
->>>>>>> 1977d7cc39a650684b8a56172cb6d79ea64a7d02
+
 	}
 }
