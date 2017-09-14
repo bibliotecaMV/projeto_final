@@ -10,7 +10,7 @@ public class TesteInserirTurma {
 		AdministradorDAO dao = new AdministradorDAO();
 		Turma turma = new Turma();
 		
-		turma.setTurma("3°A");
+		turma.setNome("3A");
 		dao.adicionarTurma(turma);
 		
 		System.out.println("Adicionando turma");

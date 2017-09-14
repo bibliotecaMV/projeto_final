@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @NamedQueries({	
 	@NamedQuery(name="Turma.listarTurma", query="SELECT turma FROM Turma turma"),
-	@NamedQuery(name="Turma.buscarIdTurma", query="SELECT id FROM Turma turma where turma = :turma"),
+	@NamedQuery(name="Turma.buscarIdTurma", query="SELECT id FROM Turma turma where nome = :nome"),
 	@NamedQuery(name="Turma.buscarTurmaPorId", query="SELECT turma FROM Turma turma where id = :id")
 })
 
@@ -24,7 +24,7 @@ public class Turma {
 	private Long id;
 	
 	@Column(nullable = false)
-	private String turma;
+	private String nome;
 
 	public Long getId() {
 		return id;
@@ -34,11 +34,11 @@ public class Turma {
 		this.id = id;
 	}
 
-	public String getTurma() {
-		return turma;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setTurma(String turma) {
-		this.turma = turma;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }
