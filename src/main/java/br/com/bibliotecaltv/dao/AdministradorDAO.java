@@ -489,7 +489,7 @@ public class AdministradorDAO {
 	}
 	
 	//Método adicionando turma 
-	public void adicionar(Turma turma) {
+	public void adicionarTurma(Turma turma) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {

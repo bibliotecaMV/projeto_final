@@ -11,7 +11,7 @@ public class TesteInserirTurma {
 		Turma turma = new Turma();
 		
 		turma.setTurma("3°A");
-		dao.adicionar(turma);
+		dao.adicionarTurma(turma);
 		
 		System.out.println("Adicionando turma");
 		
