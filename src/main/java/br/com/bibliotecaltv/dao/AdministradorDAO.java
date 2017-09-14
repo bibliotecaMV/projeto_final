@@ -345,12 +345,12 @@ public class AdministradorDAO {
 	@SuppressWarnings("unchecked")
 	public List<Professor> listarProfessor(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Professor> prof = null;
+		List<Professor> professor = null;
 
 		try {
 			
 			Query consulta = sessao.getNamedQuery("Professor.listarProfessor");
-			prof = consulta.list();
+			professor = consulta.list();
 			
 		} catch(RuntimeException e) {
 			throw e;
@@ -359,7 +359,7 @@ public class AdministradorDAO {
 			sessao.close();
 
 		}
-		return prof;
+		return professor;
 
 	}
 	
