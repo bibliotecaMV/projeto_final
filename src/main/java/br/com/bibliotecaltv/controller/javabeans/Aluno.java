@@ -7,9 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({	
+	@NamedQuery(name="Aluno.listarAluno", query="SELECT aluno FROM Aluno aluno"),
+})
 @Table(name="alunos")
 public class Aluno {
 	
