@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
+import br.com.bibliotecaltv.controller.javabeans.Genero;
+import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
 import br.com.bibliotecaltv.dao.AdministradorDAO;
 
@@ -28,4 +30,15 @@ public class AdministradorController {
 		dao.adicionarMonitor(monitores);
 		return "";
 	}
+	@RequestMapping("adicionarLivro")
+	public String adicionarLivro(Livro livro){
+		dao.adicionarLivro(livro);
+		return "";
+	}
+	@RequestMapping("adicionarGenero")
+	public String adicionarGenero(Genero genero){
+		dao.adicionarGenero(genero);
+		return "";
+	}
+	
 }
