@@ -6,7 +6,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
@@ -488,6 +487,26 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	//Método adicionando turma 
+	public void adicionar(Turma turma) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(turma);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+		} finally {
+			session.close();
+		}
+	}
+	
+	//Fim do método turma
+	
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -504,4 +523,5 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
+
 }
