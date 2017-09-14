@@ -1,6 +1,7 @@
 package br.com.bibliotecaltv.dao;
 
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -31,8 +32,9 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null) {
-			transaction.rollback();
-			}
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -50,6 +52,7 @@ public class AdministradorDAO {
 			if(transaction != null) {
 			transaction.rollback();
 			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -65,8 +68,9 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null) {
-			transaction.rollback();
-			}
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -84,7 +88,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -102,7 +107,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -120,7 +126,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -138,7 +145,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -156,7 +164,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -174,7 +183,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -334,12 +344,12 @@ public class AdministradorDAO {
 	@SuppressWarnings("unchecked")
 	public List<Professor> listarProfessor(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		List<Professor> prof = null;
+		List<Professor> professor = null;
 
 		try {
 			
 			Query consulta = sessao.getNamedQuery("Professor.listarProfessor");
-			prof = consulta.list();
+			professor = consulta.list();
 			
 		} catch(RuntimeException e) {
 			throw e;
@@ -348,7 +358,7 @@ public class AdministradorDAO {
 			sessao.close();
 
 		}
-		return prof;
+		return professor;
 
 	}
 	
@@ -379,7 +389,10 @@ public class AdministradorDAO {
 			session.save(administrador);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -392,7 +405,10 @@ public class AdministradorDAO {
 			session.save(monitores);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -405,7 +421,10 @@ public class AdministradorDAO {
 			session.save(genero);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -446,7 +465,10 @@ public class AdministradorDAO {
 			session.save(livro);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -470,4 +492,22 @@ public class AdministradorDAO {
 	}
 	
 	//Fim do método turma
+	
+	public void realizarEmprestimo(Emprestimo emprestimo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(emprestimo);
+			transaction.commit();
+		}catch(Exception e){
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
+		}finally{
+			session.close();
+		}
+	}
+
 }

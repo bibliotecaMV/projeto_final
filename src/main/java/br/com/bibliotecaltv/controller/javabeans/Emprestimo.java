@@ -26,7 +26,7 @@ public class Emprestimo {
 	private String dataDevolucao;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Aluno aluno;
 	
 	@ManyToOne
@@ -42,7 +42,7 @@ public class Emprestimo {
 	private Genero genero;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Professor professor;
 
 	public Aluno getAluno() {
