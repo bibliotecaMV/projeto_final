@@ -505,12 +505,12 @@ public class AdministradorDAO {
 		}
 	}
 	//Fim do método turma
-	public Long buscarIdTurma(String turma){
+	public Long buscarIdTurma(String nome){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try{
 			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
-			consulta.setString("turma", turma);
+			consulta.setString("nome", nome);
 			id = (Long) consulta.uniqueResult();
 		}catch(RuntimeException e){
 			throw e;
