@@ -451,4 +451,23 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	//Método adicionando turma 
+	public void adicionar(Turma turma) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(turma);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+		} finally {
+			session.close();
+		}
+	}
+	
+	//Fim do método turma
 }
