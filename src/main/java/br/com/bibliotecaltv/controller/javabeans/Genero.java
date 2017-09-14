@@ -12,7 +12,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="generos")
 @NamedQueries({@NamedQuery(name = "Genero.pegarId", query = "select id from Genero genero where genero.descricao = :descricao"),
-	@NamedQuery(name = "Genero.buscarGenero", query = "select genero from Genero genero where genero.id = :id")})
+	@NamedQuery(name = "Genero.buscarGenero", query = "select genero from Genero genero where genero.id = :id"),
+	@NamedQuery(name="Genero.listarGenero", query="SELECT genero FROM Genero genero")})
 public class Genero {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

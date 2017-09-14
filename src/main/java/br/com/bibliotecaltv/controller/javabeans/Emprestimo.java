@@ -5,9 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({	
+	@NamedQuery(name="Emprestimo.listarEmprestimo", query="SELECT emprestimo FROM Emprestimo emprestimo"),
+})
 @Table(name = "emprestimos")
 public class Emprestimo {
 	
@@ -21,7 +26,7 @@ public class Emprestimo {
 	private String dataDevolucao;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Aluno aluno;
 	
 	@ManyToOne
@@ -37,32 +42,8 @@ public class Emprestimo {
 	private Genero genero;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Professor professor;
-	
-	public Long getTombo() {
-		return tombo;
-	}
-
-	public void setTombo(Long tombo) {
-		this.tombo = tombo;
-	}
-
-	public String getDataEmprestimo() {
-		return dataEmprestimo;
-	}
-
-	public void setDataEmprestimo(String dataEmprestimo) {
-		this.dataEmprestimo = dataEmprestimo;
-	}
-
-	public String getDataDevolucao() {
-		return dataDevolucao;
-	}
-
-	public void setDataDevolucao(String dataDevolucao) {
-		this.dataDevolucao = dataDevolucao;
-	}
 
 	public Aluno getAluno() {
 		return aluno;
@@ -103,5 +84,29 @@ public class Emprestimo {
 	public void setProfessor(Professor professor) {
 		this.professor = professor;
 	}
-	
+
+
+	public Long getTombo() {
+		return tombo;
+	}
+
+	public void setTombo(Long tombo) {
+		this.tombo = tombo;
+	}
+
+	public String getDataEmprestimo() {
+		return dataEmprestimo;
+	}
+
+	public void setDataEmprestimo(String dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
+	}
+
+	public String getDataDevolucao() {
+		return dataDevolucao;
+	}
+
+	public void setDataDevolucao(String dataDevolucao) {
+		this.dataDevolucao = dataDevolucao;
+	}
 }
