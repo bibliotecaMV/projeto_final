@@ -397,6 +397,8 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	
 	public void adicionarMonitor(Monitores monitores){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -413,6 +415,8 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	
 	public void adicionarGenero(Genero genero){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -429,6 +433,8 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	
 	public Long buscarIdGenero(String descricao){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = 0L;
@@ -443,6 +449,8 @@ public class AdministradorDAO {
 		}
 		return id;
 	}
+	
+	
 	public Genero buscarGeneroPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Genero genero = null;
@@ -457,6 +465,7 @@ public class AdministradorDAO {
 		}
 		return genero;
 	}
+
 	public void adicionarAluno(Aluno aluno){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -471,6 +480,7 @@ public class AdministradorDAO {
 			e.printStackTrace();
 		}
 	}
+
 	public void adicionarLivro(Livro livro){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
