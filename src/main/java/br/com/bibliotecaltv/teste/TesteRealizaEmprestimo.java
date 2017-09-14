@@ -11,12 +11,18 @@ import br.com.bibliotecaltv.dao.MonitoresDAO;
 public class TesteRealizaEmprestimo {
 
 	public static void main(String[] args) {
+		MonitoresDAO dao = new MonitoresDAO();
+		String livro_titulo = "loucura";
+		Long id_livro = dao.buscarIdLivro(livro_titulo);
+		Livro livro = dao.buscarLivroPorId(id_livro);
+		
 	    Emprestimo emp = new Emprestimo();
 	    
+	    emp.setLivro(livro);
+	    
 	    /*Aluno aluno = new Aluno();
-	    Genero genero = new Genero();
+	   */ Genero genero = new Genero();
 	    Turma turma = new Turma();
-	    Livro livro = new Livro();
 	    Professor professor = new Professor();
 */
 
