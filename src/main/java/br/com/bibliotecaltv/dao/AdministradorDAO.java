@@ -6,7 +6,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
-
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
@@ -466,8 +465,22 @@ public class AdministradorDAO {
 		}
 		return genero;
 	}
-	
-	
+
+	public void adicionarAluno(Aluno aluno){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(aluno);
+			transaction.commit();
+		}catch(Exception e){
+			if(transaction != null){
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		}
+	}
+
 	public void adicionarLivro(Livro livro){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -484,6 +497,54 @@ public class AdministradorDAO {
 			session.close();
 		}	
 	}
+	
+	//Método adicionando turma 
+	public void adicionarTurma(Turma turma) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(turma);
+			transaction.commit();
+		} catch (Exception e) {
+			if(transaction != null) {
+				transaction.rollback();
+			}
+		} finally {
+			session.close();
+		}
+	}
+	//Fim do método turma
+	public Long buscarIdTurma(String turma){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
+			consulta.setString("turma", turma);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+	public Turma buscarTurmaPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Turma turma = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarTurmaPorId");
+			consulta.setLong("id", id);
+			turma = (Turma) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return turma;
+	}
+	
+	
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -500,4 +561,5 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
+
 }

@@ -5,8 +5,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
@@ -17,13 +15,7 @@ import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
-import br.com.bibliotecaltv.controller.javabeans.Aluno;
-import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
-import br.com.bibliotecaltv.controller.javabeans.Genero;
-import br.com.bibliotecaltv.controller.javabeans.Livro;
-import br.com.bibliotecaltv.controller.javabeans.Professor;
-import br.com.bibliotecaltv.controller.javabeans.Turma;
-import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
+
 
 @Repository
 public class MonitoresDAO {

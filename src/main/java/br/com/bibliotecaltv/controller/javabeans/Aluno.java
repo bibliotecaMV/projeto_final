@@ -27,7 +27,7 @@ public class Aluno {
 	private String nome;
 	
 	@Column(name="numero", nullable = false)
-	private int numero;
+	private Long numero;
 	
 	@Column(name="matricula", nullable = false)
 	private Long matricula;
@@ -54,10 +54,10 @@ public class Aluno {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getNumero() {
+	public Long getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
+	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
 	public Long getMatricula() {
