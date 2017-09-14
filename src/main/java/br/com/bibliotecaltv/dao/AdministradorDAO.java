@@ -561,5 +561,161 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
+    
+	//Metodos de alterar dados//
+	
+		public void alterarAdministrador(Administrador administrador) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
 
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(administrador);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarAluno(Aluno aluno) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(aluno);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_Sesc) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(emprestimo_Sesc);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarEmprestimo(Emprestimo emprestimo) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(emprestimo);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarGenero(Genero genero) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(genero);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarLivro(Livro livro) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(livro);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarMonitores(Monitores monitores) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(monitores);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarProfessor(Professor professor) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(professor);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		public void alterarTurma(Turma turma) {
+			Session sessao = HibernateUtil.getSessionFactory().openSession();
+			Transaction transacao = null;
+
+			try {
+				transacao = sessao.beginTransaction();
+				sessao.update(turma);
+				transacao.commit();
+			} catch(RuntimeException e) {
+				if(transacao != null){
+					transacao.rollback();
+				}
+			}finally {
+				sessao.close();
+			}
+		}
+		
+		//Fim Do Alterar//
 }
