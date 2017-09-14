@@ -1,10 +1,12 @@
 package br.com.bibliotecaltv.dao;
 
 import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
+
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
@@ -31,8 +33,9 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null) {
-			transaction.rollback();
-			}
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -50,6 +53,7 @@ public class AdministradorDAO {
 			if(transaction != null) {
 			transaction.rollback();
 			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -65,8 +69,9 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null) {
-			transaction.rollback();
-			}
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -84,7 +89,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -102,7 +108,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -120,7 +127,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -138,7 +146,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -156,7 +165,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -174,7 +184,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-			}
+				}
+				e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -379,7 +390,10 @@ public class AdministradorDAO {
 			session.save(administrador);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -392,7 +406,10 @@ public class AdministradorDAO {
 			session.save(monitores);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -405,7 +422,10 @@ public class AdministradorDAO {
 			session.save(genero);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
@@ -446,9 +466,28 @@ public class AdministradorDAO {
 			session.save(livro);
 			transaction.commit();
 		}catch(Exception e){
-			e.printStackTrace();
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
 		}finally{
 			session.close();
 		}	
+	}
+	public void realizarEmprestimo(Emprestimo emprestimo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try{
+			transaction = session.beginTransaction();
+			session.save(emprestimo);
+			transaction.commit();
+		}catch(Exception e){
+			if(transaction != null) {
+				transaction.rollback();
+				}
+				e.printStackTrace();
+		}finally{
+			session.close();
+		}
 	}
 }
