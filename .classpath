@@ -23,5 +23,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/renato.silva/estagio-workspace/fj21-tarefa/WebContent/WEB-INF/lib/spring-web-3.2.10.RELEASE.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
