@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NamedQueries({	
 	@NamedQuery(name="Monitores.listarMonitores", query="SELECT monitores FROM Monitores monitores"),
 	@NamedQuery(name = "Monitores.listarPorId", query = "select monitores from Monitores monitores where id = :id"),
-	@NamedQuery(name = "Monitores.buscarIdMonitores", query = "select id from Monitores monitores where nome = :nome")
+	@NamedQuery(name = "Monitores.buscarId", query = "select id from Monitores monitores where nome = :nome")
 })
 @Table(name = "monitores")
 public class Monitores {

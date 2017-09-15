@@ -827,7 +827,7 @@ public class AdministradorDAO {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Long tombo = null;
 			try{
-				Query consulta = session.getNamedQuery("Livro.buscarTomboLivro");
+				Query consulta = session.getNamedQuery("Livro.buscarTombo");
 				consulta.setString("titulo", titulo );
 				tombo = (Long) consulta.uniqueResult();
 			}catch(Exception e){
@@ -842,7 +842,7 @@ public class AdministradorDAO {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Long id = null;
 			try{
-				Query consulta = session.getNamedQuery("Monitores.buscarIdProfessor");
+				Query consulta = session.getNamedQuery("Monitores.buscarId");
 				consulta.setString("nomeCompleto", nomeCompleto );
 				id = (Long) consulta.uniqueResult();
 			}catch(Exception e){
@@ -857,7 +857,7 @@ public class AdministradorDAO {
 			Session session = HibernateUtil.getSessionFactory().openSession();
 			Long id = null;
 			try{
-				Query consulta = session.getNamedQuery("Monitores.buscarIdMonitores");
+				Query consulta = session.getNamedQuery("Monitores.buscarId");
 				consulta.setString("nome", nome );
 				id = (Long) consulta.uniqueResult();
 			}catch(Exception e){
