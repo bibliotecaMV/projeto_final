@@ -11,6 +11,7 @@ import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
 import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
+import br.com.bibliotecaltv.controller.javabeans.Monitores;
 import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
@@ -39,7 +40,7 @@ public class MonitoresDAO {
 	}
 
 	// pegar o genero através do id
-	public Genero buscarGeneroPorId(Long id){
+	/*public Genero buscarGeneroPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Genero genero = null;
 		try{
@@ -53,23 +54,66 @@ public class MonitoresDAO {
 		}
 		return genero;
 	}
+	*/
+
+	public Livro buscarLivroPorTombo(Long tombo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Livro livro = null;
+		try{
+			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
+			consulta.setLong("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return livro;
+	}
 	
-
-
-	// busca o professor através do id
+	public Monitores buscarMonitorPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Monitores monitores = null;
+		try{
+			Query consulta = session.getNamedQuery("Monitores.listarPorId");
+			consulta.setLong("id", id);
+			monitores = (Monitores) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return monitores;
+	}
+	
 	public Professor buscarProfessorPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Professor professor = null;
 		try{
-			Query consulta = session.getNamedQuery("Genero.buscarGenero");
+			Query consulta = session.getNamedQuery("Professor.listarPorId");
 			consulta.setLong("id", id);
 			professor = (Professor) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
+		}catch(RuntimeException e){
+			throw e;
 		}finally{
 			session.close();
 		}
 		return professor;
+	}
+
+	public Turma buscarTurmaPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Turma turma = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.listarPorId");
+			consulta.setLong("id", id);
+			turma = (Turma) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return turma;
 	}
 	
 	
