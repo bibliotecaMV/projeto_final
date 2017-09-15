@@ -39,7 +39,7 @@ public class MonitoresDAO {
 		}
 	}
 
-	// pegar o genero através do id
+	/// pegar o genero através do id
 	/*public Genero buscarGeneroPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Genero genero = null;
@@ -54,7 +54,7 @@ public class MonitoresDAO {
 		}
 		return genero;
 	}
-	*/
+	*/ 
 
 	public Livro buscarLivroPorTombo(Long tombo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
