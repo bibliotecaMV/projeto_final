@@ -795,7 +795,7 @@ public class AdministradorDAO {
 			
 		public Long buscarIdTurma(String nome){
 			Session session = HibernateUtil.getSessionFactory().openSession();
-			Long id_turma = 0L;
+			Long id_turma = null;
 			try{
 				Query consulta = session.getNamedQuery("Turma.buscarId");
 				consulta.setString("nome", nome);
