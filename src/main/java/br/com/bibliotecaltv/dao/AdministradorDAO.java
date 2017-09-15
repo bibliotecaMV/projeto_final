@@ -34,8 +34,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -51,7 +51,7 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if(transaction != null) {
-			transaction.rollback();
+				transaction.rollback();
 			}
 			e.printStackTrace();
 		} finally {
@@ -70,8 +70,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -89,8 +89,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -108,8 +108,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -127,8 +127,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -146,8 +146,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -165,8 +165,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -184,8 +184,8 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -193,7 +193,7 @@ public class AdministradorDAO {
 	}
 
 	//Fim dos métodos de excluir dados
-	
+
 	//Listando Todos As Classes//
 	@SuppressWarnings("unchecked")
 	public List<Administrador> listarAdministrador(){
@@ -201,10 +201,10 @@ public class AdministradorDAO {
 		List<Administrador> administrador = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Administrador.listarAdministrador");
 			administrador = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -215,17 +215,17 @@ public class AdministradorDAO {
 		return administrador;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Aluno> listarAluno(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Aluno> aluno = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Aluno.listarAluno");
 			aluno = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -236,17 +236,17 @@ public class AdministradorDAO {
 		return aluno;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Emprestimo_Sesc> listarEmprestimo_Sesc(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Emprestimo_Sesc> emprestimo_sesc = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Emprestimo_Sesc.listarEmprestimo_Sesc");
 			emprestimo_sesc = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -257,17 +257,17 @@ public class AdministradorDAO {
 		return emprestimo_sesc;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Emprestimo> listarEmprestimo(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Emprestimo> emprestimo = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Emprestimo.listarEmprestimo");
 			emprestimo = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -278,17 +278,17 @@ public class AdministradorDAO {
 		return emprestimo;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Genero> listarGenero(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Genero> genero = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Genero.listarGenero");
 			genero = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -299,17 +299,17 @@ public class AdministradorDAO {
 		return genero;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Livro> listarLivro(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Livro> livro = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Livro.listarLivro");
 			livro = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -320,17 +320,17 @@ public class AdministradorDAO {
 		return livro;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Monitores> listarMonitores(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Monitores> monitores = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Monitores.listarMonitores");
 			monitores = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -341,17 +341,17 @@ public class AdministradorDAO {
 		return monitores;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Professor> listarProfessor(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Professor> professor = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Professor.listarProfessor");
 			professor = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -362,17 +362,17 @@ public class AdministradorDAO {
 		return professor;
 
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Turma> listarTurma(){
 		Session sessao = HibernateUtil.getSessionFactory().openSession();
 		List<Turma> turma = null;
 
 		try {
-			
+
 			Query consulta = sessao.getNamedQuery("Turma.listarTurma");
 			turma = consulta.list();
-			
+
 		} catch(RuntimeException e) {
 			throw e;
 
@@ -383,7 +383,7 @@ public class AdministradorDAO {
 		return turma;
 	}
 	//Fim dos métodos de listar classes
-	
+
 	//Métodos de inserir dados
 	public void adicionarAdministrador(Administrador administrador){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -395,14 +395,14 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}	
 	}
-	
-	
+
+
 	public void adicionarMonitor(Monitores monitores){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -413,14 +413,14 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}	
 	}
-	
-	
+
+
 	public void adicionarGenero(Genero genero){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -431,13 +431,13 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}	
 	}
-	
+
 
 	public void adicionarAluno(Aluno aluno){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -464,13 +464,13 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}	
 	}
-	
+
 	public void adicionarTurma(Turma turma) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -497,15 +497,15 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}
 	}
-    
-	
-	
+
+
+
 	public void adicionarProfessor(Professor professor){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -516,13 +516,13 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			if(transaction != null) {
 				transaction.rollback();
-				}
-				e.printStackTrace();
+			}
+			e.printStackTrace();
 		}finally{
 			session.close();
 		}
 	}
-	
+
 	public void realisarDevolucaoEmprestimo(Emprestimo emprestimo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -555,7 +555,7 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
-	
+
 	public void realizarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -572,72 +572,10 @@ public class AdministradorDAO {
 		}
 	}
 	//Fim dos métodos de inserir dados
-	
-	//Métodos de buscarId
-	
-	public Long buscarAluno(String nome){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Aluno.buscarAluno");
-			consulta.setString("nome", nome);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
-	public Long buscarAdministrador(String usuario){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Administrador.buscarAdministrador");
-			consulta.setString("usuario", usuario);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
-	public Long buscarGenero(String sigla){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Genero.buscarGenero");
-			consulta.setString("sigla", sigla);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
-	public Long buscarTurma(String nome){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Turma.buscarTurma");
-			consulta.setString("nome", nome);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
-	//Fim dos métodos de buscarId
-	
-	
+
+
+
+
 	//Métodos de buscarPorId
 	public Livro buscarLivroPorTombo(Long tombo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -653,7 +591,7 @@ public class AdministradorDAO {
 		}
 		return livro;
 	}
-	
+
 	public Monitores buscarMonitorPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Monitores monitores = null;
@@ -668,7 +606,7 @@ public class AdministradorDAO {
 		}
 		return monitores;
 	}
-	
+
 	public Professor buscarProfessorPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Professor professor = null;
@@ -683,7 +621,7 @@ public class AdministradorDAO {
 		}
 		return professor;
 	}
-	
+
 	public Turma buscarTurmaPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Turma turma = null;
@@ -699,161 +637,227 @@ public class AdministradorDAO {
 		return turma;
 	}
 	//Fim dos métodos de buscasPorId	
-	
+
 	//Metodos de alterar dados//
-	
-			public void alterarAdministrador(Administrador administrador) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(administrador);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
-			}
-			
-			public void alterarAluno(Aluno aluno) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+	public void alterarAdministrador(Administrador administrador) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(aluno);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(administrador);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
 			}
-			
-			public void alterarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_Sesc) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+		}finally {
+			sessao.close();
+		}
+	}
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(emprestimo_Sesc);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
-			}
-			
-			public void alterarEmprestimo(Emprestimo emprestimo) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+	public void alterarAluno(Aluno aluno) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(emprestimo);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(aluno);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
 			}
-			
-			public void alterarGenero(Genero genero) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+		}finally {
+			sessao.close();
+		}
+	}
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(genero);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
-			}
-			
-			public void alterarLivro(Livro livro) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+	public void alterarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_Sesc) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(livro);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(emprestimo_Sesc);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
 			}
-			
-			public void alterarMonitores(Monitores monitores) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+		}finally {
+			sessao.close();
+		}
+	}
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(monitores);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
-			}
-			
-			public void alterarProfessor(Professor professor) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+	public void alterarEmprestimo(Emprestimo emprestimo) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(professor);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(emprestimo);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
 			}
-			
-			public void alterarTurma(Turma turma) {
-				Session sessao = HibernateUtil.getSessionFactory().openSession();
-				Transaction transacao = null;
+		}finally {
+			sessao.close();
+		}
+	}
 
-				try {
-					transacao = sessao.beginTransaction();
-					sessao.update(turma);
-					transacao.commit();
-				} catch(RuntimeException e) {
-					if(transacao != null){
-						transacao.rollback();
-					}
-				}finally {
-					sessao.close();
-				}
+	public void alterarGenero(Genero genero) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(genero);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
 			}
-			
-		//Fim Do Alterar//
+		}finally {
+			sessao.close();
+		}
+	}
+
+	public void alterarLivro(Livro livro) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(livro);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
+			}
+		}finally {
+			sessao.close();
+		}
+	}
+
+	public void alterarMonitores(Monitores monitores) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(monitores);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
+			}
+		}finally {
+			sessao.close();
+		}
+	}
+
+	public void alterarProfessor(Professor professor) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(professor);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
+			}
+		}finally {
+			sessao.close();
+		}
+	}
+
+	public void alterarTurma(Turma turma) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(turma);
+			transacao.commit();
+		} catch(RuntimeException e) {
+			if(transacao != null){
+				transacao.rollback();
+			}
+		}finally {
+			sessao.close();
+		}
+	}
+
+	//Fim Do Alterar//
+
+	//Métodos de buscar o Id
+
+	public Long buscarIdTurma(String nome){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id_turma = 0L;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarId");
+			consulta.setString("nome", nome);
+			id_turma = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id_turma;
+	}
+
+	public Long buscarIdGenero(String descricao){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id_genero = 0L;
+		try{
+			Query consulta = session.getNamedQuery("Genero.buscarId");
+			consulta.setString("descricao", descricao);
+			id_genero = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id_genero;
+	}
+
+	public Long buscarAluno(String nome){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Aluno.buscarid");
+			consulta.setString("nome", nome);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+
+	public Long buscarAdministrador(String usuario){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Administrador.buscarid");
+			consulta.setString("usuario", usuario);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+
+	//Fim dos métodos de buscarId
 }
+
+
