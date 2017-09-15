@@ -484,8 +484,6 @@ public class AdministradorDAO {
 		}
 	}
 	//Fim do método turma
-	
-	
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -502,5 +500,21 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
-
+	
+	//Métodos de buscarPorId
+	
+	public Livro buscarLivroPorTombo(Long tombo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Livro livro = null;
+		try{
+			Query consulta = session.getNamedQuery("Livro.listaPorTombo");
+			consulta.setLong("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return livro;
+	}
 }
