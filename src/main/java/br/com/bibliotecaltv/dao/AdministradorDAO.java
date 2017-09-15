@@ -381,6 +381,9 @@ public class AdministradorDAO {
 		}
 		return turma;
 	}
+	//Fim dos métodos de listar classes
+	
+	//Métodos de inserir dados
 	public void adicionarAdministrador(Administrador administrador){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -467,7 +470,6 @@ public class AdministradorDAO {
 		}	
 	}
 	
-	//Método adicionando turma 
 	public void adicionarTurma(Turma turma) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -483,7 +485,7 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
-	//Fim do método turma
+
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -501,6 +503,11 @@ public class AdministradorDAO {
 		}
 	}
 	
+	//Métodos de buscarId
+	
+	
+	//Fim dos métodos de buscarId
+	
 	//Métodos de buscarPorId
 	
 	public Livro buscarLivroPorTombo(Long tombo){
@@ -517,4 +524,5 @@ public class AdministradorDAO {
 		}
 		return livro;
 	}
+	//Fim dos métodos de buscasPorId
 }
