@@ -12,9 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="professores")
 @NamedQueries({ 
-	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor"),
-	@NamedQuery(name = "professor.buscarId", query = "select id from Professor professor where id = :id"),
-	@NamedQuery(name = "professor.buscarProfessor", query = "select id from Professor professor where nome_completo = :nome_completo")})
+	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor")})
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
