@@ -13,7 +13,8 @@ import javax.persistence.Table;
 @Table(name="generos")
 @NamedQueries({
 	@NamedQuery(name="Genero.listarGenero", query="SELECT genero FROM Genero genero"),
-	@NamedQuery(name="Genero.buscarId", query="SELECT genero From Genero genero where id = :id")
+	@NamedQuery(name="Genero.buscarId", query="SELECT genero From Genero genero where id = :id"),
+	@NamedQuery(name = "Genero.buscarGeneroPorId", query = "SELECT genero FROM Genero genero where genero.id = :id")
 })
 
 public class Genero {
@@ -51,5 +52,8 @@ public class Genero {
 		this.descricao = descricao;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla=" + sigla + "]";
+	}
 }

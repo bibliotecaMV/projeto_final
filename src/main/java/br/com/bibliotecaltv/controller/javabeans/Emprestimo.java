@@ -109,4 +109,9 @@ public class Emprestimo {
 	public void setDataDevolucao(String dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
+	
+	@Override
+	public String toString() {
+		return "Emprestimo [tombo=" + tombo + ", dataEmprestimo=" + dataEmprestimo + ",  datadevolucao=" +  dataDevolucao + "]";
+	}
 }
