@@ -480,6 +480,20 @@ public class AdministradorDAO {
 			e.printStackTrace();
 		}
 	}
+	public Long buscarIdAluno(String nome){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
+			consulta.setString("nome", nome);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
 
 	public void adicionarLivro(Livro livro){
 		Session session = HibernateUtil.getSessionFactory().openSession();
