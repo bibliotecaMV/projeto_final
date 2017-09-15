@@ -118,4 +118,11 @@ public class Livro {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
+	
+	@Override
+	public String toString() {
+		return "Livro [tombo=" + tombo + ", CDD=" + CDD + ", titulo=" + titulo + ", autor=" + autor + ","
+				+ " forma_arquisicao=" +forma_arquisicao + ",  volume=" +  volume + ",  exemplares=" +  exemplares + ","
+						+ " editora=" + editora + ", local_edicao=" + local_edicao + ", ano_editado=" + ano_editado + "]";
+	}
 }

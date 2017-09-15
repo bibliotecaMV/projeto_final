@@ -47,6 +47,6 @@ public class Administrador {
 	
 	@Override
 	public String toString() {
-		return "Produto [id=" + id + ", senha=" + senha + ", usuario=" + usuario + "]";
+		return "Administrador [id=" + id + ", senha=" + senha + ", usuario=" + usuario + "]";
 	}
 }
