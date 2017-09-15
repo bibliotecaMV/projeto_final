@@ -95,7 +95,7 @@ public class AdministradorDAO {
 		}
 
 	}
-*/
+
 	public void excluir(Emprestimo emprestimo ){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;

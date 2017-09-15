@@ -10,43 +10,38 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="generos")
-@NamedQueries({@NamedQuery(name = "Genero.listarGenero", query = "SELECT genero FROM Genero genero"),
-	           @NamedQuery(name = "Genero.buscarGeneroPorId", query = "SELECT genero FROM Genero genero where genero.id = :id")})
-public class Genero {
+@NamedQueries({	
+	@NamedQuery(name="Administrador.listarAdministrador", query="SELECT administrador FROM Administrador administrador"),
+})
+@Table(name = "Administradores")
+public class Administrador {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(nullable = false)
-	private String sigla;
+	private String usuario;
 	
 	@Column(nullable = false)
-	private String descricao;
-
+	private String senha;
+	
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getSigla() {
-		return sigla;
+	public String getUsuario() {
+		return usuario;
 	}
-
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
-
-	public String getDescricao() {
-		return descricao;
+	public String getSenha() {
+		return senha;
 	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
-	
-	
 }
