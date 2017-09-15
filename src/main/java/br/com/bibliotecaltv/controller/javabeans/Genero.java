@@ -48,5 +48,8 @@ public class Genero {
 		this.descricao = descricao;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla=" + sigla + "]";
+	}
 }

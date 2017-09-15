@@ -120,5 +120,10 @@ public class Emprestimo_Sesc {
 		this.turma = turma;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Emprestimo_Sesc [tombo=" + tombo + ", CDD=" + CDD + ", titulo=" + titulo + ", autor=" + autor + ","
+				+ " data_emprestimo=" + data_emprestimo + ",  data_devolucao=" +  data_devolucao + "]";
+	}
 }
+

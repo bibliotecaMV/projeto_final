@@ -50,4 +50,8 @@ public class Monitores {
 		this.senha = senha;
 	}
 
+	@Override
+	public String toString() {
+		return "Monitores [id=" + id + ", nome=" + nome + ", senha=" + senha + "]";
+	}
 }
