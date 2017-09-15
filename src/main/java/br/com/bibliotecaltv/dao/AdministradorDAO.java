@@ -434,37 +434,6 @@ public class AdministradorDAO {
 		}	
 	}
 	
-	
-	public Long buscarIdGenero(String descricao){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = 0L;
-		try{
-			Query consulta = session.getNamedQuery("Genero.pegarId");
-			consulta.setString("descricao", descricao);
-			id = (Long) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	
-	
-	public Genero buscarGeneroPorId(Long id){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Genero genero = null;
-		try{
-			Query consulta = session.getNamedQuery("Genero.buscarGenero");
-			consulta.setLong("id", id);
-			genero = (Genero) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.close();
-		}
-		return genero;
-	}
 
 	public void adicionarAluno(Aluno aluno){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -515,36 +484,6 @@ public class AdministradorDAO {
 		}
 	}
 	//Fim do método turma
-	public Long buscarIdTurma(String nome){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Turma.buscarIdTurma");
-			consulta.setString("nome", nome);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-	public Turma buscarTurmaPorId(Long id){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Turma turma = null;
-		try{
-			Query consulta = session.getNamedQuery("Turma.buscarTurmaPorId");
-			consulta.setLong("id", id);
-			turma = (Turma) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return turma;
-	}
-	
-	
 	public void realizarEmprestimo(Emprestimo emprestimo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -718,4 +657,21 @@ public class AdministradorDAO {
 		}
 		
 		//Fim Do Alterar//
+	
+	//Métodos de buscarPorId
+	
+	public Livro buscarLivroPorTombo(Long tombo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Livro livro = null;
+		try{
+			Query consulta = session.getNamedQuery("Livro.listaPorTombo");
+			consulta.setLong("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return livro;
+	}
 }

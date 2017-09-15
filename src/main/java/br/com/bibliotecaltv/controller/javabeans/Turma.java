@@ -12,10 +12,8 @@ import javax.persistence.Table;
 @Entity
 
 @NamedQueries({	
-	@NamedQuery(name="Turma.listarTurma", query="SELECT turma FROM Turma turma"),
-	@NamedQuery(name="Turma.buscarIdTurma", query="SELECT id FROM Turma turma where nome = :nome"),
-	@NamedQuery(name="Turma.buscarTurmaPorId", query="SELECT turma FROM Turma turma where id = :id")
-})
+	@NamedQuery(name="Turma.listarTurma", query="SELECT turma FROM Turma turma")
+	})
 
 @Table(name = "turmas")
 public class Turma {
