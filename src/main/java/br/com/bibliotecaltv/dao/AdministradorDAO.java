@@ -589,4 +589,61 @@ public class AdministradorDAO {
 		return turma;
 	}
 	//Fim dos métodos de buscasPorId
+	
+	//Realisar emprestimo sesc
+
+		public void realizarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction transaction = null;
+			try {
+				transaction = session.beginTransaction();
+				session.save(emprestimo_sesc);
+				transaction.commit();
+			} catch (Exception e) {
+				if(transaction != null) {
+					transaction.rollback();
+				}
+			} finally {
+				session.close();
+			}
+		}
+
+		//Fim do emprestimo sesc
+		
+		//Realisar Devoluções
+		
+		public void realisarDevolucaoEmprestimo(Emprestimo emprestimo) {
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction transaction = null;
+			try{
+				transaction = session.beginTransaction();
+				session.save(emprestimo);
+				transaction.commit();
+			}catch(Exception e){
+				if(transaction != null) {
+					transaction.rollback();
+				}
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+		}
+
+		public void realisarDevolucaoEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Transaction transaction = null;
+			try {
+				transaction = session.beginTransaction();
+				session.save(emprestimo_sesc);
+				transaction.commit();
+			} catch (Exception e) {
+				if(transaction != null) {
+					transaction.rollback();
+				}
+			} finally {
+				session.close();
+			}
+		}
+		
+		//fim do método
 }
