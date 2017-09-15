@@ -23,7 +23,7 @@ public class AdministradorDAO {
 
 
 	//Métodos de excluir dados
-	public void excluir(Aluno aluno) {
+	public void excluirAluno(Aluno aluno) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -41,7 +41,7 @@ public class AdministradorDAO {
 		}
 	}
 
-	public void excluir(Professor professor) {
+	public void excluirProfessor(Professor professor) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -59,7 +59,7 @@ public class AdministradorDAO {
 		}
 	}
 
-	public void excluir(Monitores monitores){
+	public void excluirMonitores(Monitores monitores){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -78,7 +78,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Administrador administrador){
+	public void excluirAdministradores(Administrador administrador){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -97,7 +97,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Emprestimo emprestimo ){
+	public void excluirEmprestimo(Emprestimo emprestimo ){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -116,7 +116,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Emprestimo_Sesc emprestimo_sesc){
+	public void excluirEmprestimoSesc(Emprestimo_Sesc emprestimo_sesc){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -135,7 +135,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Genero genero){
+	public void excluirGenero(Genero genero){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -154,7 +154,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Livro livro){
+	public void excluirLivro(Livro livro){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -173,7 +173,7 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluir(Turma turma){
+	public void excluirTurma(Turma turma){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
