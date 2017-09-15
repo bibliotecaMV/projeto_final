@@ -797,4 +797,37 @@ public class AdministradorDAO {
 			}
 			
 		//Fim Do Alterar//
+		
+		//Métodos de buscar o Id
+			
+		public Long buscarIdTurma(String nome){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id_turma = 0L;
+			try{
+				Query consulta = session.getNamedQuery("Turma.buscarId");
+				consulta.setString("nome", nome);
+				id_turma = (Long) consulta.uniqueResult();
+			}catch(RuntimeException e){
+				throw e;
+			}finally{
+				session.close();
+			}
+			return id_turma;
+		}
+		
+		public Long buscarIdGenero(String descricao){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id_genero = 0L;
+			try{
+				Query consulta = session.getNamedQuery("Genero.buscarId");
+				consulta.setString("descricao", descricao);
+				id_genero = (Long) consulta.uniqueResult();
+			}catch(RuntimeException e){
+				throw e;
+			}finally{
+				session.close();
+			}
+			return id_genero;
+		}
+		//Fim dos métodos de buscar o Id
 }
