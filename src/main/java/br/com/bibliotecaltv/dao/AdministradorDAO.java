@@ -572,56 +572,7 @@ public class AdministradorDAO {
 		}
 	}
 	//Fim dos métodos de inserir dados
-
-	//Métodos de buscarId
-	public Long buscarTomboLivro(String titulo){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long tombo = null;
-		try{
-			Query consulta = session.getNamedQuery("Livro.buscarTomboLivro");
-			consulta.setString("titulo", titulo );
-			tombo = (Long) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.close();
-		}
-		return tombo;
-	}
-
-	public Long buscarIdProfessor(String nomeCompleto){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Monitores.buscarIdProfessor");
-			consulta.setString("nomeCompleto", nomeCompleto );
-			id = (Long) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-
-	public Long buscarIdMonitores(String nome){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Monitores.buscarIdMonitores");
-			consulta.setString("nome", nome );
-			id = (Long) consulta.uniqueResult();
-		}catch(Exception e){
-			e.printStackTrace();
-		}finally{
-			session.close();
-		}
-		return id;
-	}
-
-	//Fim dos métodos de buscarId
-
-
+	
 	//Métodos de buscarPorId
 	public Livro buscarLivroPorTombo(Long tombo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -838,6 +789,83 @@ public class AdministradorDAO {
 			sessao.close();
 		}
 	}
+		//Fim Do Alterar//
+		
+		//Métodos de buscar o Id
+			
+		public Long buscarIdTurma(String nome){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id_turma = 0L;
+			try{
+				Query consulta = session.getNamedQuery("Turma.buscarId");
+				consulta.setString("nome", nome);
+				id_turma = (Long) consulta.uniqueResult();
+			}catch(RuntimeException e){
+				throw e;
+			}finally{
+				session.close();
+			}
+			return id_turma;
+		}
+		
+		public Long buscarIdGenero(String descricao){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id_genero = 0L;
+			try{
+				Query consulta = session.getNamedQuery("Genero.buscarId");
+				consulta.setString("descricao", descricao);
+				id_genero = (Long) consulta.uniqueResult();
+			}catch(RuntimeException e){
+				throw e;
+			}finally{
+				session.close();
+			}
+			return id_genero;
+		}
+		
+		public Long buscarTomboLivro(String titulo){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long tombo = null;
+			try{
+				Query consulta = session.getNamedQuery("Livro.buscarTomboLivro");
+				consulta.setString("titulo", titulo );
+				tombo = (Long) consulta.uniqueResult();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return tombo;
+		}
 
-	//Fim Do Alterar//
+		public Long buscarIdProfessor(String nomeCompleto){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id = null;
+			try{
+				Query consulta = session.getNamedQuery("Monitores.buscarIdProfessor");
+				consulta.setString("nomeCompleto", nomeCompleto );
+				id = (Long) consulta.uniqueResult();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return id;
+		}
+
+		public Long buscarIdMonitores(String nome){
+			Session session = HibernateUtil.getSessionFactory().openSession();
+			Long id = null;
+			try{
+				Query consulta = session.getNamedQuery("Monitores.buscarIdMonitores");
+				consulta.setString("nome", nome );
+				id = (Long) consulta.uniqueResult();
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return id;
+		}
+		//Fim dos métodos de buscar o Id
 }
