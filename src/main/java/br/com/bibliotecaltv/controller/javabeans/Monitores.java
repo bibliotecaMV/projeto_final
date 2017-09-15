@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({	
 	@NamedQuery(name="Monitores.listarMonitores", query="SELECT monitores FROM Monitores monitores"),
+	@NamedQuery(name = "Monitores.listarPorId", query = "select monitores from Monitores monitores where id = :id")
 })
 @Table(name = "monitores")
 public class Monitores {
