@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name="generos")
 @NamedQueries({
 	@NamedQuery(name="Genero.listarGenero", query="SELECT genero FROM Genero genero"),
-	@NamedQuery(name = "Genero.buscarGeneroPorId", query = "SELECT genero FROM Genero genero where genero.id = :id"),
+	@NamedQuery(name = "Genero.buscarPorId", query = "SELECT genero FROM Genero genero where genero.id = :id"),
 	@NamedQuery(name = "Genero.buscarId", query = "select id from Genero genero where descricao = :descricao")
 })
 

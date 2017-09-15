@@ -10,7 +10,7 @@ public class TesteAlterarAluno {
 		Aluno aluno = new Aluno();
 		aluno.setId(1L);
 		aluno.setNome("mayk lucas");
-		aluno.setMatricula(233L);
+		aluno.setMatricula("233");
 		aluno.setNumero(25L);
 		dao.alterarAluno(aluno);
 	}

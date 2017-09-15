@@ -30,7 +30,7 @@ public class Aluno {
 	private Long numero;
 	
 	@Column(name="matricula", nullable = false)
-	private Long matricula;
+	private String matricula;
 	
 	@ManyToOne
 	@JoinColumn(nullable = false)
@@ -60,10 +60,10 @@ public class Aluno {
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-	public Long getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Long matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
 	
