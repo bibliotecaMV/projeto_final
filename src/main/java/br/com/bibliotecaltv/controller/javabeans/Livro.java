@@ -15,7 +15,6 @@ import javax.persistence.Table;
 	     @NamedQuery(name="Livro.listarLivro", query="SELECT livro FROM Livro livro"),
 	     @NamedQuery(name = "Livro.listarPorTombo", query = "select livro from Livro livro where tombo = :tombo")})
 
-
 public class Livro {
 	@Id
 	private Long tombo;
