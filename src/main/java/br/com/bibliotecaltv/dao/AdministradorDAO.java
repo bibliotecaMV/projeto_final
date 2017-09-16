@@ -569,6 +569,20 @@ public class AdministradorDAO {
 
 	// Métodos de buscarPorId
 	
+	public Administrador buscarAdministradorPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Administrador administrador = null;
+		try{
+			Query consulta = session.getNamedQuery("Administrador.buscarPorId");
+			consulta.setLong("id", id);
+			administrador = (Administrador) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return administrador;
+	}
 	
 	public Aluno buscarAlunoPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();

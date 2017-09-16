@@ -6,6 +6,8 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import java.util.List;
 import org.springframework.stereotype.Repository;
+
+import br.com.bibliotecaltv.controller.javabeans.Administrador;
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
@@ -38,13 +40,42 @@ public class MonitoresDAO {
 			session.close();
 		}
 	}
-
-	/// pegar o genero através do id
-	/*public Genero buscarGeneroPorId(Long id){
+	// Métodos de buscarPorId
+	public Administrador buscarAdministradorPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Administrador administrador = null;
+		try{
+			Query consulta = session.getNamedQuery("Administrador.buscarPorId");
+			consulta.setLong("id", id);
+			administrador = (Administrador) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return administrador;
+	}
+	
+	public Aluno buscarAlunoPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Aluno aluno = null;
+		try{
+			Query consulta = session.getNamedQuery("Aluno.buscarPorId");
+			consulta.setLong("id", id);
+			aluno = (Aluno) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return aluno;
+	}
+	
+	public Genero buscarGeneroPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Genero genero = null;
 		try{
-			Query consulta = session.getNamedQuery("Genero.buscarGeneroPorId");
+			Query consulta = session.getNamedQuery("Genero.buscarPorId");
 			consulta.setLong("id", id);
 			genero = (Genero) consulta.uniqueResult();
 		}catch(Exception e){
@@ -54,7 +85,7 @@ public class MonitoresDAO {
 		}
 		return genero;
 	}
-	*/ 
+	
 
 	public Livro buscarLivroPorTombo(Long tombo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -85,6 +116,8 @@ public class MonitoresDAO {
 		}
 		return monitores;
 	}
+	
+    //Fim dos metodos de buscar por id
 	
 	public Professor buscarProfessorPorId(Long id){
 		Session session = HibernateUtil.getSessionFactory().openSession();
