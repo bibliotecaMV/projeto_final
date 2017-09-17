@@ -1,7 +1,11 @@
 package br.com.bibliotecaltv.controller.javabeans;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,20 +21,21 @@ import javax.persistence.Table;
 public class Emprestimo {
 	
 	@Id
-	private Long tombo;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
 	@Column(nullable = false)
-	private String dataEmprestimo;
+	private Date dataEmprestimo;
 	
-	@Column(nullable = false)
-	private String dataDevolucao;
+	@Column(nullable = true)
+	private Date dataDevolucao;
 	
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Aluno aluno;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Turma turma;
 	
 	@ManyToOne
@@ -86,32 +91,32 @@ public class Emprestimo {
 	}
 
 
-	public Long getTombo() {
-		return tombo;
+	public Long getId() {
+		return id;
 	}
 
-	public void setTombo(Long tombo) {
-		this.tombo = tombo;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	public String getDataEmprestimo() {
+	public Date getDataEmprestimo() {
 		return dataEmprestimo;
 	}
 
-	public void setDataEmprestimo(String dataEmprestimo) {
+	public void setDataEmprestimo(Date dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 
-	public String getDataDevolucao() {
+	public Date getDataDevolucao() {
 		return dataDevolucao;
 	}
 
-	public void setDataDevolucao(String dataDevolucao) {
+	public void setDataDevolucao(Date dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
 	
 	@Override
 	public String toString() {
-		return "Emprestimo [tombo=" + tombo + ", dataEmprestimo=" + dataEmprestimo + ",  datadevolucao=" +  dataDevolucao + "]";
+		return "Emprestimo [id=" + id + ", dataEmprestimo=" + dataEmprestimo + ",  datadevolucao=" +  dataDevolucao + "]";
 	}
 }

@@ -8,7 +8,7 @@ public class TesteInserirGenero {
 		AdministradorDAO dao = new AdministradorDAO();
 		Genero genero = new Genero();
 		genero.setDescricao("Romance");
-		genero.setSigla("000");
+		genero.setSigla("001");
 		dao.adicionarGenero(genero);
 	}
 }
