@@ -7,6 +7,7 @@ public class TesteRealizarEmprestimo {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Emprestimo emprestimo = new Emprestimo();
+		
 		/*
 		emprestimo.setAluno(aluno);
 		emprestimo.setDataEmprestimo(dataEmprestimo);
