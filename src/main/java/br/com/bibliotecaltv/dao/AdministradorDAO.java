@@ -824,34 +824,35 @@ public class AdministradorDAO {
 		return id_genero;
 	}
 
-	public Long buscarAluno(String nome){
+	public Long buscarIdAluno(String nome){
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
+		Long id_aluno = 0L;
 		try{
 			Query consulta = session.getNamedQuery("Aluno.buscarId");
 			consulta.setString("nome", nome);
-			id = (Long) consulta.uniqueResult();
+			id_aluno = (Long) consulta.uniqueResult();
 		}catch(RuntimeException e){
 			throw e;
 		}finally{
 			session.close();
 		}
-		return id;
+		return id_aluno;
 	}
 
-	public Long buscarAdministrador(String usuario){
+	public Long buscarIdAdministrador(String usuario, String senha){
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
+		Long id_administrador = 0L;
 		try{
 			Query consulta = session.getNamedQuery("Administrador.buscarId");
 			consulta.setString("usuario", usuario);
-			id = (Long) consulta.uniqueResult();
+			consulta.setString("senha", senha);
+			id_administrador = (Long) consulta.uniqueResult();
 		}catch(RuntimeException e){
 			throw e;
 		}finally{
 			session.close();
 		}
-		return id;
+		return id_administrador;
 	}
 
 	public Long buscarTomboLivro(String titulo){
