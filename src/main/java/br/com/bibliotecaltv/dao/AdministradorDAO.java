@@ -573,9 +573,6 @@ public class AdministradorDAO {
 	}
 	//Fim dos métodos de inserir dados
 
-
-
-
 	//Métodos de buscarPorId
 	public Livro buscarLivroPorTombo(Long tombo){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -831,7 +828,7 @@ public class AdministradorDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try{
-			Query consulta = session.getNamedQuery("Aluno.buscarid");
+			Query consulta = session.getNamedQuery("Aluno.buscarId");
 			consulta.setString("nome", nome);
 			id = (Long) consulta.uniqueResult();
 		}catch(RuntimeException e){
@@ -846,7 +843,7 @@ public class AdministradorDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try{
-			Query consulta = session.getNamedQuery("Administrador.buscarid");
+			Query consulta = session.getNamedQuery("Administrador.buscarId");
 			consulta.setString("usuario", usuario);
 			id = (Long) consulta.uniqueResult();
 		}catch(RuntimeException e){
@@ -857,7 +854,53 @@ public class AdministradorDAO {
 		return id;
 	}
 
-	//Fim dos métodos de buscarId
+	public Long buscarTomboLivro(String titulo){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long tombo = null;
+		try{
+			Query consulta = session.getNamedQuery("Livro.buscarTombo");
+			consulta.setString("titulo", titulo );
+			tombo = (Long) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return tombo;
+	}
+
+	public Long buscarIdProfessor(String nomeCompleto){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Monitores.buscarId");
+			consulta.setString("nomeCompleto", nomeCompleto );
+			id = (Long) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+
+	public Long buscarIdMonitores(String nome){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Monitores.buscarId");
+			consulta.setString("nome", nome );
+			id = (Long) consulta.uniqueResult();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+
+	//Fim dos métodos de buscar o Id
+
 }
 
 
