@@ -7,8 +7,8 @@ public class TesteInsecaoAdministrador {
 	public static void main(String[] args) {
 			AdministradorDAO dao = new AdministradorDAO();
 			Administrador administrador = new Administrador();
-			administrador.setUsuario("Pedro Lucas");
-			administrador.setSenha("pedrolucas");
+			administrador.setUsuario("Cely mesquita");
+			administrador.setSenha("1234");
 			dao.adicionarAdministrador(administrador);
 	}
 }

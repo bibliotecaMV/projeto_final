@@ -7,8 +7,8 @@ public class TesteInsercaoMonitor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Monitores monitores = new Monitores();
-		monitores.setNome("Renato");
-		monitores.setSenha("renatopereira");
+		monitores.setNome("Adriane Damião");
+		monitores.setSenha("Dry");
 		dao.adicionarMonitor(monitores);
 	}
 }
