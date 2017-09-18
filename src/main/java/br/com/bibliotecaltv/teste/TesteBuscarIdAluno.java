@@ -6,7 +6,7 @@ public class TesteBuscarIdAluno {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id = dao.buscarIdAluno("Carla");
+		Long id = dao.buscarIdAluno("Pedro Lucas");
 		System.out.println(id);
 	}
 
