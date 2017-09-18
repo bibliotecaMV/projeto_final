@@ -890,12 +890,13 @@ public class AdministradorDAO {
 		return id;
 	}
 
-	public Long buscarIdMonitores(String nome) {
+	public Long buscarIdMonitores(String nome, String senha) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
 			Query consulta = session.getNamedQuery("Monitores.buscarId");
 			consulta.setString("nome", nome);
+			consulta.setString("senha", senha);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
