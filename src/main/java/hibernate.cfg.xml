@@ -9,8 +9,8 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost/biblioteca</property>
-        <property name="connection.username">root</property>
+        <property name="connection.url">jdbc:mysql://192.168.254.82/biblioteca</property>
+        <property name="connection.username">renato</property>
         <property name="connection.password">1234</property>
 
         <!-- JDBC connection pool (use the built-in) -->
