@@ -19,7 +19,10 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public class AdministradorDAO {
 
+<<<<<<< HEAD
 //--------------------------------------------------------------------------------------------------------------------------
+=======
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 	// Métodos de excluir dados
 	public void excluirAluno(Aluno aluno) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -86,6 +89,47 @@ public class AdministradorDAO {
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
+<<<<<<< HEAD
+=======
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+	}
+
+	public void excluirEmprestimo(Emprestimo emprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+
+		try {
+			transaction = session.beginTransaction();
+			session.delete(emprestimo);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+
+	}
+
+	public void excluirEmprestimoSesc(Emprestimo_Sesc emprestimo_sesc) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+
+		try {
+			transaction = session.beginTransaction();
+			session.delete(emprestimo_sesc);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 				transaction.rollback();
 			}
 			e.printStackTrace();
@@ -153,8 +197,12 @@ public class AdministradorDAO {
 	}
 
 	// Fim dos métodos de excluir dados
+<<<<<<< HEAD
 //--------------------------------------------------------------------------------------------------------------------------
 	
+=======
+
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 	// Listando Todos As Classes//
 	@SuppressWarnings("unchecked")
 	public List<Administrador> listarAdministrador() {
@@ -527,6 +575,7 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
+<<<<<<< HEAD
 	//Fim dos métodos de inserir dados
 
 	//Métodos de buscarPorId
@@ -568,11 +617,40 @@ public class AdministradorDAO {
 			Query consulta = session.getNamedQuery("Genero.buscarPorId");
 			consulta.setLong("id", id);
 			genero = (Genero) consulta.uniqueResult();
+=======
+	// Fim dos métodos de inserir dados
+
+	// Métodos de buscarPorId
+	
+	public Administrador buscarAdministradorPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Administrador administrador = null;
+		try{
+			Query consulta = session.getNamedQuery("Administrador.buscarPorId");
+			consulta.setLong("id", id);
+			administrador = (Administrador) consulta.uniqueResult();
 		}catch(RuntimeException e){
 			throw e;
 		}finally{
 			session.close();
 		}
+		return administrador;
+	}
+	
+	public Aluno buscarAlunoPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Aluno aluno = null;
+		try{
+			Query consulta = session.getNamedQuery("Aluno.buscarPorId");
+			consulta.setLong("id", id);
+			aluno = (Aluno) consulta.uniqueResult();
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+<<<<<<< HEAD
 		return genero;
 	}
 
@@ -582,6 +660,33 @@ public class AdministradorDAO {
 		try {
 			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
 			consulta.setLong("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+=======
+		return aluno;
+	}
+	public Genero buscarGeneroPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Genero genero = null;
+		try{
+			Query consulta = session.getNamedQuery("Genero.buscarPorId");
+			consulta.setLong("id", id);
+			genero = (Genero) consulta.uniqueResult();
+		}catch(RuntimeException e){
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
+			throw e;
+		} finally {
+			session.close();
+		}
+		return genero;
+	}
+	
+	public Livro buscarLivroPorTombo(String tombo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Livro livro = null;
+		try {
+			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
+			consulta.setString("tombo", tombo);
 			livro = (Livro) consulta.uniqueResult();
 		} catch (RuntimeException e) {
 			throw e;
@@ -791,12 +896,18 @@ public class AdministradorDAO {
 			sessao.close();
 		}
 	}
+<<<<<<< HEAD
 
 
 	//Fim Do Alterar//
 
 	//Métodos de buscar o Id
 
+=======
+	// Fim Do Alterar//
+
+	// Métodos de buscar o Id
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 
 	public Long buscarIdTurma(String nome) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -828,6 +939,7 @@ public class AdministradorDAO {
 		return id_genero;
 	}
 
+<<<<<<< HEAD
 
 	public Long buscarIdAluno(String nome){
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -870,6 +982,18 @@ public class AdministradorDAO {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
+=======
+	public String buscarTomboLivro(String titulo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		String tombo = null;
+		try {
+			Query consulta = session.getNamedQuery("Livro.buscarTombo");
+			consulta.setString("titulo", titulo);
+			tombo = (String) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 			session.close();
 		}
 		return tombo;
@@ -904,11 +1028,30 @@ public class AdministradorDAO {
 		}
 		return id;
 	}
+<<<<<<< HEAD
 
 	//Fim dos métodos de buscar o Id
 
 
 
+=======
+	
+	public Long buscarIdAluno(String nome){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try{
+			Query consulta = session.getNamedQuery("Aluno.buscarId");
+			consulta.setString("nome", nome);
+			id = (Long) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return id;
+	}
+	// Fim dos métodos de buscar o Id
+>>>>>>> c7db692987863bcd5a65ca525e779bd19f8dcb25
 }
 
 

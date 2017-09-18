@@ -2,10 +2,10 @@ package br.com.bibliotecaltv.teste;
 
 import br.com.bibliotecaltv.dao.AdministradorDAO;
 
-public class TesteBuscarIdAluno {
+public class TesteBuscarTomboLivro {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id = dao.buscarIdAluno("Pedro Lucas");
-		System.out.println(id);
+		String tombo = dao.buscarTomboLivro("The Love");
+		System.out.println(tombo);
 	}
 }

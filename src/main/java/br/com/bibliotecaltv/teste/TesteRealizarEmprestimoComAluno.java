@@ -14,7 +14,7 @@ public class TesteRealizarEmprestimoComAluno {
 		Emprestimo emprestimo = new Emprestimo();
 		Long id_aluno = dao.buscarIdAluno("Renato Richard");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
-		Long tombo_livro = dao.buscarTomboLivro("The Love");
+		String tombo_livro = dao.buscarTomboLivro("The Love");
 		Livro livro = dao.buscarLivroPorTombo(tombo_livro);
 		emprestimo.setAluno(aluno);
 		emprestimo.setDataEmprestimo(Calendar.getInstance().getTime());
