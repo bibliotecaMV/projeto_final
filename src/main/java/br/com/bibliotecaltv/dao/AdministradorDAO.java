@@ -611,12 +611,12 @@ public class AdministradorDAO {
 		return genero;
 	}
 	
-	public Livro buscarLivroPorTombo(Long tombo) {
+	public Livro buscarLivroPorTombo(String tombo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Livro livro = null;
 		try {
 			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
-			consulta.setLong("tombo", tombo);
+			consulta.setString("tombo", tombo);
 			livro = (Livro) consulta.uniqueResult();
 		} catch (RuntimeException e) {
 			throw e;
@@ -860,13 +860,13 @@ public class AdministradorDAO {
 		return id_genero;
 	}
 
-	public Long buscarTomboLivro(String titulo) {
+	public String buscarTomboLivro(String titulo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long tombo = null;
+		String tombo = null;
 		try {
 			Query consulta = session.getNamedQuery("Livro.buscarTombo");
 			consulta.setString("titulo", titulo);
-			tombo = (Long) consulta.uniqueResult();
+			tombo = (String) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
