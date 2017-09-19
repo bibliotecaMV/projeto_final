@@ -18,7 +18,7 @@ import javax.persistence.Table;
 })
 public class Livro {
 	@Id
-	private Long tombo;
+	private String tombo;
 	
 	@Column(nullable = false)
 	private String CDD;
@@ -88,10 +88,10 @@ public class Livro {
 	public void setAno_editado(Long ano_editado) {
 		this.ano_editado = ano_editado;
 	}
-	public Long getTombo() {
+	public String getTombo() {
 		return tombo;
 	}
-	public void setTombo(Long tombo) {
+	public void setTombo(String tombo) {
 		this.tombo = tombo;
 	}
 	public String getCDD() {

@@ -1,6 +1,6 @@
 package br.com.bibliotecaltv.controller.javabeans;
 
-import java.util.Calendar;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Emprestimo_Sesc {
 	
 	@Id
-	private Long tombo;
+	private Long id;
 	
 	@Column(nullable = false)
 	private String CDD;
@@ -31,29 +31,41 @@ public class Emprestimo_Sesc {
 	private String autor;
 	
 	@Column(nullable = false)
-	private Calendar data_emprestimo;
+	private Date data_emprestimo;
 	
 	@Column(nullable = true)
-	private Calendar data_devolucao;
+	private Date data_devolucao;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Professor professor;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Aluno aluno;
 	
 	@ManyToOne
-	@JoinColumn(nullable = false)
+	@JoinColumn(nullable = true)
 	private Turma turma;
 
-	public Long getTombo() {
-		return tombo;
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Livro livro;
+	
+	public Livro getLivro() {
+		return livro;
 	}
 
-	public void setTombo(Long tombo) {
-		this.tombo = tombo;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getCDD() {
@@ -80,19 +92,19 @@ public class Emprestimo_Sesc {
 		this.autor = autor;
 	}
 
-	public Calendar getData_emprestimo() {
+	public Date getData_emprestimo() {
 		return data_emprestimo;
 	}
 
-	public void setData_emprestimo(Calendar data_emprestimo) {
+	public void setData_emprestimo(Date data_emprestimo) {
 		this.data_emprestimo = data_emprestimo;
 	}
 
-	public Calendar getData_devolucao() {
+	public Date getData_devolucao() {
 		return data_devolucao;
 	}
 
-	public void setData_devolucao(Calendar data_devolucao) {
+	public void setData_devolucao(Date data_devolucao) {
 		this.data_devolucao = data_devolucao;
 	}
 
@@ -122,7 +134,7 @@ public class Emprestimo_Sesc {
 	
 	@Override
 	public String toString() {
-		return "Emprestimo_Sesc [tombo=" + tombo + ", CDD=" + CDD + ", titulo=" + titulo + ", autor=" + autor + ","
+		return "Emprestimo_Sesc [id=" + id + ", CDD=" + CDD + ", titulo=" + titulo + ", autor=" + autor + ","
 				+ " data_emprestimo=" + data_emprestimo + ",  data_devolucao=" +  data_devolucao + "]";
 	}
 }

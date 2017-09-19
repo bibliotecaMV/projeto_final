@@ -15,7 +15,8 @@ import javax.persistence.Table;
 @Table(name="alunos")
 @NamedQueries({ 
 	@NamedQuery(name="Aluno.listarAluno", query="SELECT aluno FROM Aluno aluno"),
-	@NamedQuery(name="Aluno.buscarId", query="SELECT id FROM Aluno aluno where nome = :nome")
+	@NamedQuery(name="Aluno.buscarId", query="SELECT id FROM Aluno aluno where nome = :nome"),
+	@NamedQuery(name="Aluno.buscarPorId", query="SELECT aluno FROM Aluno aluno where id = :id")
 })
 public class Aluno {
 	
@@ -30,7 +31,7 @@ public class Aluno {
 	private Long numero;
 	
 	@Column(name="matricula", nullable = false)
-	private Long matricula;
+	private String matricula;
 	
 	@ManyToOne
 	@JoinColumn(nullable = false)
@@ -60,10 +61,10 @@ public class Aluno {
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
-	public Long getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Long matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
 	
