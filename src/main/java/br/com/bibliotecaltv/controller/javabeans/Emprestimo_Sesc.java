@@ -16,11 +16,13 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({	
 	@NamedQuery(name="Emprestimo_Sesc.listarEmprestimo_Sesc", query="SELECT emprestimo_Sesc FROM Emprestimo_Sesc emprestimo_Sesc"),
+	//@NamedQuery(name="Emprestimo_Sesc.buscarId", query="SELECT id FROM Emprestimo_Sesc emprestimo_Sesc where")
 })
 @Table(name = "emprestimos_sesc")
 public class Emprestimo_Sesc {
 	
 	@Id
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
@@ -51,6 +53,18 @@ public class Emprestimo_Sesc {
 	@JoinColumn(nullable = true)
 	private Turma turma;
 	
+	@ManyToOne
+	@JoinColumn(nullable = false)
+	private Livro livro;
+	
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+
 	@Column(nullable = false)
 	private String tombo;
 	
@@ -60,6 +74,7 @@ public class Emprestimo_Sesc {
 
 	public void setTombo(String tombo) {
 		this.tombo = tombo;
+
 	}
 
 	public Long getId() {

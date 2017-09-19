@@ -1,11 +1,15 @@
 package br.com.bibliotecaltv.teste;
 
+import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.dao.AdministradorDAO;
 
-public class TesteBuscarIdAluno {
+public class TesteAlterarTurma {
+
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id = dao.buscarIdAluno("Pedro Lucas");
-		System.out.println(id);
+		Turma turma = dao.buscarTurmaPorId(1L);
+		turma.setNome("3A");
+		dao.alterarTurma(turma);
 	}
+
 }
