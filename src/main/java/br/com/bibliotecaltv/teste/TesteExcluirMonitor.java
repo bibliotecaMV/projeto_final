@@ -8,7 +8,7 @@ public class TesteExcluirMonitor {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao  = new AdministradorDAO();
-		Long id = dao.buscarIdMonitores("renato");
+		Long id = dao.buscarIdMonitores("renato", "123");
 		Monitores monitores = dao.buscarMonitorPorId(id);
 		dao.excluirMonitores(monitores);
 		System.out.println("Exclui você!!!");
