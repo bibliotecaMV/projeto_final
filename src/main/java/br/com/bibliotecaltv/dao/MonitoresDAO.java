@@ -384,6 +384,78 @@ public class MonitoresDAO {
 		}
 		return id;
 	}
-	// Fim de metodos de buscar id
+	public String buscarTomboLivro(String titulo, String autor, Long genero, String editora, Long
+			ano_editado, Long volume, String forma_aquisicao, Long exemplares){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		String tombo = null;
+		try {
+			Query consulta = session.getNamedQuery("Livro.buscarTombo");
+			consulta.setString("titulo", titulo);
+			consulta.setString("autor", autor);
+			consulta.setLong("genero_id", genero);
+			consulta.setString("editora", editora);
+			consulta.setLong("ano_editado", ano_editado);
+			consulta.setLong("volume", volume);
+			consulta.setString("forma_aquisicao",forma_aquisicao );
+			consulta.setLong("exemplares", exemplares);
+			tombo = (String) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return tombo;
+	}
+	public Long buscarIdAdministrador(String usuario, String senha) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id_administrador = 0L;
+		try {
+			Query consulta = session.getNamedQuery("Administrador.buscarId");
+			consulta.setString("usuario", usuario);
+			consulta.setString("senha", senha);
+			id_administrador = (Long) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+		return id_administrador;
+	}
 
+	// Fim de metodos de buscar id
+   
+	
+	// metodos de alterar dados
+	public void realisarDevolucaoEmprestimo(Emprestimo emprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.update(emprestimo);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
+	
+	public void realisarDevolucaoEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.update(emprestimo_sesc);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+		} finally {
+			session.close();
+		}
+	}
 }

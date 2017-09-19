@@ -73,12 +73,13 @@
 			<version>5.1.43</version>
 		</dependency>
 		<!-- Por favor não tirem esse código abaixo, só o comentem como deixei 
-			esse aqui -->
+			esse aqui 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
 		</dependency>
+		-->
 	</dependencies>
 	<build>
 		<finalName>projeto_final</finalName>
