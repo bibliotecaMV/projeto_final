@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,11 +16,14 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({	
 	@NamedQuery(name="Emprestimo_Sesc.listarEmprestimo_Sesc", query="SELECT emprestimo_Sesc FROM Emprestimo_Sesc emprestimo_Sesc"),
+	//@NamedQuery(name="Emprestimo_Sesc.buscarId", query="SELECT id FROM Emprestimo_Sesc emprestimo_Sesc where")
 })
 @Table(name = "emprestimos_sesc")
 public class Emprestimo_Sesc {
 	
 	@Id
+
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(nullable = false)
@@ -47,7 +52,7 @@ public class Emprestimo_Sesc {
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Turma turma;
-
+	
 	@ManyToOne
 	@JoinColumn(nullable = false)
 	private Livro livro;
@@ -58,6 +63,18 @@ public class Emprestimo_Sesc {
 
 	public void setLivro(Livro livro) {
 		this.livro = livro;
+	}
+
+	@Column(nullable = false)
+	private String tombo;
+	
+	public String getTombo() {
+		return tombo;
+	}
+
+	public void setTombo(String tombo) {
+		this.tombo = tombo;
+
 	}
 
 	public Long getId() {

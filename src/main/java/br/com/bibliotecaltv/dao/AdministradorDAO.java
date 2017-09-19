@@ -19,6 +19,8 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public class AdministradorDAO {
 
+	// --------------------------------------------------------------------------------------------------------------------------
+
 	// Métodos de excluir dados
 	public void excluirAluno(Aluno aluno) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -94,44 +96,6 @@ public class AdministradorDAO {
 
 	}
 
-	public void excluirEmprestimo(Emprestimo emprestimo) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction transaction = null;
-
-		try {
-			transaction = session.beginTransaction();
-			session.delete(emprestimo);
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-
-	}
-
-	public void excluirEmprestimoSesc(Emprestimo_Sesc emprestimo_sesc) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction transaction = null;
-
-		try {
-			transaction = session.beginTransaction();
-			session.delete(emprestimo_sesc);
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-
-	}
-
 	public void excluirGenero(Genero genero) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -190,6 +154,7 @@ public class AdministradorDAO {
 	}
 
 	// Fim dos métodos de excluir dados
+	// --------------------------------------------------------------------------------------------------------------------------
 
 	// Listando Todos As Classes//
 	@SuppressWarnings("unchecked")
@@ -565,51 +530,67 @@ public class AdministradorDAO {
 	// Fim dos métodos de inserir dados
 
 	// Métodos de buscarPorId
-	
-	public Administrador buscarAdministradorPorId(Long id){
+
+	public Administrador buscarAdministradorPorId(Long id) {
+
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Administrador administrador = null;
-		try{
+		try {
 			Query consulta = session.getNamedQuery("Administrador.buscarPorId");
 			consulta.setLong("id", id);
 			administrador = (Administrador) consulta.uniqueResult();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
-		}finally{
+		} finally {
 			session.close();
 		}
 		return administrador;
 	}
-	
-	public Aluno buscarAlunoPorId(Long id){
+
+	public Aluno buscarAlunoPorId(Long id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Aluno aluno = null;
-		try{
+		try {
 			Query consulta = session.getNamedQuery("Aluno.buscarPorId");
 			consulta.setLong("id", id);
 			aluno = (Aluno) consulta.uniqueResult();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
-		}finally{
+		} finally {
 			session.close();
 		}
 		return aluno;
 	}
-	public Genero buscarGeneroPorId(Long id){
+
+	public Genero buscarGeneroPorId(Long id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Genero genero = null;
-		try{
+		try {
 			Query consulta = session.getNamedQuery("Genero.buscarPorId");
 			consulta.setLong("id", id);
 			genero = (Genero) consulta.uniqueResult();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
-		}finally{
+		} finally {
 			session.close();
 		}
 		return genero;
 	}
-	
+
+	public Livro buscarLivroPorTombo(Long tombo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Livro livro = null;
+		try {
+			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
+			consulta.setLong("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+		return livro;
+	}
 	public Livro buscarLivroPorTombo(String tombo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Livro livro = null;
@@ -825,6 +806,7 @@ public class AdministradorDAO {
 			sessao.close();
 		}
 	}
+
 	// Fim Do Alterar//
 
 	// Métodos de buscar o Id
@@ -857,6 +839,37 @@ public class AdministradorDAO {
 			session.close();
 		}
 		return id_genero;
+	}
+
+	public Long buscarIdAluno(String nome) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id_aluno = 0L;
+		try {
+			Query consulta = session.getNamedQuery("Aluno.buscarId");
+			consulta.setString("nome", nome);
+			id_aluno = (Long) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+		return id_aluno;
+	}
+
+	public Long buscarIdAdministrador(String usuario, String senha) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id_administrador = 0L;
+		try {
+			Query consulta = session.getNamedQuery("Administrador.buscarId");
+			consulta.setString("usuario", usuario);
+			consulta.setString("senha", senha);
+			id_administrador = (Long) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+			throw e;
+		} finally {
+			session.close();
+		}
+		return id_administrador;
 	}
 
 	public String buscarTomboLivro(String titulo) {
@@ -904,20 +917,7 @@ public class AdministradorDAO {
 		}
 		return id;
 	}
-	
-	public Long buscarIdAluno(String nome){
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try{
-			Query consulta = session.getNamedQuery("Aluno.buscarId");
-			consulta.setString("nome", nome);
-			id = (Long) consulta.uniqueResult();
-		}catch(RuntimeException e){
-			throw e;
-		}finally{
-			session.close();
-		}
-		return id;
-	}
+
 	// Fim dos métodos de buscar o Id
+
 }
