@@ -8,7 +8,7 @@ public class TesteAlterarMonitores {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Monitores monitores = dao.buscarMonitorPorId(1L);
-		monitores.setNome("Mayk Lucas");
+		monitores.setLogin("renatorichard2012@gmail.com");
 		monitores.setSenha("123456");
 		dao.alterarMonitores(monitores);
 	}
