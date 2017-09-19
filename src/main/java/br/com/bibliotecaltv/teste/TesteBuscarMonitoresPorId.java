@@ -7,6 +7,6 @@ public class TesteBuscarMonitoresPorId {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Monitores monitores = dao.buscarMonitorPorId(1L);
-		System.out.println(monitores.getNome());
+		System.out.println(monitores.getLogin());
 	}
 }
