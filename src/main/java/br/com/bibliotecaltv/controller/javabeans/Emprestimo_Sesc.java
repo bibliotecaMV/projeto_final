@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,6 +21,7 @@ import javax.persistence.Table;
 public class Emprestimo_Sesc {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(nullable = false)
@@ -47,17 +50,16 @@ public class Emprestimo_Sesc {
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Turma turma;
-
-	@ManyToOne
-	@JoinColumn(nullable = false)
-	private Livro livro;
 	
-	public Livro getLivro() {
-		return livro;
+	@Column(nullable = false)
+	private String tombo;
+	
+	public String getTombo() {
+		return tombo;
 	}
 
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public void setTombo(String tombo) {
+		this.tombo = tombo;
 	}
 
 	public Long getId() {
