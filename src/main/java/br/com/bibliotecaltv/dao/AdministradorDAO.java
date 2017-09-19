@@ -19,8 +19,6 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public class AdministradorDAO {
 
-	// --------------------------------------------------------------------------------------------------------------------------
-
 	// Métodos de excluir dados
 	public void excluirAluno(Aluno aluno) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
