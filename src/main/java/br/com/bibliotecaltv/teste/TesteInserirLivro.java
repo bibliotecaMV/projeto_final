@@ -17,13 +17,13 @@ public class TesteInserirLivro {
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2000L);
-		livro.setAutor("Tony");
+		livro.setAutor("Kelmy");
 		livro.setEditora("Eryka");
-		livro.setExemplares(4L);
+		livro.setExemplares(10L);
 		livro.setForma_arquisicao("comprado");
 		livro.setLocal_edicao("house");
 		livro.setTitulo("The Love");
-		livro.setVolume(1L);
+		livro.setVolume(3L);
 		dao.adicionarLivro(livro);
 	}
 }

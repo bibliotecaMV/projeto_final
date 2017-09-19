@@ -14,7 +14,10 @@ import javax.persistence.Table;
 @NamedQueries({
 	     @NamedQuery(name="Livro.listarLivro", query="SELECT livro FROM Livro livro"),
 	     @NamedQuery(name = "Livro.listarPorTombo", query = "select livro from Livro livro where tombo = :tombo"),
-	     @NamedQuery(name = "Livro.buscarTombo", query = "select tombo from Livro livro where titulo = :titulo")
+	     @NamedQuery(name = "Livro.buscarTombo", query = "select tombo from Livro livro where titulo = :titulo "
+	     		+ "and autor = :autor and genero_id = :genero_id and editora = :editora "
+	     		+ "and ano_editado = :ano_editado and volume = :volume "
+	     		+ "and forma_aquisicao = :forma_aquisicao and exemplares = :exemplares")
 })
 public class Livro {
 	@Id
@@ -24,7 +27,7 @@ public class Livro {
 	private String CDD;
 	
 	@Column(nullable = false)
-	private String forma_arquisicao;
+	private String forma_aquisicao;
 	
 	@Column(nullable = false)
 	private String titulo;
@@ -100,11 +103,11 @@ public class Livro {
 	public void setCDD(String CDD) {
 		this.CDD = CDD;
 	}
-	public String getForma_arquisicao() {
-		return forma_arquisicao;
+	public String getForma_aquisicao() {
+		return forma_aquisicao;
 	}
-	public void setForma_arquisicao(String forma_arquisicao) {
-		this.forma_arquisicao = forma_arquisicao;
+	public void setForma_arquisicao(String forma_aquisicao) {
+		this.forma_aquisicao = forma_aquisicao;
 	}
 	public String getTitulo() {
 		return titulo;
@@ -122,7 +125,7 @@ public class Livro {
 	@Override
 	public String toString() {
 		return "Livro [tombo=" + tombo + ", CDD=" + CDD + ", titulo=" + titulo + ", autor=" + autor + ","
-				+ " forma_arquisicao=" +forma_arquisicao + ",  volume=" +  volume + ",  exemplares=" +  exemplares + ","
+				+ " forma_aquisicao=" +forma_aquisicao + ",  volume=" +  volume + ",  exemplares=" +  exemplares + ","
 						+ " editora=" + editora + ", local_edicao=" + local_edicao + ", ano_editado=" + ano_editado + "]";
 	}
 }
