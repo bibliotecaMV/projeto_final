@@ -13,10 +13,8 @@ public class TesteRealizarEmprestimoComProfessor {
 		
 		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça");
 		Professor professor = dao.buscarProfessorPorId(id_professor);
-		
 		String tombo_livro = dao.buscarTomboLivro("The Love");
 		Livro livro = dao.buscarLivroPorTombo(tombo_livro);
-		
 		Emprestimo emprestimo = new Emprestimo();
 		emprestimo.setProfessor(professor);
 		emprestimo.setGenero(livro.getGenero());
