@@ -915,6 +915,21 @@ public class AdministradorDAO {
 		}
 		return id;
 	}
+	
+	public Long buscarIdEmprestimo_Sesc(String tombo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarId");
+			consulta.setString("tombo", tombo);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
 
 	// Fim dos métodos de buscar o Id
 
