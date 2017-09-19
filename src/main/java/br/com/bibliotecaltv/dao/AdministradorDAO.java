@@ -462,7 +462,22 @@ public class AdministradorDAO {
 			session.close();
 		}
 	}
-
+	public void realizarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(emprestimo_sesc);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
 	public void adicionarProfessor(Professor professor) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -485,7 +500,7 @@ public class AdministradorDAO {
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
-			session.save(emprestimo);
+			session.update(emprestimo);
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
@@ -502,23 +517,7 @@ public class AdministradorDAO {
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
-			session.save(emprestimo_sesc);
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-		} finally {
-			session.close();
-		}
-	}
-
-	public void realizarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction transaction = null;
-		try {
-			transaction = session.beginTransaction();
-			session.save(emprestimo_sesc);
+			session.update(emprestimo_sesc);
 			transaction.commit();
 		} catch (Exception e) {
 			if (transaction != null) {
