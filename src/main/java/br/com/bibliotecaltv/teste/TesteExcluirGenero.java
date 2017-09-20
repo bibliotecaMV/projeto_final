@@ -7,7 +7,7 @@ public class TesteExcluirGenero {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao  = new AdministradorDAO();
-		Long id_genero = dao.buscarIdGenero("Romance");
+		Long id_genero = dao.buscarIdGenero("Romance","000");
 		Genero genero = dao.buscarGeneroPorId(id_genero);
 		dao.excluirGenero(genero);
 	}

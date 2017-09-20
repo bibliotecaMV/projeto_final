@@ -7,7 +7,7 @@ public class TesteBuscarTomboLivro {
 		AdministradorDAO dao = new AdministradorDAO();
 		String titulo = "Iracema";
 		String autor = "Thaynara";
-		Long id_genero = dao.buscarIdGenero("Romance");
+		Long id_genero = dao.buscarIdGenero("Romance","000");
 		String editora = "Gilmar";
 		Long ano_editado = 1985L;
 		Long volume = 4L;

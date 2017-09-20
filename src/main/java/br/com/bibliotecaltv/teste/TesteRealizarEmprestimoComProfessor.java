@@ -16,7 +16,7 @@ public class TesteRealizarEmprestimoComProfessor {
 
 		String titulo = "The Love";
 		String autor = "Kelmy";
-		Long genero = dao.buscarIdGenero("Romance");
+		Long genero = dao.buscarIdGenero("Romance","000");
 		String editora = "Eryka";
 		Long ano_editado = 2000L;
 		Long volume = 3L;
