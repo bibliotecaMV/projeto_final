@@ -18,7 +18,7 @@ public class TesteRealizarEmprestimo_Sesc_ComAlunoM {
 		emprestimo_Sesc.setData_emprestimo(Calendar.getInstance().getTime());
 		emprestimo_Sesc.setAutor("Cely");
 		emprestimo_Sesc.setCDD("001");
-		emprestimo_Sesc.setData_emprestimo(Calendar.getInstance().getTime());
+		emprestimo_Sesc.setData_devolucao(null);
 		emprestimo_Sesc.setTitulo("Teste emprestimo_sesc");
 		emprestimo_Sesc.setTombo("3455545");
 
