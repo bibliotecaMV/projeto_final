@@ -106,7 +106,7 @@ public class Livro {
 	public String getForma_aquisicao() {
 		return forma_aquisicao;
 	}
-	public void setForma_arquisicao(String forma_aquisicao) {
+	public void setForma_aquisicao(String forma_aquisicao) {
 		this.forma_aquisicao = forma_aquisicao;
 	}
 	public String getTitulo() {

@@ -13,17 +13,17 @@ public class TesteInserirLivro {
 		Genero genero = dao.buscarGeneroPorId(id_genero);
 		
 		Livro livro = new Livro();
-		livro.setTombo("1235");
+		livro.setTombo("3455545");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
-		livro.setAno_editado(2000L);
-		livro.setAutor("Kelmy");
+		livro.setAno_editado(2017L);
+		livro.setAutor("Pedro Lucas Oliveira de Matos");
 		livro.setEditora("Eryka");
-		livro.setExemplares(10L);
-		livro.setForma_arquisicao("comprado");
-		livro.setLocal_edicao("house");
-		livro.setTitulo("The Love");
-		livro.setVolume(3L);
+		livro.setExemplares(30L);
+		livro.setForma_aquisicao("comprado");
+		livro.setLocal_edicao("Dragão do Mar");
+		livro.setTitulo("The Bad");
+		livro.setVolume(1L);
 		dao.adicionarLivro(livro);
 	}
 }

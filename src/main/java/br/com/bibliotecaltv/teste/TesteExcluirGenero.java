@@ -10,7 +10,5 @@ public class TesteExcluirGenero {
 		Long id_genero = dao.buscarIdGenero("Romance");
 		Genero genero = dao.buscarGeneroPorId(id_genero);
 		dao.excluirGenero(genero);
-		System.out.println("Exclui você!!!");
-
 	}
 }
