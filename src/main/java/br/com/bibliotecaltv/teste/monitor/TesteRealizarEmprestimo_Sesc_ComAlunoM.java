@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.teste;
+package br.com.bibliotecaltv.teste.monitor;
 
 import java.util.Calendar;
 
@@ -6,7 +6,7 @@ import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
-public class TesteRealizarEmprestimo_Sesc_ComAluno {
+public class TesteRealizarEmprestimo_Sesc_ComAlunoM {
 	public static void main(String[] args) {
 		MonitoresDAO dao = new MonitoresDAO();
 	

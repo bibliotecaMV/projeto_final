@@ -36,6 +36,23 @@ public class MonitoresDAO {
 			session.close();
 		}
 	}
+	
+	public void realizarEmprestimo_Sesc(Emprestimo_Sesc emprestimo_sesc) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			session.save(emprestimo_sesc);
+			transaction.commit();
+		} catch (Exception e) {
+			if (transaction != null) {
+				transaction.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
 
 	// Fim dos métodos de inserir dados
 
@@ -144,22 +161,23 @@ public class MonitoresDAO {
 		}
 		return turma;
 	}
-	public Long buscarTomboLivro(String titulo) {
+
+
+	// Fim dos metodos de buscar por id
+	public Livro buscarLivroPorTombo(String tombo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long tombo = null;
+		Livro livro = null;
 		try {
-			Query consulta = session.getNamedQuery("Livro.buscarTombo");
-			consulta.setString("titulo", titulo);
-			tombo = (Long) consulta.uniqueResult();
-		} catch (Exception e) {
-			e.printStackTrace();
+			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
+			consulta.setString("tombo", tombo);
+			livro = (Livro) consulta.uniqueResult();
+		} catch (RuntimeException e) {
+			throw e;
 		} finally {
 			session.close();
 		}
-		return tombo;
+		return livro;
 	}
-
-	// Fim dos metodos de buscar por id
 
 	// Métodos de listar dados
 

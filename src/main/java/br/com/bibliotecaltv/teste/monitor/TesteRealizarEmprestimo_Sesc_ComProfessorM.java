@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.teste;
+package br.com.bibliotecaltv.teste.monitor;
 
 import java.util.Calendar;
 
@@ -6,7 +6,7 @@ import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
 import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.dao.AdministradorDAO;
 
-public class TesteRealizarEmprestimo_Sesc_ComProfessor {
+public class TesteRealizarEmprestimo_Sesc_ComProfessorM {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça",3455689L);
