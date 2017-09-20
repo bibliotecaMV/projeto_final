@@ -102,20 +102,7 @@ public class MonitoresDAO {
 		return genero;
 	}
 
-	public Livro buscarLivroPorTombo(Long tombo) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Livro livro = null;
-		try {
-			Query consulta = session.getNamedQuery("Livro.listarPorTombo");
-			consulta.setLong("tombo", tombo);
-			livro = (Livro) consulta.uniqueResult();
-		} catch (RuntimeException e) {
-			throw e;
-		} finally {
-			session.close();
-		}
-		return livro;
-	}
+
 
 	public Monitores buscarMonitorPorId(Long id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -177,7 +164,8 @@ public class MonitoresDAO {
 			session.close();
 		}
 		return livro;
-	}
+	}	
+	
 
 	// Métodos de listar dados
 
