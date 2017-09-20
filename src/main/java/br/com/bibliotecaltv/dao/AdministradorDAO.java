@@ -442,7 +442,7 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
-			}
+			}e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -759,6 +759,7 @@ public class AdministradorDAO {
 			if (transacao != null) {
 				transacao.rollback();
 			}
+			e.printStackTrace();
 		} finally {
 			sessao.close();
 		}

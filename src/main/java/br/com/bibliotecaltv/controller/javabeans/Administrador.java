@@ -12,8 +12,8 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({	
 	@NamedQuery(name="Administrador.listarAdministrador", query="SELECT administrador FROM Administrador administrador"),
-	@NamedQuery(name="Administrador.buscarId", query= "SELECT id FROM Administrador administrador where usuario = :usuario and senha = :senha"),
-	@NamedQuery(name="Administrador.buscarPorId", query="SELECT administrador FROM Administrador administrador where id = :id")
+	@NamedQuery(name="Administrador.buscarId", query= "SELECT id FROM Administrador administrador WHERE usuario = :usuario and senha = :senha"),
+	@NamedQuery(name="Administrador.buscarPorId", query="SELECT administrador FROM Administrador administrador WHERE id = :id")
 })
 @Table(name = "Administradores")
 public class Administrador {

@@ -22,7 +22,6 @@ import javax.persistence.Table;
 public class Emprestimo_Sesc {
 	
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
@@ -53,18 +52,6 @@ public class Emprestimo_Sesc {
 	@JoinColumn(nullable = true)
 	private Turma turma;
 	
-	@ManyToOne
-	@JoinColumn(nullable = false)
-	private Livro livro;
-	
-	public Livro getLivro() {
-		return livro;
-	}
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-	}
-
 	@Column(nullable = false)
 	private String tombo;
 	

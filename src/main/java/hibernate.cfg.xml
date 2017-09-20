@@ -4,6 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
+
 	<session-factory>
 
 		<!-- Database connection settings -->
@@ -42,6 +43,5 @@
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Professor" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Turma" />
 	</session-factory>
-
 
 </hibernate-configuration>
