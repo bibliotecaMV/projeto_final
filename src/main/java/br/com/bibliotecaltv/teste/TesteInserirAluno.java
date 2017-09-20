@@ -11,7 +11,7 @@ public class TesteInserirAluno {
 		Turma turma = dao.buscarTurmaPorId(id_turma);
 		Aluno aluno = new Aluno();
 		aluno.setMatricula("3455617");
-		aluno.setNome("Renato Richard");
+		aluno.setNome("Pedro Lucas");
 		aluno.setNumero(32L);
 		aluno.setTurma(turma);
 		dao.adicionarAluno(aluno);
