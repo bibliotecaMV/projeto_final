@@ -8,7 +8,7 @@ public class TesteInserirProfessor {
 		AdministradorDAO dao = new AdministradorDAO();
 		Professor professor = new Professor();
 		professor.setMatricula(3455545L);
-		professor.setNomeCompleto("Kelmy Camurça");
+		professor.setNomeCompleto("Edy Vidal");
 		dao.adicionarProfessor(professor);
 	}
 }
