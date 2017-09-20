@@ -13,7 +13,7 @@ public class TesteInsercaoMonitor {
 		
 		Monitores monitores = new Monitores();
 		monitores.setAluno(aluno);
-		monitores.setLogin("Renatorichard@gmail.com");
+		monitores.setLogin("Renatorichard2012@gmail.com");
 		monitores.setSenha("1234567");
 		dao.adicionarMonitor(monitores);
 	}

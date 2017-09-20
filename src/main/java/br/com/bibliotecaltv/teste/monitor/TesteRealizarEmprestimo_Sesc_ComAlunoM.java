@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.teste;
+package br.com.bibliotecaltv.teste.monitor;
 
 import java.util.Calendar;
 
@@ -6,11 +6,11 @@ import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
-public class TesteRealizarEmprestimo_Sesc_ComAluno {
+public class TesteRealizarEmprestimo_Sesc_ComAlunoM {
 	public static void main(String[] args) {
 		MonitoresDAO dao = new MonitoresDAO();
 	
-		Long id_aluno = dao.buscarIdAluno("Renato Richard",32L,"3455617");
+		Long id_aluno = dao.buscarIdAluno("Renato Richard");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();
