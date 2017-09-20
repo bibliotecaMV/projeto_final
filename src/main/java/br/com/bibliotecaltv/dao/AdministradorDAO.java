@@ -797,12 +797,14 @@ public class AdministradorDAO {
 		}
 		return id_genero;
 	}
-	public Long buscarIdAluno(String nome) {
+	public Long buscarIdAluno(String nome, Long numero, String matricula) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
 			Query consulta = session.getNamedQuery("Aluno.buscarId");
 			consulta.setString("nome", nome);
+			consulta.setLong("numero", numero);
+			consulta.setString("matricula", matricula);
 			id = (Long) consulta.uniqueResult();
 		} catch (RuntimeException e) {
 			throw e;
@@ -850,12 +852,13 @@ public class AdministradorDAO {
 		return tombo;
 	}
 
-	public Long buscarIdProfessor(String nome_completo) {
+	public Long buscarIdProfessor(String nome_completo, Long matricula) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
 			Query consulta = session.getNamedQuery("Professor.buscarId");
 			consulta.setString("nome_completo", nome_completo);
+			consulta.setLong("matricula", matricula);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();

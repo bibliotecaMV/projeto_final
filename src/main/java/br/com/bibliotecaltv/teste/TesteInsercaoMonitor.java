@@ -8,7 +8,7 @@ public class TesteInsercaoMonitor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		
-		Long id_aluno = dao.buscarIdAluno("Renato Richard");
+		Long id_aluno = dao.buscarIdAluno("Renato Richard",32L,"3455617");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 		
 		Monitores monitores = new Monitores();

@@ -10,9 +10,9 @@
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
         <!--<property name="connection.url">jdbc:mysql://192.168.0.107:3306/biblioteca</property>-->
-        <property name="connection.url">jdbc:mysql://localhost/biblioteca</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password"></property>
+        <property name="connection.url">jdbc:mysql://192.168.254.82/biblioteca</property>
+        <property name="connection.username">richard</property>
+        <property name="connection.password">1234</property>
 
 
         <!-- JDBC connection pool (use the built-in) -->
@@ -31,7 +31,7 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <mapping class="br.com.bibliotecaltv.controller.javabeans.Livro"/>
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Administrador"/>

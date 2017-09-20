@@ -10,7 +10,7 @@ public class TesteRealizarEmprestimo_Sesc_ComAluno {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 	
-		Long id_aluno = dao.buscarIdAluno("Renato Richard");
+		Long id_aluno = dao.buscarIdAluno("Renato Richard",32L,"3455617");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();

@@ -14,7 +14,7 @@ public class TesteRealizarEmprestimoComAluno {
 		AdministradorDAO dao = new AdministradorDAO();
 		Emprestimo emprestimo = new Emprestimo();
 
-		Long id_aluno = dao.buscarIdAluno("Renato Richard");
+		Long id_aluno = dao.buscarIdAluno("Renato Richard",32L,"3455617");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 
 		String titulo = "The Love";
