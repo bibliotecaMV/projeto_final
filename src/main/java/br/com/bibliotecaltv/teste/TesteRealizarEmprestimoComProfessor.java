@@ -11,7 +11,7 @@ public class TesteRealizarEmprestimoComProfessor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 
-		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça");
+		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça",3455689L);
 		Professor professor = dao.buscarProfessorPorId(id_professor);
 
 		String titulo = "The Love";

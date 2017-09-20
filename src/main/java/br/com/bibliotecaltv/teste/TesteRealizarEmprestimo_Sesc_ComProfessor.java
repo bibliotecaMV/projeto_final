@@ -9,7 +9,7 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 public class TesteRealizarEmprestimo_Sesc_ComProfessor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça");
+		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça",3455689L);
 		Professor professor = dao.buscarProfessorPorId(id_professor);
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();

@@ -8,8 +8,8 @@ public class TesteAlterarGenero {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Genero genero = dao.buscarGeneroPorId(1L);
-		genero.setDescricao("Paródia");
-		genero.setSigla("000");
+		genero.setDescricao("Terro");
+		genero.setSigla("005");
 		dao.alterarGenero(genero);
 
 	}
