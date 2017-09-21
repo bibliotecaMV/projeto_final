@@ -26,7 +26,7 @@ public class Professor {
 	private String nomeCompleto;
 	
 	@Column(name="matricula", nullable = false)
-	private Long matricula;
+	private String matricula;
 	
 	public Long getId() {
 		return id;
@@ -40,10 +40,10 @@ public class Professor {
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-	public Long getMatricula() {
+	public String getMatricula() {
 		return matricula;
 	}
-	public void setMatricula(Long matricula) {
+	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
 	

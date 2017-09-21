@@ -52,18 +52,6 @@ public class Emprestimo_Sesc {
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Turma turma;
-	
-	@ManyToOne
-	@JoinColumn(nullable = false)
-	private Livro livro;
-	
-	public Livro getLivro() {
-		return livro;
-	}
-
-	public void setLivro(Livro livro) {
-		this.livro = livro;
-	}
 
 	@Column(nullable = false)
 	private String tombo;
