@@ -21,7 +21,9 @@ import javax.persistence.Table;
 				+ "dataEmprestimo = :dataEmprestimo"),
 		@NamedQuery(name = "Emprestimo.buscarIdAluno", query = "select id from Emprestimo emprestimo"
 				+ " where livro_tombo = :livro_tombo and genero_id = :genero_id and "
-				+ "aluno_id = :aluno_id and turma_id = :turma_id and dataEmprestimo = :dataEmprestimo") })
+				+ "aluno_id = :aluno_id and turma_id = :turma_id and dataEmprestimo = :dataEmprestimo"),
+		@NamedQuery(name = "Emprestimo.buscarPorId", query = "select emprestimo from Emprestimo emprestimo where "
+				+ "id = :id")})		
 @Table(name = "emprestimos")
 public class Emprestimo {
 
