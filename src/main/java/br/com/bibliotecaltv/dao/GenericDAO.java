@@ -1,9 +1,8 @@
 package br.com.bibliotecaltv.dao;
-import java.io.Serializable;
 
+import java.io.Serializable;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 
@@ -46,5 +45,22 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			session.close();
 		}
 	}
+   
+   public void alterar(T entity) {
+		Session sessao = HibernateUtil.getSessionFactory().openSession();
+		Transaction transacao = null;
+		try {
+			transacao = sessao.beginTransaction();
+			sessao.update(entity);
+			transacao.commit();
+		} catch (RuntimeException e) {
+			if (transacao != null) {
+				transacao.rollback();
+			}
+		} finally {
+			sessao.close();
+		}
+	}
+   
 
 }

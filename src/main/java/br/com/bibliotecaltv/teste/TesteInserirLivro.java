@@ -3,11 +3,13 @@ package br.com.bibliotecaltv.teste;
 import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.LivroDAO;
 
 public class TesteInserirLivro {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		 
+		LivroDAO daoLivro = new LivroDAO();
+		
 		String descricao_genero = "Romance";
 		Long id_genero = dao.buscarIdGenero(descricao_genero);
 		Genero genero = dao.buscarGeneroPorId(id_genero);
@@ -24,6 +26,6 @@ public class TesteInserirLivro {
 		livro.setLocal_edicao("Dragão do Mar");
 		livro.setTitulo("The Bad");
 		livro.setVolume(1L);
-		dao.adicionarLivro(livro);
+		daoLivro.salvar(livro);
 	}
 }

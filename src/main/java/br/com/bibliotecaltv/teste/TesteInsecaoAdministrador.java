@@ -9,6 +9,6 @@ public class TesteInsecaoAdministrador {
 			Administrador administrador = new Administrador();
 			administrador.setUsuario("Cely mesquita");
 			administrador.setSenha("1234");
-			dao.adicionarAdministrador(administrador);
+			dao.salvar(administrador);
 	}
 }

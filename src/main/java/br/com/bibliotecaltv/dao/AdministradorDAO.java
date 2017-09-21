@@ -113,26 +113,6 @@ public class AdministradorDAO extends GenericDAO<Administrador, Long> {
 		}
 
 	}
-
-	public void excluirLivro(Livro livro) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction transaction = null;
-
-		try {
-			transaction = session.beginTransaction();
-			session.delete(livro);
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-
-	}
-
 	public void excluirTurma(Turma turma) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
@@ -415,24 +395,6 @@ public class AdministradorDAO extends GenericDAO<Administrador, Long> {
 			e.printStackTrace();
 		}
 	}
-
-	public void adicionarLivro(Livro livro) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction transaction = null;
-		try {
-			transaction = session.beginTransaction();
-			session.save(livro);
-			transaction.commit();
-		} catch (Exception e) {
-			if (transaction != null) {
-				transaction.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-	}
-
 	public void adicionarTurma(Turma turma) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
