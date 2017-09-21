@@ -4,13 +4,13 @@ import java.util.Calendar;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
-import br.com.bibliotecaltv.dao.MonitoresDAO;
+import br.com.bibliotecaltv.dao.AdministradorDAO;
 
 public class TesteRealizarEmprestimo_Sesc_ComAluno {
 	public static void main(String[] args) {
-		MonitoresDAO dao = new MonitoresDAO();
+		AdministradorDAO dao = new AdministradorDAO();
 	
-		Long id_aluno = dao.buscarIdAluno("Renato Richard");
+		Long id_aluno = dao.buscarIdAluno("Mayk Lucas", 25L, "3429637");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 		
 		
@@ -20,12 +20,13 @@ public class TesteRealizarEmprestimo_Sesc_ComAluno {
 		emprestimo_Sesc.setAutor("Cely");
 		emprestimo_Sesc.setCDD("001");
 		emprestimo_Sesc.setData_emprestimo(Calendar.getInstance().getTime());
-		emprestimo_Sesc.setData_devolucao(null);
 		emprestimo_Sesc.setTitulo("Teste emprestimo_sesc");
-		emprestimo_Sesc.setTombo("3455545");
-        
+		emprestimo_Sesc.setTombo("33333");
 		emprestimo_Sesc.setTurma(aluno.getTurma());
-		
-		dao.realizarEmprestimo_Sesc(emprestimo_Sesc);
+		try {
+			dao.realizarEmprestimo_Sesc(emprestimo_Sesc);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
