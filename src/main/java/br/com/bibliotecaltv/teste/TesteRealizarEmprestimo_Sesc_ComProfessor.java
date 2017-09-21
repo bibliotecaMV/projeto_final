@@ -9,6 +9,7 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 public class TesteRealizarEmprestimo_Sesc_ComProfessor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
+		
 		Long id_professor = dao.buscarIdProfessor("Edy Vidal","3455545");
 		Professor professor = dao.buscarProfessorPorId(id_professor);
 		
