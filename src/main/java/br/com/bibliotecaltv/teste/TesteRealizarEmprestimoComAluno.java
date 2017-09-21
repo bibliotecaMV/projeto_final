@@ -13,17 +13,17 @@ public class TesteRealizarEmprestimoComAluno {
 		AdministradorDAO dao = new AdministradorDAO();
 		Emprestimo emprestimo = new Emprestimo();
 
-		Long id_aluno = dao.buscarIdAluno("Renato Richard",32L,"3455617");
+		Long id_aluno = dao.buscarIdAluno("Pedro Lucas",25L,"3455545");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 
-		String titulo = "The Love";
-		String autor = "Kelmy";
+		String titulo = "The Bad";
+		String autor = "Pedro Lucas Oliveira de Matos";
 		Long id_genero = dao.buscarIdGenero("Romance","000");
 		String editora = "Eryka";
-		Long ano_editado = 2000L;
-		Long volume = 3L;
+		Long ano_editado = 2017L;
+		Long volume = 1L;
 		String forma_aquisicao = "comprado";
-		Long exemplares = 10L;
+		Long exemplares = 30L;
 		String tombo_livro = dao.buscarTomboLivro(titulo, autor, id_genero,
 				editora, ano_editado, volume, forma_aquisicao, exemplares);
 		System.out.println(tombo_livro);

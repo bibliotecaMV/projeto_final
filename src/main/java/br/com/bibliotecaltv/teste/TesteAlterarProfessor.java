@@ -8,7 +8,7 @@ public class TesteAlterarProfessor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Professor professor = dao.buscarProfessorPorId(1L);
-		professor.setMatricula(20L);
+		professor.setMatricula("20");
 		professor.setNomeCompleto("Jucelino");
 		dao.alterarProfessor(professor);
 	}

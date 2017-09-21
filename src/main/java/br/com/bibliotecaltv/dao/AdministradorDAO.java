@@ -855,13 +855,13 @@ public class AdministradorDAO {
 		return tombo;
 	}
 
-	public Long buscarIdProfessor(String nome_completo, Long matricula) {
+	public Long buscarIdProfessor(String nome_completo, String matricula) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
 			Query consulta = session.getNamedQuery("Professor.buscarId");
 			consulta.setString("nome_completo", nome_completo);
-			consulta.setLong("matricula", matricula);
+			consulta.setString("matricula", matricula);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -897,6 +897,43 @@ public class AdministradorDAO {
 			consulta.setLong("aluno", aluno);
 			consulta.setLong("turma", turma);
 			consulta.setLong("genero", genero);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+	public Long buscarIdEmprestimoAluno(String tombo, Long genero,Long turma, 
+			Long aluno, String dataEmprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo.buscarIdAluno");
+			consulta.setString("livro_tombo", tombo);
+			consulta.setLong("genero_id", genero);
+			consulta.setLong("turma_id", turma);
+			consulta.setLong("aluno_id", aluno);
+			consulta.setString("dataEmprestimo", dataEmprestimo);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+	public Long buscarIdEmprestimoProfessor(String tombo, Long genero, Long professor,
+			String dataEmprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo.buscarIdProfessor");
+			consulta.setString("livro_tombo", tombo);
+			consulta.setLong("genero_id", genero);
+			consulta.setLong("professor_id", professor);
+			consulta.setString("dataEmprestimo", dataEmprestimo);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
