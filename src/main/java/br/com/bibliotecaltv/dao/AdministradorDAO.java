@@ -1,5 +1,6 @@
 package br.com.bibliotecaltv.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -876,6 +877,83 @@ public class AdministradorDAO {
 			Query consulta = session.getNamedQuery("Monitores.buscarId");
 			consulta.setString("nome", nome);
 			consulta.setString("senha", senha);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+
+	public Long buscarIdEmprestimo_SescAluno( String tombo, Long genero,Long turma, 
+			Long aluno, String dataEmprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarIdAluno");
+			consulta.setString("livro_tombo",tombo);
+			consulta.setLong("genero_id", genero);
+			consulta.setLong("aluno_id", aluno);
+			consulta.setLong("turma_id", turma);
+			consulta.setString("dataEmprestimo",dataEmprestimo);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+
+
+	public Long buscarIdEmprestimo_SescProfessor( String tombo, String genero, Long professor, Date data_emprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarIdProfessor");
+			consulta.setString("tombo",tombo);
+			consulta.setString("genero", genero);
+			consulta.setLong("professor", professor);
+			consulta.setDate("data_emprestimo", data_emprestimo);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+
+	public Long buscarIdEmprestimoAluno(String tombo, Long genero,Long turma, 
+			Long aluno, String dataEmprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo.buscarIdAluno");
+			consulta.setString("livro_tombo", tombo);
+			consulta.setLong("genero_id", genero);
+			consulta.setLong("turma_id", turma);
+			consulta.setLong("aluno_id", aluno);
+			consulta.setString("dataEmprestimo", dataEmprestimo);
+			id = (Long) consulta.uniqueResult();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return id;
+	}
+	public Long buscarIdEmprestimoProfessor(String tombo, Long genero, Long professor,
+			String dataEmprestimo) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Long id = null;
+		try {
+			Query consulta = session.getNamedQuery("Emprestimo.buscarIdProfessor");
+			consulta.setString("livro_tombo", tombo);
+			consulta.setLong("genero_id", genero);
+			consulta.setLong("professor_id", professor);
+			consulta.setString("dataEmprestimo", dataEmprestimo);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();

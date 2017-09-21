@@ -16,8 +16,13 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({	
 	@NamedQuery(name="Emprestimo_Sesc.listarEmprestimo_Sesc", query="SELECT emprestimo_Sesc FROM Emprestimo_Sesc emprestimo_Sesc"),
-	@NamedQuery(name="Emprestimo_Sesc.buscarIdAluno", query="SELECT id FROM Emprestimo_Sesc emprestimo_Sesc WHERE tombo = :tombo and genero = :genero and aluno = :aluno and turma = :turma and data_emprestimo = :data_emprestimo"),
-	@NamedQuery(name="Emprestimo_Sesc.buscarIdProfessor", query="SELECT id FROM Emprestimo_Sesc emprestimo_Sesc WHERE tombo = :tombo and genero = :genero and professor = :professor and data_emprestimo = :data_emprestimo")
+	
+	@NamedQuery(name = "Emprestimo_Sesc.buscarIdProfessor", query = "select id from Emprestimo_Sesc emprestimo_Sesc"
+			+ " where livro_tombo = :livro_tombo and genero_id = :genero_id and professor_id = :professor_id and "
+			+ "dataEmprestimo = :dataEmprestimo"),
+	@NamedQuery(name = "Emprestimo_Sesc.buscarIdAluno", query = "select id from Emprestimo_Sesc emprestimo_Sesc"
+			+ " where livro_tombo = :livro_tombo and genero_id = :genero_id and "
+			+ "aluno_id = :aluno_id and turma_id = :turma_id and dataEmprestimo = :dataEmprestimo")
 })
 @Table(name = "emprestimos_sesc")
 public class Emprestimo_Sesc {

@@ -10,18 +10,18 @@ public class TesteRealizarEmprestimo_Sesc_ComAluno {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 	
-		Long id_aluno = dao.buscarIdAluno("Mayk Lucas", 25L, "3429637");
+		Long id_aluno = dao.buscarIdAluno("Carla Valéria", 4L, "3453234");
 		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
 		
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();
 		emprestimo_Sesc.setAluno(aluno);
 		emprestimo_Sesc.setData_emprestimo(Calendar.getInstance().getTime());
-		emprestimo_Sesc.setAutor("Cely");
+		emprestimo_Sesc.setAutor("Leandro");
 		emprestimo_Sesc.setCDD("001");
 		emprestimo_Sesc.setData_emprestimo(Calendar.getInstance().getTime());
 		emprestimo_Sesc.setTitulo("Teste emprestimo_sesc");
-		emprestimo_Sesc.setTombo("33333");
+		emprestimo_Sesc.setTombo("333");
 		emprestimo_Sesc.setTurma(aluno.getTurma());
 		try {
 			dao.realizarEmprestimo_Sesc(emprestimo_Sesc);

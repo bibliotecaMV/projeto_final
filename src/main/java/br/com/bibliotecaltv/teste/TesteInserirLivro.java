@@ -13,7 +13,7 @@ public class TesteInserirLivro {
 		Genero genero = dao.buscarGeneroPorId(id_genero);
 		
 		Livro livro = new Livro();
-		livro.setTombo("3455545");
+		livro.setTombo("333");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
