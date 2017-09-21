@@ -890,17 +890,12 @@ public class AdministradorDAO {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
-<<<<<<< HEAD
-			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarIdProfessor");
-			consulta.setString("tombo", tombo);
-=======
 			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarId");
 			consulta.setString("tombo",tombo);
 			consulta.setLong("professor", professor);
 			consulta.setLong("aluno", aluno);
 			consulta.setLong("turma", turma);
 			consulta.setLong("genero", genero);
->>>>>>> 9201d0c3b7a0ae86afa59c6fa64db3d1eac89277
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
