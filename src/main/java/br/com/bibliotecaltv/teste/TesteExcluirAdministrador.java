@@ -7,10 +7,10 @@ public class TesteExcluirAdministrador {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id_administrador = dao.buscarIdAdministrador("Renato", "123");
+		Long id_administrador = dao.buscarIdAdministrador("Lucas Mayk", "654321");
 		Administrador administrador = dao.buscarAdministradorPorId(id_administrador); 
 		dao.excluirAdministradores(administrador);
-		System.out.println("Excluindo adm Renato feio");
+		System.out.println("Excluindo Administrador");
 
 	}
 

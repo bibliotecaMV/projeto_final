@@ -8,8 +8,8 @@ public class TestaAlterarAdministrador {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 		Administrador administrador = dao.buscarAdministradorPorId(1L);
-		administrador.setSenha("1234");
-		administrador.setUsuario("Pedro Lucas");
+		administrador.setSenha("654321");
+		administrador.setUsuario("Lucas Mayk");
 		dao.alterarAdministrador(administrador);
 
 	}
