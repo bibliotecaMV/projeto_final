@@ -13,10 +13,9 @@ public class TesteRealizarEmprestimoComProfessor {
 
 		Long id_professor = dao.buscarIdProfessor("Edy Vidal","3455545");
 		Professor professor = dao.buscarProfessorPorId(id_professor);
-
 		String titulo = "The Bad";
 		String autor = "Pedro Lucas Oliveira de Matos";
-		Long genero = dao.buscarIdGenero("Romance");
+		Long genero = dao.buscarIdGenero("Romance","000");
 		String editora = "Eryka";
 		Long ano_editado = 2017L;
 		Long volume = 1L;

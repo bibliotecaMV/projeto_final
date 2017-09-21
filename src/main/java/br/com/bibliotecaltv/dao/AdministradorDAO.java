@@ -763,12 +763,13 @@ public class AdministradorDAO extends GenericDAO<Administrador, Long> {
 		return id_turma;
 	}
 
-	public Long buscarIdGenero(String descricao) {
+	public Long buscarIdGenero(String descricao, String sigla) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id_genero = 0L;
 		try {
 			Query consulta = session.getNamedQuery("Genero.buscarId");
 			consulta.setString("descricao", descricao);
+			consulta.setString("sigla", sigla);
 			id_genero = (Long) consulta.uniqueResult();
 		} catch (RuntimeException e) {
 			throw e;

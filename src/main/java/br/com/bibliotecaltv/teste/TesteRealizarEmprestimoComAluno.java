@@ -18,7 +18,7 @@ public class TesteRealizarEmprestimoComAluno {
 
 		String titulo = "The Bad";
 		String autor = "Pedro Lucas Oliveira de Matos";
-		Long id_genero = dao.buscarIdGenero("Romance");
+		Long id_genero = dao.buscarIdGenero("Romance","000");
 		String editora = "Eryka";
 		Long ano_editado = 2017L;
 		Long volume = 1L;

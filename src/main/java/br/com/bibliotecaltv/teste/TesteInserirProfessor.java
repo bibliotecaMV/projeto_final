@@ -5,7 +5,6 @@ import br.com.bibliotecaltv.dao.ProfessorDAO;
 
 public class TesteInserirProfessor {
 	public static void main(String[] args) {
-		//AdministradorDAO dao = new AdministradorDAO();
 		ProfessorDAO dao = new ProfessorDAO(); 
 		Professor professor = new Professor();
 		professor.setMatricula("3455545");

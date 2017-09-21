@@ -7,10 +7,10 @@ public class TesteAlterarAluno {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Aluno aluno = dao.buscarAlunoPorId(1L);
-		aluno.setNome("Pedro Lucas");
-		aluno.setMatricula("233");
-		aluno.setNumero(29L);
+		Aluno aluno = dao.buscarAlunoPorId(4L);
+		aluno.setNome("Lucas Mayk");
+		aluno.setMatricula("3579243");
+		aluno.setNumero(25L);
 		dao.alterarAluno(aluno);
 	}
 

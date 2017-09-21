@@ -11,7 +11,7 @@ public class TesteInserirLivro {
 		LivroDAO daoLivro = new LivroDAO();
 		
 		String descricao_genero = "Romance";
-		Long id_genero = dao.buscarIdGenero(descricao_genero);
+		Long id_genero = dao.buscarIdGenero(descricao_genero, descricao_genero);
 		Genero genero = dao.buscarGeneroPorId(id_genero);
 		
 		Livro livro = new Livro();
