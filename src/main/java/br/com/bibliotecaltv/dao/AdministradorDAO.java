@@ -18,7 +18,7 @@ import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
-public class AdministradorDAO {
+public class AdministradorDAO extends GenericDAO<Administrador, Long> {
 
 	// Métodos de excluir dados
 	public void excluirAluno(Aluno aluno) {
@@ -484,6 +484,8 @@ public class AdministradorDAO {
 	}
 
 	public void adicionarProfessor(Professor professor) {
+		
+		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {

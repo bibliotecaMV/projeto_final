@@ -17,7 +17,7 @@ import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
-public class MonitoresDAO {
+public class MonitoresDAO extends GenericDAO<Monitores, Long> {
 
 	// Métodos de inserir dados
 	public void realizaEmprestimo(Emprestimo emprestimo) {
