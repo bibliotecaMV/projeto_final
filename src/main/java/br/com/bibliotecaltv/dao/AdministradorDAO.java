@@ -18,7 +18,7 @@ import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
-public class AdministradorDAO {
+public class AdministradorDAO extends GenericDAO<Administrador, Long> {
 
 	// Métodos de excluir dados
 	public void excluirAluno(Aluno aluno) {
@@ -484,6 +484,8 @@ public class AdministradorDAO {
 	}
 
 	public void adicionarProfessor(Professor professor) {
+		
+		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
@@ -504,6 +506,20 @@ public class AdministradorDAO {
 
 	// Métodos de buscarPorId
 
+	public Emprestimo buscarEmprestimoPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Emprestimo emprestimo = null;
+		try{
+			Query consulta = session.getNamedQuery("Emprestimo.buscarPorId");
+			consulta.setLong("id", id);
+			emprestimo = (Emprestimo) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return emprestimo;
+	}
 	public Administrador buscarAdministradorPorId(Long id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Administrador administrador = null;
