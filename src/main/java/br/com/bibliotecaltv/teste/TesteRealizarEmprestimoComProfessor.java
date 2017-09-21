@@ -11,17 +11,17 @@ public class TesteRealizarEmprestimoComProfessor {
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
 
-		Long id_professor = dao.buscarIdProfessor("Kelmy Camurça",3455689L);
+		Long id_professor = dao.buscarIdProfessor("Edy Vidal","3455545");
 		Professor professor = dao.buscarProfessorPorId(id_professor);
 
-		String titulo = "The Love";
-		String autor = "Kelmy";
+		String titulo = "The Bad";
+		String autor = "Pedro Lucas Oliveira de Matos";
 		Long genero = dao.buscarIdGenero("Romance");
 		String editora = "Eryka";
-		Long ano_editado = 2000L;
-		Long volume = 3L;
+		Long ano_editado = 2017L;
+		Long volume = 1L;
 		String forma_aquisicao = "comprado";
-		Long exemplares = 10L;
+		Long exemplares = 30L;
 		String tombo_livro = dao.buscarTomboLivro(titulo, autor, genero,
 				editora, ano_editado, volume, forma_aquisicao, exemplares);
 

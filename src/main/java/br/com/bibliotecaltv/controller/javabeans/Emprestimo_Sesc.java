@@ -52,7 +52,7 @@ public class Emprestimo_Sesc {
 	@ManyToOne
 	@JoinColumn(nullable = true)
 	private Turma turma;
-	
+
 	@Column(nullable = false)
 	private String tombo;
 	

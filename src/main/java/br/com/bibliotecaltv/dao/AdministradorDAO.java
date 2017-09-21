@@ -1,6 +1,5 @@
 package br.com.bibliotecaltv.dao;
 
-import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -854,13 +853,13 @@ public class AdministradorDAO {
 		return tombo;
 	}
 
-	public Long buscarIdProfessor(String nome_completo, Long matricula) {
+	public Long buscarIdProfessor(String nome_completo, String matricula) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
 			Query consulta = session.getNamedQuery("Professor.buscarId");
 			consulta.setString("nome_completo", nome_completo);
-			consulta.setLong("matricula", matricula);
+			consulta.setString("matricula", matricula);
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -886,47 +885,6 @@ public class AdministradorDAO {
 		return id;
 	}
 
-	//_______________________________________________________________
-	public Long buscarIdEmprestimo_SescAluno( String tombo, String genero, Long aluno, Long turma, Date data_emprestimo) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try {
-			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarId");
-			consulta.setString("tombo",tombo);
-			consulta.setString("genero", genero);
-			consulta.setLong("aluno", aluno);
-			consulta.setLong("turma", turma);
-			consulta.setDate("data_emprestimo", data_emprestimo);
-			id = (Long) consulta.uniqueResult();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-		return id;
-
-
-	}
-
-	public Long buscarIdEmprestimo_SescProfessor( String tombo, String genero, Long professor, Date data_emprestimo) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Long id = null;
-		try {
-			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarId");
-			consulta.setString("tombo",tombo);
-			consulta.setString("genero", genero);
-			consulta.setLong("professor", professor);
-			consulta.setDate("data_emprestimo", data_emprestimo);
-			id = (Long) consulta.uniqueResult();
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
-		return id;
-
-	}
-	//_______________________________________________________________
 	// Fim dos métodos de buscar o Id
 
 }
