@@ -504,6 +504,20 @@ public class AdministradorDAO {
 
 	// Métodos de buscarPorId
 
+	public Emprestimo buscarEmprestimoPorId(Long id){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Emprestimo emprestimo = null;
+		try{
+			Query consulta = session.getNamedQuery("Emprestimo.buscarPorId");
+			consulta.setLong("id", id);
+			emprestimo = (Emprestimo) consulta.uniqueResult();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return emprestimo;
+	}
 	public Administrador buscarAdministradorPorId(Long id) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Administrador administrador = null;
