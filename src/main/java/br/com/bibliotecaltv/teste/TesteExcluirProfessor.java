@@ -1,15 +1,12 @@
 package br.com.bibliotecaltv.teste;
 
-import br.com.bibliotecaltv.controller.javabeans.Professor;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.ProfessorDAO;
 
 public class TesteExcluirProfessor {
 
 	public static void main(String[] args) {
-		AdministradorDAO dao  = new AdministradorDAO();
-		Long id = dao.buscarIdProfessor("kelmy","3455689");
-		Professor professor= dao.buscarProfessorPorId(id);
-		dao.excluirProfessor(professor);
+		ProfessorDAO dao = new ProfessorDAO();
+		dao.excluir(1L);
 		System.out.println("Exclui você!!!");
 
 	}
