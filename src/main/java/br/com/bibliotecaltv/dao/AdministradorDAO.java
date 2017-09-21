@@ -484,6 +484,8 @@ public class AdministradorDAO {
 	}
 
 	public void adicionarProfessor(Professor professor) {
+		
+		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
