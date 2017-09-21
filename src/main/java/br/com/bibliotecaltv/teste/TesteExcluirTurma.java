@@ -9,6 +9,6 @@ public class TesteExcluirTurma {
 		Long id_turma = dao.buscarIdTurma("3A");
 		Turma turma = dao.buscarTurmaPorId(id_turma);
 		dao.excluirTurma(turma);
-		System.out.println("Exclui você!!!");
+		System.out.println("Exclui você 3A!!!");
 	}
 }

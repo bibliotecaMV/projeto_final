@@ -10,9 +10,17 @@
 		<!-- Database connection settings -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<!--<property name="connection.url">jdbc:mysql://192.168.0.107:3306/biblioteca</property> -->
+<<<<<<< HEAD
 		<property name="connection.url">jdbc:mysql://localhost/biblioteca</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
+=======
+		<property name="connection.url">jdbc:mysql://192.168.254.82:3306/biblioteca</property>
+		<property name="connection.username">root2</property>
+		<property name="connection.password">1234</property>
+
+
+>>>>>>> 9201d0c3b7a0ae86afa59c6fa64db3d1eac89277
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
 

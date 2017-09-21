@@ -1,5 +1,6 @@
 package br.com.bibliotecaltv.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -442,7 +443,7 @@ public class AdministradorDAO {
 		} catch (Exception e) {
 			if (transaction != null) {
 				transaction.rollback();
-			}
+			}e.printStackTrace();
 		} finally {
 			session.close();
 		}
@@ -759,6 +760,7 @@ public class AdministradorDAO {
 			if (transacao != null) {
 				transacao.rollback();
 			}
+			e.printStackTrace();
 		} finally {
 			sessao.close();
 		}
@@ -884,12 +886,21 @@ public class AdministradorDAO {
 		return id;
 	}
 	
-	public Long buscarIdEmprestimo_Sesc(String tombo) {
+	public Long buscarIdEmprestimo_Sesc( String tombo, Long professor, Long aluno, Long turma, Long genero, Date data_emprestimo) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Long id = null;
 		try {
+<<<<<<< HEAD
 			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarIdProfessor");
 			consulta.setString("tombo", tombo);
+=======
+			Query consulta = session.getNamedQuery("Emprestimo_Sesc.buscarId");
+			consulta.setString("tombo",tombo);
+			consulta.setLong("professor", professor);
+			consulta.setLong("aluno", aluno);
+			consulta.setLong("turma", turma);
+			consulta.setLong("genero", genero);
+>>>>>>> 9201d0c3b7a0ae86afa59c6fa64db3d1eac89277
 			id = (Long) consulta.uniqueResult();
 		} catch (Exception e) {
 			e.printStackTrace();

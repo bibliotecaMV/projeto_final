@@ -22,7 +22,6 @@ import javax.persistence.Table;
 public class Emprestimo_Sesc {
 	
 	@Id
-
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
