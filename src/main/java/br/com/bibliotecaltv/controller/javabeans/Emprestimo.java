@@ -10,21 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Entity
-@NamedQueries({
-		@NamedQuery(name = "Emprestimo.listar", query = "SELECT emprestimo FROM Emprestimo emprestimo"),
-		@NamedQuery(name = "Emprestimo.buscarIdProfessor", query = "select id from Emprestimo emprestimo"
-				+ " where livro_tombo = :livro_tombo and genero_id = :genero_id and professor_id = :professor_id and "
-				+ "dataEmprestimo = :dataEmprestimo"),
-		@NamedQuery(name = "Emprestimo.buscarIdAluno", query = "select id from Emprestimo emprestimo"
-				+ " where livro_tombo = :livro_tombo and genero_id = :genero_id and "
-				+ "aluno_id = :aluno_id and turma_id = :turma_id and dataEmprestimo = :dataEmprestimo"),
-		@NamedQuery(name = "Emprestimo.buscarPorId", query = "select emprestimo from Emprestimo emprestimo where "
-				+ "id = :id")})		
+@Entity	
 @Table(name = "emprestimos")
 public class Emprestimo {
 

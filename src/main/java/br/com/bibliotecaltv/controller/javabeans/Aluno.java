@@ -8,17 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="alunos")
-@NamedQueries({ 
-	@NamedQuery(name="Aluno.listar", query="SELECT aluno FROM Aluno aluno"),
-	@NamedQuery(name="Aluno.buscarId", query="SELECT id FROM Aluno aluno where nome = :nome and numero = :numero and matricula = :matricula"),
-	@NamedQuery(name="Aluno.buscarPorId", query="SELECT aluno FROM Aluno aluno where id = :id")
-})
 public class Aluno {
 	
 	@Id
