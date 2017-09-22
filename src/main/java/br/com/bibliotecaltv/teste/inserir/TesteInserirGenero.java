@@ -10,12 +10,5 @@ public class TesteInserirGenero {
 		genero.setSigla("002");
 		genero.setDescricao("Programação");
 		dao.salvar(genero);
-		System.out.println("Salvando com o novo método");
-		
-		/*AdministradorDAO dao = new AdministradorDAO();
-		Genero genero = new Genero();
-		genero.setDescricao("Romance");
-		genero.setSigla("001");
-		dao.adicionarGenero(genero);*/
 	}
 }
