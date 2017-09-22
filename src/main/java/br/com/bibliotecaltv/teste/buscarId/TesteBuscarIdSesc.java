@@ -14,7 +14,7 @@ public class TesteBuscarIdSesc {
 	public static void main(String[] args) {
 
 		AdministradorDAO dao = new AdministradorDAO();
-		Livro livro = dao.buscarLivroPorTombo("333");
+		Livro livro = dao.buscarLivroPorTombo("001");
 		String tombo = livro.getTombo();
 		Genero genero = livro.getGenero();
 		Long id_genero = genero.getId();
@@ -41,23 +41,3 @@ public class TesteBuscarIdSesc {
 	}
 
 }
-
-/*public Long buscarIdEmprestimoAluno(String tombo, Long genero,Long turma, 
-		Long aluno, String dataEmprestimo) {
-	Session session = HibernateUtil.getSessionFactory().openSession();
-	Long id = null;
-	try {
-		Query consulta = session.getNamedQuery("Emprestimo.buscarIdAluno");
-		consulta.setString("livro_tombo", tombo);
-		consulta.setLong("genero_id", genero);
-		consulta.setLong("turma_id", turma);
-		consulta.setLong("aluno_id", aluno);
-		consulta.setString("dataEmprestimo", dataEmprestimo);
-		id = (Long) consulta.uniqueResult();
-	} catch (Exception e) {
-		e.printStackTrace();
-	} finally {
-		session.close();
-	}
-	return id;
-}*/
