@@ -8,16 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({	
-	@NamedQuery(name="Monitores.listar", query="SELECT monitores FROM Monitores monitores"),
-	@NamedQuery(name = "Monitores.listarPorId", query = "select monitores from Monitores monitores where id = :id"),
-	@NamedQuery(name = "Monitores.buscarId", query = "select id from Monitores monitores where nome = :nome and senha = :senha")
-})
 @Table(name = "monitores")
 public class Monitores {
 	@Id

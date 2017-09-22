@@ -5,18 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="professores")
-@NamedQueries({ 
-	@NamedQuery(name="Professor.listar", query="SELECT professor FROM Professor professor"),
-	@NamedQuery(name = "Professor.buscarId", query = "select id from Professor professor where nome_completo = :nome_completo and matricula = :matricula"),
-	@NamedQuery(name="Professor.listarPorId", query="select professor from Professor professor where id = :id")
-})
-
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
