@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "livros")
 @NamedQueries({
-	     @NamedQuery(name="Livro.listarLivro", query="SELECT livro FROM Livro livro"),
+	     @NamedQuery(name="Livro.listar", query="SELECT livro FROM Livro livro"),
 	     @NamedQuery(name = "Livro.listarPorTombo", query = "select livro from Livro livro where tombo = :tombo"),
 	     @NamedQuery(name = "Livro.buscarTombo", query = "select tombo from Livro livro where titulo = :titulo "
 	     		+ "and autor = :autor and genero_id = :genero_id and editora = :editora "

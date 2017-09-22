@@ -1,7 +1,6 @@
 package br.com.bibliotecaltv.teste;
 
 import br.com.bibliotecaltv.controller.javabeans.Turma;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
 import br.com.bibliotecaltv.dao.TurmaDAO;
 
 public class TesteInserirTurma {

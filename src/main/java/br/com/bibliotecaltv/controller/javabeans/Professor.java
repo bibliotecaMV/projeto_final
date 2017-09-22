@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="professores")
 @NamedQueries({ 
-	@NamedQuery(name="Professor.listarProfessor", query="SELECT professor FROM Professor professor"),
+	@NamedQuery(name="Professor.listar", query="SELECT professor FROM Professor professor"),
 	@NamedQuery(name = "Professor.buscarId", query = "select id from Professor professor where nome_completo = :nome_completo and matricula = :matricula"),
 	@NamedQuery(name="Professor.listarPorId", query="select professor from Professor professor where id = :id")
 })

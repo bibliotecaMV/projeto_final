@@ -1,8 +1,14 @@
 package br.com.bibliotecaltv.dao;
 
 import java.io.Serializable;
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
+import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 
@@ -47,20 +53,36 @@ public abstract class GenericDAO<T, I extends Serializable> {
 	}
    
    public void alterar(T entity) {
-		Session sessao = HibernateUtil.getSessionFactory().openSession();
-		Transaction transacao = null;
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
 		try {
-			transacao = sessao.beginTransaction();
-			sessao.update(entity);
-			transacao.commit();
+			transaction = session.beginTransaction();
+			session.update(entity);
+			transaction.commit();
 		} catch (RuntimeException e) {
-			if (transacao != null) {
-				transacao.rollback();
+			if (transaction != null) {
+				transaction.rollback();
 			}
 		} finally {
-			sessao.close();
+			session.close();
 		}
 	}
-   
+   @SuppressWarnings("unchecked")
+   public List<T> listar(Class<?> classe){
+	   Session session = HibernateUtil.getSessionFactory().openSession();
+	   Transaction transaction = null;
+       List<T> lista = null;
+       try{
+    	   transaction = session.beginTransaction();
+    	   Criteria selectAll = session.createCriteria(classe);
+           transaction.commit();
+           lista = selectAll.list();
+       }catch(RuntimeException e){
+    	   throw e;
+       }finally{
+    	   session.close();
+       }
+       return lista;
+   }
 
 }
