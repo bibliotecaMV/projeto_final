@@ -5,10 +5,9 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 
 public class TesteExcluirAdministrador {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		AdministradorDAO dao = new AdministradorDAO();
-		Long id_administrador = dao.buscarIdAdministrador("Lucas Mayk", "654321");
-		Administrador administrador = dao.buscarAdministradorPorId(id_administrador); 
+		Administrador administrador = dao.listarPorId(Administrador.class, 1L); 
 		dao.excluirAdministradores(administrador);
 		System.out.println("Excluindo Administrador");
 
