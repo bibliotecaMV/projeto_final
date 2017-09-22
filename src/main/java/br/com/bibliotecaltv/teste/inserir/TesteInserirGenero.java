@@ -12,6 +12,7 @@ public class TesteInserirGenero {
 		
 		GeneroDAO dao = new GeneroDAO(); 
 		dao.salvar(genero);
+
 		System.out.println("Inserindo com o novo método");
 		
 		/*AdministradorDAO dao = new AdministradorDAO();
@@ -19,5 +20,6 @@ public class TesteInserirGenero {
 		genero.setDescricao("Romance");
 		genero.setSigla("001");
 		dao.adicionarGenero(genero);*/
+
 	}
 }

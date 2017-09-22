@@ -11,10 +11,9 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 
 public abstract class GenericDAO<T, I extends Serializable> {
-
+	Session session = HibernateUtil.getSessionFactory().openSession();
 
 	public T salvar(T entity) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -26,14 +25,11 @@ public abstract class GenericDAO<T, I extends Serializable> {
 				transaction.rollback();
 			}
 			e.printStackTrace();
-		} finally {
-			session.close();
 		}
 		return null;
 	}
 
 	public void excluir(T entity) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
 		try {
@@ -45,13 +41,10 @@ public abstract class GenericDAO<T, I extends Serializable> {
 				transaction.rollback();
 			}
 			e.printStackTrace();
-		} finally {
-			session.close();
 		}
 	}
 
 	public void alterar(T entity) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -61,13 +54,10 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			if (transaction != null) {
 				transaction.rollback();
 			}
-		} finally {
-			session.close();
 		}
 	}
 	@SuppressWarnings("unchecked")
 	public List<T> listar(Class<T> classe){
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		List<T> lista = null;
 		try{
@@ -77,14 +67,11 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			lista = selectAll.list();
 		}catch(RuntimeException e){
 			throw e;
-		}finally{
-			session.close();
 		}
 		return lista;
 	}
 	@SuppressWarnings("unchecked")
 	public T listarPorId(Class<T> classe, Long pk) throws Exception{
-		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
@@ -94,9 +81,6 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			return  entity;
 		}catch(RuntimeException e){
 			throw e;
-		}
-		finally{
-			session.close();
 		}
 	}
 

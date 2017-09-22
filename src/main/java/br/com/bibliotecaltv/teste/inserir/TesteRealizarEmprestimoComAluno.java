@@ -4,39 +4,33 @@ import java.util.Calendar;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
+import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.AlunoDAO;
+import br.com.bibliotecaltv.dao.EmprestimoDAO;
+import br.com.bibliotecaltv.dao.GeneroDAO;
+import br.com.bibliotecaltv.dao.LivroDAO;
 
 public class TesteRealizarEmprestimoComAluno {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		AdministradorDAO dao = new AdministradorDAO();
+		EmprestimoDAO daoEmprestimo = new EmprestimoDAO();
+		AlunoDAO daoAluno = new AlunoDAO();
+		GeneroDAO daoGenero = new GeneroDAO();
+		LivroDAO daoLivro = new LivroDAO();
+		
 		Emprestimo emprestimo = new Emprestimo();
-
-		Long id_aluno = dao.buscarIdAluno("Pedro Lucas",25L,"3455545");
-		Aluno aluno = dao.buscarAlunoPorId(id_aluno);
-
-		String titulo = "The Bad";
-		String autor = "Pedro Lucas Oliveira de Matos";
-		Long id_genero = dao.buscarIdGenero("Romance","000");
-		String editora = "Eryka";
-		Long ano_editado = 2017L;
-		Long volume = 1L;
-		String forma_aquisicao = "comprado";
-		Long exemplares = 30L;
-		String tombo_livro = dao.buscarTomboLivro(titulo, autor, id_genero,
-				editora, ano_editado, volume, forma_aquisicao, exemplares);
-		System.out.println(tombo_livro);
-
-		Livro livro = dao.buscarLivroPorTombo(tombo_livro);
+		Aluno aluno = daoAluno.listarPorId(Aluno.class, 1L);
+		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
+		Livro livro = daoLivro.listarPorId(Livro.class,"333");
 
 		emprestimo.setAluno(aluno);
 		emprestimo.setDataEmprestimo(Calendar.getInstance().getTime());
 		emprestimo.setLivro(livro);
-		emprestimo.setGenero(dao.buscarGeneroPorId(id_genero));
+		emprestimo.setGenero(genero);
 		emprestimo.setTurma(aluno.getTurma());
 		
-		dao.realizarEmprestimo(emprestimo);
+		daoEmprestimo.salvar(emprestimo);
 
 	}
 }

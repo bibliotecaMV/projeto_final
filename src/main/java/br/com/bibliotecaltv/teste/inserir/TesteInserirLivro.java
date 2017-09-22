@@ -2,17 +2,14 @@ package br.com.bibliotecaltv.teste.inserir;
 
 import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.GeneroDAO;
 import br.com.bibliotecaltv.dao.LivroDAO;
 
 public class TesteInserirLivro {
-	public static void main(String[] args) {
-		AdministradorDAO dao = new AdministradorDAO();
+	public static void main(String[] args) throws Exception {
 		LivroDAO daoLivro = new LivroDAO();
-		
-		String descricao_genero = "Romance";
-		Long id_genero = dao.buscarIdGenero(descricao_genero, descricao_genero);
-		Genero genero = dao.buscarGeneroPorId(id_genero);
+		GeneroDAO daoGenero = new GeneroDAO();
+		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
 		
 		Livro livro = new Livro();
 		livro.setTombo("333");

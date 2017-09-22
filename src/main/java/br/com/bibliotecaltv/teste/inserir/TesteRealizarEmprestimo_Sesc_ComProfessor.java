@@ -4,14 +4,15 @@ import java.util.Calendar;
 
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
 import br.com.bibliotecaltv.controller.javabeans.Professor;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.Emprestimo_SescDAO;
+import br.com.bibliotecaltv.dao.ProfessorDAO;
 
 public class TesteRealizarEmprestimo_Sesc_ComProfessor {
-	public static void main(String[] args) {
-		AdministradorDAO dao = new AdministradorDAO();
-
-		Long id_professor = dao.buscarIdProfessor("Edy Vidal","3455545");
-		Professor professor = dao.buscarProfessorPorId(id_professor);
+	public static void main(String[] args) throws Exception {
+		Emprestimo_SescDAO daoEmprestimo_Sesc = new Emprestimo_SescDAO();
+		ProfessorDAO daoProfessor = new ProfessorDAO();
+		
+		Professor professor = daoProfessor.listarPorId(Professor.class, 1L);
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();
 		emprestimo_Sesc.setProfessor(professor);
@@ -20,10 +21,6 @@ public class TesteRealizarEmprestimo_Sesc_ComProfessor {
 		emprestimo_Sesc.setCDD("002");
 		emprestimo_Sesc.setTitulo("Teste com realizar emprestimo_professor");
 		emprestimo_Sesc.setTombo("345");
-		try {
-			dao.realizarEmprestimo_Sesc(emprestimo_Sesc);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+		daoEmprestimo_Sesc.salvar(emprestimo_Sesc);
 	}
 }
