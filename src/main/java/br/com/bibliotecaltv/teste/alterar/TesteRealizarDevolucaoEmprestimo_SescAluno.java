@@ -3,7 +3,6 @@ package br.com.bibliotecaltv.teste.alterar;
 import java.util.Calendar;
 
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
 import br.com.bibliotecaltv.dao.Emprestimo_SescDAO;
 
 public class TesteRealizarDevolucaoEmprestimo_SescAluno {
