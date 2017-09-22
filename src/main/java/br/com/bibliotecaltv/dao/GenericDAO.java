@@ -4,20 +4,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 
 public abstract class GenericDAO<T, I extends Serializable> {
 
 
-   public T salvar(T entity) {
-	   Session session = HibernateUtil.getSessionFactory().openSession();
-	   Transaction transaction = null;
+	public T salvar(T entity) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
 			session.save(entity);
@@ -32,9 +30,9 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			session.close();
 		}
 		return null;
-   }
-   
-   public void excluir(T entity) {
+	}
+
+	public void excluir(T entity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 
@@ -51,8 +49,8 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			session.close();
 		}
 	}
-   
-   public void alterar(T entity) {
+
+	public void alterar(T entity) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction transaction = null;
 		try {
@@ -67,22 +65,36 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			session.close();
 		}
 	}
-   @SuppressWarnings("unchecked")
-   public List<T> listar(Class<?> classe){
-	   Session session = HibernateUtil.getSessionFactory().openSession();
-	   Transaction transaction = null;
-       List<T> lista = null;
-       try{
-    	   transaction = session.beginTransaction();
-    	   Criteria selectAll = session.createCriteria(classe);
-           transaction.commit();
-           lista = selectAll.list();
-       }catch(RuntimeException e){
-    	   throw e;
-       }finally{
-    	   session.close();
-       }
-       return lista;
-   }
+	@SuppressWarnings("unchecked")
+	public List<T> listar(Class<T> classe){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		List<T> lista = null;
+		try{
+			transaction = session.beginTransaction();
+			Criteria selectAll = session.createCriteria(classe);
+			transaction.commit();
+			lista = selectAll.list();
+		}catch(RuntimeException e){
+			throw e;
+		}finally{
+			session.close();
+		}
+		return lista;
+	}
+	@SuppressWarnings("unchecked")
+	public T listarPorId(Class<T> classe, Long pk) throws Exception{
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		try {
+			transaction = session.beginTransaction();
+			T entity = (T) session.load(classe, pk);
+			session.flush();
+			transaction.commit();
+			return  entity;
+		}catch(RuntimeException e){
+			throw e;
+		}
+	}
 
 }
