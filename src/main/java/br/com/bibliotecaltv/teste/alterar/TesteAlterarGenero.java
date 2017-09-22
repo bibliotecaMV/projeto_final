@@ -7,9 +7,9 @@ public class TesteAlterarGenero {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Genero genero = dao.buscarGeneroPorId(1L);
-		genero.setDescricao("Terro");
-		genero.setSigla("005");
+		Genero genero = dao.buscarGeneroPorId(3L);
+		genero.setDescricao("Lógica");
+		genero.setSigla("003");
 		dao.alterarGenero(genero);
 
 	}

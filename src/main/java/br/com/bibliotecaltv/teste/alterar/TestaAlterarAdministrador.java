@@ -7,10 +7,10 @@ public class TestaAlterarAdministrador {
 
 	public static void main(String[] args) {
 		AdministradorDAO dao = new AdministradorDAO();
-		Administrador administrador = dao.buscarAdministradorPorId(1L);
-		administrador.setSenha("654321");
-		administrador.setUsuario("Lucas Mayk");
-		dao.alterarAdministrador(administrador);
+		Administrador administrador = dao.buscarAdministradorPorId(2L);
+		administrador.setUsuario("Carla Valéria");
+		administrador.setSenha("13042000");
+		dao.alterar(administrador);
 
 	}
 
