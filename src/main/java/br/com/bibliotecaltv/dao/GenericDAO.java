@@ -95,6 +95,9 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}catch(RuntimeException e){
 			throw e;
 		}
+		finally{
+			session.close();
+		}
 	}
 
 }

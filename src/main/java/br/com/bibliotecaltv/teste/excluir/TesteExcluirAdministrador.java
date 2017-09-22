@@ -9,8 +9,6 @@ public class TesteExcluirAdministrador {
 		AdministradorDAO dao = new AdministradorDAO();
 		Administrador administrador = dao.listarPorId(Administrador.class, 1L); 
 		dao.excluirAdministradores(administrador);
-		System.out.println("Excluindo Administrador");
-
 	}
 
 }
