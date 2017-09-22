@@ -8,7 +8,7 @@ public class TesteExcluirAdministrador {
 	public static void main(String[] args) throws Exception {
 		AdministradorDAO dao = new AdministradorDAO();
 		Administrador administrador = dao.listarPorId(Administrador.class, 1L); 
-		dao.excluirAdministradores(administrador);
+		dao.excluir(administrador);
 	}
 
 }
