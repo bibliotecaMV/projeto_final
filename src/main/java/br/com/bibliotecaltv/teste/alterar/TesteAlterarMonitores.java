@@ -1,16 +1,16 @@
 package br.com.bibliotecaltv.teste.alterar;
 
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.dao.MonitoresDAO;
 
 public class TesteAlterarMonitores {
 
-	public static void main(String[] args) {
-		AdministradorDAO dao = new AdministradorDAO();
-		Monitores monitores = dao.buscarMonitorPorId(1L);
+	public static void main(String[] args) throws Exception {
+		MonitoresDAO dao = new MonitoresDAO();
+		Monitores monitores = dao.listarPorId(Monitores.class, 2L);
 		monitores.setLogin("renatorichard2012@gmail.com");
 		monitores.setSenha("123456");
-		dao.alterarMonitores(monitores);
+		dao.alterar(monitores);
 	}
 
 }

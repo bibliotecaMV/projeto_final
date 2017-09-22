@@ -5,12 +5,12 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 
 public class TestaAlterarAdministrador {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		AdministradorDAO dao = new AdministradorDAO();
-		Administrador administrador = dao.buscarAdministradorPorId(1L);
+		Administrador administrador = dao.listarPorId(Administrador.class, 1L);
 		administrador.setSenha("654321");
-		administrador.setUsuario("Lucas Mayk");
-		dao.alterarAdministrador(administrador);
+		administrador.setUsuario("Lucas Pedro");
+		dao.alterar(administrador);
 
 	}
 
