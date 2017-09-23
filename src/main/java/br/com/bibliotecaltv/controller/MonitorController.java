@@ -7,34 +7,35 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.bibliotecaltv.controller.javabeans.Administrador;
-import br.com.bibliotecaltv.dao.AdministradorDAO;
+import br.com.bibliotecaltv.controller.javabeans.Monitores;
+import br.com.bibliotecaltv.dao.MonitoresDAO;
 
 @Controller
-public class AdministradorController {
-	AdministradorDAO dao;
+public class MonitorController {
+	MonitoresDAO dao;
 	
 	@Autowired
-	public AdministradorController(AdministradorDAO dao){
+	public MonitorController(MonitoresDAO dao){
 		this.dao = dao;
 	}
 	
 	@RequestMapping("realizarLogin")
 	public String realizarLogin(){
-		return "teste.administrador/testeLogin";
+		return "teste.Monitor/testeLogin";
 	}
 	
 	@RequestMapping("testeInterceptador")
 	public String testeInterceptador(){
-		return "teste.administrador/loginDeuCerto";
+		return "teste.monitor/loginDeuCerto";
 	}
 	
 	@RequestMapping("verificarLogin")
-	public String verificarLogin(Administrador administrador, HttpSession session){
-		boolean verifica = dao.realizarLoginAdministrador("Administrador", 
-				administrador.getUsuario(), administrador.getSenha());
+	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
+		boolean verifica = dao.realizarLoginMonitor("Monitores", 
+				monitor.getLogin(), monitor.getSenha());
 		if(verifica == true){
-			session.setAttribute("usuarioLogado", administrador);
-			return "teste.administrador/loginDeuCerto";
+			session.setAttribute("usuarioLogado", monitor);
+			return "teste.monitor/loginDeuCerto";
 		}else{
 			return "redirect:realizarLogin";
 		}
@@ -42,7 +43,7 @@ public class AdministradorController {
 	
 	@RequestMapping("acessarFormularioLogado")
 	public String acessarFormularioLogado(){
-		return "teste.administrador/acessarFormularioLogado";
+		return "teste.monitor/acessarFormularioLogado";
 	}
 	
 	@RequestMapping("logout")

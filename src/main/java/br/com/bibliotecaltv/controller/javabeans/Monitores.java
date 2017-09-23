@@ -8,9 +8,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "monitor.realizarLogin", 
+			query = "select monitores from Monitores monitores where"
+					+ " login = :login and senha = :senha") 
+})
 @Table(name = "monitores")
 public class Monitores {
 	@Id

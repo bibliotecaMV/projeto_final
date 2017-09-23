@@ -13,13 +13,13 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 		String uri = request.getRequestURI();
 		
 		if((uri.endsWith("realizarLogin") || uri.endsWith("verificarLogin"))
-				&& (request.getSession().getAttribute("administradorLogado") == null)){
+				&& (request.getSession().getAttribute("usuarioLogado") == null)){
 			return true;
 		}else if ((uri.endsWith("realizarLogin") || uri.endsWith("verificarLogin"))
-				&& (request.getSession().getAttribute("administradorLogado") != null)){
+				&& (request.getSession().getAttribute("usuarioLogado") != null)){
 			response.sendRedirect("acessarFormularioLogado");
 			return false;
-		}else if((request.getSession().getAttribute("administradorLogado") != null)){
+		}else if((request.getSession().getAttribute("usuarioLogado") != null)){
 			return true;
 		}
 		response.sendRedirect("realizarLogin");
