@@ -8,7 +8,7 @@ public class TesteBuscarEmprestimo_SescPorId {
 
 	public static void main(String[] args) throws Exception {
 		Emprestimo_SescDAO dao = new Emprestimo_SescDAO();
-		Emprestimo_Sesc emprestimo_Sesc = dao.listarPorId(Emprestimo_Sesc.class, 3L);
+		Emprestimo_Sesc emprestimo_Sesc = dao.listarPorId(Emprestimo_Sesc.class, 1L);
 		System.out.println(emprestimo_Sesc);
 	}
 

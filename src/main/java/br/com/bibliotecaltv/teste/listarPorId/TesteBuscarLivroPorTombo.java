@@ -6,7 +6,7 @@ import br.com.bibliotecaltv.dao.LivroDAO;
 public class TesteBuscarLivroPorTombo {
 	public static void main(String[] args) throws Exception {
 		LivroDAO dao = new LivroDAO();
-		Livro livro = dao.listarPorId(Livro.class,"3455545");
+		Livro livro = dao.listarPorId(Livro.class,"333");
 		System.out.println(livro.getTitulo());
 	}
 }

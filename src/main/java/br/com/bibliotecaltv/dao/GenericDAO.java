@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -12,7 +13,7 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public abstract class GenericDAO<T, I extends Serializable> {
 	Session session = HibernateUtil.getSessionFactory().openSession();
-
+	
 	public T salvar(T entity) {
 		Transaction transaction = null;
 		try {
@@ -82,6 +83,28 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}catch(RuntimeException e){
 			throw e;
 		}
+	}
+	@SuppressWarnings("unchecked")
+	public boolean realizarLogin(String classe, String usuario, String senha){
+		Transaction transaction = null;
+		T entity = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.getNamedQuery(classe + ".realizarLogin");
+			consulta.setString("usuario", usuario);
+			consulta.setString("senha", senha);
+			entity = (T) consulta.uniqueResult();
+			session.flush();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		if(entity == null){
+			return false;
+		}else{
+			return true;
+		}
+		
 	}
 
 }

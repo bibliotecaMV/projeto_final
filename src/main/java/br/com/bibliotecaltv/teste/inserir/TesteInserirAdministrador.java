@@ -11,6 +11,5 @@ public class TesteInserirAdministrador {
 			administrador.setUsuario("Cely");
 			administrador.setSenha("1234");
 			dao.salvar(administrador);
-			System.out.println("Inserindo com o novo método");
 	}
 }
