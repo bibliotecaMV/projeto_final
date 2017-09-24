@@ -19,36 +19,30 @@ public class MonitorController {
 		this.dao = dao;
 	}
 	
-	@RequestMapping("realizarLogin")
+	@RequestMapping("realizarLoginMonitor")
 	public String realizarLogin(){
-		return "teste.Monitor/testeLogin";
-	}
-	
-	@RequestMapping("testeInterceptador")
-	public String testeInterceptador(){
-		return "teste.monitor/loginDeuCerto";
-	}
-	
-	@RequestMapping("verificarLogin")
+		return "teste.monitor/testeLogin";
+	}	
+	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
-		boolean verifica = dao.realizarLoginMonitor("Monitores", 
-				monitor.getLogin(), monitor.getSenha());
+		boolean verifica = dao.realizarLoginUsuario("Monitores", 
+				monitor.getUsuario(), monitor.getSenha());
 		if(verifica == true){
-			session.setAttribute("usuarioLogado", monitor);
+			session.setAttribute("usuarioLogadoMonitor", monitor);
 			return "teste.monitor/loginDeuCerto";
 		}else{
-			return "redirect:realizarLogin";
+			return "redirect:realizarLoginMonitor";
 		}
 	}
 	
-	@RequestMapping("acessarFormularioLogado")
+	@RequestMapping("acessarFormularioLogadoMonitor")
 	public String acessarFormularioLogado(){
 		return "teste.monitor/acessarFormularioLogado";
 	}
 	
-	@RequestMapping("logout")
+	@RequestMapping("logoutMonitor")
 	public String encerrarSessao(HttpSession session){
 		session.invalidate();
-		return "redirect:realizarLogin";
+		return "redirect:realizarLoginMonitor";
 	}
 }

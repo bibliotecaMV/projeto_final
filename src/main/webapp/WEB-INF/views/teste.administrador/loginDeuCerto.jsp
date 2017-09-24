@@ -7,6 +7,6 @@
 		<meta charset="utf-8" />
 	</head>
 	<body>
-		Login deu certo!!!
+		Login do Adm deu certo!!!
 	</body>
 </html>

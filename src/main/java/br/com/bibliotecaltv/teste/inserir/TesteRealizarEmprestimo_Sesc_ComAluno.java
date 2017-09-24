@@ -13,7 +13,7 @@ public class TesteRealizarEmprestimo_Sesc_ComAluno {
 		Emprestimo_SescDAO daoEmprestimo_Sesc = new Emprestimo_SescDAO();
 		AlunoDAO daoAluno = new AlunoDAO();
 		
-		Aluno aluno = daoAluno.listarPorId(Aluno.class, 5L);
+		Aluno aluno = daoAluno.listarPorId(Aluno.class, 1L);
 		
 		Emprestimo_Sesc emprestimo_Sesc = new Emprestimo_Sesc();
 		emprestimo_Sesc.setAluno(aluno);

@@ -11,12 +11,12 @@ public class TesteInserirMonitor {
 		
 		AlunoDAO daoAluno = new AlunoDAO();
 		
-		Aluno aluno = daoAluno.listarPorId(Aluno.class,3L);
+		Aluno aluno = daoAluno.listarPorId(Aluno.class, 2L);
 		
 		Monitores monitores = new Monitores();
 		monitores.setAluno(aluno);
-		monitores.setLogin("Renatorichard2012@gmail.com");
-		monitores.setSenha("1234567");
+		monitores.setUsuario("pedro.matos");
+		monitores.setSenha("mvfor@2018");
 		daoMonitores.salvar(monitores);
 	}
 }

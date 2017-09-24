@@ -2,12 +2,11 @@
 <html>
 	<head>
 		<title>
-			Fazer logout
+			Fazer Login
 		</title>
 		<meta charset="utf-8" />
 	</head>
 	<body>
-		Acesso negado, pois você já está em uma sessão.<br>
-		<a href="logoutAdministrador">Clique aqui</a> para encerrar a sessão e iniciar uma nova.
+		Login do Monitor deu certo!!!
 	</body>
 </html>

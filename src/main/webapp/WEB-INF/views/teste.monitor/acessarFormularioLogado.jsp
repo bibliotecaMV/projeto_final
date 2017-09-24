@@ -8,6 +8,6 @@
 	</head>
 	<body>
 		Acesso negado, pois você já está em uma sessão.<br>
-		<a href="logoutAdministrador">Clique aqui</a> para encerrar a sessão e iniciar uma nova.
+		<a href="logoutMonitor">Clique aqui</a> para encerrar a sessão e iniciar uma nova.
 	</body>
 </html>

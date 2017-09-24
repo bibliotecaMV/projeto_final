@@ -7,6 +7,6 @@ public class TesteBuscarMonitoresPorId {
 	public static void main(String[] args) throws Exception {
 		MonitoresDAO dao = new MonitoresDAO();
 		Monitores monitores = dao.listarPorId(Monitores.class, 1L);
-		System.out.println(monitores.getLogin());
+		System.out.println(monitores.getUsuario());
 	}
 }

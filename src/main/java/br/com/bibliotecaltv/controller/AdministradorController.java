@@ -18,36 +18,30 @@ public class AdministradorController {
 		this.dao = dao;
 	}
 	
-	@RequestMapping("realizarLogin")
+	@RequestMapping("realizarLoginAdministrador")
 	public String realizarLogin(){
 		return "teste.administrador/testeLogin";
-	}
-	
-	@RequestMapping("testeInterceptador")
-	public String testeInterceptador(){
-		return "teste.administrador/loginDeuCerto";
-	}
-	
-	@RequestMapping("verificarLogin")
+	}	
+	@RequestMapping("verificarLoginAdministrador")
 	public String verificarLogin(Administrador administrador, HttpSession session){
-		boolean verifica = dao.realizarLoginAdministrador("Administrador", 
+		boolean verifica = dao.realizarLoginUsuario("Administrador", 
 				administrador.getUsuario(), administrador.getSenha());
 		if(verifica == true){
-			session.setAttribute("usuarioLogado", administrador);
+			session.setAttribute("usuarioLogadoAdministrador", administrador);
 			return "teste.administrador/loginDeuCerto";
 		}else{
-			return "redirect:realizarLogin";
+			return "redirect:realizarLoginAdministrador";
 		}
 	}
 	
-	@RequestMapping("acessarFormularioLogado")
+	@RequestMapping("acessarFormularioLogadoAdministrador")
 	public String acessarFormularioLogado(){
 		return "teste.administrador/acessarFormularioLogado";
 	}
 	
-	@RequestMapping("logout")
+	@RequestMapping("logoutAdministrador")
 	public String encerrarSessao(HttpSession session){
 		session.invalidate();
-		return "redirect:realizarLogin";
+		return "redirect:realizarLoginAdministrador";
 	}
 }

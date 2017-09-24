@@ -7,16 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "monitor.realizarLogin", 
+	@NamedQuery(name = "Monitores.realizarLogin", 
 			query = "select monitores from Monitores monitores where"
-					+ " login = :login and senha = :senha") 
+					+ " usuario = :usuario and senha = :senha") 
 })
 @Table(name = "monitores")
 public class Monitores {
@@ -24,14 +24,14 @@ public class Monitores {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name = "login", nullable = false)
-	private String login;
+	@Column(name = "usuario", nullable = false)
+	private String usuario;
 	
 	@Column(name = "senha", nullable = false)
 	private String senha;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false)
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(unique=true, nullable = false)
 	private Aluno aluno;
 	
 	
@@ -45,13 +45,13 @@ public class Monitores {
 	}
 
 
-	public String getLogin() {
-		return login;
+	public String getUsuario() {
+		return usuario;
 	}
 
 
-	public void setLogin(String login) {
-		this.login = login;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 
@@ -77,6 +77,6 @@ public class Monitores {
 
 	@Override
 	public String toString() {
-		return "Monitores [id=" + id + ", login=" + login + ", senha=" + senha + "]";
+		return "Monitores [id=" + id + ", usuario=" + usuario + ", senha=" + senha + "]";
 	}
 }

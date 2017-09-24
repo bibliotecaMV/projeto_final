@@ -85,36 +85,13 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 	}
 	@SuppressWarnings("unchecked")
-	public boolean realizarLoginAdministrador(String classe, String usuario, String senha){
+	public boolean realizarLoginUsuario(String classe, String usuario, String senha){
 		Transaction transaction = null;
 		T entity = null;
 		try{
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".realizarLogin");
 			consulta.setString("usuario", usuario);
-			consulta.setString("senha", senha);
-			entity = (T) consulta.uniqueResult();
-			session.flush();
-			transaction.commit();
-		}catch(RuntimeException e){
-			throw e;
-		}
-		if(entity == null){
-			return false;
-		}else{
-			return true;
-		}
-		
-	}
-	
-	@SuppressWarnings("unchecked")
-	public boolean realizarLoginMonitor(String classe, String login, String senha){
-		Transaction transaction = null;
-		T entity = null;
-		try{
-			transaction = session.beginTransaction();
-			Query consulta = session.getNamedQuery(classe + ".realizarLogin");
-			consulta.setString("login", login);
 			consulta.setString("senha", senha);
 			entity = (T) consulta.uniqueResult();
 			session.flush();

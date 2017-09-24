@@ -12,7 +12,7 @@ public class TesteInserirLivro {
 		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
 		
 		Livro livro = new Livro();
-		livro.setTombo("333");
+		livro.setTombo("23112015");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
@@ -21,7 +21,7 @@ public class TesteInserirLivro {
 		livro.setExemplares(30L);
 		livro.setForma_aquisicao("comprado");
 		livro.setLocal_edicao("Dragão do Mar");
-		livro.setTitulo("The Bad");
+		livro.setTitulo("The Love");
 		livro.setVolume(1L);
 		daoLivro.salvar(livro);
 	}

@@ -7,7 +7,7 @@ public class TesteRealizarLoginAdministrador {
 	public static void main(String[] args) throws Exception {
 		AdministradorDAO dao = new AdministradorDAO();		
 		Administrador administrador = dao.listarPorId(Administrador.class, 1L);
-		boolean verifica = dao.realizarLoginAdministrador("Administrador", administrador.getUsuario(), 
+		boolean verifica = dao.realizarLoginUsuario("Administrador", administrador.getUsuario(), 
 				administrador.getSenha());
 		System.out.println(verifica);
 	}

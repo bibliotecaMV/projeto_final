@@ -7,19 +7,11 @@ public class TesteInserirGenero {
 	public static void main(String[] args) {
 		
 		Genero genero = new Genero();
-		genero.setSigla("000");
-		genero.setDescricao("Programação");
+		genero.setSigla("001");
+		genero.setDescricao("Romance");
 		
 		GeneroDAO dao = new GeneroDAO(); 
 		dao.salvar(genero);
-
-		System.out.println("Inserindo com o novo método");
-		
-		/*AdministradorDAO dao = new AdministradorDAO();
-		Genero genero = new Genero();
-		genero.setDescricao("Romance");
-		genero.setSigla("001");
-		dao.adicionarGenero(genero);*/
 
 	}
 }

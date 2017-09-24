@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h2>Login:</h2>
-		<form action="verificarLoginAdministrador" method="post">
+		<form action="verificarLoginMonitor" method="post">
 			<table>
 				<tr>
 					<td>Usuario:</td>
