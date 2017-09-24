@@ -11,7 +11,7 @@
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost/biblioteca</property>
 		<property name="connection.username">root</property> 
-		<property name="connection.password"></property>
+		<property name="connection.password">1234</property>
 
 		<!-- JDBC connection pool (use the built-in) -->
 		<property name="connection.pool_size">1</property>
@@ -34,7 +34,6 @@
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Livro" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Administrador" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Aluno" />
-		<mapping class="br.com.bibliotecaltv.controller.javabeans.Emprestimo_Sesc" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Emprestimo" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Genero" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Monitores" />
