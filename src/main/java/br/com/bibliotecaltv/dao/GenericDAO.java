@@ -12,7 +12,7 @@ import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 
 public abstract class GenericDAO<T, I extends Serializable> {
-	Session session = HibernateUtil.getSessionFactory().openSession();
+	Session session = HibernateUtil.getSession();
 	
 	public T salvar(T entity) {
 		Transaction transaction = null;

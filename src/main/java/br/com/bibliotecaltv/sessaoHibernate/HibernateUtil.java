@@ -8,36 +8,39 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
 	
-	private static final SessionFactory sessionFactory = buildSessionFactory();
-	private static Session session;
+	private static SessionFactory sessionFactory = null;
+	private static Session session = null;
 
-	private static SessionFactory buildSessionFactory() {
-
-		try {
-			// Criando nova sessão da configuração
+	public static SessionFactory getSessionFactory() {
+		if(sessionFactory == null){
 			Configuration configuration = new Configuration();
 			configuration.configure();
 			ServiceRegistry serviceResgistry = new StandardServiceRegistryBuilder()
 					.applySettings(configuration.getProperties()).build();
-			SessionFactory sessionFactory = configuration.buildSessionFactory(serviceResgistry);
-			
-			session = sessionFactory.openSession();
-
+			sessionFactory = configuration.buildSessionFactory(serviceResgistry);
 			return sessionFactory;
-		} catch (Throwable ex) {
-			// Falha na criação da sessão
-			System.err.println("A sessão falhou." + ex);
-			throw new ExceptionInInitializerError(ex);
+		}else{
+			return sessionFactory;
 		}
-		
-	}
-
-	public static SessionFactory getSessionFactory() {
-		return sessionFactory;
 	}
 	
 	public static Session getSession() {
-		return session;
+		if(session == null){
+			if(sessionFactory == null){
+				Configuration configuration = new Configuration();
+				configuration.configure();
+				ServiceRegistry serviceResgistry = new StandardServiceRegistryBuilder()
+						.applySettings(configuration.getProperties()).build();
+				sessionFactory = configuration.buildSessionFactory(serviceResgistry);
+				session = sessionFactory.openSession();
+				return session;
+			}else{
+				session = sessionFactory.openSession();
+				return session;
+			}
+		}else{
+			return session;
+		}
 	}
 
 }
