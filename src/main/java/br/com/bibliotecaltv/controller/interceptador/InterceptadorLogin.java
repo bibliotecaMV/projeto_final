@@ -1,4 +1,4 @@
-package br.com.bibliotecaltv.controller.interceptador;
+/*package br.com.bibliotecaltv.controller.interceptador;
 
 import java.io.IOException;
 
@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
 
 public class InterceptadorLogin extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
@@ -72,3 +73,4 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 		return false;
 	}
 }
+*/
