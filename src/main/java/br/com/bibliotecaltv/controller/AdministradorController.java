@@ -16,7 +16,11 @@ public class AdministradorController {
 	@Autowired
 	public AdministradorController(AdministradorDAO dao){
 		this.dao = dao;
-	}	
+	}
+	@RequestMapping("realizarLoginAdministrador")
+	public String realizarLogin(){
+		return "administrador/loginAdministrador";
+	}
 	@RequestMapping("verificarLoginAdministrador")
 	public String verificarLogin(Administrador administrador, HttpSession session){
 		boolean verifica = dao.realizarLoginUsuario("Administrador", 
@@ -25,7 +29,7 @@ public class AdministradorController {
 			session.setAttribute("usuarioLogadoAdministrador", administrador);
 			return "teste.administrador/loginDeuCerto";
 		}else{
-			return "redirect:mostrarInicio";
+			return "redirect:realizarLoginAdministrador";
 		}
 	}
 	
@@ -37,6 +41,6 @@ public class AdministradorController {
 	@RequestMapping("logoutAdministrador")
 	public String encerrarSessao(HttpSession session){
 		session.invalidate();
-		return "redirect:mostrarInicio";
+		return "redirect:realizarLoginAdministrador";
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
@@ -18,6 +19,10 @@ public class MonitorController {
 	public MonitorController(MonitoresDAO dao){
 		this.dao = dao;
 	}
+	@RequestMapping("realizarLoginMonitor")
+	public String realizarLogin(){
+		return "monitor/loginMonitor";
+	}
 	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
 		boolean verifica = dao.realizarLoginUsuario("Monitores", 
@@ -26,7 +31,7 @@ public class MonitorController {
 			session.setAttribute("usuarioLogadoMonitor", monitor);
 			return "teste.monitor/loginDeuCerto";
 		}else{
-			return "redirect:mostrarInicio";
+			return "redirect:realizarLoginMonitor";
 		}
 	}
 	
@@ -38,6 +43,6 @@ public class MonitorController {
 	@RequestMapping("logoutMonitor")
 	public String encerrarSessao(HttpSession session){
 		session.invalidate();
-		return "redirect:mostrarInicio";
+		return "redirect:realizarLoginMonitor";
 	}
 }
