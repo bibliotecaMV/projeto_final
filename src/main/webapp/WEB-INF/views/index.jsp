@@ -37,7 +37,7 @@
         <div id="content">
             <div class="row">
               <div class="col-lg-6" id="centro">
-                    <a href="loginAdministrador.jsp" class="item" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginAdministrador" class="item" style="margin-left: 35px; margin-right: 35px;">
                           <div id="centraliza" class="centraliza" >
                              <center> <div class="circulo" >
                                   <img src="resources/img/adm.png" border="0">
@@ -51,7 +51,7 @@
                     </a>
               </div>
                   <div class="col-lg-6" id="centro">
-                    <a href="loginMonitor.jsp" class="item page-scroll" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginMonitor" class="item page-scroll" style="margin-left: 35px; margin-right: 35px;">
                           <div id="centraliza" class="centraliza" >
                              <center> <div class="circulo" >
                                   <img src="resources/img/monitor.png" border="0">
