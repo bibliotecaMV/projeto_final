@@ -18,11 +18,6 @@ public class MonitorController {
 	public MonitorController(MonitoresDAO dao){
 		this.dao = dao;
 	}
-	
-	@RequestMapping("realizarLoginMonitor")
-	public String realizarLogin(){
-		return "teste.monitor/testeLogin";
-	}	
 	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
 		boolean verifica = dao.realizarLoginUsuario("Monitores", 
@@ -31,7 +26,7 @@ public class MonitorController {
 			session.setAttribute("usuarioLogadoMonitor", monitor);
 			return "teste.monitor/loginDeuCerto";
 		}else{
-			return "redirect:realizarLoginMonitor";
+			return "redirect:mostrarInicio";
 		}
 	}
 	
@@ -43,6 +38,6 @@ public class MonitorController {
 	@RequestMapping("logoutMonitor")
 	public String encerrarSessao(HttpSession session){
 		session.invalidate();
-		return "redirect:realizarLoginMonitor";
+		return "redirect:mostrarInicio";
 	}
 }
