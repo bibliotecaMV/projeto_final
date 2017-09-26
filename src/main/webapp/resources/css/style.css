@@ -3,7 +3,9 @@
 	padding: 0;
 	text-decoration: none;
 }
-
+body{
+	background-color: white;
+}
 #centraliza{
 	text-align: center;
 }

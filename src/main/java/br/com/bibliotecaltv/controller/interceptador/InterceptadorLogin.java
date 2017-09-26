@@ -1,4 +1,4 @@
-/*package br.com.bibliotecaltv.controller.interceptador;
+package br.com.bibliotecaltv.controller.interceptador;
 
 import java.io.IOException;
 
@@ -73,4 +73,3 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 		return false;
 	}
 }
-*/

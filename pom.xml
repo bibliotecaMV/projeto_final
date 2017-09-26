@@ -81,6 +81,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/jstl/jstl -->
 	</dependencies>
 	<build>
 		<finalName>projeto_final</finalName>
