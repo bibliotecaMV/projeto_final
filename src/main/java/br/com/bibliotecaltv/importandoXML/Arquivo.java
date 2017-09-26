@@ -19,25 +19,20 @@ public class Arquivo {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	
-		
 	}
 	private void copiar(InputStream origem, OutputStream destino) {
-			int bite = 0;
-			byte[] tamanhoMaximo = new byte[1024 * 8];
-			// enquanto bytes forem sendo lidos
-		    try {
-				while((bite = origem.read(tamanhoMaximo)) >= 0) {
-				    // pegue o byte lido e escreva no destino
+		int bite = 0;
+		byte[] tamanhoMaximo = new byte[1024 * 8];
+		// enquanto bytes forem sendo lidos
+		try {
+			while((bite = origem.read(tamanhoMaximo)) >= 0) {
+				// pegue o byte lido e escreva no destino
 				destino.write(tamanhoMaximo, 0, bite);
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-	}
-		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-
+}
