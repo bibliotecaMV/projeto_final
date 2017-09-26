@@ -37,14 +37,14 @@
         <div id="content">
             <div class="row">
               <div class="panel panel-warning">
-                <div class="panel-heading"> <center>ADMINISTRADOR</center>
+                <div class="panel-heading"> <center>MONITOR</center>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" action="verificarLoginMonitor" method="post">
                        <div class="form-group">
                       <label for="usuario" class="col-sm-3 control-label">Usuário</label>
                       <div class="col-sm-5">
-                        <input type="text" class="form-control" id="usuario" placeholder="caahup1" name="usuario" required/>
+                        <input type="text" class="form-control" id="usuario" placeholder="usuario" name="usuario" required/>
                       </div>
                     </div>
 
@@ -79,5 +79,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="resources/js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -12,7 +12,7 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 			Object controller) throws IOException{
 		String uri = request.getRequestURI();
 
-		if(((
+		if(((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
@@ -20,7 +20,7 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
 			return false;
 		}
-		if(((
+		if(((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
@@ -28,14 +28,14 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 			response.sendRedirect("acessarFormularioLogadoMonitor");
 			return false;
 		}
-		if((((
+		if((((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
 				== null))){
 			return true;
 		}
-		if(((
+		if(((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
@@ -43,14 +43,14 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
 			return false;
 		}
-		if((((
+		if((((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
 				== null))){
 			return true;
 		}
-		if(((
+		if(((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
@@ -66,12 +66,12 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 			return true;
 		}
 		if((request.getSession().getAttribute("usuarioLogadoAdministrador") == null)){
-			response.sendRedirect("mostrarInicio");
+			response.sendRedirect("realizarLoginAdministrador");
 			return false;
 		}
 		if((request.getSession().getAttribute("usuarioLogadoMonitor") 
 				== null)){
-			response.sendRedirect("mostrarInicio");
+			response.sendRedirect("realizarLoginMonitor");
 			return false;
 		}
 		response.sendRedirect("mostrarInicio");
