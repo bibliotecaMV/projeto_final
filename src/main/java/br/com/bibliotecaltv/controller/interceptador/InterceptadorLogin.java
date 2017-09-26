@@ -13,7 +13,7 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 			Object controller) throws IOException{
 		String uri = request.getRequestURI();
 
-		if(((uri.endsWith("realizarLoginMonitor") ||
+		if(((
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
@@ -21,7 +21,7 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
 			return false;
 		}
-		if(((uri.endsWith("realizarLoginAdministrador") ||
+		if(((
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
@@ -29,14 +29,14 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 			response.sendRedirect("acessarFormularioLogadoMonitor");
 			return false;
 		}
-		if((((uri.endsWith("realizarLoginAdministrador") ||
+		if((((
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
 				== null))){
 			return true;
 		}
-		if(((uri.endsWith("realizarLoginAdministrador") ||
+		if(((
 				uri.endsWith("verificarLoginAdministrador")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
@@ -44,14 +44,14 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
 			return false;
 		}
-		if((((uri.endsWith("realizarLoginMonitor") ||
+		if((((
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
 				== null))){
 			return true;
 		}
-		if(((uri.endsWith("realizarLoginMonitor") ||
+		if(((
 				uri.endsWith("verificarLoginMonitor")
 				|| uri.endsWith("mostrarInicio"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
