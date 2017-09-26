@@ -120,7 +120,7 @@
 					<h4 class="modal-title" id="exampleModalLabel">ADMINISTRADOR</h4>
 				</div>
 				<div class="modal-body">
-					<form id="" method="post" action="" class="form-horizontal">
+					<form id="" method="post" action="verificarLoginAdministrador" class="form-horizontal">
 
 						<div class="form-group">
 							<label for="usuario" class="col-sm-3 control-label">Usuário</label>
@@ -162,7 +162,7 @@
 					<h4 class="modal-title" id="exampleModalLabel">MONITOR</h4>
 				</div>
 				<div class="modal-body">
-					<form id="" method="post" action="" class="form-horizontal">
+					<form id="" method="post" action="verificarLoginMonitor" class="form-horizontal">
 
 						<div class="form-group">
 							<label for="usuario" class="col-sm-3 control-label">Usuário</label>

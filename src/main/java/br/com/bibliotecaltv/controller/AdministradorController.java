@@ -20,7 +20,7 @@ public class AdministradorController {
 	
 	@RequestMapping("realizarLoginAdministrador")
 	public String realizarLogin(){
-		return "teste.administrador/testeLogin";
+		return "index";
 	}	
 	@RequestMapping("verificarLoginAdministrador")
 	public String verificarLogin(Administrador administrador, HttpSession session){

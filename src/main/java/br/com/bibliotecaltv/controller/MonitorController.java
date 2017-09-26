@@ -21,7 +21,7 @@ public class MonitorController {
 	
 	@RequestMapping("realizarLoginMonitor")
 	public String realizarLogin(){
-		return "teste.monitor/testeLogin";
+		return "index";
 	}	
 	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
