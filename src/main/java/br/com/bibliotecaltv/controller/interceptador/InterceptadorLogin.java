@@ -1,4 +1,4 @@
-/*package br.com.bibliotecaltv.controller.interceptador;
+package br.com.bibliotecaltv.controller.interceptador;
 
 import java.io.IOException;
 
@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-
-public class InterceptadorLogin extends HandlerInterceptorAdapter {
+public class InterceptadorLogin extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object controller) throws IOException{
 		String uri = request.getRequestURI();
@@ -73,4 +72,3 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter {
 		return false;
 	}
 }
-*/

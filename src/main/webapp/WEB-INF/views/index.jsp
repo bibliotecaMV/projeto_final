@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
@@ -8,7 +9,7 @@
     <title>BIBLIOTECA LTV - MV INFORMATICA</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
@@ -43,15 +44,19 @@
 
 
                           <div id="centraliza" class="centraliza" >
-                             <center> <div class="circulo" >
+                             <center> 
+                             	<div class="circulo" >
                                   <img src="img/adm.png" border="0">
-                              </div></center>
+                             	</div>
+                              </center>
                           </div>
 
                           <div class="titulo">
                               <div class="seta">&nbsp;</div>
                               <div class="borda">
-                                <center> <span>ADMINISTRADOR</span></center>
+                                <center>
+                                	<span>ADMINISTRADOR</span>
+                                </center>
                               </div>
                           </div>
                       </a>
@@ -64,15 +69,19 @@
 
 
                           <div id="centraliza" class="centraliza" >
-                             <center> <div class="circulo" >
+                             <center> 
+                             <div class="circulo" >
                                   <img src="img/monitor.png" border="0">
-                              </div></center>
+                              </div>
+                             </center>
                           </div>
 
                           <div class="titulo">
                               <div class="seta">&nbsp;</div>
                               <div class="borda">
-                                 <center> <span>MONITOR</span></center>
+                                 <center> 
+                                 <span>MONITOR</span>
+                                 </center>
                               </div>
                           </div>
                       </a>
