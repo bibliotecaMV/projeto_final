@@ -78,16 +78,6 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>2.5.2</version>
-		</dependency>
-
-
-
-
 	</dependencies>
 	<build>
 		<finalName>projeto_final</finalName>
