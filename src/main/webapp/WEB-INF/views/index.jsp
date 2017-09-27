@@ -7446,7 +7446,7 @@ fieldset[disabled] .btn-danger.active {
             <div class="row">
               <div class="col-lg-6" id="centro">
 
-                    <a href="loginAdministrador.html" class="item" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginAdministrador" class="item" style="margin-left: 35px; margin-right: 35px;">
 
 
                           <div id="centraliza" class="centraliza" >
@@ -7466,7 +7466,7 @@ fieldset[disabled] .btn-danger.active {
 
                   <div class="col-lg-6" id="centro">
 
-                    <a href="loginMonitor.html" class="item" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginMonitor" class="item" style="margin-left: 35px; margin-right: 35px;">
 
 
                           <div id="centraliza" class="centraliza" >
