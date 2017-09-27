@@ -4,12 +4,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class InicioController {
+public class testeController {
 	
-	@RequestMapping("mostrarInicio")
-	public String mostrarInicio(){
-		return "index";
+	@RequestMapping("testa")
+	public String testes() {
+		return "novo";
 	}
-	
-
 }
