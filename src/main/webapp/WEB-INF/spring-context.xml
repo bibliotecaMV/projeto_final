@@ -21,6 +21,5 @@
 		<bean class="br.com.bibliotecaltv.controller.interceptador.InterceptadorLogin" />
 	</mvc:interceptors>
 	
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-	
+	<!--<mvc:resources mapping="/resources/**" location="/resources/"   />-->
 </beans>
