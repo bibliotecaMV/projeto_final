@@ -8,6 +8,6 @@ public class InicioController {
 	
 	@RequestMapping("mostrarInicio")
 	public String mostrarInicio(){
-		return "index";
+		return "teste";
 	}
 }

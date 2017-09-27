@@ -9,8 +9,8 @@
     <title>BIBLIOTECA LTV - MV INFORMATICA</title>
 
     <!-- Bootstrap -->
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link type="text/css" href="resources/style.css"  rel="stylesheet" />
+    <script type="text/javascript" src="resources/js/bootstrap.js"></script>
     <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
     <!--[if lt IE 9]>
