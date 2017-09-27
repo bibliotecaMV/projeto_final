@@ -64,7 +64,9 @@
             </div>
         </div>
     </div>
-
+	<a href="index.jsp" class="link">
+    <div class="glyphicon glyphicon-triangle-left">
+    </div></a>
 
 
     <!--/.Rodapé -->
