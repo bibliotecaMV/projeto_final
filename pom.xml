@@ -81,8 +81,6 @@
 			<artifactId>spring-core</artifactId>
 			<version>4.3.11.RELEASE</version>
 		</dependency>
-<<<<<<< HEAD
-=======
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -107,7 +105,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>2.5.2</version>
 		</dependency>-->
->>>>>>> a02290ad16ce9e1a5de10135d6d6121792d54e38
 	</dependencies>
 	<build>
 		<finalName>projeto_final</finalName>

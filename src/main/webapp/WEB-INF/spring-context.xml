@@ -20,11 +20,8 @@
 		<bean class="br.com.bibliotecaltv.controller.interceptador.InterceptadorLogin" />
 	</mvc:interceptors>
 	
-<<<<<<< HEAD
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	<mvc:default-servlet-handler />
-	
-=======
->>>>>>> a02290ad16ce9e1a5de10135d6d6121792d54e38
+
 </beans>
