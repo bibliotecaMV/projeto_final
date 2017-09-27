@@ -81,6 +81,33 @@
 			<artifactId>spring-core</artifactId>
 			<version>4.3.11.RELEASE</version>
 		</dependency>
+<<<<<<< HEAD
+=======
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Por favor não tirem esse código abaixo, só o comentem como deixei 
+			esse aqui 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>2.5.2</version>
+		</dependency>-->
+>>>>>>> a02290ad16ce9e1a5de10135d6d6121792d54e38
 	</dependencies>
 	<build>
 		<finalName>projeto_final</finalName>

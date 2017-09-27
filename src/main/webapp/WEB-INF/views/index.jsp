@@ -16,30 +16,24 @@
 	padding: 0;
 	text-decoration: none;
 }
-
 #erro{
   background-color: orange;
   text-align: center;
   font-size: 26px;
 }
-
 .e400{
   font-size: 25px;
 }
-
 #centraliza{
 	text-align: center;
 }
-
 .centraliza{
 	text-align: center; 
 }
-
 .item{ 
     background-color: black;
     text-decoration: none;
 }
-
 a.item{ 
     text-decoration: none; 
     width: 160px;
@@ -47,7 +41,6 @@ a.item{
     margin: 0px 35px;
     text-decoration: none; 
 }
-
 .item .circulo{ 
 	background-color: #ef8d1a; 
     width: 160px; 
@@ -58,9 +51,7 @@ a.item{
     -moz-border-radius: 50%;  
     -webkit-border-radius: 50%;
     text-decoration: none; 
-
 }
-
 .item .titulo{ 
 	color: #3baa72; 
 	width: 150px; 
@@ -68,7 +59,6 @@ a.item{
 	margin-top: 10px; 
     text-decoration: none; 
 }
-
 .item .borda{ 
 	background: #FFF; 
 	border: 1px solid #9dd4b8; 
@@ -78,33 +68,23 @@ a.item{
 	-webkit-border-radius: 8px; 
     text-decoration: none; 
 }
-
 a.item:hover .circulo{ 
     background-color: #f0bd1f;
     text-decoration: none; 
 }
-
 a.item:hover .borda{ 
     background-color: #ef8d1a; 
     border:1px solid #ef8d1a; 
     color: #FFF;
     text-decoration: none; 
 }
-
 #alert{
     padding-top: 260px;
     text-align: center;
 }
-
 #link{
     text-decoration: none;
 }
-
-
-
-
-
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -322,7 +302,6 @@ th {
   pre,
   blockquote {
     border: 1px solid #999;
-
     page-break-inside: avoid;
   }
   thead {
@@ -369,7 +348,6 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
@@ -381,7 +359,6 @@ th {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1185,7 +1162,6 @@ th {
 }
 html {
   font-size: 10px;
-
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
@@ -6114,7 +6090,6 @@ button.close {
   white-space: normal;
   filter: alpha(opacity=0);
   opacity: 0;
-
   line-break: auto;
 }
 .tooltip.in {
@@ -6239,7 +6214,6 @@ button.close {
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-
   line-break: auto;
 }
 .popover.top {
@@ -6365,7 +6339,6 @@ button.close {
     -webkit-transition: -webkit-transform .6s ease-in-out;
          -o-transition:      -o-transform .6s ease-in-out;
             transition:         transform .6s ease-in-out;
-
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     -webkit-perspective: 1000px;
@@ -6862,8 +6835,6 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-
-
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -7451,7 +7422,6 @@ fieldset[disabled] .btn-danger.active {
           box-shadow: inset 0 1px 3px rgba(0, 0, 0, .05), 0 1px 0 rgba(255, 255, 255, .1);
 }
 /*# sourceMappingURL=bootstrap-theme.css.map */
-
     </style>
   </head>
   <body>
@@ -7476,7 +7446,7 @@ fieldset[disabled] .btn-danger.active {
             <div class="row">
               <div class="col-lg-6" id="centro">
 
-                    <a href="loginAdministrador.html" class="item" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginAdministrador" class="item" style="margin-left: 35px; margin-right: 35px;">
 
 
                           <div id="centraliza" class="centraliza" >
@@ -7496,7 +7466,7 @@ fieldset[disabled] .btn-danger.active {
 
                   <div class="col-lg-6" id="centro">
 
-                    <a href="loginMonitor.html" class="item" style="margin-left: 35px; margin-right: 35px;">
+                    <a href="realizarLoginMonitor" class="item" style="margin-left: 35px; margin-right: 35px;">
 
 
                           <div id="centraliza" class="centraliza" >
