@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ERRO</title>
-   <style type="text/css">
-     *{
+    <style type="text/css">
+      *{
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -7447,7 +7449,7 @@ fieldset[disabled] .btn-danger.active {
 }
 /*# sourceMappingURL=bootstrap-theme.css.map */
 
-   </style>
+    </style>
 </head>
 <body>
 <!-- TOPO-->
@@ -7459,8 +7461,8 @@ fieldset[disabled] .btn-danger.active {
       </div>
     </nav>
     <div id="erro">
-      <p><font size="50px">ERRO 404</font></p>
-        Página não encontrada
+   		<p><font size="50px">ERRO 500</font></p>
+   			Problema com servidor interno
     </div>
      <a href="main.html" class="link">
     <div class="glyphicon glyphicon-triangle-left">
