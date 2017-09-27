@@ -10,4 +10,6 @@ public class InicioController {
 	public String mostrarInicio(){
 		return "index";
 	}
+	
+
 }

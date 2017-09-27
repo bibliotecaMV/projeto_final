@@ -69,37 +69,38 @@
 			<version>5.1.43</version>
 		</dependency>
 		<!-- Por favor não tirem esse código abaixo, só o comentem como deixei 
-			esse aqui -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.3.11.Final</version>
-		</dependency>
-		
+
+		</dependency>-->
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>4.3.11.RELEASE</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<version>2.2.1</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		<!-- Por favor não tirem esse código abaixo, só o comentem como deixei 
-			esse aqui -->
+	
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
