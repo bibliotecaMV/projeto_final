@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="utf-8">
@@ -7447,6 +7449,7 @@ fieldset[disabled] .btn-danger.active {
 }
 /*# sourceMappingURL=bootstrap-theme.css.map */
 
+     
    </style>
 </head>
 <body>
@@ -7459,8 +7462,8 @@ fieldset[disabled] .btn-danger.active {
       </div>
     </nav>
     <div id="erro">
-      <p><font size="50px">ERRO 404</font></p>
-        Página não encontrada
+   		<p><font size="50px">ERRO 400</font></p>
+   			Você fez uma solicitação incorreta
     </div>
      <a href="main.html" class="link">
     <div class="glyphicon glyphicon-triangle-left">
