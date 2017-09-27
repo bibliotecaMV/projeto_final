@@ -2,72 +2,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>BIBLIOTECA LTV - MV INFORMATICA</title>
-
-    <!-- Bootstrap -->
-   
-    <style type="text/css">
-*{
-	margin: 0;
-	padding: 0;
-	text-decoration: none;
-}
-body{
-	background-color: white;
-}
-#centraliza{
-	text-align: center;
-}
-
-.centraliza{
-	text-align: center; 
-}
-
-a.item{ 
-    text-decoration: none; 
-    width: 160px;
-    height: 195px;
-    margin: 0px 35px;
-}
-
-.item .circulo{ 
-	background-color: #ef8d1a; 
-    width: 160px; 
-    height: 160px; 
-    display: table-cell;  
-    vertical-align: middle; 
-    border-radius: 50%;    
-    -moz-border-radius: 50%;  
-    -webkit-border-radius: 50%;
-
-}
-
-.item .titulo{ 
-	color: #3baa72; 
-	width: 150px; 
-	margin: 0px auto; 
-	margin-top: 10px; 
-}
-
-.item .borda{ 
-	background: #FFF; 
-	border: 1px solid #9dd4b8; 
-	padding: 5px; 
-	border-radius: 8px;
-	-moz-border-radius: 8px; 
-	-webkit-border-radius: 8px; 
-	}
-     a.item:hover .circulo{ 
-     	background-color: #f0bd1f;
-     }
-    a.item:hover .borda{ 
-    	background-color: #ef8d1a; 
-    	 border:1px solid #ef8d1a; 
-    	 color: #FFF}
+    
 
     </style>
   </head>
