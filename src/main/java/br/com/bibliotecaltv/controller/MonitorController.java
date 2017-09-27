@@ -21,7 +21,7 @@ public class MonitorController {
 	}
 	@RequestMapping("realizarLoginMonitor")
 	public String realizarLogin(){
-		return "teste.monitor/loginMonitor";
+		return "loginMonitor";
 	}
 	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
@@ -29,7 +29,7 @@ public class MonitorController {
 				monitor.getUsuario(), monitor.getSenha());
 		if(verifica == true){
 			session.setAttribute("usuarioLogadoMonitor", monitor);
-			return "teste.monitor/loginDeuCerto";
+			return "painelMonitor";
 		}else{
 			return "redirect:realizarLoginMonitor";
 		}
@@ -37,7 +37,7 @@ public class MonitorController {
 	
 	@RequestMapping("acessarFormularioLogadoMonitor")
 	public String acessarFormularioLogado(){
-		return "teste.monitor/acessarFormularioLogado";
+		return "acessarFormularioLogadoMonitor";
 	}
 	
 	@RequestMapping("logoutMonitor")

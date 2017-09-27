@@ -19,7 +19,7 @@ public class AdministradorController {
 	}
 	@RequestMapping("realizarLoginAdministrador")
 	public String realizarLogin(){
-		return "teste.administrador/loginAdministrador";
+		return "loginAdministrador";
 	}
 	@RequestMapping("verificarLoginAdministrador")
 	public String verificarLogin(Administrador administrador, HttpSession session){
@@ -27,7 +27,7 @@ public class AdministradorController {
 				administrador.getUsuario(), administrador.getSenha());
 		if(verifica == true){
 			session.setAttribute("usuarioLogadoAdministrador", administrador);
-			return "teste.administrador/loginDeuCerto";
+			return "painelAdministrador";
 		}else{
 			return "redirect:realizarLoginAdministrador";
 		}
@@ -35,7 +35,7 @@ public class AdministradorController {
 	
 	@RequestMapping("acessarFormularioLogadoAdministrador")
 	public String acessarFormularioLogado(){
-		return "teste.administrador/acessarFormularioLogado";
+		return "acessarFormularioLogadoAdministrador";
 	}
 	
 	@RequestMapping("logoutAdministrador")
