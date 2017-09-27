@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
-    <title>BIBLIOTECA LTV - MV INFORMATICA</title>
-
+    <title>ERRO</title>
     <style type="text/css">
       *{
   margin: 0;
@@ -7452,9 +7450,9 @@ fieldset[disabled] .btn-danger.active {
 /*# sourceMappingURL=bootstrap-theme.css.map */
 
     </style>
-  </head>
-  <body>
-    <!-- TOPO-->
+</head>
+<body>
+<!-- TOPO-->
     <nav class="navbar navbar-default">
       <div class="container">
         <div id="logo" align="center">
@@ -7462,61 +7460,22 @@ fieldset[disabled] .btn-danger.active {
         </div>
       </div>
     </nav>
-
-    <div class="container">
-        <div class="starter-template">
-            <h3 align="center">Sistema Gerenciador de Biblioteca</h3>
-            <p align="center">SEJA BEM VINDO</p>
-          </div>
+    <div id="erro">
+   		<p><font size="50px">ERRO 500</font></p>
+   			Problema com servidor interno
     </div>
-
-    <div class="container">
-        <div id="content">
-            <div class="row">
-              <div class="panel panel-warning">
-                <div class="panel-heading"> <center>ADMINISTRADOR</center>
-                </div>
-                <div class="panel-body">
-                    <form class="form-horizontal">
-                       <div class="form-group">
-                      <label for="usuario" class="col-sm-3 control-label">Usuário</label>
-                      <div class="col-sm-5">
-                        <input type="text" class="form-control" id="usuario" placeholder="caahup1" name="usuario" required/>
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label for="senha" class="col-sm-3 control-label" >Senha</label>
-                      <div class="col-sm-5">
-                        <input type="password" class="form-control" id="senha" placeholder="********" name="senha" required/>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="reset" class="btn btn-danger">Limpar</button>
-                        <button type="submit" class="btn btn-warning">Acessar</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-    <a href="main.html" class="link">
+     <a href="main.html" class="link">
     <div class="glyphicon glyphicon-triangle-left">
     </div></a>
-
-    <!--/.Rodapé -->
     <hr>
     <footer class="footer">
       <div class="container">
         <p class="text-muted" align="center">© 2017 - Governo do Estado do Ceará - Todos os direitos reservados</p>
       </div>
     </footer>
-
-    
     <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="resources/js/bootstrap.min.js"></script>
-  </body>
+</body>
 </html>
