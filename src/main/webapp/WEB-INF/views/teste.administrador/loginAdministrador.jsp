@@ -6,7 +6,7 @@
 	<body>
 		<form method="post" action="verificarLoginAdministrador">
 			Usuario: <input type="text" name="usuario" />
-			Senha: <input type="text" name="senha" />
+			Senha: <input type="password" name="senha" />
 			<input type="submit" value="enviar" />
 		</form>
 	</body>
