@@ -32,6 +32,9 @@
        <tr>  
          <td>Matricula:</td><td><input type="text" name="matricula"/></td>
        </tr>
+       <tr>
+         <td><input type="submit" value="Cadastra"/></td>
+       </tr>  
      </table>         
      </form>
      <br>

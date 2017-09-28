@@ -1,5 +1,7 @@
 package br.com.bibliotecaltv.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +19,15 @@ public class ProfessorController {
 		this.dao = dao;
 	}
 	
-	@RequestMapping("listarProfessores0")
+	@RequestMapping("listarProfessores")
 	public String listarProfessores(Model model) {
-		model.addAttribute("emprestimos", dao.listar(Professor.class));
+		model.addAttribute("professores", dao.listar(Professor.class));
 		return "Professor";
 	}
+	
+	@RequestMapping("logout")
+	 public String logout(HttpSession session) {
+	   session.invalidate();
+	   return "redirect:realizarLoginAdministrador";
+	 }
 }
