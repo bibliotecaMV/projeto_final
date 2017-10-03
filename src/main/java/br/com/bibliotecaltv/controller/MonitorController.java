@@ -1,16 +1,15 @@
 package br.com.bibliotecaltv.controller;
 
-import javax.management.monitor.Monitor;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
-
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
+import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
 @Controller
@@ -48,14 +47,22 @@ public class MonitorController {
 		return "redirect:realizarLoginMonitor";
 	}
 	
+	@RequestMapping("listarMonitores")
 	public String listarMonitor(Model model) {
 		model.addAttribute("monitores", dao.listar(Monitores.class));
 		return "Monitor"; 
 	}
 	
-	@RequestMapping("logout")
-	 public String logout(HttpSession session) {
-	   session.invalidate();
-	   return "redirect:realizarLoginAdministrador";
-	 }
+	@RequestMapping("adicionarMonitores")
+	public String adicionaMonitores(Monitores monitores, BindingResult result) {
+		dao.salvar(monitores);
+		return "redirect:listarMonitores";
+	}
+	
+	@RequestMapping("deletaMonitores")
+	public String deletaProfessor(Long id) throws Exception {
+		Monitores monitores = dao.listarPorId(Monitores.class, id);
+		dao.excluir(monitores);
+		return "redirect:listarMonitores";
+	}
 }
