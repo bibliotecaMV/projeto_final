@@ -14,10 +14,8 @@ public class TesteRealizarEmprestimoComProfessor {
 		EmprestimoDAO daoEmprestimo = new EmprestimoDAO();
 		ProfessorDAO daoProfessor = new ProfessorDAO();
 		LivroDAO daoLivro = new LivroDAO();
-		
 		Professor professor = daoProfessor.listarPorId(Professor.class,1L);
-		
-		Livro livro = daoLivro.listarPorId(Livro.class, "333");
+		Livro livro = daoLivro.listarPorId(Livro.class, "20170930");
 		
 		Emprestimo emprestimo = new Emprestimo();
 		emprestimo.setProfessor(professor);

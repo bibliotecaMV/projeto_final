@@ -5,9 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Turma.listarIdPorNome", 
+			query = "select id from Turma turma where"
+					+ " nome = :nome") 
+})
 @Table(name = "turmas")
 public class Turma {
 	@Id

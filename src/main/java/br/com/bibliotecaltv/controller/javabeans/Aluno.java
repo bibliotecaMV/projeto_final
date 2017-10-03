@@ -8,29 +8,38 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Aluno.listarIdPorNome", 
+			query = "select id from Aluno aluno where"
+					+ " nome = :nome"),
+	@NamedQuery(name = "Aluno.listarPorFK", 
+			query = "select aluno from Aluno aluno where"
+					+ " turma_id = :turma_id") 
+})
 @Table(name="alunos")
 public class Aluno {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name="nome", nullable = false)
+
+	@Column(unique = true,name="nome", nullable = false)
 	private String nome;
-	
+
 	@Column(name="numero", nullable = false)
 	private Long numero;
-	
-	@Column(name="matricula", nullable = false)
+
+	@Column(unique = true, name="matricula", nullable = false)
 	private String matricula;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private Turma turma;
-	
+
 	public Turma getTurma() {
 		return turma;
 	}
@@ -61,10 +70,10 @@ public class Aluno {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Aluno [id=" + id + ", nome=" + nome + ", matricula=" + matricula + ", numero=" + numero + "]";
 	}
-	
+
 }

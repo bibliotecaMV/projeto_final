@@ -9,7 +9,7 @@ public class TesteAlterarProfessor {
 		ProfessorDAO dao = new ProfessorDAO();
 		Professor professor = dao.listarPorId(Professor.class, 1L);
 		professor.setMatricula("20");
-		professor.setNomeCompleto("Jucelino");
+		professor.setNome("Jucelino");
 		dao.alterar(professor);
 	}
 

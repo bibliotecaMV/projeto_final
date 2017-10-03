@@ -7,6 +7,6 @@ public class TesteBuscarProfessorPorId {
 	public static void main(String[] args) throws Exception {
 		ProfessorDAO dao = new ProfessorDAO();
 		Professor professor = dao.listarPorId(Professor.class, 1L);
-		System.out.println(professor.getNomeCompleto());
+		System.out.println(professor.getNome());
 	}
 }

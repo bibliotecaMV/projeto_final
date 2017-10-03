@@ -5,13 +5,10 @@ import br.com.bibliotecaltv.dao.GeneroDAO;
 
 public class TesteInserirGenero {
 	public static void main(String[] args) {
-		
 		Genero genero = new Genero();
 		genero.setSigla("001");
 		genero.setDescricao("Romance");
-		
 		GeneroDAO dao = new GeneroDAO(); 
 		dao.salvar(genero);
-
 	}
 }

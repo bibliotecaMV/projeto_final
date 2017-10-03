@@ -106,5 +106,34 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		
 	}
-
+	public Long listarIdPorNome(String classe, String nome){
+		Transaction transaction = null;
+		Long id = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.getNamedQuery(classe + ".listarIdPorNome");
+			consulta.setString("nome", nome);
+			id = (Long) consulta.uniqueResult();
+			session.flush();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		return id;
+	}
+	public List<T> listarPorFK(String classe, Long fk, String campo){
+		Transaction transaction = null;
+		List<T> lista = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.getNamedQuery(classe + ".listarPorFK");
+			consulta.setLong(campo, fk);
+			lista = consulta.list();
+			session.flush();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		return lista;
+	}
 }

@@ -5,19 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
+@NamedQueries({
+	@NamedQuery(name = "Professor.listarIdPorNome", 
+			query = "select id from Professor professor where"
+					+ " nome = :nome") 
+})
 @Table(name="professores")
 public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(name="nome_completo", nullable = false)
-	private String nomeCompleto;
+	@Column(unique = true,name="nome", nullable = false)
+	private String nome;
 	
-	@Column(name="matricula", nullable = false)
+	@Column(unique = true, name="matricula", nullable = false)
 	private String matricula;
 	
 	public Long getId() {
@@ -26,11 +33,11 @@ public class Professor {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNomeCompleto() {
-		return nomeCompleto;
+	public String getNome() {
+		return nome;
 	}
-	public void setNomeCompleto(String nomeCompleto) {
-		this.nomeCompleto = nomeCompleto;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getMatricula() {
 		return matricula;
@@ -41,7 +48,7 @@ public class Professor {
 	
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", matricula=" + matricula + ", nome_completo=" + nomeCompleto + "]";
+		return "Professor [id=" + id + ", matricula=" + matricula + ", nome=" + nome + "]";
 	}
 	
 }

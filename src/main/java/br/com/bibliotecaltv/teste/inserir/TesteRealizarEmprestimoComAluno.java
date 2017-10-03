@@ -22,7 +22,7 @@ public class TesteRealizarEmprestimoComAluno {
 		Emprestimo emprestimo = new Emprestimo();
 		Aluno aluno = daoAluno.listarPorId(Aluno.class, 1L);
 		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
-		Livro livro = daoLivro.listarPorId(Livro.class,"333");
+		Livro livro = daoLivro.listarPorId(Livro.class,"20170930");
 
 		emprestimo.setAluno(aluno);
 		emprestimo.setDataEmprestimo(Calendar.getInstance().getTime());
