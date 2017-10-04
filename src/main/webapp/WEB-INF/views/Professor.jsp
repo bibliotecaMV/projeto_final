@@ -26,7 +26,7 @@
 		    <td>${professor.matricula}</td>
 		    <td>${professor.nomeCompleto}</td>
 		    <td><a href = "deletaProfessores?id=${professor.id}">Remover</a></td>
-		    <td><a href = "adicionaProfessores?id=${professor.id}">Alterar</a></td>
+		    <td><a href = "mostraProfessores?id=${professor.id}">Alterar</a></td>
         </tr>
         </c:forEach>
      </table>
@@ -35,11 +35,11 @@
      <table>
        <tr>
          <td>Nome Completo:</td>
-         <td><input type="text" name="nomeCompleto"/></td>
+         <td><input type="text" name="nomeCompleto" required/></td>
        </tr>
        <tr>  
          <td>Matricula:</td>
-         <td><input type="text" name="matricula"/></td>
+         <td><input type="text" name="matricula" required/></td>
        </tr>
        <tr>
          <td><input type="submit" value="Cadastra"/></td>

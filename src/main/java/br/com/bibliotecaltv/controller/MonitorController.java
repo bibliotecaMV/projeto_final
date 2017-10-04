@@ -8,18 +8,22 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
-import br.com.bibliotecaltv.controller.javabeans.Professor;
+import br.com.bibliotecaltv.dao.AlunoDAO;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
 
 @Controller
 public class MonitorController {
 	MonitoresDAO dao;
+	AlunoDAO dao1;
 	
 	@Autowired
-	public MonitorController(MonitoresDAO dao){
+	public MonitorController(MonitoresDAO dao,AlunoDAO dao1){
 		this.dao = dao;
+		this.dao1 = dao1;
 	}
+	
 	@RequestMapping("realizarLoginMonitor")
 	public String realizarLogin(){
 		return "teste.monitor/loginMonitor";
@@ -50,12 +54,16 @@ public class MonitorController {
 	@RequestMapping("listarMonitores")
 	public String listarMonitor(Model model) {
 		model.addAttribute("monitores", dao.listar(Monitores.class));
+		model.addAttribute("alunos", dao1.listar(Aluno.class));
 		return "Monitor"; 
 	}
 	
 	@RequestMapping("adicionarMonitores")
-	public String adicionaMonitores(Monitores monitores, BindingResult result) {
-		dao.salvar(monitores);
+	public String adicionaMonitores(String usuario, String senha, String aluno) {
+		Monitores monitores = new Monitores();
+		monitores.setUsuario(usuario);
+		monitores.setSenha(senha);
+		
 		return "redirect:listarMonitores";
 	}
 	

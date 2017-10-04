@@ -36,22 +36,22 @@
 	<h1>CADASTRAR MONITOR:</h1>
 	<form action="adicionarMonitores" method="post">
 		<table>
-		    <tr>
-		        <td>Alunos</td>
-				<td><select name="Alunos">
-				 <c:forEach items="${alunos}" var="aluno">
-				    <option>${aluno.nome}</option>
-				 </c:forEach>
-				</select></td>
-			</tr>
-		    
 			<tr>
 				<td>Usuario:</td>
-				<td><input type="text" name="usuario" /></td>
+				<td><input type="text" name="usuario" required/></td>
 			</tr>
 			<tr>
 				<td>Senha:</td>
-				<td><input type="password" name="senha" /></td>
+				<td><input type="password" name="senha" required/></td>
+			</tr>
+			
+			<tr>
+		        <td>Alunos</td>
+				<td><select name="aluno">
+		        <c:forEach items="${alunos}" var="aluno"> 	
+				    <option>${aluno.nome}</option>
+				</c:forEach>
+				</select></td>
 			</tr>
 			
 			<tr>
