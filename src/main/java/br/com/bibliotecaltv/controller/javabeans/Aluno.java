@@ -13,9 +13,9 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Aluno.listarIdPorNome", 
+	@NamedQuery(name = "Aluno.listarIdPorNomeTurma", 
 			query = "select id from Aluno aluno where"
-					+ " nome = :nome"),
+					+ " nome = :nome and turma_id = :turma_id"),
 	@NamedQuery(name = "Aluno.listarPorFK", 
 			query = "select aluno from Aluno aluno where"
 					+ " turma_id = :turma_id") 

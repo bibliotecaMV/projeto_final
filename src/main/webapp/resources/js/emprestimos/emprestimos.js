@@ -4,6 +4,11 @@ function realizarDevolucao(id) {
 		$("#campo_devolucao_"+id).html(resposta);
 	});
 }
+function removerEmprestimo(id) {
+	$.post("excluirEmprestimo", {"id" : id}, function(){
+		$("#linha_"+id).closest("tr").hide();
+	});
+}
 function habilitarAlunos(){
 	document.getElementById("turma").disabled = false;
 	document.getElementById("aluno").disabled = false;

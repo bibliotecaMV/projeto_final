@@ -46,28 +46,29 @@ public class EmprestimosController {
 		model.addAttribute("emprestimos", daoEmprestimo.listar(Emprestimo.class));
 		model.addAttribute("turmas", daoTurma.listar(Turma.class));
 		model.addAttribute("professores", daoProfessor.listar(Professor.class));
-		model.addAttribute("alunos", daoAluno.listar(Aluno.class));
+		model.addAttribute("livros", daoLivro.listar(Livro.class));
 		return "emprestimos/emprestimos";
 	}
 	@RequestMapping("realizarEmprestimos")
-	public String realizarEmprestimos(String tombo, String nome_aluno, 
-			String nome_professor) throws Exception{
+	public String realizarEmprestimos(String tombo, String aluno, 
+			String professor, String turma) throws Exception{
 		Emprestimo emprestimo = new Emprestimo();
+		emprestimo.setDataEmprestimoFormatada(Calendar.getInstance().getTime().toString());
 		Livro livro = daoLivro.listarPorId(Livro.class, tombo);
 		emprestimo.setLivro(livro);
-		emprestimo.setDataEmprestimo(Calendar.getInstance().getTime());
-		emprestimo.setGenero(livro.getGenero());
-		if(nome_aluno != null){
-			Long id_aluno = daoAluno.listarIdPorNome("Aluno", nome_aluno);
-			Aluno aluno = daoAluno.listarPorId(Aluno.class, id_aluno);
-			emprestimo.setAluno(aluno);
-			emprestimo.setTurma(aluno.getTurma());
-		}else if(nome_professor != null){
-			Long id_professor = daoProfessor.listarIdPorNome
-					("Professor", nome_professor);
-			Professor professor = daoProfessor.listarPorId
-					(Professor.class, id_professor);
-			emprestimo.setProfessor(professor);
+		if(aluno != null){
+			Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
+			Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno, turma_id);
+			Aluno aluno1 = daoAluno.listarPorId(Aluno.class, aluno_id);
+			emprestimo.setAluno(aluno1);
+			emprestimo.setTurma(aluno1.getTurma());
+			
+		}else if(professor != null){
+			Long professor_id = daoProfessor.listarIdPorNome("Professor", professor);
+			Professor professor1 = daoProfessor.listarPorId(Professor.class, professor_id);
+			emprestimo.setProfessor(professor1);
+		}else{
+			return "redirect:listarDadosParaEmprestimos";
 		}
 		daoEmprestimo.salvar(emprestimo);
 		return "redirect:listarDadosParaEmprestimos";
@@ -75,13 +76,19 @@ public class EmprestimosController {
 	@RequestMapping("realizarDevolucao")
 	public void realizarDevolucao(Long id, HttpServletResponse response) throws Exception{
 		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, id);
-		emprestimo.setDataDevolucao(Calendar.getInstance().getTime());
+		emprestimo.setDataDevolucaoFormatada(Calendar.getInstance().getTime().toString());
 		try{
 			daoEmprestimo.alterar(emprestimo);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
 		response.setStatus(200);
-		response.getWriter().write(emprestimo.getDataDevolucao().toString());
+		response.getWriter().write(emprestimo.getDataDevolucaoFormatada().toString());
+	}
+	@RequestMapping("excluirEmprestimo")
+	public void excluirEmprestimo(Long id, HttpServletResponse response) throws Exception{
+		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, id);
+		daoEmprestimo.excluir(emprestimo);
+		response.setStatus(200);
 	}
 }

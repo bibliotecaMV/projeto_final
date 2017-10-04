@@ -19,9 +19,8 @@ public class TesteRealizarEmprestimoComProfessor {
 		
 		Emprestimo emprestimo = new Emprestimo();
 		emprestimo.setProfessor(professor);
-		emprestimo.setGenero(livro.getGenero());
 		emprestimo.setLivro(livro);
-		emprestimo.setDataEmprestimo(Calendar.getInstance().getTime());
+		emprestimo.setDataEmprestimo(Calendar.getInstance());
 		daoEmprestimo.salvar(emprestimo);
 	}
 }
