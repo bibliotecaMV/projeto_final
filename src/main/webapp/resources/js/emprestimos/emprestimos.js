@@ -1,7 +1,7 @@
 function realizarDevolucao(id) {
 	$.post("realizarDevolucao", {"id" : id}, function(resposta){
 		$("#emprestimo_"+id).html("Devolvido");
-		$("#campo_devolucao_"+id).html(resposta);
+		$("#campo_devolucao_"+id).html("<input type='text' name='dataDevolucaoFormatada' value="+resposta+" />");
 	});
 }
 function removerEmprestimo(id) {
