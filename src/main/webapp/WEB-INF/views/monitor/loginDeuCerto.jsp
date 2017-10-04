@@ -6,7 +6,9 @@
 		</title>
 		<meta charset="utf-8" />
 	</head>
-	<body>
-		Login do Monitor deu certo!!!
+	<body>>
+		<a href = "sobreTurmas">Turmas</a><br />
+		<a href = "sobreAlunos">Alunos</a><br />
+		<a href = "logoutMonitor">Encerrar Sessão</a>
 	</body>
 </html>

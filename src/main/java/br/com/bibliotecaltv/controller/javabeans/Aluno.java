@@ -11,60 +11,69 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="alunos")
+@Table(name = "alunos")
 public class Aluno {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
-	@Column(name="nome", nullable = false)
+
+	@Column(name = "nome", nullable = false)
 	private String nome;
-	
-	@Column(name="numero", nullable = false)
+
+	@Column(name = "numero", nullable = false)
 	private Long numero;
-	
-	@Column(name="matricula", nullable = false)
+
+	@Column(name = "matricula", nullable = false)
 	private String matricula;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private Turma turma;
-	
+
 	public Turma getTurma() {
 		return turma;
 	}
+
 	public void setTurma(Turma turma) {
 		this.turma = turma;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public Long getNumero() {
 		return numero;
 	}
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
 	public String getMatricula() {
 		return matricula;
 	}
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Aluno [id=" + id + ", nome=" + nome + ", matricula=" + matricula + ", numero=" + numero + "]";
 	}
-	
+
 }

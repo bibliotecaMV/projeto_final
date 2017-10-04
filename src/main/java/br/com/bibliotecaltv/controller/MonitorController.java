@@ -2,10 +2,10 @@ package br.com.bibliotecaltv.controller;
 
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 
 
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
@@ -21,7 +21,7 @@ public class MonitorController {
 	}
 	@RequestMapping("realizarLoginMonitor")
 	public String realizarLogin(){
-		return "teste.monitor/loginMonitor";
+		return "monitor/loginMonitor";
 	}
 	@RequestMapping("verificarLoginMonitor")
 	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
@@ -29,7 +29,7 @@ public class MonitorController {
 				monitor.getUsuario(), monitor.getSenha());
 		if(verifica == true){
 			session.setAttribute("usuarioLogadoMonitor", monitor);
-			return "teste.monitor/loginDeuCerto";
+			return "monitor/loginDeuCerto";
 		}else{
 			return "redirect:realizarLoginMonitor";
 		}
@@ -37,7 +37,7 @@ public class MonitorController {
 	
 	@RequestMapping("acessarFormularioLogadoMonitor")
 	public String acessarFormularioLogado(){
-		return "teste.monitor/acessarFormularioLogado";
+		return "monitor/acessarFormularioLogado";
 	}
 	
 	@RequestMapping("logoutMonitor")
@@ -45,4 +45,5 @@ public class MonitorController {
 		session.invalidate();
 		return "redirect:realizarLoginMonitor";
 	}
+
 }

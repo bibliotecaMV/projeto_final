@@ -44,7 +44,8 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
 	public void alterar(T entity) {
 		Transaction transaction = null;
 		try {
@@ -106,5 +107,6 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		
 	}
+	
 
 }

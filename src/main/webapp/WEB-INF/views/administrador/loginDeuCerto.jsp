@@ -7,6 +7,8 @@
 		<meta charset="utf-8" />
 	</head>
 	<body>
-		Login do Adm deu certo!!!
+		<a href = "sobreAdministrador">Administradores</a><br />
+		<a href = "sobreTurmas">Turmas</a>
+		<a href = "logoutAdministrador">Encerrar Sessão</a>
 	</body>
 </html>
