@@ -13,7 +13,7 @@
 		<p><a href="#">Alunos</a></p>
 		<p><a href="mostrarEmprestimos">Empréstimos e Devoluções</a></p>
 		<p><a href="#">Turmas</a></p>
-		<p><a href="#">Monitores</a></p>
+		<p><a href="listarMonitores">Monitores</a></p>
 		<p><a href="#">Administradores</a></p>
 	</body>
 </html>
