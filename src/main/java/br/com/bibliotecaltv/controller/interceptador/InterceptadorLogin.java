@@ -65,15 +65,6 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 				!= null)){
 			return true;
 		}
-		if((request.getSession().getAttribute("usuarioLogadoAdministrador") == null)){
-			response.sendRedirect("realizarLoginAdministrador");
-			return false;
-		}
-		if((request.getSession().getAttribute("usuarioLogadoMonitor") 
-				== null)){
-			response.sendRedirect("realizarLoginMonitor");
-			return false;
-		}
 		response.sendRedirect("mostrarInicio");
 		return false;
 	}

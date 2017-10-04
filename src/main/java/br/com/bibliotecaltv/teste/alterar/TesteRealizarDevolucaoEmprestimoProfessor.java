@@ -10,7 +10,7 @@ public class TesteRealizarDevolucaoEmprestimoProfessor {
 		EmprestimoDAO dao = new EmprestimoDAO();
 		Emprestimo emprestimo = dao.listarPorId(Emprestimo.class,1L);
 		if(emprestimo.getDataDevolucao() == null){
-			emprestimo.setDataDevolucao(Calendar.getInstance().getTime());
+			emprestimo.setDataDevolucao(Calendar.getInstance());
 			dao.alterar(emprestimo);
 		}else{
 			System.out.println("Devolução já realizada");

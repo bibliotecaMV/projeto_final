@@ -12,16 +12,16 @@ public class TesteInserirLivro {
 		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
 		
 		Livro livro = new Livro();
-		livro.setTombo("23112015");
+		livro.setTombo("20170930");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
-		livro.setAutor("Pedro Lucas Oliveira de Matos");
-		livro.setEditora("Eryka");
+		livro.setAutor("Vinícius de Moraes");
+		livro.setEditora("Bienal");
 		livro.setExemplares(30L);
 		livro.setForma_aquisicao("comprado");
-		livro.setLocal_edicao("Dragão do Mar");
-		livro.setTitulo("The Love");
+		livro.setLocal_edicao("Nova York");
+		livro.setTitulo("A prova de fogo");
 		livro.setVolume(1L);
 		daoLivro.salvar(livro);
 	}

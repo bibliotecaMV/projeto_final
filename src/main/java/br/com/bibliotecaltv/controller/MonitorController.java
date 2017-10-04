@@ -10,18 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
+import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.dao.AlunoDAO;
 import br.com.bibliotecaltv.dao.MonitoresDAO;
+import br.com.bibliotecaltv.dao.TurmaDAO;
 
 @Controller
 public class MonitorController {
 	MonitoresDAO dao;
 	AlunoDAO dao1;
-	
+	TurmaDAO dao2;
 	@Autowired
-	public MonitorController(MonitoresDAO dao,AlunoDAO dao1){
+	public MonitorController(MonitoresDAO dao,AlunoDAO dao1, TurmaDAO dao2){
 		this.dao = dao;
 		this.dao1 = dao1;
+		this.dao2 = dao2;
 	}
 	
 	@RequestMapping("realizarLoginMonitor")
@@ -55,15 +58,20 @@ public class MonitorController {
 	public String listarMonitor(Model model) {
 		model.addAttribute("monitores", dao.listar(Monitores.class));
 		model.addAttribute("alunos", dao1.listar(Aluno.class));
+		model.addAttribute("turmas", dao2.listar(Turma.class));
 		return "Monitor"; 
 	}
 	
 	@RequestMapping("adicionarMonitores")
-	public String adicionaMonitores(String usuario, String senha, String aluno) {
+	public String adicionaMonitores(String usuario, String senha, String aluno, String turma) throws Exception {
 		Monitores monitores = new Monitores();
 		monitores.setUsuario(usuario);
 		monitores.setSenha(senha);
-		
+		Long turma_id = dao2.listarIdPorNome("Turma", turma);
+		Long aluno_id = dao1.listarIdPorNomeTurma("Aluno", aluno, turma_id);
+		Aluno aluno1 = dao1.listarPorId(Aluno.class, aluno_id);
+		monitores.setAluno(aluno1);
+		dao.salvar(monitores);
 		return "redirect:listarMonitores";
 	}
 	

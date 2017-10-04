@@ -44,7 +44,14 @@
 				<td>Senha:</td>
 				<td><input type="password" name="senha" required/></td>
 			</tr>
-			
+			<tr>
+		        <td>Turmas</td>
+				<td><select name="turma">
+		        <c:forEach items="${turmas}" var="turma"> 	
+				    <option>${turma.nome}</option>
+				</c:forEach>
+				</select></td>
+			</tr>
 			<tr>
 		        <td>Alunos</td>
 				<td><select name="aluno">
