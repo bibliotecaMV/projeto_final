@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
@@ -31,7 +33,7 @@ public class AlunoController {
 	}
     
 	@RequestMapping("adicionarAluno")
-	public String adicionaAluno(Aluno aluno, BindingResult result) {
+	public String adicionaAluno(Aluno aluno, BindingResult result, String nome) {
 		dao.salvar(aluno);
 		return "redirect:listarAlunos";
 	}

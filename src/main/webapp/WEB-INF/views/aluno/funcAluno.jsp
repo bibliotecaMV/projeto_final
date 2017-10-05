@@ -36,12 +36,14 @@
 			</tr>
 			<tr>
 				<td>Turma:</td>
-				<td><select name="Listurmas" class="btn btn-primary dropdown-toggle">
+				<td>
+				  <select name="Listurmas" class="btn btn-primary dropdown-toggle">
 				            <option>Selecione</option>
-						<c:forEach items="${turma}" var="turmas">
-							<option value="${turmas.id}" name= "turma">${turmas.nome}</option>
-						</c:forEach>
-				</select></td>
+						     <c:forEach items="${turma}" var="turmas">
+							     <option value="${turmas.id}"> ${turmas.nome}</option>
+						     </c:forEach>
+				  </select>
+				</td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="Cadastrar"></td>

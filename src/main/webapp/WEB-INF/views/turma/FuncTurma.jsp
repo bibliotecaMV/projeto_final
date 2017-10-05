@@ -58,8 +58,8 @@
 				<tr>
 					<td><input type="text" value="${turmas.id}" class="form-control" id="disabledInput" disabled /></td>
 					<td><input type="text" value="${turmas.nome}" name="nome" /></td>
-					<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-					<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
+					<td><a href="deletaTurmas?id=${turmas.id}" >Remover</a></td>
+					<td><a href="alterarTurma?id=${turmas.id}" >Alterar</a></td>
 
 				</tr>
 			</c:forEach>
