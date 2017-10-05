@@ -39,14 +39,35 @@ public class EmprestimosController {
 	}
 	@RequestMapping("mostrarEmprestimos")
 	public String mostrarEmprestimos(){
-		return "redirect:listarDadosParaEmprestimos";
+		return "redirect:listarTodosEmprestimos";
 	}
-	@RequestMapping("listarDadosParaEmprestimos")
-	public String listarDadosParaEmprestimos(Model model){
-		model.addAttribute("emprestimos", daoEmprestimo.listar(Emprestimo.class));
+	
+	public void setarValoresFormulario(Model model){
+		model.addAttribute("livros", daoLivro.listar(Livro.class));
 		model.addAttribute("turmas", daoTurma.listar(Turma.class));
 		model.addAttribute("professores", daoProfessor.listar(Professor.class));
-		model.addAttribute("livros", daoLivro.listar(Livro.class));
+	}
+	@RequestMapping("listarTodosEmprestimos")
+	public String listarTodosEmprestimos(Model model){
+		model.addAttribute("emprestimos", daoEmprestimo.listar(Emprestimo.class));
+		setarValoresFormulario(model);
+		return "emprestimos/emprestimos";
+	}
+	@RequestMapping("listarAlunosEmprestimos")
+	public String listarAlunosEmprestimos(Model model){
+		model.addAttribute("emprestimos", 
+				daoEmprestimo.listarNotNullEntidade("Emprestimo", "aluno_id", "Aluno"));
+		return "emprestimos/emprestimos";
+	}
+	@RequestMapping("listarProfessoresEmprestimos")
+	public String listarProfessoresEmprestimos(Model model){
+		model.addAttribute("emprestimos", 
+				daoEmprestimo.listarNotNullEntidade("Emprestimo", "professor_id", "Professor"));
+		return "emprestimos/emprestimos";
+	}
+	@RequestMapping("listarEmprestimos")
+	public String listarEmprestimos(String option){
+		System.out.println(option);
 		return "emprestimos/emprestimos";
 	}
 	@RequestMapping("realizarEmprestimos")
@@ -68,10 +89,10 @@ public class EmprestimosController {
 			Professor professor1 = daoProfessor.listarPorId(Professor.class, professor_id);
 			emprestimo.setProfessor(professor1);
 		}else{
-			return "redirect:listarDadosParaEmprestimos";
+			return "redirect:listarTodosEmprestimos";
 		}
 		daoEmprestimo.salvar(emprestimo);
-		return "redirect:listarDadosParaEmprestimos";
+		return "redirect:listarTodosEmprestimos";
 	}
 	@RequestMapping("realizarDevolucao")
 	public void realizarDevolucao(Long id, HttpServletResponse response) throws Exception{

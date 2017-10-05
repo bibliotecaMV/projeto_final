@@ -16,8 +16,8 @@
 	<br>
 	<br>
 	<div id="escolha">
-		<input type="radio" name="radio" onclick="habilitarAlunos();" checked>Aluno
-		<input type="radio" name="radio" onclick="habilitarProfessores();">Professor
+		<input type="radio" name="radio" onclick="habilitarAlunosAdicionar();" checked>Aluno
+		<input type="radio" name="radio" onclick="habilitarProfessoresAdicionar();">Professor
 	</div>
 	<form action="realizarEmprestimos" method="POST" name="formulario">
 		<table id="esquerda">
@@ -50,15 +50,28 @@
 		</table>
 		<br> <input type="submit" value="Realizar Empréstimo" />
 	</form><br><br>
-	<div id="opcoes">
-		<input type="text" name="pesquisa" size="40"
-			placeholder="Nome do aluno ou professor"> <input type="radio"
-			name="option" value="todos" checked>Todos <input type="radio"
-			name="option" value="alunos">Alunos <input type="radio"
-			name="option" value="professores">Professores <input
-			type="checkbox" name="selection" value="devolvidos">Devolvidos
-		<a href="listarEmprestimos"><input type="submit" value="Pesquisar"></a>
-	</div>
+	<form name="formulario2" action="listarEmprestimos" method="post">
+		<div id="opcoes">
+			<input type="radio" name="option" value="todos" onclick="desabilitarAlunosProfessoresListar();" checked>Todos 
+			<input type="radio" name="option" value="alunos"  onclick="habilitarAlunosListar();">Alunos
+			<select name="nometurma" id="nometurma" disabled>
+				<option>Turma:</option>
+				<c:forEach items="${turmas}" var="turma">
+					<option>${turma.nome}</option>
+				</c:forEach>
+			</select>
+			<input type="text" name="nomealuno" id="nomealuno" disabled>
+			<input type="radio" name="option" value="professores"  onclick="habilitarProfessorListar();">Professores 
+			<select name="nomeprofessor" id="nomeprofessor" disabled>
+				<option>Professor:</option>
+				<c:forEach items="${professores}" var="professor">
+					<option>${professor.nome}</option>
+				</c:forEach>
+			</select> 
+			<input type="checkbox" name="selection" value="devolvidos">Devolvidos
+			<input type="submit" value="Pesquisar">
+		</div>
+	</form>
 	<br>
 	<table id="direito" border="1">
 		<tr>

@@ -12,13 +12,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
+@NamedQueries({
+	@NamedQuery(name = "Emprestimo.listarNotNullAluno", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+					+ " aluno_id is not null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullProfessor", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+					+ " professor_id is not null")
+})
 @Entity	
 @Table(name = "emprestimos")
 public class Emprestimo {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
