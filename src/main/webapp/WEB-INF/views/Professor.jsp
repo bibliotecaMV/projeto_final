@@ -16,7 +16,7 @@
         <tr>
          <th>Id</th>
          <th>Matricula</th>
-         <th>Nome Completo</th>
+         <th>Nome</th>
          <th>Deleta</th>
          <th>Alterar</th>
         </tr>
@@ -24,7 +24,7 @@
         <tr>
             <td>${professor.id}</td>
 		    <td>${professor.matricula}</td>
-		    <td>${professor.nomeCompleto}</td>
+		    <td>${professor.nome}</td>
 		    <td><a href = "deletaProfessores?id=${professor.id}">Remover</a></td>
 		    <td><a href = "mostraProfessores?id=${professor.id}">Alterar</a></td>
         </tr>
@@ -35,7 +35,7 @@
      <table>
        <tr>
          <td>Nome Completo:</td>
-         <td><input type="text" name="nomeCompleto" required/></td>
+         <td><input type="text" name="nome" required/></td>
        </tr>
        <tr>  
          <td>Matricula:</td>
