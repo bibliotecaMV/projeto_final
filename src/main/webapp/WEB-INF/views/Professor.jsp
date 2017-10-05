@@ -26,7 +26,7 @@
 		    <td>${professor.matricula}</td>
 		    <td>${professor.nome}</td>
 		    <td><a href = "deletaProfessores?id=${professor.id}">Remover</a></td>
-		    <td><a href = "mostraProfessores?id=${professor.id}">Alterar</a></td>
+		    <td><a href = "deletaProfessores?id=${professor.id}">Alterar</a></td>
         </tr>
         </c:forEach>
      </table>

@@ -37,11 +37,5 @@ public class ProfessorController {
 		dao.excluir(professor);
 		return "redirect:listarProfessores";
 	}
-	
-	@RequestMapping("alterarProfessores")
-	public String alterarProfessor(Professor professor) {
-		dao.alterar(professor);
-		return "redirect:listarProfessores";
-	}
 
 }
