@@ -140,7 +140,7 @@ public abstract class GenericDAO<T, I extends Serializable> {
 	}
 	@SuppressWarnings("unchecked")
 	public List<T> listarNotNullEntidade
-		(String classe, String campo, String complemento){
+		(String classe, String complemento){
 			Transaction transaction = null;
 			List<T> lista = null;
 			try{

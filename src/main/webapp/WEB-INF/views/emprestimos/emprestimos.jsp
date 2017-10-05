@@ -50,7 +50,7 @@
 		</table>
 		<br> <input type="submit" value="Realizar Empréstimo" />
 	</form><br><br>
-	<form name="formulario2" action="listarEmprestimos" method="post">
+	<form name="formulario2" action="listarEmprestimosDaTable" method="post">
 		<div id="opcoes">
 			<input type="radio" name="option" value="todos" onclick="desabilitarAlunosProfessoresListar();" checked>Todos 
 			<input type="radio" name="option" value="alunos"  onclick="habilitarAlunosListar();">Alunos
@@ -74,7 +74,8 @@
 	</form>
 	<br>
 	<table id="direito" border="1">
-		<tr>
+		<c:if test="${resultado == '1'}">
+			<tr>
 			<td>Id</td>
 			<td>Livro</td>
 			<td>Aluno</td>
@@ -143,6 +144,179 @@
 				<td><a href="#">Alterar</a></td>
 			</tr>
 		</c:forEach>
+		</c:if>
+		<c:if test="${resultado == '2'}">
+			<tr>
+			<td>Id</td>
+			<td>Livro</td>
+			<td>Aluno</td>
+			<td>Professor</td>
+			<td>Turma</td>
+			<td>Data do Empréstimo</td>
+			<td>Data da Devolução</td>
+			<td>Devolver</td>
+			<td>Excluir</td>
+			<td>Alterar</td>
+		</tr>
+		<c:forEach var="emprestimos" items="${emprestimos}">
+			<tr id="linha_${emprestimos.id}">
+				<td><center>
+						<input type="text" name="id" value="${emprestimos.id}" disabled />
+					</center></td>
+				<td><center>
+						<input type="text" name="tombo" value="${emprestimos.livro.tombo}" />
+					</center></td>
+
+				<c:if test="${emprestimos.aluno.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.aluno.nome != null }">
+					<td><center>
+							<input type="text" name="aluno" value="${emprestimos.aluno.nome}" />
+						</center></td>
+				</c:if>
+				<c:if test="${emprestimos.professor.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.professor.nome != null }">
+					<td><center>
+							<input type="text" name="professor"
+								value="${emprestimos.professor.nome}" />
+						</center></td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome != null }">
+					<td><center>
+							<input type="text" name="turma" value="${emprestimos.turma.nome}" />
+						</center></td>
+				</c:if>
+				<td><center>
+						<input type="text" name="dataEmprestimo"
+							value="${emprestimos.dataEmprestimoFormatada}" />
+					</center></td>
+				<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+				<td id="emprestimo_${emprestimos.id}">
+					<a href="#" onClick="realizarDevolucao(${emprestimos.id})">
+						Devolver Agora
+					</a>
+				</td>
+				<td><a href="#" onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+				<td><a href="#">Alterar</a></td>
+			</tr>
+		</c:forEach>
+		</c:if>
+		<c:if test="${resultado == '3'}">
+			<tr>
+			<td>Id</td>
+			<td>Livro</td>
+			<td>Aluno</td>
+			<td>Turma</td>
+			<td>Data do Empréstimo</td>
+			<td>Data da Devolução</td>
+			<td>Devolver</td>
+			<td>Excluir</td>
+			<td>Alterar</td>
+		</tr>
+		<c:forEach var="emprestimos" items="${emprestimos}">
+			<tr id="linha_${emprestimos.id}">
+				<td><center>
+						<input type="text" name="id" value="${emprestimos.id}" disabled />
+					</center></td>
+				<td><center>
+						<input type="text" name="tombo" value="${emprestimos.livro.tombo}" />
+					</center></td>
+
+				<c:if test="${emprestimos.aluno.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.aluno.nome != null }">
+					<td><center>
+							<input type="text" name="aluno" value="${emprestimos.aluno.nome}" />
+						</center></td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome != null }">
+					<td><center>
+							<input type="text" name="turma" value="${emprestimos.turma.nome}" />
+						</center></td>
+				</c:if>
+				<td><center>
+						<input type="text" name="dataEmprestimo"
+							value="${emprestimos.dataEmprestimoFormatada}" />
+					</center></td>
+				<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+				<td id="emprestimo_${emprestimos.id}">
+					<a href="#" onClick="realizarDevolucao(${emprestimos.id})">
+						Devolver Agora
+					</a>
+				</td>
+				<td><a href="#" onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+				<td><a href="#">Alterar</a></td>
+			</tr>
+		</c:forEach>
+		</c:if>
+		<c:if test="${resultado == '4'}">
+			<tr>
+			<td>Id</td>
+			<td>Livro</td>
+			<td>Aluno</td>
+			<td>Turma</td>
+			<td>Data do Empréstimo</td>
+			<td>Data da Devolução</td>
+			<td>Devolver</td>
+			<td>Excluir</td>
+			<td>Alterar</td>
+		</tr>
+		<c:forEach var="emprestimos" items="${emprestimos}">
+			<tr id="linha_${emprestimos.id}">
+				<td><center>
+						<input type="text" name="id" value="${emprestimos.id}" disabled />
+					</center></td>
+				<td><center>
+						<input type="text" name="tombo" value="${emprestimos.livro.tombo}" />
+					</center></td>
+
+				<c:if test="${emprestimos.aluno.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.aluno.nome != null }">
+					<td><center>
+							<input type="text" name="aluno" value="${emprestimos.aluno.nome}" />
+						</center></td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome == null }">
+					<td>Vazio</td>
+				</c:if>
+				<c:if test="${emprestimos.turma.nome != null }">
+					<td><center>
+							<input type="text" name="turma" value="${emprestimos.turma.nome}" />
+						</center></td>
+				</c:if>
+				<td><center>
+						<input type="text" name="dataEmprestimo"
+							value="${emprestimos.dataEmprestimoFormatada}" />
+					</center></td>
+				<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+				<td id="emprestimo_${emprestimos.id}">
+					<a href="#" onClick="realizarDevolucao(${emprestimos.id})">
+						Devolver Agora
+					</a>
+				</td>
+				<td><a href="#" onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+				<td><a href="#">Alterar</a></td>
+			</tr>
+		</c:forEach>
+		</c:if>
+		<c:if test="${resultado == '5'}">
+			Deu certo 5
+		</c:if>
+		<c:if test="${resultado == '6'}">
+			Deu certo 6
+		</c:if>
 	</table>
 	
 

@@ -55,7 +55,38 @@ public class EmprestimosController {
 	@RequestMapping("listarEmprestimosDaTable")
 	public String listarEmprestimosDaTable(String option, String turma2,
 			String aluno2, String professor2, String selection, Model model){
-		
+		if(option.equals("todos")){
+			if(selection != null){
+				model.addAttribute("resultado", 1L);
+				model.addAttribute("emprestimos", daoEmprestimo.listar(Emprestimo.class));
+			}else{
+				model.addAttribute("resultado", 2L);
+				model.addAttribute("emprestimos", 
+						daoEmprestimo.listarNotNullEntidade("Emprestimo","Emprestimo"));
+			}
+		}else if(option.equals("alunos")){
+			if(selection != null){
+				model.addAttribute("resultado", 3L);
+				model.addAttribute("emprestimos", 
+						daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoDevolvidos"));
+			}else{
+				model.addAttribute("resultado", 4L);
+				model.addAttribute("emprestimos", 
+						daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoNaoDevolvidos"));
+			}
+		}else if(option.equals("professores")){
+			if(selection != null){
+				model.addAttribute("resultado", 5L);
+				model.addAttribute("emprestimos", 
+						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorDevolvidos"));
+			}else{
+				model.addAttribute("resultado", 6L);
+				model.addAttribute("emprestimos", 
+						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorNaoDevolvidos"));
+			}
+		}else{
+			System.out.println("erro");
+		}
 		return "emprestimos/emprestimos";
 	}
 	@RequestMapping("realizarEmprestimos")

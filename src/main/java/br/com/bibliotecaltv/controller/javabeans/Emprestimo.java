@@ -16,13 +16,22 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-@NamedQueries({
-	@NamedQuery(name = "Emprestimo.listarNotNullAluno", 
+@NamedQueries({					
+	@NamedQuery(name = "Emprestimo.listarNotNullEmprestimo", 
 			query = "select emprestimo from Emprestimo emprestimo where"
-					+ " aluno_id is not null"),
-	@NamedQuery(name = "Emprestimo.listarNotNullProfessor", 
+				+ " dataDevolucao is null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoDevolvidos", 
 			query = "select emprestimo from Emprestimo emprestimo where"
-					+ " professor_id is not null")
+				+ " aluno_id is not null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullProfessorDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " professor_id is not null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoNaoDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " aluno_id is not null and dataDevolucao is null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullProfessorNaoDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " professor_id is not null and dataDevolucao is null")
 })
 @Entity	
 @Table(name = "emprestimos")
@@ -137,14 +146,16 @@ public class Emprestimo {
 		return dataEmprestimoFormatada;
 	}
 	public void setDataDevolucaoFormatada(String dataDevolucao){
-		Calendar date = new GregorianCalendar();
-		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		try {
-			date.setTime(sd.parse(dataDevolucao));
-		} catch (Exception e) {
-			e.printStackTrace();
+		if(dataDevolucao != null){
+			Calendar date = new GregorianCalendar();
+			SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			try {
+				date.setTime(sd.parse(dataDevolucao));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			setDataDevolucao(date);
 		}
-		setDataDevolucao(date);
 		this.dataDevolucaoFormatada = dataDevolucao;
 	}
 	public String getDataDevolucaoFormatada(){
