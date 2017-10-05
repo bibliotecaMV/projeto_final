@@ -10,10 +10,9 @@ import org.hibernate.Transaction;
 
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
-
 public abstract class GenericDAO<T, I extends Serializable> {
 	Session session = HibernateUtil.getSession();
-	
+
 	public T salvar(T entity) {
 		Transaction transaction = null;
 		try {
@@ -57,79 +56,84 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			}
 		}
 	}
+
 	@SuppressWarnings("unchecked")
-	public List<T> listar(Class<T> classe){
+	public List<T> listar(Class<T> classe) {
 		Transaction transaction = null;
 		List<T> lista = null;
-		try{
+		try {
 			transaction = session.beginTransaction();
 			Criteria selectAll = session.createCriteria(classe);
 			transaction.commit();
 			lista = selectAll.list();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
 		}
 		return lista;
 	}
+
 	@SuppressWarnings("unchecked")
-	public T listarPorId(Class<T> classe, Long pk) throws Exception{
+	public T listarPorId(Class<T> classe, Long pk) throws Exception {
 		Transaction transaction = null;
 		try {
 			transaction = session.beginTransaction();
 			T entity = (T) session.load(classe, pk);
 			session.flush();
 			transaction.commit();
-			return  entity;
-		}catch(RuntimeException e){
+			return entity;
+		} catch (RuntimeException e) {
 			throw e;
 		}
 	}
+
 	@SuppressWarnings("unchecked")
-	public boolean realizarLoginUsuario(String classe, String usuario, String senha){
+	public boolean realizarLoginUsuario(String classe, String usuario, String senha) {
 		Transaction transaction = null;
 		T entity = null;
-		try{
+		try {
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".realizarLogin");
 			consulta.setString("usuario", usuario);
 			consulta.setString("senha", senha);
 			entity = (T) consulta.uniqueResult();
 			transaction.commit();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
 		}
-		if(entity == null){
+		if (entity == null) {
 			return false;
-		}else{
+		} else {
 			return true;
 		}
-		
+
 	}
-	public Long listarIdPorNome(String classe, String nome){
+
+	public Long listarIdPorNome(String classe, String nome) {
 		Transaction transaction = null;
 		Long id = null;
-		try{
+		try {
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".listarIdPorNome");
 			consulta.setString("nome", nome);
 			id = (Long) consulta.uniqueResult();
 			transaction.commit();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
 		}
 		return id;
 	}
+
 	@SuppressWarnings("unchecked")
-	public List<T> listarPorFK(String classe, Long fk, String campo){
+	public List<T> listarPorFK(String classe, Long fk, String campo) {
 		Transaction transaction = null;
 		List<T> lista = null;
-		try{
+		try {
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".listarPorFK");
 			consulta.setLong(campo, fk);
 			lista = consulta.list();
 			transaction.commit();
-		}catch(RuntimeException e){
+		} catch (RuntimeException e) {
 			throw e;
 		}
 		return lista;

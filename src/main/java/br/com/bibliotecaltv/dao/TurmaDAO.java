@@ -6,4 +6,5 @@ import br.com.bibliotecaltv.controller.javabeans.Turma;
 
 @Repository
 public class TurmaDAO extends GenericDAO<Turma, Long> {
+
 }

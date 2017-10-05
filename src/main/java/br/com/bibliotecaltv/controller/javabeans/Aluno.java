@@ -11,29 +11,27 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
 @Entity
 @NamedQueries({
-	@NamedQuery(name = "Aluno.listarIdPorNomeTurma", 
-			query = "select id from Aluno aluno where"
-					+ " nome = :nome and turma_id = :turma_id"),
-	@NamedQuery(name = "Aluno.listarPorFK", 
-			query = "select aluno from Aluno aluno where"
-					+ " turma_id = :turma_id") 
-})
-@Table(name="alunos")
+		@NamedQuery(name = "Aluno.listarIdPorNomeTurma", query = "select id from Aluno aluno where"
+				+ " nome = :nome and turma_id = :turma_id"),
+		@NamedQuery(name = "Aluno.listarPorFK", query = "select aluno from Aluno aluno where"
+				+ " turma_id = :turma_id") })
+@Table(name = "alunos")
 public class Aluno {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(unique = true,name="nome", nullable = false)
+	@Column(unique = true, name = "nome", nullable = false)
 	private String nome;
 
-	@Column(name="numero", nullable = false)
+	@Column(name = "numero", nullable = false)
 	private Long numero;
 
-	@Column(unique = true, name="matricula", nullable = false)
+	@Column(unique = true, name = "matricula", nullable = false)
 	private String matricula;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -43,30 +41,39 @@ public class Aluno {
 	public Turma getTurma() {
 		return turma;
 	}
+
 	public void setTurma(Turma turma) {
 		this.turma = turma;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public Long getNumero() {
 		return numero;
 	}
+
 	public void setNumero(Long numero) {
 		this.numero = numero;
 	}
+
 	public String getMatricula() {
 		return matricula;
 	}
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}

@@ -5,10 +5,10 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
+
 import br.com.bibliotecaltv.controller.javabeans.Monitores;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.dao.AlunoDAO;
@@ -20,48 +20,49 @@ public class MonitorController {
 	MonitoresDAO dao;
 	AlunoDAO dao1;
 	TurmaDAO dao2;
+
 	@Autowired
-	public MonitorController(MonitoresDAO dao,AlunoDAO dao1, TurmaDAO dao2){
+	public MonitorController(MonitoresDAO dao, AlunoDAO dao1, TurmaDAO dao2) {
 		this.dao = dao;
 		this.dao1 = dao1;
 		this.dao2 = dao2;
 	}
-	
+
 	@RequestMapping("realizarLoginMonitor")
-	public String realizarLogin(){
-		return "teste.monitor/loginMonitor";
+	public String realizarLogin() {
+		return "monitor/loginMonitor";
 	}
+
 	@RequestMapping("verificarLoginMonitor")
-	public String verificarLoginMonitor(Monitores monitor, HttpSession session){
-		boolean verifica = dao.realizarLoginUsuario("Monitores", 
-				monitor.getUsuario(), monitor.getSenha());
-		if(verifica == true){
+	public String verificarLoginMonitor(Monitores monitor, HttpSession session) {
+		boolean verifica = dao.realizarLoginUsuario("Monitores", monitor.getUsuario(), monitor.getSenha());
+		if (verifica == true) {
 			session.setAttribute("usuarioLogadoMonitor", monitor);
-			return "teste.monitor/loginDeuCerto";
-		}else{
+			return "monitor/loginDeuCerto";
+		} else {
 			return "redirect:realizarLoginMonitor";
 		}
 	}
-	
+
 	@RequestMapping("acessarFormularioLogadoMonitor")
-	public String acessarFormularioLogado(){
-		return "teste.monitor/acessarFormularioLogado";
+	public String acessarFormularioLogado() {
+		return "monitor/acessarFormularioLogado";
 	}
-	
+
 	@RequestMapping("logoutMonitor")
-	public String encerrarSessao(HttpSession session){
+	public String encerrarSessao(HttpSession session) {
 		session.invalidate();
 		return "redirect:realizarLoginMonitor";
 	}
-	
+
 	@RequestMapping("listarMonitores")
 	public String listarMonitor(Model model) {
 		model.addAttribute("monitores", dao.listar(Monitores.class));
 		model.addAttribute("alunos", dao1.listar(Aluno.class));
 		model.addAttribute("turmas", dao2.listar(Turma.class));
-		return "Monitor"; 
+		return "Monitor";
 	}
-	
+
 	@RequestMapping("adicionarMonitores")
 	public String adicionaMonitores(String usuario, String senha, String aluno, String turma) throws Exception {
 		Monitores monitores = new Monitores();
@@ -74,11 +75,12 @@ public class MonitorController {
 		dao.salvar(monitores);
 		return "redirect:listarMonitores";
 	}
-	
+
 	@RequestMapping("deletaMonitores")
 	public String deletaProfessor(Long id) throws Exception {
 		Monitores monitores = dao.listarPorId(Monitores.class, id);
 		dao.excluir(monitores);
 		return "redirect:listarMonitores";
 	}
+
 }
