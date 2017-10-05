@@ -21,7 +21,8 @@ public class Monitores {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(name = "usuario", nullable = false)
+	@Column(unique = true, name = "usuario", nullable = false)
+
 	private String usuario;
 
 	@Column(name = "senha", nullable = false)

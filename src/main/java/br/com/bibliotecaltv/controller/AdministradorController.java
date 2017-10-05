@@ -26,21 +26,28 @@ public class AdministradorController {
 		return "administrador/loginAdministrador";
 	}
 
+	@RequestMapping("mostrarPainelAdministrador")
+	public String mostrarPainelAdministrador() {
+		return "administrador/painelAdministrador";
+	}
+
 	@RequestMapping("verificarLoginAdministrador")
 	public String verificarLogin(Administrador administrador, HttpSession session) {
 		boolean verifica = dao.realizarLoginUsuario("Administrador", administrador.getUsuario(),
 				administrador.getSenha());
 		if (verifica == true) {
 			session.setAttribute("usuarioLogadoAdministrador", administrador);
-			return "administrador/loginDeuCerto";
+			return "administrador/painelAdministrador";
 		} else {
+
 			return "redirect:realizarLoginAdministrador";
 		}
 	}
 
 	@RequestMapping("acessarFormularioLogadoAdministrador")
+
 	public String acessarFormularioLogado() {
-		return "administrador/acessarFormularioLogado";
+		return "administrador/acessarFormularioLogadoAdministrador";
 	}
 
 	@RequestMapping("logoutAdministrador")
@@ -72,14 +79,5 @@ public class AdministradorController {
 	public String sobreTurma() {
 		return "redirect:listaAdministradores";
 	}
-	
-	@RequestMapping("alteraAdministrador")
-	public String alteraAdm(Administrador adm, String usuario, Long id ) throws Exception {
-		Administrador administrador = dao.listarPorId(Administrador.class, id);
-		adm.setUsuario(usuario);
-		dao.alterar(adm);
-	    return "redirect:listaAdministradores";
-	}
-	
-	
+
 }

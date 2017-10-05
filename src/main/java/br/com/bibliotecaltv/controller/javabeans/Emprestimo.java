@@ -1,6 +1,8 @@
 package br.com.bibliotecaltv.controller.javabeans;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity	
 @Table(name = "emprestimos")
@@ -20,11 +23,11 @@ public class Emprestimo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(nullable = false)
-	private Date dataEmprestimo;
+	@Column(nullable = true)
+	private Calendar dataEmprestimo;
 
 	@Column(nullable = true)
-	private Date dataDevolucao;
+	private Calendar dataDevolucao;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = true)
@@ -37,15 +40,18 @@ public class Emprestimo {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
 	private Livro livro;
-
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false)
-	private Genero genero;
-
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = true)
 	private Professor professor;
 
+	@Transient
+	private String dataEmprestimoFormatada;
+	
+	@Transient
+	private String dataDevolucaoFormatada;
+	
+	
 	public Aluno getAluno() {
 		return aluno;
 	}
@@ -69,15 +75,7 @@ public class Emprestimo {
 	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
-
-	public Genero getGenero() {
-		return genero;
-	}
-
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-
+	
 	public Professor getProfessor() {
 		return professor;
 	}
@@ -94,22 +92,61 @@ public class Emprestimo {
 		this.id = id;
 	}
 
-	public Date getDataEmprestimo() {
+	public Calendar getDataEmprestimo() {
 		return dataEmprestimo;
 	}
 
-	public void setDataEmprestimo(Date dataEmprestimo) {
+	public void setDataEmprestimo(Calendar dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 
-	public Date getDataDevolucao() {
+	public Calendar getDataDevolucao() {
 		return dataDevolucao;
 	}
 
-	public void setDataDevolucao(Date dataDevolucao) {
+	public void setDataDevolucao(Calendar dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
-
+	public void setDataEmprestimoFormatada(String dataEmprestimo){
+		Calendar date = new GregorianCalendar();
+		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		try {
+			date.setTime(sd.parse(dataEmprestimo));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		setDataEmprestimo(date);
+		this.dataEmprestimoFormatada = dataEmprestimo;
+	}
+	public String getDataEmprestimoFormatada(){
+		SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		try{
+			this.dataEmprestimoFormatada = s.format(dataEmprestimo.getTime());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return dataEmprestimoFormatada;
+	}
+	public void setDataDevolucaoFormatada(String dataDevolucao){
+		Calendar date = new GregorianCalendar();
+		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		try {
+			date.setTime(sd.parse(dataDevolucao));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		setDataDevolucao(date);
+		this.dataDevolucaoFormatada = dataDevolucao;
+	}
+	public String getDataDevolucaoFormatada(){
+		SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		try{
+			this.dataDevolucaoFormatada = s.format(dataDevolucao.getTime());
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return dataDevolucaoFormatada;
+	}
 	@Override
 	public String toString() {
 		return "Emprestimo [id=" + id + ", dataEmprestimo=" + dataEmprestimo

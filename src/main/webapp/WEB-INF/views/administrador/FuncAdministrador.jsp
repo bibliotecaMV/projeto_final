@@ -8,16 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Sobre Administradores</title>
 <style type="text/css">
-
-
-
 </style>
 </head>
 <body>
 	<br />
 	<center>
 
-		<h1 >Administradores</h1>
+		<h1>Administradores</h1>
 
 		<br /> Adicione um novo: <br />
 		<form action="adicionaAdministrador" method="post">

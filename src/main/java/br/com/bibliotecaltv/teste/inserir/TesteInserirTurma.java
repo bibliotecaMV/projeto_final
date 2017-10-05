@@ -10,6 +10,10 @@ public class TesteInserirTurma {
 		Turma turma = new Turma();
 		turma.setNome("34A");
 		dao.salvar(turma);
+		
+		Turma turma2 = new Turma();
+		turma2.setNome("3B");
+		dao.salvar(turma2);
 	}
 
 }

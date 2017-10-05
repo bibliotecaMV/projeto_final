@@ -1,7 +1,5 @@
 package br.com.bibliotecaltv.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,6 @@ import br.com.bibliotecaltv.dao.TurmaDAO;
 
 @Controller
 public class TurmaController {
-
 	private TurmaDAO dao;
 
 	@Autowired
@@ -44,6 +41,5 @@ public class TurmaController {
 	public String sobreTurma() {
 		return "redirect:listarTurmas";
 	}
-
 
 }

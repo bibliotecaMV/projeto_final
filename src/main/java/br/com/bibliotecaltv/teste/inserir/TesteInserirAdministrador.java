@@ -5,11 +5,11 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 
 public class TesteInserirAdministrador {
 	public static void main(String[] args) {
-		
-			AdministradorDAO dao = new AdministradorDAO();
-			Administrador administrador = new Administrador();
-			administrador.setUsuario("mayk");
-			administrador.setSenha("1234");
-			dao.salvar(administrador);
+
+		AdministradorDAO dao = new AdministradorDAO();
+		Administrador administrador = new Administrador();
+		administrador.setUsuario("manpipoca");
+		administrador.setSenha("1234");
+		dao.salvar(administrador);
 	}
 }

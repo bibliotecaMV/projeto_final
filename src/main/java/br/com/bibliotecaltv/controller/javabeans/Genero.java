@@ -14,10 +14,10 @@ public class Genero {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(unique = true,nullable = false)
 	private String sigla;
 	
-	@Column(nullable = false)
+	@Column(unique = true,nullable = false)
 	private String descricao;
 
 	public Long getId() {

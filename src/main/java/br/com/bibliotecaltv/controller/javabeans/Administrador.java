@@ -22,7 +22,7 @@ public class Administrador {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Column(nullable = false)
+	@Column(unique = true, nullable = false)
 	private String usuario;
 	
 	@Column(nullable = false)
