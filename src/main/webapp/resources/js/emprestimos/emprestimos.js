@@ -10,27 +10,27 @@ function removerEmprestimo(id) {
 	});
 }
 function habilitarAlunosAdicionar(){
-	document.getElementById("turma").disabled = false;
-	document.getElementById("aluno").disabled = false;
-	document.getElementById("professor").disabled = true;
+	document.getElementById("turma1").disabled = false;
+	document.getElementById("aluno1").disabled = false;
+	document.getElementById("professor1").disabled = true;
 }
 function habilitarProfessoresAdicionar(){
-	document.getElementById("turma").disabled = true;
-	document.getElementById("aluno").disabled = true;
-	document.getElementById("professor").disabled = false;
+	document.getElementById("turma1").disabled = true;
+	document.getElementById("aluno1").disabled = true;
+	document.getElementById("professor1").disabled = false;
 }
 function habilitarAlunosListar(){
-	document.getElementById("nome_turma").disabled = false;
-	document.getElementById("nome_aluno").disabled = false;
-	document.getElementById("nome_professor").disabled = true;
+	document.getElementById("turma2").disabled = false;
+	document.getElementById("aluno2").disabled = false;
+	document.getElementById("professor2").disabled = true;
 }
-function habilitarProfessoresListar(){
-	document.getElementById("nome_turma").disabled = true;
-	document.getElementById("nome_aluno").disabled = true;
-	document.getElementById("nome_professor").disabled = false;
+function habilitarProfessorListar(){
+	document.getElementById("turma2").disabled = true;
+	document.getElementById("aluno2").disabled = true;
+	document.getElementById("professor2").disabled = false;
 }
 function desabilitarAlunosProfessoresListar(){
-	document.getElementById("nome_turma").disabled = true;
-	document.getElementById("nome_aluno").disabled = true;
-	document.getElementById("nome_professor").disabled = true;
+	document.getElementById("turma2").disabled = true;
+	document.getElementById("aluno2").disabled = true;
+	document.getElementById("professor2").disabled = true;
 }

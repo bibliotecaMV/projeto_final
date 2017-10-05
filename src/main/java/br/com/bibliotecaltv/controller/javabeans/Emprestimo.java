@@ -148,11 +148,13 @@ public class Emprestimo {
 		this.dataDevolucaoFormatada = dataDevolucao;
 	}
 	public String getDataDevolucaoFormatada(){
-		SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		try{
-			this.dataDevolucaoFormatada = s.format(dataDevolucao.getTime());
-		}catch(Exception e){
-			e.printStackTrace();
+		if(dataDevolucao != null){
+			SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			try{
+				this.dataDevolucaoFormatada = s.format(dataDevolucao.getTime());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 		return dataDevolucaoFormatada;
 	}

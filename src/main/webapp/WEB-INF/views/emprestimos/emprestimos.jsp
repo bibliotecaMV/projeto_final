@@ -23,11 +23,11 @@
 		<table id="esquerda">
 			<tr>
 				<td>Tombo:</td>
-				<td><input type="text" name="tombo" /></td>
+				<td><input type="text" name="tombo1" /></td>
 			</tr>
 			<tr>
 				<td>Turma:</td>
-				<td><select name="turma" id="turma">
+				<td><select name="turma1" id="turma1">
 						<option selected>Selecione</option>
 						<c:forEach items="${turmas}" var="turma">
 							<option>${turma.nome}</option>
@@ -36,11 +36,11 @@
 			</tr>
 			<tr>
 				<td>Aluno:</td>
-				<td><input type="text" name="aluno" id="aluno" /></td>
+				<td><input type="text" name="aluno1" id="aluno1" /></td>
 			</tr>
 			<tr>
 				<td>Professor:</td>
-				<td><select name="professor" id="professor" disabled>
+				<td><select name="professor1" id="professor1" disabled>
 						<option selected>Selecione</option>
 						<c:forEach items="${professores}" var="professor">
 							<option>${professor.nome}</option>
@@ -54,15 +54,15 @@
 		<div id="opcoes">
 			<input type="radio" name="option" value="todos" onclick="desabilitarAlunosProfessoresListar();" checked>Todos 
 			<input type="radio" name="option" value="alunos"  onclick="habilitarAlunosListar();">Alunos
-			<select name="nometurma" id="nometurma" disabled>
+			<select name="turma2" id="turma2" disabled>
 				<option>Turma:</option>
 				<c:forEach items="${turmas}" var="turma">
 					<option>${turma.nome}</option>
 				</c:forEach>
 			</select>
-			<input type="text" name="nomealuno" id="nomealuno" disabled>
+			<input type="text" name="aluno2" id="aluno2" disabled>
 			<input type="radio" name="option" value="professores"  onclick="habilitarProfessorListar();">Professores 
-			<select name="nomeprofessor" id="nomeprofessor" disabled>
+			<select name="professor2" id="professor2" disabled>
 				<option>Professor:</option>
 				<c:forEach items="${professores}" var="professor">
 					<option>${professor.nome}</option>

@@ -8,11 +8,9 @@ import br.com.bibliotecaltv.dao.MonitoresDAO;
 public class TesteInserirMonitor {
 	public static void main(String[] args) throws Exception {
 		MonitoresDAO daoMonitores = new MonitoresDAO();
-		
 		AlunoDAO daoAluno = new AlunoDAO();
-		
+
 		Aluno aluno = daoAluno.listarPorId(Aluno.class, 4L);
-		
 		Monitores monitores = new Monitores();
 		monitores.setAluno(aluno);
 		monitores.setUsuario("Jujuba");

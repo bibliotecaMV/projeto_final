@@ -41,7 +41,6 @@ public class EmprestimosController {
 	public String mostrarEmprestimos(){
 		return "redirect:listarTodosEmprestimos";
 	}
-	
 	public void setarValoresFormulario(Model model){
 		model.addAttribute("livros", daoLivro.listar(Livro.class));
 		model.addAttribute("turmas", daoTurma.listar(Turma.class));
@@ -53,21 +52,10 @@ public class EmprestimosController {
 		setarValoresFormulario(model);
 		return "emprestimos/emprestimos";
 	}
-	@RequestMapping("listarAlunosEmprestimos")
-	public String listarAlunosEmprestimos(Model model){
-		model.addAttribute("emprestimos", 
-				daoEmprestimo.listarNotNullEntidade("Emprestimo", "aluno_id", "Aluno"));
-		return "emprestimos/emprestimos";
-	}
-	@RequestMapping("listarProfessoresEmprestimos")
-	public String listarProfessoresEmprestimos(Model model){
-		model.addAttribute("emprestimos", 
-				daoEmprestimo.listarNotNullEntidade("Emprestimo", "professor_id", "Professor"));
-		return "emprestimos/emprestimos";
-	}
-	@RequestMapping("listarEmprestimos")
-	public String listarEmprestimos(String option){
-		System.out.println(option);
+	@RequestMapping("listarEmprestimosDaTable")
+	public String listarEmprestimosDaTable(String option, String turma2,
+			String aluno2, String professor2, String selection, Model model){
+		
 		return "emprestimos/emprestimos";
 	}
 	@RequestMapping("realizarEmprestimos")
