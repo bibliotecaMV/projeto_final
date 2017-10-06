@@ -48,16 +48,21 @@ public class EmprestimosController {
 		model.addAttribute("turmas", daoTurma.listar(Turma.class));
 		model.addAttribute("professores", daoProfessor.listar(Professor.class));
 	}
+	@RequestMapping("retornarJSPEmprestimos")
+	public String retornarJSPEmprestimos(){
+		return "emprestimos/emprestimos";
+	}
 	@RequestMapping("listarTodosEmprestimos")
 	public String listarTodosEmprestimos(Model model){
 		model.addAttribute("resultado", 1L);
 		model.addAttribute("emprestimos", daoEmprestimo.listar(Emprestimo.class));
 		setarValoresFormulario(model);
-		return "emprestimos/emprestimos";
+		return "redirect:retornarJSPEmprestimos";
 	}
 	@RequestMapping("listarEmprestimosDaTable")
 	public String listarEmprestimosDaTable(String option, String turma2,
 			String aluno2, String professor2, String selection, Model model){
+		setarValoresFormulario(model);
 		if(option.equals("todos")){
 			if(selection != null){
 				model.addAttribute("resultado", 1L);
@@ -87,10 +92,8 @@ public class EmprestimosController {
 				model.addAttribute("emprestimos", 
 						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorNaoDevolvidos"));
 			}
-		}else{
-			
 		}
-		return "emprestimos/emprestimos";
+		return "redirect:retornarJSPEmprestimos";
 	}
 	@RequestMapping("realizarEmprestimos")
 	public String realizarEmprestimos(String tombo1, String aluno1, 
@@ -163,7 +166,7 @@ public class EmprestimosController {
 			}
 			if(dataDevolucao != null){
 				SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-				Date date2 = sdf2.parse(dataEmprestimo);
+				Date date2 = sdf2.parse(dataDevolucao);
 				Calendar calendar2 = sdf2.getCalendar();
 				calendar2.setTime(date2);
 				System.out.println(calendar2.toString());
