@@ -7,9 +7,9 @@ public class TestaAlterarAdministrador {
 
 	public static void main(String[] args) throws Exception {
 		AdministradorDAO dao = new AdministradorDAO();
-		Administrador administrador = dao.listarPorId(Administrador.class, 1L);
-		administrador.setSenha("654321");
-		administrador.setUsuario("Lucas Pedro");
+		Administrador administrador = dao.listarPorId(Administrador.class, 5L);
+		administrador.setSenha("1234");
+		administrador.setUsuario("Richard");
 		dao.alterar(administrador);
 
 	}

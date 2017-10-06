@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public abstract class GenericDAO<T, I extends Serializable> {
@@ -137,5 +138,19 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			throw e;
 		}
 		return lista;
+	}
+
+	public Long buscarPorId(Class<Turma> class1, Long id) {
+		Transaction transaction = null;
+
+		try {
+			transaction = session.beginTransaction();
+			Query consulta = session.getNamedQuery(class1 + ".listarId");
+			consulta.setLong("id", id);
+			transaction.commit();
+		} catch (RuntimeException e) {
+			throw e;
+		}
+		return id;
 	}
 }
