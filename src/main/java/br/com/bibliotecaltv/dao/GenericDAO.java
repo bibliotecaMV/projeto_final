@@ -138,4 +138,19 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		return lista;
 	}
+	@SuppressWarnings("unchecked")
+	public List<T> listarNotNullEntidade
+		(String classe, String complemento){
+			Transaction transaction = null;
+			List<T> lista = null;
+			try{
+				transaction = session.beginTransaction();
+				Query consulta = session.getNamedQuery(classe+".listarNotNull"+complemento);
+				lista = consulta.list();
+				transaction.commit();
+			}catch(RuntimeException e){
+				throw e;
+			}
+			return lista;
+	}
 }

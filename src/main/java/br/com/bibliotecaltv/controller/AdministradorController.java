@@ -1,8 +1,6 @@
 package br.com.bibliotecaltv.controller;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,7 +43,6 @@ public class AdministradorController {
 	}
 
 	@RequestMapping("acessarFormularioLogadoAdministrador")
-
 	public String acessarFormularioLogado() {
 		return "administrador/acessarFormularioLogadoAdministrador";
 	}
@@ -63,7 +60,7 @@ public class AdministradorController {
 	}
 
 	@RequestMapping("adicionaAdministrador")
-	public String adicionaAdministrador(@Valid Administrador administrador, BindingResult result) {
+	public String adicionaAdministrador(Administrador administrador, BindingResult result) {
 		dao.salvar(administrador);
 		return "redirect:listaAdministradores";
 	}

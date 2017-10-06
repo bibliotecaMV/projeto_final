@@ -1,5 +1,6 @@
 package br.com.bibliotecaltv.controller.javabeans;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -12,13 +13,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
+@NamedQueries({					
+	@NamedQuery(name = "Emprestimo.listarNotNullEmprestimo", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " dataDevolucao is null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " aluno_id is not null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullProfessorDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " professor_id is not null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoNaoDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " aluno_id is not null and dataDevolucao is null"),
+	@NamedQuery(name = "Emprestimo.listarNotNullProfessorNaoDevolvidos", 
+			query = "select emprestimo from Emprestimo emprestimo where"
+				+ " professor_id is not null and dataDevolucao is null")
+})
 @Entity	
 @Table(name = "emprestimos")
 public class Emprestimo {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -112,7 +131,8 @@ public class Emprestimo {
 		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		try {
 			date.setTime(sd.parse(dataEmprestimo));
-		} catch (Exception e) {
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		setDataEmprestimo(date);
@@ -128,22 +148,26 @@ public class Emprestimo {
 		return dataEmprestimoFormatada;
 	}
 	public void setDataDevolucaoFormatada(String dataDevolucao){
-		Calendar date = new GregorianCalendar();
-		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		try {
-			date.setTime(sd.parse(dataDevolucao));
-		} catch (Exception e) {
-			e.printStackTrace();
+		if(dataDevolucao != null){
+			Calendar date = new GregorianCalendar();
+			SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			try {
+				date.setTime(sd.parse(dataDevolucao));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			setDataDevolucao(date);
+			this.dataDevolucaoFormatada = dataDevolucao;
 		}
-		setDataDevolucao(date);
-		this.dataDevolucaoFormatada = dataDevolucao;
 	}
 	public String getDataDevolucaoFormatada(){
-		SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		try{
-			this.dataDevolucaoFormatada = s.format(dataDevolucao.getTime());
-		}catch(Exception e){
-			e.printStackTrace();
+		if(dataDevolucao != null){
+			SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			try{
+				this.dataDevolucaoFormatada = s.format(dataDevolucao.getTime());
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 		return dataDevolucaoFormatada;
 	}
