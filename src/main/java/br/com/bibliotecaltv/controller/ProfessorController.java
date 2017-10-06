@@ -22,7 +22,7 @@ public class ProfessorController {
 	@RequestMapping("listarProfessores")
 	public String listarProfessores(Model model) {
 		model.addAttribute("professores", dao.listar(Professor.class));
-		return "Professor";
+		return "professor/Professor";
 	}
 
 	@RequestMapping("adicionaProfessores")
@@ -39,9 +39,12 @@ public class ProfessorController {
 	}
 	
 	@RequestMapping("alterarProfessores")
-	public String alterarProfessor(Professor professor) {
+	public String alterarProfessores(Long id, String matricula, String nome) throws Exception {
+		Professor professor = dao.listarPorId(Professor.class, id);
+		professor.setMatricula(matricula);
+		professor.setNome(nome);
 		dao.alterar(professor);
-		return "redirect:listarProfessores";
+		return "redirect:listarProfessores";	
 	}
 
 }

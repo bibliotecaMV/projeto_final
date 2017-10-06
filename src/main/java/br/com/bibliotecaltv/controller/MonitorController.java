@@ -60,7 +60,7 @@ public class MonitorController {
 		model.addAttribute("monitores", dao.listar(Monitores.class));
 		model.addAttribute("alunos", dao1.listar(Aluno.class));
 		model.addAttribute("turmas", dao2.listar(Turma.class));
-		return "Monitor";
+		return "monitor/Monitor";
 	}
 
 	@RequestMapping("adicionarMonitores")
@@ -82,5 +82,22 @@ public class MonitorController {
 		dao.excluir(monitores);
 		return "redirect:listarMonitores";
 	}
-
+    
+	@RequestMapping("alterarMonitores")
+	public String alterarMonitores(Long id, String usuario, String senha, String aluno, String turma) throws Exception{
+		Monitores monitores = dao.listarPorId(Monitores.class, id);
+		Long turma_id = dao2.listarIdPorNome("Turma", turma);
+		Long aluno_id = dao1.listarIdPorNomeTurma("Aluno", aluno, turma_id);
+		Aluno aluno1 = dao1.listarPorId(Aluno.class, aluno_id);
+		monitores.setSenha(senha);
+		monitores.setUsuario(usuario);
+		monitores.setAluno(aluno1);
+		try {
+			dao.alterar(monitores);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	    
+		return "redirect:listarMonitores";
+	}
 }

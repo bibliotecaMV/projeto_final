@@ -7,9 +7,9 @@ public class TesteInserirTurma {
 
 	public static void main(String[] args) {
 		TurmaDAO dao = new TurmaDAO();
-		Turma turma3 = new Turma();
-		turma3.setNome("3C");
-		dao.salvar(turma3);
+		Turma turma = new Turma();
+		turma.setNome("3A");
+		dao.salvar(turma);
 	}
 
 }
