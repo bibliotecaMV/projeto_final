@@ -1,5 +1,6 @@
 package br.com.bibliotecaltv.controller.javabeans;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -130,7 +131,8 @@ public class Emprestimo {
 		SimpleDateFormat sd = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		try {
 			date.setTime(sd.parse(dataEmprestimo));
-		} catch (Exception e) {
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		setDataEmprestimo(date);
@@ -155,8 +157,8 @@ public class Emprestimo {
 				e.printStackTrace();
 			}
 			setDataDevolucao(date);
+			this.dataDevolucaoFormatada = dataDevolucao;
 		}
-		this.dataDevolucaoFormatada = dataDevolucao;
 	}
 	public String getDataDevolucaoFormatada(){
 		if(dataDevolucao != null){

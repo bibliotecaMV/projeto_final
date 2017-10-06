@@ -43,7 +43,6 @@ public class AdministradorController {
 	}
 
 	@RequestMapping("acessarFormularioLogadoAdministrador")
-
 	public String acessarFormularioLogado() {
 		return "administrador/acessarFormularioLogadoAdministrador";
 	}

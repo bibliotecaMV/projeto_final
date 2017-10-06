@@ -14,7 +14,8 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 
 		if(((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
 				!= null)){
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
@@ -22,7 +23,8 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 		}
 		if(((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
 				!= null)){
 			response.sendRedirect("acessarFormularioLogadoMonitor");
@@ -30,14 +32,16 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 		}
 		if((((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
 				== null))){
 			return true;
 		}
 		if(((uri.endsWith("realizarLoginAdministrador") ||
 				uri.endsWith("verificarLoginAdministrador")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoAdministrador")
 				!= null)){
 			response.sendRedirect("acessarFormularioLogadoAdministrador");
@@ -45,14 +49,16 @@ public class InterceptadorLogin extends HandlerInterceptorAdapter{
 		}
 		if((((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
 				== null))){
 			return true;
 		}
 		if(((uri.endsWith("realizarLoginMonitor") ||
 				uri.endsWith("verificarLoginMonitor")
-				|| uri.endsWith("mostrarInicio"))&&
+				|| uri.endsWith("mostrarInicio")
+				|| uri.endsWith("iniciar"))&&
 				request.getSession().getAttribute("usuarioLogadoMonitor")
 				!= null)){
 			response.sendRedirect("acessarFormularioLogadoMonitor");
