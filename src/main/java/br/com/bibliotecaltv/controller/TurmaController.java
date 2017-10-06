@@ -37,12 +37,6 @@ public class TurmaController {
 		return "redirect:listarTurmas";
 	}
 
-	@RequestMapping("mostraTurma")
-	public String mostraTurma(Model model, Long id) {
-		model.addAttribute("turmas", dao.buscarPorId(Turma.class, id));
-		return "turma/alteraT";
-	}
-
 	@RequestMapping("alterarTurma")
 	public String alteraTurma(Long id, String nome) throws Exception {
 		Turma turma = dao.listarPorId(Turma.class, id);

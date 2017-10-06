@@ -47,7 +47,20 @@ public class AlunoController {
 		dao.excluir(aluno);
 		return "redirect:listarAlunos";
 	}
-
+    
+	@RequestMapping("alterarAluno")
+	public String alteraAluno(Long id, String nome, Long numero, String matricula, String turma) throws Exception {
+		Aluno aluno = dao.listarPorId(Aluno.class, id);
+		aluno.setNome(nome);
+		aluno.setNumero(numero);
+		aluno.setMatricula(matricula);
+		Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
+		Turma turma1 = daoTurma.listarPorId(Turma.class, turma_id);
+		aluno.setTurma(turma1);
+		dao.alterar(aluno);
+		return "redirect:listarAlunos";
+	}
+	
 	@RequestMapping("sobreAlunos")
 	public String sobreAluno() {
 		return "redirect:listarAlunos";
