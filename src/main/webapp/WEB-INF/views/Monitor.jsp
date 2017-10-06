@@ -42,15 +42,15 @@
 		<table>
 			<tr>
 				<td>Usuario:</td>
-				<td><input type="text" name="usuario" required/></td>
+				<td><input type="text" name="usuario" id="usuario" required/></td>
 			</tr>
 			<tr>
 				<td>Senha:</td>
-				<td><input type="password" name="senha" required/></td>
+				<td><input type="password" name="senha" id="senha" required/></td>
 			</tr>
 			<tr>
 		        <td>Turmas</td>
-				<td><select name="turma">
+				<td><select name="turma" id="turma">
 		        <c:forEach items="${turmas}" var="turma"> 	
 				    <option>${turma.nome}</option>
 				</c:forEach>
@@ -58,7 +58,7 @@
 			</tr>
 			<tr>
 		        <td>Alunos</td>
-				<td><select name="aluno">
+				<td><select name="aluno" id="aluno">
 		        <c:forEach items="${alunos}" var="aluno"> 	
 				    <option>${aluno.nome}</option>
 				</c:forEach>
