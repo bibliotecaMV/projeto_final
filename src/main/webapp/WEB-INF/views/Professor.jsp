@@ -21,13 +21,15 @@
          <th>Alterar</th>
         </tr>
         <c:forEach items="${professores}" var="professor">
+        <form action="alterarProfessores" method="post">
         <tr>
-            <td>${professor.id}</td>
-		    <td>${professor.matricula}</td>
-		    <td>${professor.nome}</td>
+            <td><input type="text" name="id" class="form-control" value="${professor.id}"/></td>
+		    <td><input type="text" name="matricula" value="${professor.matricula}"/></td>
+		    <td><input type="text" name="nome" value="${professor.nome}"/></td>
 		    <td><a href = "deletaProfessores?id=${professor.id}">Remover</a></td>
-		    <td><a href = "deletaProfessores?id=${professor.id}">Alterar</a></td>
+		    <td><input type="submit" value="Alterar"/></td>
         </tr>
+        </form>
         </c:forEach>
      </table>
      <h1>CADASTRAR PROFESSOR:</h1>

@@ -37,5 +37,14 @@ public class ProfessorController {
 		dao.excluir(professor);
 		return "redirect:listarProfessores";
 	}
+	
+	@RequestMapping("alterarProfessores")
+	public String alterarProfessores(Long id, String matricula, String nome) throws Exception {
+		Professor professor = dao.listarPorId(Professor.class, id);
+		professor.setMatricula(matricula);
+		professor.setNome(nome);
+		dao.alterar(professor);
+		return "redirect:listarProfessores";	
+	}
 
 }
