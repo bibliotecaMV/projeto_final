@@ -22,7 +22,7 @@ public class ProfessorController {
 	@RequestMapping("listarProfessores")
 	public String listarProfessores(Model model) {
 		model.addAttribute("professores", dao.listar(Professor.class));
-		return "Professor";
+		return "professor/Professor";
 	}
 
 	@RequestMapping("adicionaProfessores")
