@@ -51,9 +51,6 @@
 
 	</form>
 
-
-
-
 	<table border="1">
 		<tr>
 			<th size="15">id</th>
@@ -65,26 +62,22 @@
 			<th>Editar</th>
 		</tr>
 		<c:forEach items="${alunos}" var="aluno">
-		  <form action = "alterarAluno" method = "post">
-		  <tr>
-				<td><input type="text" value="${aluno.id}" name = "id"/></td>
-				<td><input type="text" value="${aluno.matricula}"
-					name="matricula" name = "matricula" /></td>
-				<td><input type="text" value="${aluno.nome}" name="nome" /></td>
-				<td><input type="text" value="${aluno.numero}" name="numero" /></td>
-				<td><input type="text" value="${aluno.turma.nome}" name="turma" /></td>
-				<td><a href="deletarAluno?id=${aluno.id}">Remover</a></td>
-				<td><input type = "submit" value ="Alterar" /></td>
+			<form action="alterarAluno" method="post">
+				<tr>
+					<td><input type="text" value="${aluno.id}" name="id" /></td>
+					<td><input type="text" value="${aluno.matricula}"
+						name="matricula" name="matricula" /></td>
+					<td><input type="text" value="${aluno.nome}" name="nome" /></td>
+					<td><input type="text" value="${aluno.numero}" name="numero" /></td>
+					<td><input type="text" value="${aluno.turma.nome}"
+						name="turma" /></td>
+					<td><a href="deletarAluno?id=${aluno.id}">Remover</a></td>
+					<td><input type="submit" value="Alterar" /></td>
 
-			</tr>
-		  
-		  </form>
-			
+				</tr>
+			</form>
 		</c:forEach>
-
 	</table>
-
-
 
 </body>
 </html>

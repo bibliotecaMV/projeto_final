@@ -47,7 +47,7 @@ public class AlunoController {
 		dao.excluir(aluno);
 		return "redirect:listarAlunos";
 	}
-    
+
 	@RequestMapping("alterarAluno")
 	public String alteraAluno(Long id, String nome, Long numero, String matricula, String turma) throws Exception {
 		Aluno aluno = dao.listarPorId(Aluno.class, id);
@@ -60,7 +60,7 @@ public class AlunoController {
 		dao.alterar(aluno);
 		return "redirect:listarAlunos";
 	}
-	
+
 	@RequestMapping("sobreAlunos")
 	public String sobreAluno() {
 		return "redirect:listarAlunos";

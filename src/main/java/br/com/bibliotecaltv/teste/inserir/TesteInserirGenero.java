@@ -7,7 +7,7 @@ public class TesteInserirGenero {
 	public static void main(String[] args) {
 		Genero genero = new Genero();
 		genero.setSigla("001");
-		genero.setDescricao("Romance");
+		genero.setDescricao("Aventura");
 		GeneroDAO dao = new GeneroDAO(); 
 		dao.salvar(genero);
 	}

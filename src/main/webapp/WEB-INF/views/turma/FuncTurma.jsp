@@ -60,11 +60,11 @@
 				<form method="post" action="alterarTurma">
 					<tr>
 						<td><input type="text" value="${turmas.id}"
-							class="form-control" name="id"/></td>
+							class="form-control" name="id" /></td>
 						<td><input type="text" value="${turmas.nome}" name="nome" /></td>
 						<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-						<td><input type="submit" value="Alterar"/></td>
-				<!--<div class="container">
+						<td><input type="submit" value="Alterar" /></td>
+						<!--<div class="container">
 						<div class="modal fade" id="myModal" role="dialog">
 							<div class="modal-dialog">
 								<div class="modal-content">
@@ -94,9 +94,9 @@
 
 					</div> -->
 
-				</tr>
+					</tr>
 				</form>
-					
+
 			</c:forEach>
 
 		</table>

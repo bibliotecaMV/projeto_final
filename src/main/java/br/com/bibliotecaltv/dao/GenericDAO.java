@@ -109,13 +109,14 @@ public abstract class GenericDAO<T, I extends Serializable> {
 
 	}
 
-	public Long listarIdPorNome(String classe, String nome) {
+	public Long listarIdPorNome(String classe, String nome, String descricao) {
 		Transaction transaction = null;
 		Long id = null;
 		try {
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".listarIdPorNome");
 			consulta.setString("nome", nome);
+		    consulta.setString("descricao", descricao);
 			id = (Long) consulta.uniqueResult();
 			transaction.commit();
 		} catch (RuntimeException e) {
@@ -123,6 +124,7 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		return id;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	public List<T> listarPorFK(String classe, Long fk, String campo) {
@@ -140,17 +142,4 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		return lista;
 	}
 
-	public Long buscarPorId(Class<Turma> class1, Long id) {
-		Transaction transaction = null;
-
-		try {
-			transaction = session.beginTransaction();
-			Query consulta = session.getNamedQuery(class1 + ".listarId");
-			consulta.setLong("id", id);
-			transaction.commit();
-		} catch (RuntimeException e) {
-			throw e;
-		}
-		return id;
-	}
 }
