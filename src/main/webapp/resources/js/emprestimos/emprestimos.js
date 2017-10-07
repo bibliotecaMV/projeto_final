@@ -1,7 +1,7 @@
 function realizarDevolucao(id) {
 	$.post("realizarDevolucao", {"id" : id}, function(resposta){
 		$("#emprestimo_"+id).html("Devolvido");
-		$("#campo_devolucao_"+id).html("<input type='text' name='dataDevolucaoFormatada' value="+resposta+" />");
+		$("#campo_devolucao_"+id).html(resposta);
 	});
 }
 function removerEmprestimo(id) {
@@ -9,13 +9,28 @@ function removerEmprestimo(id) {
 		$("#linha_"+id).closest("tr").hide();
 	});
 }
-function habilitarAlunos(){
-	document.getElementById("turma").disabled = false;
-	document.getElementById("aluno").disabled = false;
-	document.getElementById("professor").disabled = true;
+function habilitarAlunosAdicionar(){
+	document.getElementById("turma1").disabled = false;
+	document.getElementById("aluno1").disabled = false;
+	document.getElementById("professor1").disabled = true;
 }
-function habilitarProfessores(){
-	document.getElementById("turma").disabled = true;
-	document.getElementById("aluno").disabled = true;
-	document.getElementById("professor").disabled = false;
+function habilitarProfessoresAdicionar(){
+	document.getElementById("turma1").disabled = true;
+	document.getElementById("aluno1").disabled = true;
+	document.getElementById("professor1").disabled = false;
+}
+function habilitarAlunosListar(){
+	document.getElementById("turma2").disabled = false;
+	document.getElementById("aluno2").disabled = false;
+	document.getElementById("professor2").disabled = true;
+}
+function habilitarProfessorListar(){
+	document.getElementById("turma2").disabled = true;
+	document.getElementById("aluno2").disabled = true;
+	document.getElementById("professor2").disabled = false;
+}
+function desabilitarAlunosProfessoresListar(){
+	document.getElementById("turma2").disabled = true;
+	document.getElementById("aluno2").disabled = true;
+	document.getElementById("professor2").disabled = true;
 }

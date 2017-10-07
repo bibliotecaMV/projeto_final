@@ -6,14 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BIBLIOTECA LTV - MV INFORMATICA</title>
 
-<!-- Bootstrap -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
 </head>
 
@@ -22,7 +16,9 @@
 	<nav class="navbar navbar-default">
 		<div class="container">
 			<div id="logo" align="center">
-				<img src="logo.png">
+
+				<img src="resources/img/logo.png">
+
 			</div>
 		</div>
 	</nav>
@@ -46,7 +42,9 @@
 						<div id="centraliza" class="centraliza">
 							<center>
 								<div class="circulo">
-									<img src="adm.png" border="0">
+
+									<img src="resources/img/adm.png" border="0">
+
 								</div>
 							</center>
 						</div>
@@ -71,7 +69,9 @@
 						<div id="centraliza" class="centraliza">
 							<center>
 								<div class="circulo">
-									<img src="monitor.png" border="0">
+
+									<img src="resources/img/monitor.png" border="0">
+
 								</div>
 							</center>
 						</div>

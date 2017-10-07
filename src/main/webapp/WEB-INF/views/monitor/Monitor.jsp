@@ -19,18 +19,22 @@
 			<th>Usuario</th>
 			<th>Senha</th>
 			<th>aluno</th>
+			<th>turma</th>
 			<th>Excluir</th>
 			<th>Alterar</th>
 		</tr>
 		<c:forEach items="${monitores}" var="monitor">
+		<form action="alterarMonitores" method="post">
 			<tr>
-				<td>${monitor.id}</td>
-				<td>${monitor.usuario}</td>
-				<td>${monitor.senha}</td>
-				<td>${monitor.aluno.nome}</td>
+				<td><input type="text" name="id" class="form-control" value="${monitor.id}"/></td>
+				<td><input type="text" name="usuario" value="${monitor.usuario}"/></td>
+				<td><input type="text" name="senha" value="${monitor.senha}"/></td>
+				<td><input type="text" name="aluno" value="${monitor.aluno.nome}"/></td>
+				<td><input type="text" name="turma" value="${monitor.aluno.turma.nome}"/></td>
 				<td><a href = "deletaMonitores?id=${monitor.id}">Remover</a></td>
-				<td><a href = "deletaMonitores?id=${monitor.id}">Alterar</a></td>
+				<td><input type="submit" value="Alterar"/></td>
 			</tr>
+		</form>
 		</c:forEach>
 	</table>
 	<h1>CADASTRAR MONITOR:</h1>
@@ -38,15 +42,15 @@
 		<table>
 			<tr>
 				<td>Usuario:</td>
-				<td><input type="text" name="usuario" required/></td>
+				<td><input type="text" name="usuario" id="usuario" required/></td>
 			</tr>
 			<tr>
 				<td>Senha:</td>
-				<td><input type="password" name="senha" required/></td>
+				<td><input type="password" name="senha" id="senha" required/></td>
 			</tr>
 			<tr>
 		        <td>Turmas</td>
-				<td><select name="turma">
+				<td><select name="turma" id="turma">
 		        <c:forEach items="${turmas}" var="turma"> 	
 				    <option>${turma.nome}</option>
 				</c:forEach>
@@ -54,7 +58,7 @@
 			</tr>
 			<tr>
 		        <td>Alunos</td>
-				<td><select name="aluno">
+				<td><select name="aluno" id="aluno">
 		        <c:forEach items="${alunos}" var="aluno"> 	
 				    <option>${aluno.nome}</option>
 				</c:forEach>

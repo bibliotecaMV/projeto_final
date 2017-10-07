@@ -16,18 +16,20 @@
         <tr>
          <th>Id</th>
          <th>Matricula</th>
-         <th>Nome Completo</th>
+         <th>Nome</th>
          <th>Deleta</th>
          <th>Alterar</th>
         </tr>
         <c:forEach items="${professores}" var="professor">
+        <form action="alterarProfessores" method="post">
         <tr>
-            <td>${professor.id}</td>
-		    <td>${professor.matricula}</td>
-		    <td>${professor.nomeCompleto}</td>
+            <td><input type="text" name="id" class="form-control" value="${professor.id}"/></td>
+		    <td><input type="text" name="matricula" value="${professor.matricula}"/></td>
+		    <td><input type="text" name="nome" value="${professor.nome}"/></td>
 		    <td><a href = "deletaProfessores?id=${professor.id}">Remover</a></td>
-		    <td><a href = "mostraProfessores?id=${professor.id}">Alterar</a></td>
+		    <td><input type="submit" value="Alterar"/></td>
         </tr>
+        </form>
         </c:forEach>
      </table>
      <h1>CADASTRAR PROFESSOR:</h1>
@@ -35,7 +37,7 @@
      <table>
        <tr>
          <td>Nome Completo:</td>
-         <td><input type="text" name="nomeCompleto" required/></td>
+         <td><input type="text" name="nome" required/></td>
        </tr>
        <tr>  
          <td>Matricula:</td>

@@ -21,7 +21,7 @@ public class LivroController {
 		this.daoGenero = daoGenero;
 
 	}
-
+   /*
 	@RequestMapping("adicionarLivros")
 	public String adicionaLivro(String tombo, String forma_aquisicao, String titulo, String autor, Long volume,
 			Long exemplares, String editora, String local_edicao, String ano_editado, String genero)
@@ -43,7 +43,7 @@ public class LivroController {
 		daoLivro.salvar(livro);
 		return "redirect:listaLivros";
 	}
-
+*/
 	@RequestMapping("listaLivros")
 	public String listaLivros(Model model) {
 		model.addAttribute("livros", daoLivro.listar(Livro.class));

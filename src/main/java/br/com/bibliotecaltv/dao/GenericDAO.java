@@ -8,7 +8,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.sessaoHibernate.HibernateUtil;
 
 public abstract class GenericDAO<T, I extends Serializable> {
@@ -109,14 +108,13 @@ public abstract class GenericDAO<T, I extends Serializable> {
 
 	}
 
-	public Long listarIdPorNome(String classe, String nome, String descricao) {
+	public Long listarIdPorNome(String classe, String nome) {
 		Transaction transaction = null;
 		Long id = null;
 		try {
 			transaction = session.beginTransaction();
 			Query consulta = session.getNamedQuery(classe + ".listarIdPorNome");
 			consulta.setString("nome", nome);
-		    consulta.setString("descricao", descricao);
 			id = (Long) consulta.uniqueResult();
 			transaction.commit();
 		} catch (RuntimeException e) {
@@ -140,6 +138,22 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			throw e;
 		}
 		return lista;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<T> listarNotNullEntidade
+		(String classe, String complemento){
+			Transaction transaction = null;
+			List<T> lista = null;
+			try{
+				transaction = session.beginTransaction();
+				Query consulta = session.getNamedQuery(classe+".listarNotNull"+complemento);
+				lista = consulta.list();
+				transaction.commit();
+			}catch(RuntimeException e){
+				throw e;
+			}
+			return lista;
 	}
 
 }

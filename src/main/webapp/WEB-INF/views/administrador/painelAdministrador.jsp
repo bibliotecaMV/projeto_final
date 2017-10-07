@@ -14,7 +14,7 @@
 		<a href="sobreLivros">Livros</a>
 	</p>
 	<p>
-		<a href="#">Professores</a>
+		<a href="listarProfessores">Professores</a>
 	</p>
 	<p>
 		<a href="sobreAlunos">Alunos</a>
