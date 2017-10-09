@@ -46,7 +46,7 @@ public class MonitorController {
 
 	@RequestMapping("acessarFormularioLogadoMonitor")
 	public String acessarFormularioLogado() {
-		return "monitor/acessarFormularioLogado";
+		return "monitor/painelMonitor";
 	}
 
 	@RequestMapping("logoutMonitor")

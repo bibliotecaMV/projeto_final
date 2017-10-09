@@ -38,6 +38,14 @@ public class TurmaController {
 		return "redirect:listarTurmas";
 	}
 
+	@RequestMapping("alterarTurma")
+	public String alteraTurma(Long id, String nome) throws Exception {
+		Turma turma = dao.listarPorId(Turma.class, id);
+		turma.setNome(nome);
+		dao.alterar(turma);
+		return "redirect:listarTurmas";
+	}
+
 	@RequestMapping("sobreTurmas")
 	public String sobreTurma() {
 		return "redirect:listarTurmas";

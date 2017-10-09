@@ -12,7 +12,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "turmas")
 @NamedQueries({
-		@NamedQuery(name = "Turma.listarIdPorNome", query = "select id from Turma turma where" + " nome = :nome") })
+		@NamedQuery(name = "Turma.listarIdPorNome", query = "select id from Turma turma where" + " nome = :nome"), 
+		@NamedQuery(name = "Turma.listarId", query = "select id from Turma turma where" + " id = :id")
+})
 
 public class Turma {
 	@Id

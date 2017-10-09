@@ -29,7 +29,7 @@ public class AlunoController {
 	}
 
 	@RequestMapping("adicionarAluno")
-	public String adicionaMonitores(String nome, Long numero, String matricula, String turma) throws Exception {
+	public String adicionaAlunos(String nome, Long numero, String matricula, String turma) throws Exception {
 		Aluno aluno = new Aluno();
 		aluno.setNome(nome);
 		aluno.setNumero(numero);
@@ -45,6 +45,19 @@ public class AlunoController {
 	public String deletaATurma(Long id) throws Exception {
 		Aluno aluno = dao.listarPorId(Aluno.class, id);
 		dao.excluir(aluno);
+		return "redirect:listarAlunos";
+	}
+
+	@RequestMapping("alterarAluno")
+	public String alteraAluno(Long id, String nome, Long numero, String matricula, String turma) throws Exception {
+		Aluno aluno = dao.listarPorId(Aluno.class, id);
+		aluno.setNome(nome);
+		aluno.setNumero(numero);
+		aluno.setMatricula(matricula);
+		Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
+		Turma turma1 = daoTurma.listarPorId(Turma.class, turma_id);
+		aluno.setTurma(turma1);
+		dao.alterar(aluno);
 		return "redirect:listarAlunos";
 	}
 

@@ -17,8 +17,6 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/emprestimos/emprestimos.js"></script>
-</head>
-
 <body>
 	<nav class="navbar navbar-default">
 	<div class="container">
@@ -35,6 +33,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="submit" class="btn btn-warning">
+
 					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
 				</button>
 			</form>
@@ -90,14 +89,22 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-4">
-									<a href="listarTurmas"><button type="submit" class="btn btn-danger">Pesquisar</button></a>
+
+									<a href="listarTurmas"><button type="submit"
+											class="btn btn-danger">Pesquisar</button></a>
+
 								</div>
 							</div>
 						</div>
 
 						<br /> <br /> <br /> <br />
 
+
+
+
 						<div>
+
+
 							<table width="600px" class="table table-bordered">
 								<tr>
 									<td class="active">Id</td>
@@ -114,13 +121,18 @@
 										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
 										<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
 
+
 									</tr>
+
+
 								</c:forEach>
 							</table>
 						</div>
 
+
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

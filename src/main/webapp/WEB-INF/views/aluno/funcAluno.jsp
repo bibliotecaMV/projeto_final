@@ -21,6 +21,7 @@
 </head>
 
 <body>
+	<<<<<<< HEAD
 	<nav class="navbar navbar-default">
 	<div class="container">
 		<div class="navbar-header">
@@ -55,7 +56,8 @@
 
 
 						<form class="form-horizontal" action="
-							adicionarAluno" method="POST" name="formulario">
+							adicionarAluno"
+							method="POST" name="formulario">
 							<div class="form-group">
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
@@ -87,8 +89,8 @@
 									<select class="btn btn-primary dropdown-toggle" name="turma"
 										id="turma">
 										<option selected>Selecione</option>
-										<c:forEach items="${turmas}" var="turma">
-											<option>${turma.nome}</option>
+										<c:forEach items="${turma}" var="turmas">
+											<option>${turmas.nome}</option>
 										</c:forEach>
 									</select>
 								</div>
@@ -168,5 +170,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>
