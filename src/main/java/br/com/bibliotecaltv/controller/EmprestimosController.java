@@ -69,12 +69,10 @@ public class EmprestimosController {
 		}else if(option.equals("alunos")){
 			if(selection != null){
 				if(((turma2.equals("Turma:"))) && (aluno2.equals(""))){
-					System.out.println("entrou no 1");
 					model.addAttribute("resultado", 3L);
 					model.addAttribute("emprestimos", 
 							daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoDevolvidos2"));
 				}else{
-					System.out.println("entrou no 2");
 					Long turma_id = daoTurma.listarIdPorNome("Turma", turma2);
 					Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno2, turma_id);
 					model.addAttribute("resultado", 3L);
@@ -83,10 +81,19 @@ public class EmprestimosController {
 				}
 				
 			}else{
-				model.addAttribute("resultado", 4L);
-				model.addAttribute("emprestimos", 
-						daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoNaoDevolvidos"));
+				if(((turma2.equals("Turma:"))) && (aluno2.equals(""))){
+					model.addAttribute("resultado", 4L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoNaoDevolvidos2"));
+				}else{
+					Long turma_id = daoTurma.listarIdPorNome("Turma", turma2);
+					Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno2, turma_id);
+					model.addAttribute("resultado", 3L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoNaoDevolvidos1", aluno_id, "aluno_id", turma_id,"turma_id"));
+				}
 			}
+				
 		}else if(option.equals("professores")){
 			if(selection != null){
 				if(professor2.equals("Professor:")){
@@ -100,9 +107,17 @@ public class EmprestimosController {
 							("Emprestimo", "ProfessorDevolvidos1", professor_id, "professor_id", null, null));
 				}
 			}else{
-				model.addAttribute("resultado", 6L);
-				model.addAttribute("emprestimos", 
-						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorNaoDevolvidos"));
+				if(professor2.equals("Professor:")){
+					model.addAttribute("resultado", 6L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorNaoDevolvidos2"));
+				}else{
+					Long professor_id = daoProfessor.listarIdPorNome("Professor", professor2);
+					model.addAttribute("resultado", 5L);
+					model.addAttribute("emprestimos", daoEmprestimo.listarNotNullEntidade
+							("Emprestimo", "ProfessorNaoDevolvidos1", professor_id, "professor_id", null, null));
+				}
+				
 			}
 		}
 		return "emprestimos/emprestimos";
