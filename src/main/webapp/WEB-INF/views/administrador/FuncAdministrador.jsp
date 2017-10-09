@@ -50,7 +50,7 @@
           <div class="panel-body">
 
 
-          <form class="form-horizontal action="adicionaAdministrador" method="POST" name="formulario">
+          <form class="form-horizontal" action="adicionaAdministrador" method="POST" name="formulario">
             <div class="form-group">
               <label for="usuario" class="col-sm-2 control-label">Usuario:</label>
                           <div class="col-sm-4">
@@ -67,7 +67,7 @@
 
               <div class="modal-footer">
                           <button type="reset" class="btn btn-danger">Limpar</button>
-                          <button type="submit" class="btn btn-warning">Cadastar Monitor</button>
+                          <button type="submit" class="btn btn-warning">Cadastar Administrador</button>
                       </div>
             
           </form>

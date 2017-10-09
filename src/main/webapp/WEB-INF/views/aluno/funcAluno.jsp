@@ -21,132 +21,152 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-      <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">Painel do Administrador</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-             <button type="submit" class="btn btn-warning"> <a href="#" class="link">Encerrar a sessão</a></button>
-            </form>
-          </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-<div class="container">
-        <div id="content">
-            <div class="row">
-              <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title">Cadastrar Alunos</h3>
-          </div>
+	<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Painel do Administrador</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-warning">
+					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
+				</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+	</nav>
+	<div class="container">
+		<div id="content">
+			<div class="row">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastrar Alunos</h3>
+					</div>
 
-          <div class="panel-body">
-
-
-          <form class="form-horizontal action="adicionarAluno" method="POST" name="formulario">
-            <div class="form-group">
-              <label for="matricula" class="col-sm-2 control-label">Matricula:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="matricula"  name="matricula" required/>
-                          </div>
-                     </div>
-
-			<div class="form-group">
-              <label for="nome" class="col-sm-2 control-label">Nome:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="nome"  name="nome" required/>
-                          </div>
-                     </div>
+					<div class="panel-body">
 
 
-            <div class="form-group">
-              <label for="numero" class="col-sm-2 control-label">Número:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="numero"  name="numero" required/>
-                          </div>
-                     </div>   
+						<form class="form-horizontal" action="
+							adicionarAluno" method="POST" name="formulario">
+							<div class="form-group">
+								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="matricula"
+										name="matricula" required />
+								</div>
+							</div>
 
-              <div class="form-group">
-							<label for="turma" class="col-sm-2 control-label">Turma:</label>
-		                      <div class="col-sm-3">
-		                    	<select class="btn btn-primary dropdown-toggle" name="turma" id="turma">
+							<div class="form-group">
+								<label for="nome" class="col-sm-2 control-label">Nome:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="nome" name="nome"
+										required />
+								</div>
+							</div>
+
+
+							<div class="form-group">
+								<label for="numero" class="col-sm-2 control-label">Número:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="numero"
+										name="numero" required />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="turma" class="col-sm-2 control-label">Turma:</label>
+								<div class="col-sm-3">
+									<select class="btn btn-primary dropdown-toggle" name="turma"
+										id="turma">
 										<option selected>Selecione</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
-								</select></td>
-		                    	</div>
-		      </div>
+									</select>
+								</div>
+							</div>
 
-              <div class="modal-footer">
-                          <button type="reset" class="btn btn-danger">Limpar</button>
-                          <button type="submit" class="btn btn-warning">Cadastar Monitor</button>
-                      </div>
-            
-          </form>
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-danger">Limpar</button>
+								<button type="submit" class="btn btn-warning">Cadastar
+									Monitor</button>
+							</div>
 
-
-         </div>
-        </div>
+						</form>
 
 
-        <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Lista de Alunos</h3>
-  </div>
-  <div class="panel-body">
-    <div id="opcoes">
-            <div class="form-group">
-                          <div class="col-sm-6">
-                            <input type="text" class="form-control" name="pesquisa" placeholder="Pesquisar"/>
-                          </div>
-                     </div>
-     <div class="form-group">
-                          <div class="col-sm-4">
-    <a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a></div></div>
-</div>
+					</div>
+				</div>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<div>
 
-<table width="600px" class="table table-bordered">
- <tr>
-  <td class="active">Id</td>
-  <td class="success">Matricula</td>
-  <td class="danger">Nome</td>
-  <td class="warning">Numero</td>
-  <td class="warning">Turma</td>
-  <td class="danger">Excluir</td>
-  <td class="active">Alterar</td>
-</tr>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista de Alunos</h3>
+					</div>
+					<div class="panel-body">
+						<div id="opcoes">
+							<div class="form-group">
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="pesquisa"
+										placeholder="Pesquisar" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-4">
+									<a href="listarAlunos"><button type="submit"
+											class="btn btn-danger">Pesquisar</button></a>
+								</div>
+							</div>
+						</div>
 
-     <c:forEach items="${alunos}" var="aluno">
-			<tr>
-				<td class="col-sm-2"><input type="text" value="${aluno.id}" /></td>
-				<td class="col-sm-2"><input type="text" value="${aluno.matricula}"
-					name="matricula" /></td>
-				<td class="col-sm-2"><input type="text" value="${aluno.nome}" name="nome" /></td>
-				<td class="col-sm-2"><input type="text" value="${aluno.numero}" name="numero" /></td>
-				<td class="col-sm-2"><input type="text" value="${aluno.turma.nome}" name="turma" /></td>
-				<td class="col-sm-1"><a href="deletarAluno?id=${aluno.id}">Remover</a></td>
-				<td class="col-sm-1"><a href="altetarAluno?id=${aluno.id}">Alterar</a></td>
+						<br /> <br /> <br /> <br />
+						<div>
 
-			</tr>
-		</c:forEach>
-</table>
-</div>
+							<table width="600px" class="table table-bordered">
+								<tr>
+									<td class="active">Id</td>
+									<td class="success">Matricula</td>
+									<td class="danger">Nome</td>
+									<td class="warning">Numero</td>
+									<td class="warning">Turma</td>
+									<td class="danger">Excluir</td>
+									<td class="active">Alterar</td>
+								</tr>
 
- </div></div></div>
+								<c:forEach items="${alunos}" var="aluno">
+									<tr>
+										<td class="col-sm-2"><input type="text"
+											value="${aluno.id}" /></td>
+										<td class="col-sm-2"><input type="text"
+											value="${aluno.matricula}" name="matricula" /></td>
+										<td class="col-sm-2"><input type="text"
+											value="${aluno.nome}" name="nome" /></td>
+										<td class="col-sm-2"><input type="text"
+											value="${aluno.numero}" name="numero" /></td>
+										<td class="col-sm-2"><input type="text"
+											value="${aluno.turma.nome}" name="turma" /></td>
+										<td class="col-sm-1"><a
+											href="deletarAluno?id=${aluno.id}">Remover</a></td>
+										<td class="col-sm-1"><a
+											href="altetarAluno?id=${aluno.id}">Alterar</a></td>
 
+									</tr>
+								</c:forEach>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

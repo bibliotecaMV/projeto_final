@@ -60,7 +60,7 @@
         		              </div>
 
         		              <div class="col-lg-3" id="centro">
-        		                    <a href="" class="item">
+        		                    <a href="listarProfessores" class="item">
                                       <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
@@ -77,7 +77,7 @@
         		              </div>
 
                           <div class="col-lg-3" id="centro">
-                                <a href="" class="item">
+                                <a href="sobreAlunos" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
@@ -113,7 +113,7 @@
 
                          <div class="col-lg-12" id="centro">
                           <div class="col-lg-4" id="centro">
-                                <a href="cadastrarTurma" class="item">
+                                <a href="sobreTurmas" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
