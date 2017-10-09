@@ -146,8 +146,7 @@
 								<c:forEach items="${monitores}" var="monitor">
 									<form action="alterarMonitores" method="post">
 									<tr>
-										<td><input type="text" name="id" class="form-control"
-											value="${monitor.id}" /></td>
+										<td>${monitor.id}</td>
 										<td><input type="text" name="usuario"
 											value="${monitor.usuario}" /></td>
 										<td><input type="text" name="senha"
