@@ -59,25 +59,186 @@
 	<form name="formulario2" action="listarEmprestimosDaTable"
 		method="post">
 		<div id="opcoes">
-			<input type="radio" name="option" value="todos"
-				onclick="desabilitarAlunosProfessoresListar();" checked>Todos
-			<input type="radio" name="option" value="alunos"
-				onclick="habilitarAlunosListar();">Alunos <select
-				name="turma2" id="turma2" disabled>
-				<option>Turma:</option>
-				<c:forEach items="${turmas}" var="turma">
-					<option>${turma.nome}</option>
-				</c:forEach>
-			</select> <input type="text" name="aluno2" id="aluno2" disabled> <input
-				type="radio" name="option" value="professores"
-				onclick="habilitarProfessorListar();">Professores <select
-				name="professor2" id="professor2" disabled>
-				<option>Professor:</option>
-				<c:forEach items="${professores}" var="professor">
-					<option>${professor.nome}</option>
-				</c:forEach>
-			</select> <input type="checkbox" name="selection" value="devolvidos" checked>Devolvidos
-			<input type="submit" value="Pesquisar">
+			<c:if test="${opcoesMarcadas == '1'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();" checked>Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();">Alunos 
+					
+					<select name="turma2" id="turma2" disabled>
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2" disabled>
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();">Professores 
+					
+					<select name="professor2" id="professor2" disabled>
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos" checked>Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
+			<c:if test="${opcoesMarcadas == '2'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();" checked>Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();">Alunos 
+					
+					<select name="turma2" id="turma2" disabled>
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2" disabled>
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();">Professores 
+					
+					<select name="professor2" id="professor2" disabled>
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos">Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
+			<c:if test="${opcoesMarcadas == '3'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();">Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();" checked>Alunos 
+					
+					<select name="turma2" id="turma2">
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2">
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();">Professores 
+					
+					<select name="professor2" id="professor2" disabled>
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos" checked>Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
+			<c:if test="${opcoesMarcadas == '4'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();">Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();" checked>Alunos 
+					
+					<select name="turma2" id="turma2">
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2">
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();">Professores 
+					
+					<select name="professor2" id="professor2" disabled>
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos">Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
+			<c:if test="${opcoesMarcadas == '5'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();">Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();">Alunos 
+					
+					<select name="turma2" id="turma2" disabled>
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2" disabled>
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();" checked>Professores 
+					
+					<select name="professor2" id="professor2">
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos" checked>Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
+			<c:if test="${opcoesMarcadas == '6'}">
+				<input type="radio" name="option" value="todos"
+					onclick="desabilitarAlunosProfessoresListar();">Todos
+					
+				<input type="radio" name="option" value="alunos"
+					onclick="habilitarAlunosListar();">Alunos 
+					
+					<select name="turma2" id="turma2" disabled>
+						<option>Turma:</option>
+						<c:forEach items="${turmas}" var="turma">
+							<option>${turma.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="text" name="aluno2" id="aluno2" disabled>
+					
+					<input type="radio" name="option" value="professores"
+					onclick="habilitarProfessorListar();" checked>Professores 
+					
+					<select name="professor2" id="professor2">
+						<option>Professor:</option>
+						<c:forEach items="${professores}" var="professor">
+							<option>${professor.nome}</option>
+						</c:forEach>
+					</select>
+					
+					<input type="checkbox" name="selection" value="devolvidos">Devolvidos
+					
+					<input type="submit" value="Pesquisar">
+			</c:if>
 		</div>
 	</form>
 	<br>
@@ -216,10 +377,10 @@
 								<input type="text" name="dataEmprestimo"
 									value="${emprestimos.dataEmprestimoFormatada}" />
 							</center></td>
-							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-							<td id="emprestimo_${emprestimos.id}"><a href="#"
-								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
-									Agora </a></td>
+						<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+						<td id="emprestimo_${emprestimos.id}"><a href="#"
+							onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+								Agora </a></td>
 						<td><a href="#"
 							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
 						<td><input type="submit" value="Alterar" /></td>
@@ -250,14 +411,14 @@
 								<input type="text" name="tombo"
 									value="${emprestimos.livro.tombo}" />
 							</center></td>
-							<td><center>
-									<input type="text" name="aluno"
-										value="${emprestimos.aluno.nome}" />
-								</center></td>
-							<td><center>
-									<input type="text" name="turma"
-										value="${emprestimos.turma.nome}" />
-								</center></td>
+						<td><center>
+								<input type="text" name="aluno"
+									value="${emprestimos.aluno.nome}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="turma"
+									value="${emprestimos.turma.nome}" />
+							</center></td>
 						<td><center>
 								<input type="text" name="dataEmprestimo"
 									value="${emprestimos.dataEmprestimoFormatada}" />
@@ -308,22 +469,22 @@
 								<input type="text" name="tombo"
 									value="${emprestimos.livro.tombo}" />
 							</center></td>
-							<td><center>
-									<input type="text" name="aluno"
-										value="${emprestimos.aluno.nome}" />
-								</center></td>
-							<td><center>
-									<input type="text" name="turma"
-										value="${emprestimos.turma.nome}" />
-								</center></td>
+						<td><center>
+								<input type="text" name="aluno"
+									value="${emprestimos.aluno.nome}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="turma"
+									value="${emprestimos.turma.nome}" />
+							</center></td>
 						<td><center>
 								<input type="text" name="dataEmprestimo"
 									value="${emprestimos.dataEmprestimoFormatada}" />
 							</center></td>
-							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-							<td id="emprestimo_${emprestimos.id}"><a href="#"
-								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
-									Agora </a></td>
+						<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+						<td id="emprestimo_${emprestimos.id}"><a href="#"
+							onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+								Agora </a></td>
 						<td><a href="#"
 							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
 						<td><input type="submit" value="Alterar" /></td>
@@ -353,10 +514,10 @@
 								<input type="text" name="tombo"
 									value="${emprestimos.livro.tombo}" />
 							</center></td>
-							<td><center>
-									<input type="text" name="professor"
-										value="${emprestimos.professor.nome}" />
-								</center></td>
+						<td><center>
+								<input type="text" name="professor"
+									value="${emprestimos.professor.nome}" />
+							</center></td>
 						<td><center>
 								<input type="text" name="dataEmprestimo"
 									value="${emprestimos.dataEmprestimoFormatada}" />
@@ -406,18 +567,18 @@
 								<input type="text" name="tombo"
 									value="${emprestimos.livro.tombo}" />
 							</center></td>
-							<td><center>
-									<input type="text" name="professor"
-										value="${emprestimos.professor.nome}" />
-								</center></td>
+						<td><center>
+								<input type="text" name="professor"
+									value="${emprestimos.professor.nome}" />
+							</center></td>
 						<td><center>
 								<input type="text" name="dataEmprestimo"
 									value="${emprestimos.dataEmprestimoFormatada}" />
 							</center></td>
-							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-							<td id="emprestimo_${emprestimos.id}"><a href="#"
-								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
-									Agora </a></td>
+						<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+						<td id="emprestimo_${emprestimos.id}"><a href="#"
+							onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+								Agora </a></td>
 						<td><a href="#"
 							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
 						<td><input type="submit" value="Alterar" /></td>
