@@ -137,8 +137,9 @@
 									<td class="success">Usuario</td>
 									<td class="danger">Senha</td>
 									<td class="warning">Aluno</td>
-									<td class="danger">Excluir</td>
-									<td class="active">Alterar</td>
+									<td class="active">Turma</td>
+									<td class="success">Excluir</td>
+									<td class="danger">Alterar</td>
 								</tr>
 
 
