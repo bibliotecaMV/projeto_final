@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.dao.GeneroDAO;
@@ -21,7 +22,7 @@ public class LivroController {
 		this.daoGenero = daoGenero;
 
 	}
-   /*
+
 	@RequestMapping("adicionarLivros")
 	public String adicionaLivro(String tombo, String forma_aquisicao, String titulo, String autor, Long volume,
 			Long exemplares, String editora, String local_edicao, String ano_editado, String genero)
@@ -43,7 +44,7 @@ public class LivroController {
 		daoLivro.salvar(livro);
 		return "redirect:listaLivros";
 	}
-*/
+
 	@RequestMapping("listaLivros")
 	public String listaLivros(Model model) {
 		model.addAttribute("livros", daoLivro.listar(Livro.class));
@@ -53,6 +54,12 @@ public class LivroController {
 	
 	@RequestMapping("sobreLivros")
 	public String sobreLivro() {
+		return "redirect:listaLivros";
+	}
+	@RequestMapping("deletarLivro")
+	public String deletaLivro(Long id) throws Exception {
+		Livro livro = daoLivro.listarPorId(Livro.class, id);
+		daoLivro.excluir(livro);
 		return "redirect:listaLivros";
 	}
 

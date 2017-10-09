@@ -1,8 +1,6 @@
 package br.com.bibliotecaltv.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -58,6 +56,7 @@ public class EmprestimosController {
 	@RequestMapping("listarEmprestimosDaTable")
 	public String listarEmprestimosDaTable(String option, String turma2,
 			String aluno2, String professor2, String selection, Model model){
+		setarValoresFormulario(model);
 		if(option.equals("todos")){
 			if(selection != null){
 				model.addAttribute("resultado", 1L);
@@ -87,8 +86,6 @@ public class EmprestimosController {
 				model.addAttribute("emprestimos", 
 						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorNaoDevolvidos"));
 			}
-		}else{
-			
 		}
 		return "emprestimos/emprestimos";
 	}
@@ -139,36 +136,29 @@ public class EmprestimosController {
 			String dataEmprestimo, String dataDevolucao) throws Exception{
 		
 		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, Long.parseLong(id));
+		System.out.println("Emprestimo: " + emprestimo);
 		if((tombo != null) && (dataEmprestimo != null)){
 			Livro Objlivro = daoLivro.listarPorId(Livro.class, tombo);
+			System.out.println("Objlivro: " + Objlivro);
 			emprestimo.setLivro(Objlivro);
-			
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-			Date date = sdf.parse(dataEmprestimo);
-			Calendar calendar = sdf.getCalendar();
-			calendar.setTime(date);
-			System.out.println(calendar.toString());
-			emprestimo.setDataEmprestimoFormatada(calendar.toString());
 			
 			if((aluno != null) && (turma != null)){
 				Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
+				System.out.println("Turma: " + turma_id);
 				Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno, turma_id);
+				System.out.println("Id do Aluno: " + aluno_id);
 				Aluno Objaluno = daoAluno.listarPorId(Aluno.class, aluno_id);
+				System.out.println("Aluno: " + Objaluno);
 				emprestimo.setAluno(Objaluno);
 				emprestimo.setTurma(Objaluno.getTurma());
 			}else if(professor != null){
 				Long professor_id = daoProfessor.listarIdPorNome("Professor", professor);
+				System.out.println("Id do professor: " + professor_id);
 				Professor Objprofessor = daoProfessor.listarPorId(Professor.class, professor_id);
+				System.out.println("Professor: "+ Objprofessor);
 				emprestimo.setProfessor(Objprofessor);
 			}
-			if(dataDevolucao != null){
-				SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-				Date date2 = sdf2.parse(dataEmprestimo);
-				Calendar calendar2 = sdf2.getCalendar();
-				calendar2.setTime(date2);
-				System.out.println(calendar2.toString());
-				emprestimo.setDataDevolucaoFormatada(calendar2.toString());
-			}
+			daoEmprestimo.alterar(emprestimo);
 		}
 		return "redirect:listarTodosEmprestimos";
 		

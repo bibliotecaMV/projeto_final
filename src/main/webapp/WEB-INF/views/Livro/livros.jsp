@@ -15,7 +15,7 @@
 		<div id="esquerda">
 
 			<h1>ADICIONAR LIVROS</h1>
-			<!-- 
+		
 			<form action="adicionarLivros" method = "post">
 				<table border="2" width="300px" bordercolor="gray">
 					<tr>
@@ -86,7 +86,7 @@
 		</div>
 
 	</div>
--->
+
 	<table border="1">
 		<tr>
 			<th size="10">Tombo</th>
@@ -121,7 +121,7 @@
 				<td><input type="text" name="volume" value="${livro.volume}" /></td>
 				<td><input type="text" name="genero"
 					value="${livro.genero.descricao}" /></td>
-				<td><a href="deletarAluno?id=${livro.tombo}">Remover</a></td>
+				<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>
 				<td>alterar</td>
 			</tr>
 		</c:forEach>

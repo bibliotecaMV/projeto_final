@@ -27,9 +27,9 @@ public class AlunoController {
 		model.addAttribute("turma", daoTurma.listar(Turma.class));
 		return "aluno/funcAluno";
 	}
-/*
+
 	@RequestMapping("adicionarAluno")
-	public String adicionaMonitores(String nome, Long numero, String matricula, String turma) throws Exception {
+	public String adicionaAlunos(String nome, Long numero, String matricula, String turma) throws Exception {
 		Aluno aluno = new Aluno();
 		aluno.setNome(nome);
 		aluno.setNumero(numero);
@@ -40,7 +40,7 @@ public class AlunoController {
 		dao.salvar(aluno);
 		return "redirect:listarAlunos";
 	}
-*/
+
 	@RequestMapping("deletarAluno")
 	public String deletaATurma(Long id) throws Exception {
 		Aluno aluno = dao.listarPorId(Aluno.class, id);

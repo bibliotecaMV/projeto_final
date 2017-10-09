@@ -2,105 +2,121 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Sobre turmas</title>
+<title>BIBLIOTECA LTV - MV INFORMATICA</title>
 
-</script>
+<!-- Bootstrap -->
+<link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
+<script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"
+	src="resources/js/emprestimos/emprestimos.js"></script>
 <body>
-	<br />
-	<center>
-
-
-		<div class="jumbotron">
-			<h2>Turmas</h2>
+	<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Painel do Administrador</a>
 		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-warning">
+					<a href="#" class="link">Encerrar a sessão</a>
+				</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+	</nav>
+	<div class="container">
+		<div id="content">
+			<div class="row">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastrar Turmas</h3>
+					</div>
 
-		<br />
-		<h3>Adicione uma nova:</h3>
-		<form action="adicionaTurma" method="post">
-			<table border="1" style="margin-top: 120px;">
-				<tr>
-					<td>Descrição:</td>
-					<td><input type="text" name="nome" id="nome" placeholder="3A" /></td>
-				</tr>
-				<tr>
-					<td><input type="submit" value="Salvar" /></td>
-
-				</tr>
-				<br />
-			</table>
-		</form>
-		<table name="buscaInteligente">
-			<tr>
-				<td>Buscar:</td>
-				<td>
-				<td><input type="search" name="nome" /></td>
-				<td><input type="submit" id="buscar" value="Pesquisar"></td>
-			</tr>
-		</table>
-
-		<table border="1">
-			<tr>
-				<th size="15">id</th>
-				<th>Descrição</th>
-				<th>Deletar</th>
-				<th>Alterar</th>
-			</tr>
-			<c:forEach items="${turmas}" var="turmas">
-				<form method="post" action="alterarTurma">
-					<tr>
-						<td><input type="text" value="${turmas.id}"
-							class="form-control" name="id" /></td>
-						<td><input type="text" value="${turmas.nome}" name="nome" /></td>
-						<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-						<td><input type="submit" value="Alterar" /></td>
-						<!--<div class="container">
-						<div class="modal fade" id="myModal" role="dialog">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal">&times;</button>
-										<h4 class="modal-title">Alterar turma - ${turmas.id}</h4>
-									</div>
-									<div class="modal-body">
-										<form action="alterarTurma" method="post">
-
-											<p>Turma:</p>
-											<input type="text" name="nome" id="nome">${turmas.nome}</input>
-											<input type="submit" class="btn btn-default"
-												data-dismiss="modal">
+					<div class="panel-body">
 
 
-										</form>
-									</div>
-									<div class="modal-footer">
-										<input type="submit" class="btn btn-default"
-											data-dismiss="modal">Alterar</a>
+						<form class="form-horizontal" action="adicionaTurma" method="POST"
+							name="formulario">
+							<div class="form-group">
+								<label for="nome" class="col-sm-2 control-label">Descrição:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="nome" name="nome"
+										required />
+								</div>
+							</div>
 
-									</div>
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-danger">Limpar</button>
+								<button type="submit" class="btn btn-warning">Cadastar
+									Turma</button>
+							</div>
+
+						</form>
+
+
+					</div>
+				</div>
+
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista das Turmas</h3>
+					</div>
+					<div class="panel-body">
+						<div id="opcoes">
+							<div class="form-group">
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="pesquisa"
+										placeholder="Pesquisar" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-4">
+									<a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a>
 								</div>
 							</div>
 						</div>
 
-					</div> -->
+						<br /> <br /> <br /> <br />
+						<div>
 
-					</tr>
-				</form>
+							<table width="600px" class="table table-bordered">
+								<tr>
+									<td class="active">Id</td>
+									<td class="success">Descrição</td>
+									<td class="danger">Excluir</td>
+									<td class="active">Alterar</td>
+								</tr>
 
-			</c:forEach>
+								<c:forEach items="${turmas}" var="turmas">
+									<tr>
+										<td><input type="text" value="${turmas.id}"
+											class="form-control" id="disabledInput" disabled /></td>
+										<td><input type="text" value="${turmas.nome}" name="nome" /></td>
+										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
+										<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
+								</c:forEach>
+							</table>
+						</div>
 
-		</table>
-
-	</center>
+					</div>
+				</div>
+			</div>
 </body>
 </html>
