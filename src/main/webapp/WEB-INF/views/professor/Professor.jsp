@@ -61,7 +61,7 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" required />
+										name="matricula" placeholder="3456789" required />
 								</div>
 							</div>
 
@@ -69,7 +69,7 @@
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										required />
+										placeholder="Antonio" required />
 								</div>
 							</div>
 
