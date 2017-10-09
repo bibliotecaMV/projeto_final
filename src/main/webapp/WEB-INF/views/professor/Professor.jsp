@@ -121,7 +121,8 @@
 								<c:forEach items="${professores}" var="professor">
 									<form action="alterarProfessores" method="post">
 										<tr>
-											<td>${professor.id}</td>
+											<td><input type="text" name="id" class="form-control"
+												value="${professor.id}" /></td>
 											<td><input type="text" name="matricula"
 												value="${professor.matricula}" /></td>
 											<td><input type="text" name="nome"
