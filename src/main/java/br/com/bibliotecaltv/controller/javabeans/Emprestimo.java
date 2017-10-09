@@ -132,7 +132,7 @@ public class Emprestimo {
 		try {
 			date.setTime(sd.parse(dataEmprestimo));
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
 		setDataEmprestimo(date);
