@@ -17,101 +17,106 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/emprestimos/emprestimos.js"></script>
-</head>
-
 <body>
-<nav class="navbar navbar-default">
-      <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">Painel do Administrador</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-             <button type="submit" class="btn btn-warning"> <a href="#" class="link">Encerrar a sessão</a></button>
-            </form>
-          </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-<div class="container">
-        <div id="content">
-            <div class="row">
-              <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title">Cadastrar Turmas</h3>
-          </div>
+	<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Painel do Administrador</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-warning">
+					<a href="#" class="link">Encerrar a sessão</a>
+				</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+	</nav>
+	<div class="container">
+		<div id="content">
+			<div class="row">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastrar Turmas</h3>
+					</div>
 
-          <div class="panel-body">
-
-
-          <form class="form-horizontal action="adicionaTurma" method="POST" name="formulario">
-            <div class="form-group">
-              <label for="nome" class="col-sm-2 control-label">Descrição:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="nome"  name="nome" required/>
-                          </div>
-                     </div>
-
-              <div class="modal-footer">
-                          <button type="reset" class="btn btn-danger">Limpar</button>
-                          <button type="submit" class="btn btn-warning">Cadastar Turma</button>
-                      </div>
-            
-          </form>
+					<div class="panel-body">
 
 
-         </div>
-        </div>
+						<form class="form-horizontal" action="adicionaTurma" method="POST"
+							name="formulario">
+							<div class="form-group">
+								<label for="nome" class="col-sm-2 control-label">Descrição:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="nome" name="nome"
+										required />
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-danger">Limpar</button>
+								<button type="submit" class="btn btn-warning">Cadastar
+									Turma</button>
+							</div>
+
+						</form>
 
 
-        <div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Lista das Turmas</h3>
-  </div>
-  <div class="panel-body">
-    <div id="opcoes">
-            <div class="form-group">
-                          <div class="col-sm-6">
-                            <input type="text" class="form-control" name="pesquisa" placeholder="Pesquisar"/>
-                          </div>
-                     </div>
-     <div class="form-group">
-                          <div class="col-sm-4">
-    <a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a></div></div>
-</div>
+					</div>
+				</div>
 
-<br/>
-<br/>
-<br/>
-<br/>
-<div>
 
-<table width="600px" class="table table-bordered">
- <tr>
-  <td class="active">Id</td>
-  <td class="success">Descrição</td>
-  <td class="danger">Excluir</td>
-  <td class="active">Alterar</td>
-</tr>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista das Turmas</h3>
+					</div>
+					<div class="panel-body">
+						<div id="opcoes">
+							<div class="form-group">
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="pesquisa"
+										placeholder="Pesquisar" />
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-4">
+									<a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a>
+								</div>
+							</div>
+						</div>
 
-     <c:forEach items="${turmas}" var="turmas">
-				<tr>
-					<td><input type="text" value="${turmas.id}" class="form-control" id="disabledInput" disabled /></td>
-					<td><input type="text" value="${turmas.nome}" name="nome" /></td>
-					<td><a href="deletaTurmas?id=${turmas.id}" >Remover</a></td>
-					<td><a href="alterarTurma?id=${turmas.id}" >Alterar</a></td>
+						<br /> <br /> <br /> <br />
+						<div>
 
-				</tr>
-			</c:forEach>
-</table>
-</div>
+							<table width="600px" class="table table-bordered">
+								<tr>
+									<td class="active">Id</td>
+									<td class="success">Descrição</td>
+									<td class="danger">Excluir</td>
+									<td class="active">Alterar</td>
+								</tr>
 
- </div></div></div>
+								<c:forEach items="${turmas}" var="turmas">
+									<tr>
+										<td><input type="text" value="${turmas.id}"
+											class="form-control" id="disabledInput" disabled /></td>
+										<td><input type="text" value="${turmas.nome}" name="nome" /></td>
+										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
+										<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
+								</c:forEach>
+							</table>
+						</div>
 
+					</div>
+				</div>
+			</div>
 </body>
 </html>

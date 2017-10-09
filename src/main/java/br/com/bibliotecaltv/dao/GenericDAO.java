@@ -122,6 +122,7 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		return id;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	public List<T> listarPorFK(String classe, Long fk, String campo) {
@@ -138,6 +139,7 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		return lista;
 	}
+
 	@SuppressWarnings("unchecked")
 	public List<T> listarNotNullEntidade
 		(String classe, String complemento){
@@ -153,4 +155,5 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			}
 			return lista;
 	}
+
 }

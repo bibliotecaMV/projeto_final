@@ -9,14 +9,14 @@ public class TesteInserirLivro {
 	public static void main(String[] args) throws Exception {
 		LivroDAO daoLivro = new LivroDAO();
 		GeneroDAO daoGenero = new GeneroDAO();
-		Genero genero = daoGenero.listarPorId(Genero.class, 3L);
+		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
 		
 		Livro livro = new Livro();
 		livro.setTombo("20170932");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
-		livro.setAutor("Vinícius de Moraes");
+		livro.setAutor("Vinï¿½cius de Moraes");
 		livro.setEditora("Bienal");
 		livro.setExemplares(30L);
 		livro.setForma_aquisicao("comprado");

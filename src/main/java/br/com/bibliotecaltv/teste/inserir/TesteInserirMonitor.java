@@ -10,7 +10,7 @@ public class TesteInserirMonitor {
 		MonitoresDAO daoMonitores = new MonitoresDAO();
 		AlunoDAO daoAluno = new AlunoDAO();
 
-		Aluno aluno = daoAluno.listarPorId(Aluno.class, 2L);
+		Aluno aluno = daoAluno.listarPorId(Aluno.class, 1L);
 		Monitores monitores = new Monitores();
 		monitores.setAluno(aluno);
 		monitores.setUsuario("mayk");
