@@ -16,38 +16,41 @@
 <body>
 	<!-- TOPO-->
 	<nav class="navbar navbar-default">
-		<div class="container">
-			<div id="logo" align="center">
-				<img src="resources/img/logo.png">
-			</div>
+	<div class="container">
+		<div id="logo" align="center">
+			<img src="resources/img/logo.png">
 		</div>
+	</div>
 	</nav>
 
 	<div class="container">
 		<div class="starter-template">
-			<h3 align="center">	Acesso negado, pois vocÃª jÃ¡ estÃ¡ em uma sessÃ£o.</h3>
-			<p align="center"><a href="logoutAdministrador" class="item">
-				<div class="titulo">
-							<div class="borda">
-								<center>
-									<span>CLIQUE AQUI!</span>
-								</center>
-							</div>
+			<h3 align="center">Acesso negado, pois você já está em uma
+				sessão.</h3>
+			<p align="center">
+				<a href="logoutAdministrador" class="item">
+					<div class="titulo">
+						<div class="borda">
+							<center>
+								<span>CLIQUE AQUI!</span>
+							</center>
 						</div>
+					</div>
 				</a>
-			<h4 align="center">para encerrar a sessÃ£o e iniciar uma nova.</h4></p>
+			<h4 align="center">para encerrar a sessão e iniciar uma nova.</h4>
+			</p>
 		</div>
 	</div>
 
-	
+
 
 	<!--/.Rodapï¿½ -->
 	<hr>
 	<footer class="footer">
-		<div class="container">
-			<p class="text-muted" align="center">Â© 2011 - Governo do Estado
-				do CearÃ¡ - Todos os direitos reservados</p>
-		</div>
+	<div class="container">
+		<p class="text-muted" align="center">Â© 2011 - Governo do Estado
+			do CearÃ¡ - Todos os direitos reservados</p>
+	</div>
 	</footer>
 
 </body>

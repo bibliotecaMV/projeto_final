@@ -33,7 +33,8 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="submit" class="btn btn-warning">
-					<a href="#" class="link">Encerrar a sessão</a>
+
+					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
 				</button>
 			</form>
 		</div>
@@ -88,13 +89,21 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-4">
-									<a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a>
+
+									<a href="listarTurmas"><button type="submit"
+											class="btn btn-danger">Pesquisar</button></a>
+
 								</div>
 							</div>
 						</div>
 
 						<br /> <br /> <br /> <br />
+
+
+
+
 						<div>
+
 
 							<table width="600px" class="table table-bordered">
 								<tr>
@@ -111,12 +120,21 @@
 										<td><input type="text" value="${turmas.nome}" name="nome" /></td>
 										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
 										<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
+
+
+									</tr>
+
+
 								</c:forEach>
 							</table>
 						</div>
 
+
 					</div>
 				</div>
+
 			</div>
+		</div>
+	</div>
 </body>
 </html>
