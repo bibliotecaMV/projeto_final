@@ -77,9 +77,4 @@ public class AdministradorController {
 		return "redirect:listaAdministradores";
 	}
 	
-	@RequestMapping("cadastrarTurma")
-	public String Turma() {
-		return "turma/FuncTurma";
-	}
-	
 }

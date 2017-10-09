@@ -57,7 +57,7 @@ public class MonitorController {
 
 	@RequestMapping("listarMonitores")
 	public String listarMonitor(Model model) {
-		model.addAttribute("monitores", dao.listar(Monitores.class));
+		model.addAttribute("monitores", dao.listar(Monitores.class));	
 		model.addAttribute("alunos", dao1.listar(Aluno.class));
 		model.addAttribute("turmas", dao2.listar(Turma.class));
 		return "monitor/Monitor";
