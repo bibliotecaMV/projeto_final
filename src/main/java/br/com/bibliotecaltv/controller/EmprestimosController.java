@@ -172,26 +172,19 @@ public class EmprestimosController {
 			String dataEmprestimo, String dataDevolucao) throws Exception{
 		
 		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, Long.parseLong(id));
-		System.out.println("Emprestimo: " + emprestimo);
 		if((tombo != null) && (dataEmprestimo != null)){
 			Livro Objlivro = daoLivro.listarPorId(Livro.class, tombo);
-			System.out.println("Objlivro: " + Objlivro);
 			emprestimo.setLivro(Objlivro);
 			
 			if((aluno != null) && (turma != null)){
 				Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
-				System.out.println("Turma: " + turma_id);
 				Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno, turma_id);
-				System.out.println("Id do Aluno: " + aluno_id);
 				Aluno Objaluno = daoAluno.listarPorId(Aluno.class, aluno_id);
-				System.out.println("Aluno: " + Objaluno);
 				emprestimo.setAluno(Objaluno);
 				emprestimo.setTurma(Objaluno.getTurma());
 			}else if(professor != null){
 				Long professor_id = daoProfessor.listarIdPorNome("Professor", professor);
-				System.out.println("Id do professor: " + professor_id);
 				Professor Objprofessor = daoProfessor.listarPorId(Professor.class, professor_id);
-				System.out.println("Professor: "+ Objprofessor);
 				emprestimo.setProfessor(Objprofessor);
 			}
 			daoEmprestimo.alterar(emprestimo);
