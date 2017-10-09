@@ -42,7 +42,7 @@
                   
                     <div class="col-lg-12" id="centro">
         				      <div class="col-lg-2" id="centro">
-        		                    <a href="#cadastrarlivros" class="item" >
+        		                    <a href="listaLivros" class="item" >
 
                                       <div id="centraliza" class="centraliza">
                                         <center>
@@ -77,7 +77,7 @@
         		              </div>
 
                           <div class="col-lg-3" id="centro">
-                                <a href="" class="item">
+                                <a href="listarAlunos" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
@@ -113,7 +113,7 @@
 
                          <div class="col-lg-12" id="centro">
                           <div class="col-lg-4" id="centro">
-                                <a href="cadastrarTurma" class="item">
+                                <a href="listarTurmas" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
@@ -131,7 +131,7 @@
 
 
                           <div class="col-lg-4" id="centro">
-                                <a href="" class="item">
+                                <a href="listarMonitores" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">
@@ -191,4 +191,5 @@
     <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
     <script src="resources/js/bootstrap.min.js"></script>
   </body>
+
 </html>
