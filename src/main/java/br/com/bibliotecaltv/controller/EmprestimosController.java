@@ -89,9 +89,16 @@ public class EmprestimosController {
 			}
 		}else if(option.equals("professores")){
 			if(selection != null){
-				model.addAttribute("resultado", 5L);
-				model.addAttribute("emprestimos", 
-						daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorDevolvidos"));
+				if(professor2.equals("Professor:")){
+					model.addAttribute("resultado", 5L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "ProfessorDevolvidos2"));
+				}else{
+					Long professor_id = daoProfessor.listarIdPorNome("Professor", professor2);
+					model.addAttribute("resultado", 5L);
+					model.addAttribute("emprestimos", daoEmprestimo.listarNotNullEntidade
+							("Emprestimo", "ProfessorDevolvidos1", professor_id, "professor_id", null, null));
+				}
 			}else{
 				model.addAttribute("resultado", 6L);
 				model.addAttribute("emprestimos", 
