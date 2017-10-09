@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Genero;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.dao.GeneroDAO;

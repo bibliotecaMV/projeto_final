@@ -21,9 +21,13 @@ import javax.persistence.Transient;
 	@NamedQuery(name = "Emprestimo.listarNotNullEmprestimo", 
 			query = "select emprestimo from Emprestimo emprestimo where"
 				+ " dataDevolucao is null"),
-	@NamedQuery(name = "Emprestimo.listarNotNullAlunoDevolvidos", 
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoDevolvidos1", 
 			query = "select emprestimo from Emprestimo emprestimo where"
-				+ " aluno_id is not null"),
+				+ " aluno_id is not null and turma_id = :turma_id and "
+				+ "aluno_id = :aluno_id"),
+	@NamedQuery(name = "Emprestimo.listarNotNullAlunoDevolvidos2", 
+	query = "select emprestimo from Emprestimo emprestimo where"
+		+ " aluno_id is not null"),
 	@NamedQuery(name = "Emprestimo.listarNotNullProfessorDevolvidos", 
 			query = "select emprestimo from Emprestimo emprestimo where"
 				+ " professor_id is not null"),

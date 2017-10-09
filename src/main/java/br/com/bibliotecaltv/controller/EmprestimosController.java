@@ -68,9 +68,20 @@ public class EmprestimosController {
 			}
 		}else if(option.equals("alunos")){
 			if(selection != null){
-				model.addAttribute("resultado", 3L);
-				model.addAttribute("emprestimos", 
-						daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoDevolvidos"));
+				if(((turma2.equals("Turma:"))) && (aluno2.equals(""))){
+					System.out.println("entrou no 1");
+					model.addAttribute("resultado", 3L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoDevolvidos2"));
+				}else{
+					System.out.println("entrou no 2");
+					Long turma_id = daoTurma.listarIdPorNome("Turma", turma2);
+					Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno2, turma_id);
+					model.addAttribute("resultado", 3L);
+					model.addAttribute("emprestimos", 
+							daoEmprestimo.listarNotNullEntidade("Emprestimo", "AlunoDevolvidos1", aluno_id, "aluno_id", turma_id,"turma_id"));
+				}
+				
 			}else{
 				model.addAttribute("resultado", 4L);
 				model.addAttribute("emprestimos", 
