@@ -28,7 +28,7 @@ public class TurmaController {
 	@RequestMapping("listarTurmas")
 	public String listarTurmas(Model model) {
 		model.addAttribute("turmas", dao.listar(Turma.class));
-		return "turma/FuncTurma";
+		return "turma/funcTurma";
 	}
 
 	@RequestMapping("deletaTurmas")
