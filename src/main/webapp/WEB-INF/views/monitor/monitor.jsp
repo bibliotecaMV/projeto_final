@@ -69,7 +69,7 @@
                     <c:forEach items="${turmas}" var="turma">
                       <option>${turma.nome}</option>
                     </c:forEach>
-                </select></td>
+                </select>
                           </div>
                      </div>
             
