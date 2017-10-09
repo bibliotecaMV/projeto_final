@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- As 3 meta tags acima *devem* vir em primeiro lugar dentro do `head`; qualquer outro conteúdo deve vir *após* essas tags -->
@@ -94,7 +94,7 @@
                           </div>
 
                           <div class="col-lg-3" id="centro">
-                                <a href="" class="item">
+                                <a href="mostrarEmprestimos" class="item">
                                 <div id="centraliza" class="centraliza">
                                         <center>
                                           <div class="circulo2">

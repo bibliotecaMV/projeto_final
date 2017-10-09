@@ -175,54 +175,57 @@
 				<td>Alterar</td>
 			</tr>
 			<c:forEach var="emprestimos" items="${emprestimos}">
-				<tr id="linha_${emprestimos.id}">
-					<td><center>
-							<input type="text" name="id" value="${emprestimos.id}" disabled />
-						</center></td>
-					<td><center>
-							<input type="text" name="tombo"
-								value="${emprestimos.livro.tombo}" />
-						</center></td>
+				<form action="alterarEmprestimo" method="post">
+					<tr id="linha_${emprestimos.id}">
+						<td><center>
+								<input type="text" name="id" value="${emprestimos.id}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="tombo"
+									value="${emprestimos.livro.tombo}" />
+							</center></td>
 
-					<c:if test="${emprestimos.aluno.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.aluno.nome != null }">
+						<c:if test="${emprestimos.aluno.nome == null }">
+							<td>Vazio</td>
+						</c:if>
+						<c:if test="${emprestimos.aluno.nome != null }">
+							<td><center>
+									<input type="text" name="aluno"
+										value="${emprestimos.aluno.nome}" />
+								</center></td>
+						</c:if>
+						<c:if test="${emprestimos.professor.nome == null }">
+							<td>Vazio</td>
+						</c:if>
+						<c:if test="${emprestimos.professor.nome != null }">
+							<td><center>
+									<input type="text" name="professor"
+										value="${emprestimos.professor.nome}" />
+								</center></td>
+						</c:if>
+						<c:if test="${emprestimos.turma.nome == null }">
+							<td>Vazio</td>
+						</c:if>
+						<c:if test="${emprestimos.turma.nome != null }">
+							<td><center>
+									<input type="text" name="turma"
+										value="${emprestimos.turma.nome}" />
+								</center></td>
+						</c:if>
 						<td><center>
-								<input type="text" name="aluno"
-									value="${emprestimos.aluno.nome}" />
+								<input type="text" name="dataEmprestimo"
+									value="${emprestimos.dataEmprestimoFormatada}" />
 							</center></td>
-					</c:if>
-					<c:if test="${emprestimos.professor.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.professor.nome != null }">
-						<td><center>
-								<input type="text" name="professor"
-									value="${emprestimos.professor.nome}" />
-							</center></td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome != null }">
-						<td><center>
-								<input type="text" name="turma"
-									value="${emprestimos.turma.nome}" />
-							</center></td>
-					</c:if>
-					<td><center>
-							<input type="date" name="dataEmprestimo"
-								value="${emprestimos.dataEmprestimoFormatada}" />
-						</center></td>
-					<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-					<td id="emprestimo_${emprestimos.id}"><a href="#"
-						onClick="realizarDevolucao(${emprestimos.id})"> Devolver Agora
-					</a></td>
-					<td><a href="#"
-						onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
-					<td><a href="#">Alterar</a></td>
-				</tr>
+							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+							<td id="emprestimo_${emprestimos.id}"><a href="#"
+								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+									Agora </a></td>
+						<td><a href="#"
+							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+						<td><input type="submit" value="Alterar" /></td>
+					</tr>
+				</form>
+
 			</c:forEach>
 		</c:if>
 		<c:if test="${resultado == '3'}">
@@ -238,57 +241,49 @@
 				<td>Alterar</td>
 			</tr>
 			<c:forEach var="emprestimos" items="${emprestimos}">
-				<tr id="linha_${emprestimos.id}">
-					<td><center>
-							<input type="text" name="id" value="${emprestimos.id}" disabled />
-						</center></td>
-					<td><center>
-							<input type="text" name="tombo"
-								value="${emprestimos.livro.tombo}" />
-						</center></td>
+				<form action="alterarEmprestimo" method="post">
+					<tr id="linha_${emprestimos.id}">
+						<td><center>
+								<input type="text" name="id" value="${emprestimos.id}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="tombo"
+									value="${emprestimos.livro.tombo}" />
+							</center></td>
+							<td><center>
+									<input type="text" name="aluno"
+										value="${emprestimos.aluno.nome}" />
+								</center></td>
+							<td><center>
+									<input type="text" name="turma"
+										value="${emprestimos.turma.nome}" />
+								</center></td>
+						<td><center>
+								<input type="text" name="dataEmprestimo"
+									value="${emprestimos.dataEmprestimoFormatada}" />
+							</center></td>
+						<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
+							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
+							<td id="campo_devolucao_${emprestimos.id}"><input
+								type="text" name="dataDevolucao"
+								value="${emprestimos.dataDevolucaoFormatada}" /></td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
+							<td id="emprestimo_${emprestimos.id}"><a href="#"
+								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+									Agora </a></td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
+							<td>Devolvido</td>
+						</c:if>
+						<td><a href="#"
+							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+						<td><input type="submit" value="Alterar" /></td>
+					</tr>
+				</form>
 
-					<c:if test="${emprestimos.aluno.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.aluno.nome != null }">
-						<td><center>
-								<input type="text" name="aluno"
-									value="${emprestimos.aluno.nome}" />
-							</center></td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome != null }">
-						<td><center>
-								<input type="text" name="turma"
-									value="${emprestimos.turma.nome}" />
-							</center></td>
-					</c:if>
-					<td><center>
-							<input type="text" name="dataEmprestimo"
-								value="${emprestimos.dataEmprestimoFormatada}" />
-						</center></td>
-					<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
-						<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
-						<td id="campo_devolucao_${emprestimos.id}"><input type="text"
-							name="dataDevolucao"
-							value="${emprestimos.dataDevolucaoFormatada}" /></td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
-						<td id="emprestimo_${emprestimos.id}"><a href="#"
-							onClick="realizarDevolucao(${emprestimos.id})"> Devolver
-								Agora </a></td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
-						<td>Devolvido</td>
-					</c:if>
-					<td><a href="#"
-						onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
-					<td><a href="#">Alterar</a></td>
-				</tr>
 			</c:forEach>
 		</c:if>
 		<c:if test="${resultado == '4'}">
@@ -304,45 +299,37 @@
 				<td>Alterar</td>
 			</tr>
 			<c:forEach var="emprestimos" items="${emprestimos}">
-				<tr id="linha_${emprestimos.id}">
-					<td><center>
-							<input type="text" name="id" value="${emprestimos.id}" disabled />
-						</center></td>
-					<td><center>
-							<input type="text" name="tombo"
-								value="${emprestimos.livro.tombo}" />
-						</center></td>
+				<form action="alterarEmprestimo" method="post">
+					<tr id="linha_${emprestimos.id}">
+						<td><center>
+								<input type="text" name="id" value="${emprestimos.id}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="tombo"
+									value="${emprestimos.livro.tombo}" />
+							</center></td>
+							<td><center>
+									<input type="text" name="aluno"
+										value="${emprestimos.aluno.nome}" />
+								</center></td>
+							<td><center>
+									<input type="text" name="turma"
+										value="${emprestimos.turma.nome}" />
+								</center></td>
+						<td><center>
+								<input type="text" name="dataEmprestimo"
+									value="${emprestimos.dataEmprestimoFormatada}" />
+							</center></td>
+							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+							<td id="emprestimo_${emprestimos.id}"><a href="#"
+								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+									Agora </a></td>
+						<td><a href="#"
+							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+						<td><input type="submit" value="Alterar" /></td>
+					</tr>
+				</form>
 
-					<c:if test="${emprestimos.aluno.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.aluno.nome != null }">
-						<td><center>
-								<input type="text" name="aluno"
-									value="${emprestimos.aluno.nome}" />
-							</center></td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome == null }">
-						<td>Vazio</td>
-					</c:if>
-					<c:if test="${emprestimos.turma.nome != null }">
-						<td><center>
-								<input type="text" name="turma"
-									value="${emprestimos.turma.nome}" />
-							</center></td>
-					</c:if>
-					<td><center>
-							<input type="text" name="dataEmprestimo"
-								value="${emprestimos.dataEmprestimoFormatada}" />
-						</center></td>
-					<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-					<td id="emprestimo_${emprestimos.id}"><a href="#"
-						onClick="realizarDevolucao(${emprestimos.id})"> Devolver Agora
-					</a></td>
-					<td><a href="#"
-						onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
-					<td><a href="#">Alterar</a></td>
-				</tr>
 			</c:forEach>
 		</c:if>
 		<c:if test="${resultado == '5'}">
@@ -357,42 +344,45 @@
 				<td>Alterar</td>
 			</tr>
 			<c:forEach var="emprestimos" items="${emprestimos}">
-				<tr id="linha_${emprestimos.id}">
-					<td><center>
-							<input type="text" name="id" value="${emprestimos.id}" disabled />
-						</center></td>
-					<td><center>
-							<input type="text" name="tombo"
-								value="${emprestimos.livro.tombo}" />
-						</center></td>
-					<td><center>
-							<input type="text" name="professor"
-								value="${emprestimos.professor.nome}" />
-						</center></td>
-					<td><center>
-							<input type="text" name="dataEmprestimo"
-								value="${emprestimos.dataEmprestimoFormatada}" />
-						</center></td>
-					<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
-						<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
-						<td id="campo_devolucao_${emprestimos.id}"><input type="text"
-							name="dataDevolucao"
-							value="${emprestimos.dataDevolucaoFormatada}" /></td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
-						<td id="emprestimo_${emprestimos.id}"><a href="#"
-							onClick="realizarDevolucao(${emprestimos.id})"> Devolver
-								Agora </a></td>
-					</c:if>
-					<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
-						<td>Devolvido</td>
-					</c:if>
-					<td><a href="#"
-						onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
-					<td><a href="#">Alterar</a></td>
-				</tr>
+				<form action="alterarEmprestimo" method="post">
+					<tr id="linha_${emprestimos.id}">
+						<td><center>
+								<input type="text" name="id" value="${emprestimos.id}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="tombo"
+									value="${emprestimos.livro.tombo}" />
+							</center></td>
+							<td><center>
+									<input type="text" name="professor"
+										value="${emprestimos.professor.nome}" />
+								</center></td>
+						<td><center>
+								<input type="text" name="dataEmprestimo"
+									value="${emprestimos.dataEmprestimoFormatada}" />
+							</center></td>
+						<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
+							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
+							<td id="campo_devolucao_${emprestimos.id}"><input
+								type="text" name="dataDevolucao"
+								value="${emprestimos.dataDevolucaoFormatada}" /></td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
+							<td id="emprestimo_${emprestimos.id}"><a href="#"
+								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+									Agora </a></td>
+						</c:if>
+						<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
+							<td>Devolvido</td>
+						</c:if>
+						<td><a href="#"
+							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+						<td><input type="submit" value="Alterar" /></td>
+					</tr>
+				</form>
+
 			</c:forEach>
 		</c:if>
 		<c:if test="${resultado == '6'}">
@@ -407,30 +397,33 @@
 				<td>Alterar</td>
 			</tr>
 			<c:forEach var="emprestimos" items="${emprestimos}">
-				<tr id="linha_${emprestimos.id}">
-					<td><center>
-							<input type="text" name="id" value="${emprestimos.id}" disabled />
-						</center></td>
-					<td><center>
-							<input type="text" name="tombo"
-								value="${emprestimos.livro.tombo}" />
-						</center></td>
-					<td><center>
-							<input type="text" name="professor"
-								value="${emprestimos.professor.nome}" />
-						</center></td>
-					<td><center>
-							<input type="text" name="dataEmprestimo"
-								value="${emprestimos.dataEmprestimoFormatada}" />
-						</center></td>
-					<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
-					<td id="emprestimo_${emprestimos.id}"><a href="#"
-						onClick="realizarDevolucao(${emprestimos.id})"> Devolver Agora
-					</a></td>
-					<td><a href="#"
-						onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
-					<td><a href="#">Alterar</a></td>
-				</tr>
+				<form action="alterarEmprestimo" method="post">
+					<tr id="linha_${emprestimos.id}">
+						<td><center>
+								<input type="text" name="id" value="${emprestimos.id}" />
+							</center></td>
+						<td><center>
+								<input type="text" name="tombo"
+									value="${emprestimos.livro.tombo}" />
+							</center></td>
+							<td><center>
+									<input type="text" name="professor"
+										value="${emprestimos.professor.nome}" />
+								</center></td>
+						<td><center>
+								<input type="text" name="dataEmprestimo"
+									value="${emprestimos.dataEmprestimoFormatada}" />
+							</center></td>
+							<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
+							<td id="emprestimo_${emprestimos.id}"><a href="#"
+								onClick="realizarDevolucao(${emprestimos.id})"> Devolver
+									Agora </a></td>
+						<td><a href="#"
+							onclick="removerEmprestimo(${emprestimos.id});">Excluir</a></td>
+						<td><input type="submit" value="Alterar" /></td>
+					</tr>
+				</form>
+
 			</c:forEach>
 		</c:if>
 	</table>

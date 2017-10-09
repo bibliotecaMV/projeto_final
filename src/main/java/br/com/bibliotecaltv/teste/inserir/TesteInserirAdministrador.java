@@ -8,7 +8,7 @@ public class TesteInserirAdministrador {
 
 		AdministradorDAO dao = new AdministradorDAO();
 		Administrador administrador = new Administrador();
-		administrador.setUsuario("carla");
+		administrador.setUsuario("pedroL");
 		administrador.setSenha("1234");
 		dao.salvar(administrador);
 	}
