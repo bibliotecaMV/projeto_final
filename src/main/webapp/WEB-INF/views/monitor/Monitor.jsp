@@ -46,20 +46,18 @@
           <div class="panel-body">
 
 
-          <form class="form-horizontal" action="adicionarMonitores" method="POST" name="formulario">
+          <form class="form-horizontal action="adicionarMonitores" method="POST" name="formulario">
             <div class="form-group">
               <label for="usuario" class="col-sm-2 control-label">Usuario:</label>
                           <div class="col-sm-4">
-                            <input type="text" class="form-control" id="usuario"  name="usuario" 
-                            placeholder="Antonio" required/>
+                            <input type="text" class="form-control" id="usuario"  name="usuario" required/>
                           </div>
                      </div>
 
             <div class="form-group">
               <label for="senha" class="col-sm-2 control-label">Senha:</label>
                           <div class="col-sm-4">
-                            <input type="password" class="form-control" id="senha"  name="senha" 
-                             placeholder="********" required/>
+                            <input type="text" class="form-control" id="senha"  name="senha" required/>
                           </div>
                      </div>
 
@@ -128,24 +126,20 @@
   <td class="success">Usuario</td>
   <td class="danger">Senha</td>
   <td class="warning">Aluno</td>
-  <td class="active">Turma</td>
-  <td class="success">Excluir</td>
-  <td class="danger">Alterar</td>
+  <td class="danger">Excluir</td>
+  <td class="active">Alterar</td>
 </tr>
 
       
       <c:forEach items="${monitores}" var="monitor">
-      <form action="alterarMonitores" method="post">
       <tr>
-        <td><input type="text" name="id" class="form-control" value="${monitor.id}"/></td>
-        <td><input type="text" name="usuario" value="${monitor.usuario}"/></td>
-        <td><input type="text" name="senha" value="${monitor.senha}"/></td>
-        <td><input type="text" name="aluno" value="${monitor.aluno.nome}"/></td>
-        <td><input type="text" name="turma" value="${monitor.aluno.turma.nome}"/></td>
+        <td>${monitor.id}</td>
+        <td>${monitor.usuario}</td>
+        <td>${monitor.senha}</td>
+        <td>${monitor.aluno.nome}</td>
         <td><a href = "deletaMonitores?id=${monitor.id}">Remover</a></td>
-        <td><input type="submit" value="Alterar"/></td>
+        <td><a href = "deletaMonitores?id=${monitor.id}">Alterar</a></td>
       </tr>
-      </form>
     </c:forEach>
 </table>
 </div>
