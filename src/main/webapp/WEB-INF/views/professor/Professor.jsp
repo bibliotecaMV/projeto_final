@@ -37,11 +37,11 @@
      <table>
        <tr>
          <td>Nome Completo:</td>
-         <td><input type="text" name="nome" required/></td>
+         <td><input type="text" name="nome"   placeholder="Castelo Branco" required/></td>
        </tr>
        <tr>  
          <td>Matricula:</td>
-         <td><input type="text" name="matricula" required/></td>
+         <td><input type="text" name="matricula"  placeholder="Regime Militar" required/></td>
        </tr>
        <tr>
          <td><input type="submit" value="Cadastra"/></td>
