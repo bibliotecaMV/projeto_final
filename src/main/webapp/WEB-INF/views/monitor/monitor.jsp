@@ -50,7 +50,7 @@
 					<div class="panel-body">
 
 
-						<form class="form-horizontal" action="listarMonitores"
+						<form class="form-horizontal" action="adicionarMonitores"
 							method="POST" name="formulario">
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
