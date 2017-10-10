@@ -92,18 +92,19 @@
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
-							<div class="form-group">
-								<div class="col-sm-6">
-									<input type="text" class="form-control" name="pesquisa"
-										placeholder="Pesquisar" />
+							<form action="listarProfessoresNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="nome"
+											placeholder="Pesquisar" />
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-4">
-									<a href="listarProfessores"><button type="submit"
-											class="btn btn-danger">Pesquisar</button></a>
-								</div>
-							</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<input type="submit" value="Pesquisar" />
+									</div>
+								</div>						
+							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />

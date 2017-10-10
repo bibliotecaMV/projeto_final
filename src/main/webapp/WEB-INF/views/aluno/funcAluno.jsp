@@ -143,9 +143,10 @@
 								</tr>
 
 								<c:forEach items="${alunos}" var="aluno">
-									<tr>
+								  <form action="alterarAluno" method="post">
+								  	<tr>
 										<td class="col-sm-2"><input type="text"
-											value="${aluno.id}" /></td>
+											value="${aluno.id}" name="id"/></td>
 										<td class="col-sm-2"><input type="text"
 											value="${aluno.matricula}" name="matricula" /></td>
 										<td class="col-sm-2"><input type="text"
@@ -156,10 +157,10 @@
 											value="${aluno.turma.nome}" name="turma" /></td>
 										<td class="col-sm-1"><a
 											href="deletarAluno?id=${aluno.id}">Remover</a></td>
-										<td class="col-sm-1"><a
-											href="altetarAluno?id=${aluno.id}">Alterar</a></td>
+										<td class="col-sm-1"><input type="submit" value="alterar" /></td>
 
 									</tr>
+								  </form>
 								</c:forEach>
 							</table>
 						</div>
