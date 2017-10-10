@@ -155,5 +155,39 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			}
 			return lista;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> listarEntidadePorNome
+	(String classe, String nome) {
+		Transaction transaction = null;
+		List<T> lista = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.createQuery("select professor from Professor professor where nome"
+					+ " like '"+nome+"%'");
+			lista = consulta.list();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		return lista;
+}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> listarEntidadePorUsuario
+	(String classe, String usuario) {
+		Transaction transaction = null;
+		List<T> lista = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.createQuery("select monitores from Monitores monitores where usuario"
+					+ " like '"+usuario+"%'");
+			lista = consulta.list();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		return lista;
+}
 
 }

@@ -64,7 +64,26 @@
 									</div>
 								</a>
 							</div>
-
+							
+							<div class="col-lg-4" id="centro">
+								<a href="listarGeneros" class="item">
+									<div id="centraliza" class="centraliza">
+										<center>
+											<div class="circulo2">
+												<img src="resources/img/adm.png" border="0">
+											</div>
+										</center>
+									</div>
+									<div class="titulo">
+										<div class="borda">
+											<center>
+												<span>Cadastrar Gêneros</span>
+											</center>
+										</div>
+									</div>
+								</a>
+							</div>
+								
 							<div class="col-lg-3" id="centro">
 								<a href="listarProfessores" class="item">
 									<div id="centraliza" class="centraliza">

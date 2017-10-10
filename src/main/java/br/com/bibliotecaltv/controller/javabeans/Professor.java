@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name = "Professor.listarIdPorNome", 
 			query = "select id from Professor professor where"
-					+ " nome = :nome") 
+					+ " nome = :nome")
 })
 @Table(name="professores")
 public class Professor {

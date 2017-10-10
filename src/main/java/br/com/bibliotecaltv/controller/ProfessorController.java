@@ -46,5 +46,14 @@ public class ProfessorController {
 		dao.alterar(professor);
 		return "redirect:listarProfessores";	
 	}
-
+	
+	@RequestMapping("listarProfessoresNaTable")
+	public String listarProfessoresNaTable(String nome, Model model) {
+		if(nome.equals("")) {
+			return "redirect:listarProfessores";
+		}else {
+			model.addAttribute("professores", dao.listarEntidadePorNome("Professor", nome));
+		}
+		return "professor/Professor";
+	}
 }
