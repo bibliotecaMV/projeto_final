@@ -56,7 +56,7 @@
 
 						<form class="form-horizontal"
 							action="
-							adicionaProfessores" method="POST"
+							adicionarLivros" method="POST"
 							name="formulario">
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
@@ -147,13 +147,11 @@
 									<select class="form-control" name="genero">
 										<option selected>Selecione</option>
 										<c:forEach items="${generos}" var="genero">
-											<option>${genero.nome}</option>
+											<option>${genero.descricao}</option>
 										</c:forEach>
 									</select>
 								</div>
 							</div>
-
-
 
 							<div class="modal-footer">
 								<button type="reset" class="btn btn-danger">Limpar</button>
@@ -162,7 +160,6 @@
 							</div>
 
 						</form>
-
 
 					</div>
 				</div>
@@ -193,27 +190,23 @@
 
 							<table width="600px" class="table table-bordered">
 								<tr>
+									<td class="active">Tombo</td>
 									<td class="active">CDD</td>
-									<td class="success">Ano editado</td>
 									<td class="danger">Autor</td>
 									<td class="success">Editora</td>
 									<td class="danger">Exemplares</td>
 									<td class="success">Forma de aquisição</td>
-									<td class="danger">Local da Edição</td>
 									<td class="success">Titulo</td>
-									<td class="danger">Volume</td>
 									<td class="success">Genero</td>
 									<td class="danger">Excluir</td>
 									<td class="active">Alterar</td>
 								</tr>
-
+                              
 								<c:forEach items="${livros}" var="livro">
 									<tr>
 										<td><input type="number" name="tombo"
 											value="${livro.tombo}" /></td>
 										<td><input type="text" name="CDD" value="${livro.CDD}" /></td>
-										<td><input type="text" name="ano_editado"
-											value="${livro.ano_editado}" /></td>
 										<td><input type="text" name="autor"
 											value="${livro.autor}" />
 										<td><input type="text" name="editora"
@@ -222,12 +215,8 @@
 											value="${livro.exemplares}" /></td>
 										<td><input type="text" name="forma_aquisicao"
 											value="${livro.forma_aquisicao}" /></td>
-										<td><input type="text" name="local_edicao"
-											value="${livro.local_edicao}" /></td>
 										<td><input type="text" name="titulo"
 											value="${livro.titulo}" /></td>
-										<td><input type="text" name="volume"
-											value="${livro.volume}" /></td>
 										<td><input type="text" name="genero"
 											value="${livro.genero.descricao}" /></td>
 										<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>

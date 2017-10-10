@@ -40,6 +40,8 @@ public class TurmaController {
 
 	@RequestMapping("alterarTurma")
 	public String alteraTurma(Long id, String nome) throws Exception {
+		System.out.println(id);
+		System.out.println(nome);
 		Turma turma = dao.listarPorId(Turma.class, id);
 		turma.setNome(nome);
 		dao.alterar(turma);

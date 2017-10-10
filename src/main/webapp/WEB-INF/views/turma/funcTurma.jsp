@@ -114,17 +114,14 @@
 								</tr>
 
 								<c:forEach items="${turmas}" var="turmas">
+								<form action="alterarTurma" method="post">
 									<tr>
-										<td><input type="text" value="${turmas.id}"
-											class="form-control" id="disabledInput" disabled /></td>
+										<td><input type="text" value="${turmas.id}" name="id" /></td>
 										<td><input type="text" value="${turmas.nome}" name="nome" /></td>
 										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-										<td><a href="alterarTurma?id=${turmas.id}">Alterar</a></td>
-
-
+										<td><input type="submit" value ="Alterar" /></td>
 									</tr>
-
-
+								</form>
 								</c:forEach>
 							</table>
 						</div>
