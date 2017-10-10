@@ -12,11 +12,11 @@ public class TesteInserirLivro {
 		Genero genero = daoGenero.listarPorId(Genero.class, 1L);
 		
 		Livro livro = new Livro();
-		livro.setTombo("20170932");
+		livro.setTombo("2017");
 		livro.setCDD(genero.getSigla());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
-		livro.setAutor("Vin�cius de Moraes");
+		livro.setAutor("Vinicius de Moraes");
 		livro.setEditora("Bienal");
 		livro.setExemplares(30L);
 		livro.setForma_aquisicao("comprado");

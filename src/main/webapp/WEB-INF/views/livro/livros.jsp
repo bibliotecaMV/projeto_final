@@ -55,8 +55,7 @@
 
 
 						<form class="form-horizontal"
-							action="
-							adicionaProfessores" method="POST"
+							action="adicionarLivros" method="POST"
 							name="formulario">
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
@@ -147,7 +146,7 @@
 									<select class="form-control" name="genero">
 										<option selected>Selecione</option>
 										<c:forEach items="${generos}" var="genero">
-											<option>${genero.nome}</option>
+											<option>${genero.descricao}</option>
 										</c:forEach>
 									</select>
 								</div>

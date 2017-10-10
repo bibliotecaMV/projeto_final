@@ -51,7 +51,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/livro.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -90,7 +90,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/aluno.png" border="0">
 											</div>
 										</center>
 									</div>
