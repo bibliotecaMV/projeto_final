@@ -13,8 +13,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Monitores.realizarLogin", query = "select monitores from Monitores monitores where"
-		+ " usuario = :usuario and senha = :senha") })
+@NamedQueries({ @NamedQuery(name = "Monitores.realizarLogin", query = "select monitores from Monitores monitores where "
+		+ "usuario = :usuario and senha = :senha") })
 @Table(name = "monitores")
 public class Monitores {
 	@Id

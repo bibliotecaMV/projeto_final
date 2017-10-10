@@ -60,7 +60,7 @@ public class MonitorController {
 		model.addAttribute("monitores", dao.listar(Monitores.class));	
 		model.addAttribute("alunos", dao1.listar(Aluno.class));
 		model.addAttribute("turmas", dao2.listar(Turma.class));
-		return "monitor/Monitor";
+		return "monitor/monitor";
 	}
 
 	@RequestMapping("adicionarMonitores")
