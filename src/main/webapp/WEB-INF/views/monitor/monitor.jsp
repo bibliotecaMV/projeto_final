@@ -63,7 +63,7 @@
 							<div class="form-group">
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="senha" name="senha"
+									<input type="password" class="form-control" id="senha" name="senha"
 										required />
 								</div>
 							</div>
