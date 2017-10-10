@@ -100,4 +100,14 @@ public class MonitorController {
 	    
 		return "redirect:listarMonitores";
 	}
+	
+	@RequestMapping("listarMonitoresNaTable")
+	public String ListarMonitoresNaTable(String usuario, Model model) {
+		if(usuario.equals("")) {
+			return "redirect:listarMonitores";
+		}else {
+			model.addAttribute("monitores", dao.listarEntidadePorUsuario("Monitores", usuario));
+		}
+		return "monitor/monitor";
+	}
 }

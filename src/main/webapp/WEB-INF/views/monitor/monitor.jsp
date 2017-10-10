@@ -50,7 +50,8 @@
 					<div class="panel-body">
 
 
-						<form class="form-horizontal" action="listarMonitores" method="POST" name="formulario">
+						<form class="form-horizontal" action="listarMonitores"
+							method="POST" name="formulario">
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
@@ -113,17 +114,19 @@
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
-							<div class="form-group">
-								<div class="col-sm-6">
-									<input type="text" class="form-control" name="pesquisa"
-										placeholder="Pesquisar" />
+							<form action="listarMonitoresNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="usuario"
+											placeholder="digite o nome de usuario" />
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-4">
-									<a href=""><button type="submit" class="btn btn-danger">Pesquisar</button></a>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<input type="submit" value="Pesquisar" />
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />
@@ -141,8 +144,10 @@
 
 
 								<c:forEach items="${monitores}" var="monitor">
+									<form action="alterarMonitores" method="post">
 									<tr>
-										<td>${monitor.id}</td>
+										<td><input type="text" name="id" class="form-control"
+											value="${monitor.id}" /></td>
 										<td><input type="text" name="usuario"
 											value="${monitor.usuario}" /></td>
 										<td><input type="text" name="senha"
@@ -152,8 +157,9 @@
 										<td><input type="text" name="turma"
 											value="${monitor.aluno.turma.nome}" /></td>
 										<td><a href="deletaMonitores?id=${monitor.id}">Remover</a></td>
-										<td><a href="deletaMonitores?id=${monitor.id}">Alterar</a></td>
+										<td><input type="submit" value="Alterar" /></td>
 									</tr>
+									</form>
 								</c:forEach>
 							</table>
 						</div>
