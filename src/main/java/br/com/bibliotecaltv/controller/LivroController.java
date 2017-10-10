@@ -53,11 +53,13 @@ public class LivroController {
 	
 
 	@RequestMapping("deletarLivro")
-	public String deletaLivro(Long id) throws Exception {
+	public String deletaLivro (String id) throws Exception {
 		Livro livro = daoLivro.listarPorId(Livro.class, id);
 		daoLivro.excluir(livro);
 		return "redirect:listaLivros";
 	}
+	
+
 	
 	@RequestMapping("sobreLivros")
 	public String sobreLivro() {

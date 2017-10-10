@@ -203,15 +203,17 @@
 								</tr>
                               
 								<c:forEach items="${livros}" var="livro">
-									<tr>
-										<td><input type="number" name="tombo"
-											value="${livro.tombo}" /></td>
-										<td><input type="text" name="CDD" value="${livro.CDD}" /></td>
+								 <form action="" method="post">
+								 		<tr>
+										<td><input type="text" name="tombo"
+											value="${livro.tombo}"/></td>
+										<td><input type="text" name="CDD" 
+										    value="${livro.CDD}" /></td>
 										<td><input type="text" name="autor"
 											value="${livro.autor}" />
 										<td><input type="text" name="editora"
 											value="${livro.editora}" /></td>
-										<td><input type="text" name="exemplares"
+										<td><input type="number" name="exemplares"
 											value="${livro.exemplares}" /></td>
 										<td><input type="text" name="forma_aquisicao"
 											value="${livro.forma_aquisicao}" /></td>
@@ -220,8 +222,9 @@
 										<td><input type="text" name="genero"
 											value="${livro.genero.descricao}" /></td>
 										<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>
-										<td>alterar</td>
+										<td><input type="submit" value="alterar" /></td>
 									</tr>
+								 </form>
 								</c:forEach>
 							</table>
 						</div>
