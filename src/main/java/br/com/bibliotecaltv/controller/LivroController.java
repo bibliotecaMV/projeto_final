@@ -48,7 +48,7 @@ public class LivroController {
 	public String listaLivros(Model model) {
 		model.addAttribute("livros", daoLivro.listar(Livro.class));
 		model.addAttribute("generos", daoGenero.listar(Genero.class));
-		return "Livro/livros";
+		return "livro/livros";
 	}
 	
 	@RequestMapping("sobreLivros")

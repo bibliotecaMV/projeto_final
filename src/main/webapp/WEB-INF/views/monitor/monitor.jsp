@@ -50,22 +50,20 @@
 					<div class="panel-body">
 
 
-						<form class="form-horizontal" action="
-							adicionarMonitores"
-							method="POST" name="formulario">
+						<form class="form-horizontal" action="listarMonitores" method="POST" name="formulario">
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" placeholder="Felipe" required />
+										name="usuario" required />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control" id="senha" name="senha"
-										placeholder="********" required />
+									<input type="text" class="form-control" id="senha" name="senha"
+										required />
 								</div>
 							</div>
 
@@ -78,7 +76,6 @@
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
-									</td>
 								</div>
 							</div>
 
@@ -92,7 +89,7 @@
 											<option>${aluno.nome}</option>
 										</c:forEach>
 									</select>
-									</td>
+
 								</div>
 							</div>
 
@@ -144,7 +141,6 @@
 
 
 								<c:forEach items="${monitores}" var="monitor">
-									<form action="alterarMonitores" method="post">
 									<tr>
 										<td>${monitor.id}</td>
 										<td><input type="text" name="usuario"
@@ -156,9 +152,8 @@
 										<td><input type="text" name="turma"
 											value="${monitor.aluno.turma.nome}" /></td>
 										<td><a href="deletaMonitores?id=${monitor.id}">Remover</a></td>
-										<td><input type="submit" value="Alterar" /></td>
+										<td><a href="deletaMonitores?id=${monitor.id}">Alterar</a></td>
 									</tr>
-									</form>
 								</c:forEach>
 							</table>
 						</div>
@@ -167,7 +162,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 </body>
 </html>
