@@ -60,6 +60,16 @@ public class AlunoController {
 		dao.alterar(aluno);
 		return "redirect:listarAlunos";
 	}
+	@RequestMapping("listarAlunosNaTable")
+	public String listarAlunosNaTable(String nome, Model model) {
+		if(nome.equals("")) {
+			return "redirect:listarAlunos";
+		}else {
+			model.addAttribute("alunos", 
+					dao.listarEntidadePorNome("Aluno","aluno", "nome", nome));
+		}
+		return "aluno/funcAluno";
+	}
 
 	@RequestMapping("sobreAlunos")
 	public String sobreAluno() {

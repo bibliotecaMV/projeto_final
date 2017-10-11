@@ -59,7 +59,16 @@ public class LivroController {
 		return "redirect:listaLivros";
 	}
 	
-
+	@RequestMapping("listarLivroNaTable")
+	public String listarLivroNaTable(String titulo, Model model) {
+		if(titulo.equals("")) {
+			return "redirect:listaLivros";
+		}else {
+			model.addAttribute("turmas", 
+					daoLivro.listarEntidadePorNome("Livro","livro", "titulo", titulo));
+		}
+		return "livro/livros";
+	}
 	
 	@RequestMapping("sobreLivros")
 	public String sobreLivro() {

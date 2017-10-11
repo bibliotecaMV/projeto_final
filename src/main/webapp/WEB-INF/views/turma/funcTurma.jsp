@@ -81,20 +81,21 @@
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
-							<div class="form-group">
-								<div class="col-sm-6">
-									<input type="text" class="form-control" name="pesquisa"
-										placeholder="Pesquisar" />
+							<form action="listarTurmaNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="nome"
+											placeholder="Pesquisar" />
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-4">
+								<div class="form-group">
+									<div class="col-sm-4">
 
-									<a href="listarTurmas"><button type="submit"
-											class="btn btn-danger">Pesquisar</button></a>
+										<input type="submit" value="pesquisar" class="btn btn-danger" />
 
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />
@@ -114,14 +115,15 @@
 								</tr>
 
 								<c:forEach items="${turmas}" var="turmas">
-								<form action="alterarTurma" method="post">
-									<tr>
-										<td><input type="text" value="${turmas.id}" name="id" /></td>
-										<td><input type="text" value="${turmas.nome}" name="nome" /></td>
-										<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-										<td><input type="submit" value ="Alterar" /></td>
-									</tr>
-								</form>
+									<form action="alterarTurma" method="post">
+										<tr>
+											<td><input type="text" value="${turmas.id}" name="id" /></td>
+											<td><input type="text" value="${turmas.nome}"
+												name="nome" /></td>
+											<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
+											<td><input type="submit" value="Alterar" /></td>
+										</tr>
+									</form>
 								</c:forEach>
 							</table>
 						</div>

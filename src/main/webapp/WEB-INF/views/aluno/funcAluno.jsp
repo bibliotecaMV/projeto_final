@@ -114,18 +114,19 @@
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
-							<div class="form-group">
-								<div class="col-sm-6">
-									<input type="text" class="form-control" name="pesquisa"
-										placeholder="Pesquisar" />
+							<form action="listarAlunosNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="nome"
+											placeholder="Pesquisar" />
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-4">
-									<a href="listarAlunos"><button type="submit"
-											class="btn btn-danger">Pesquisar</button></a>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<input type="submit" class="btn btn-danger" value="pesquisar" />
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />
@@ -143,24 +144,25 @@
 								</tr>
 
 								<c:forEach items="${alunos}" var="aluno">
-								  <form action="alterarAluno" method="post">
-								  	<tr>
-										<td class="col-sm-2"><input type="text"
-											value="${aluno.id}" name="id"/></td>
-										<td class="col-sm-2"><input type="text"
-											value="${aluno.matricula}" name="matricula" /></td>
-										<td class="col-sm-2"><input type="text"
-											value="${aluno.nome}" name="nome" /></td>
-										<td class="col-sm-2"><input type="text"
-											value="${aluno.numero}" name="numero" /></td>
-										<td class="col-sm-2"><input type="text"
-											value="${aluno.turma.nome}" name="turma" /></td>
-										<td class="col-sm-1"><a
-											href="deletarAluno?id=${aluno.id}">Remover</a></td>
-										<td class="col-sm-1"><input type="submit" value="alterar" /></td>
+									<form action="alterarAluno" method="post">
+										<tr>
+											<td class="col-sm-2"><input type="text"
+												value="${aluno.id}" name="id" /></td>
+											<td class="col-sm-2"><input type="text"
+												value="${aluno.matricula}" name="matricula" /></td>
+											<td class="col-sm-2"><input type="text"
+												value="${aluno.nome}" name="nome" /></td>
+											<td class="col-sm-2"><input type="text"
+												value="${aluno.numero}" name="numero" /></td>
+											<td class="col-sm-2"><input type="text"
+												value="${aluno.turma.nome}" name="turma" /></td>
+											<td class="col-sm-1"><a
+												href="deletarAluno?id=${aluno.id}">Remover</a></td>
+											<td class="col-sm-1"><input type="submit"
+												value="alterar" /></td>
 
-									</tr>
-								  </form>
+										</tr>
+									</form>
 								</c:forEach>
 							</table>
 						</div>

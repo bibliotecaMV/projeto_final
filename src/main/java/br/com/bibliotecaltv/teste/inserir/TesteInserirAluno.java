@@ -12,7 +12,7 @@ public class TesteInserirAluno {
 		Turma turma = daoTurma.listarPorId(Turma.class, 1L);
 		Aluno aluno = new Aluno();
 		aluno.setMatricula("3453234");
-		aluno.setNome("Carla");
+		aluno.setNome("");
 		aluno.setNumero(4L);
 		aluno.setTurma(turma);
 		daoAluno.salvar(aluno);

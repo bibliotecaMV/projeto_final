@@ -71,7 +71,7 @@ public class AdministradorController {
 		dao.excluir(administrador);
 		return "redirect:listaAdministradores";
 	}
-
+	
 	@RequestMapping("sobreAdministrador")
 	public String sobreTurma() {
 		return "redirect:listaAdministradores";

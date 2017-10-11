@@ -7,7 +7,7 @@ public class TesteInserirProfessor {
 	public static void main(String[] args) {
 		ProfessorDAO dao = new ProfessorDAO(); 
 		Professor professor = new Professor();
-		professor.setMatricula("CH4");
+		professor.setMatricula("2342322");
 		professor.setNome("João Andersom");
 		dao.salvar(professor);
 	}

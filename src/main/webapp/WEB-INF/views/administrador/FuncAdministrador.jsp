@@ -21,119 +21,125 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-      <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">Painel do Administrador</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-             <button type="submit" class="btn btn-warning"> <a href="#" class="link">Encerrar a sessão</a></button>
-            </form>
-          </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
+	<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Painel do Administrador</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-warning">
+					<a href="#" class="link">Encerrar a sessão</a>
+				</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
+	</nav>
 
-    <div class="container">
-        <div id="content">
-            <div class="row">
-              <div class="panel panel-warning">
-          <div class="panel-heading">
-            <h3 class="panel-title">Cadastrar Administrador</h3>
-          </div>
-          <div class="panel-body">
-
-
-          <form class="form-horizontal" action="adicionaAdministrador" method="POST" name="formulario">
-            <div class="form-group">
-              <label for="usuario" class="col-sm-2 control-label">Usuario:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="usuario"  name="usuario" required/>
-                          </div>
-                     </div>
-
-            <div class="form-group">
-              <label for="senha" class="col-sm-2 control-label">Senha:</label>
-                          <div class="col-sm-4">
-                            <input type="text" class="form-control" id="senha"  name="senha" required/>
-                          </div>
-                     </div>   
-
-              <div class="modal-footer">
-                          <button type="reset" class="btn btn-danger">Limpar</button>
-                          <button type="submit" class="btn btn-warning">Cadastar Administrador</button>
-                      </div>
-            
-          </form>
+	<div class="container">
+		<div id="content">
+			<div class="row">
+				<div class="panel panel-warning">
+					<div class="panel-heading">
+						<h3 class="panel-title">Cadastrar Administrador</h3>
+					</div>
+					<div class="panel-body">
 
 
-         </div>
-        </div>
+						<form class="form-horizontal" action="adicionaAdministrador"
+							method="POST" name="formulario">
+							<div class="form-group">
+								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="usuario"
+										name="usuario" required />
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="senha" class="col-sm-2 control-label">Senha:</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" id="senha" name="senha"
+										required />
+								</div>
+							</div>
+
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-danger">Limpar</button>
+								<button type="submit" class="btn btn-warning">Cadastar
+									Administrador</button>
+							</div>
+
+						</form>
+
+
+					</div>
+				</div>
 
 
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Lista de Administradores</h3>
-  </div>
-  <div class="panel-body">
-    <div id="opcoes">
-            <div class="form-group">
-                          <div class="col-sm-12">
-                            <table name="buscaInteligente">
-                              <tr>
-                                <td class="col-sm-4"><input type="text" id="busca" class="form-control" name="pesquisa"/></td>
-                                
-                                <td class="col-sm-4"><a href="#"><button id="buscar" type="submit" class="btn btn-danger">Pesquisar</button></a>
-                                </td>
-                              </tr>
-                            </table>
-                          </div >
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Lista de Administradores</h3>
+					</div>
+					<div class="panel-body">
+						<div id="opcoes">
+							<form action="listarAdministradoresNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="usuario"
+											placeholder="Pesquisar" />
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<input type="submit" class="btn btn-danger" value="pesquisar" />
+									</div>
+								</div>
+							</form>
+						</div>
 
-            </div>
-    </div>
-
-    <br>
-    <br>
-
-    <br>
-    
-
-<table class="table table-bordered">
- <tr>
-  <td class="active">Id</td>
-  <td class="success">Nome</td>
-  <td class="danger">Excluir</td>
-  <td class="active">Alterar</td>
-</tr>
-
-      <c:forEach items="${administradores}" var="administrador">
-        <tr>
-          <td><input type="text" value="${administrador.id}" disabled /></td>
-          <td><input type="text" value="${administrador.usuario}"
-            name="usuario" id="usuario" /></td>
-          <td><a href="deletaAdministrador?id=${administrador.id}">Remover</a></td>
-          <td><a
-            href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}">Alterar</a></td>
-        </tr>
-      </c:forEach>
-    </table>
-</div>
+						<br> <br> <br>
 
 
-  </div>
-  
+						<table class="table table-bordered">
+							<tr>
+								<td class="active">Id</td>
+								<td class="success">Nome</td>
+								<td class="danger">Excluir</td>
+								<td class="active">Alterar</td>
+							</tr>
 
-  </div>
-</div>
+							<c:forEach items="${administradores}" var="administrador">
+								<tr>
+									<td><input type="text" value="${administrador.id}"
+										disabled /></td>
+									<td><input type="text" value="${administrador.usuario}"
+										name="usuario" id="usuario" /></td>
+									<td><a href="deletaAdministrador?id=${administrador.id}">Remover</a></td>
+									<td><a
+										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}">Alterar</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</div>
 
-</div>
+
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
 
 </body>
 </html>

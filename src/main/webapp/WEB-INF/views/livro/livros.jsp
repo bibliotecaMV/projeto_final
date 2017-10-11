@@ -21,26 +21,26 @@
 </head>
 <body>
 	<nav class="navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand">Painel do Administrador</a>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right">
-					<button type="submit" class="btn btn-warning">
-						<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
-					</button>
-				</form>
-			</div>
-			<!--/.navbar-collapse -->
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand">Painel do Administrador</a>
 		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<form class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-warning">
+					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
+				</button>
+			</form>
+		</div>
+		<!--/.navbar-collapse -->
+	</div>
 	</nav>
 
 	<div class="container">
@@ -54,9 +54,8 @@
 					<div class="panel-body">
 
 
-						<form class="form-horizontal"
-							action="adicionarLivros" method="POST"
-							name="formulario">
+						<form class="form-horizontal" action="adicionarLivros"
+							method="POST" name="formulario">
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
@@ -170,18 +169,19 @@
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
-							<div class="form-group">
-								<div class="col-sm-6">
-									<input type="text" class="form-control" name="pesquisa"
-										placeholder="Pesquisar" />
+							<form action="listarLivroNaTable" method="post">
+								<div class="form-group">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" name="titulo"
+											placeholder="Pesquisar" />
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<div class="col-sm-4">
-									<a href="listarLivros"><button type="submit"
-											class="btn btn-danger">Pesquisar</button></a>
+								<div class="form-group">
+									<div class="col-sm-4">
+										<input type="submit" value="Pesquisar" />
+									</div>
 								</div>
-							</div>
+							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />
@@ -200,30 +200,29 @@
 									<td class="danger">Excluir</td>
 									<td class="active">Alterar</td>
 								</tr>
-                              
+
 								<c:forEach items="${livros}" var="livro">
-								 <form action="" method="post">
-								 		<tr>
-										<td><input type="text" name="tombo"
-											value="${livro.tombo}"/></td>
-										<td><input type="text" name="CDD" 
-										    value="${livro.CDD}" /></td>
-										<td><input type="text" name="autor"
-											value="${livro.autor}" />
-										<td><input type="text" name="editora"
-											value="${livro.editora}" /></td>
-										<td><input type="number" name="exemplares"
-											value="${livro.exemplares}" /></td>
-										<td><input type="text" name="forma_aquisicao"
-											value="${livro.forma_aquisicao}" /></td>
-										<td><input type="text" name="titulo"
-											value="${livro.titulo}" /></td>
-										<td><input type="text" name="genero"
-											value="${livro.genero.descricao}" /></td>
-										<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>
-										<td><input type="submit" value="alterar" /></td>
-									</tr>
-								 </form>
+									<form action="" method="post">
+										<tr>
+											<td><input type="text" name="tombo"
+												value="${livro.tombo}" /></td>
+											<td><input type="text" name="CDD" value="${livro.CDD}" /></td>
+											<td><input type="text" name="autor"
+												value="${livro.autor}" />
+											<td><input type="text" name="editora"
+												value="${livro.editora}" /></td>
+											<td><input type="number" name="exemplares"
+												value="${livro.exemplares}" /></td>
+											<td><input type="text" name="forma_aquisicao"
+												value="${livro.forma_aquisicao}" /></td>
+											<td><input type="text" name="titulo"
+												value="${livro.titulo}" /></td>
+											<td><input type="text" name="genero"
+												value="${livro.genero.descricao}" /></td>
+											<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>
+											<td><input type="submit" value="alterar" /></td>
+										</tr>
+									</form>
 								</c:forEach>
 							</table>
 						</div>

@@ -47,6 +47,17 @@ public class TurmaController {
 		dao.alterar(turma);
 		return "redirect:listarTurmas";
 	}
+	
+	@RequestMapping("listarTurmaNaTable")
+	public String listarTurmaNaTable(String nome, Model model) {
+		if(nome.equals("")) {
+			return "redirect:listarTurmas";
+		}else {
+			model.addAttribute("turmas", 
+					dao.listarEntidadePorNome("Turma","turma", "nome", nome));
+		}
+		return "turma/funcTurma";
+	}
 
 	@RequestMapping("sobreTurmas")
 	public String sobreTurma() {

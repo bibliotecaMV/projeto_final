@@ -38,7 +38,7 @@ public class MonitorController {
 		boolean verifica = dao.realizarLoginUsuario("Monitores", monitor.getUsuario(), monitor.getSenha());
 		if (verifica == true) {
 			session.setAttribute("usuarioLogadoMonitor", monitor);
-			return "monitor/loginDeuCerto";
+			return "monitor/acessarFormularioLogadoMonitor";
 		} else {
 			return "redirect:realizarLoginMonitor";
 		}
@@ -46,7 +46,7 @@ public class MonitorController {
 
 	@RequestMapping("acessarFormularioLogadoMonitor")
 	public String acessarFormularioLogado() {
-		return "monitor/painelMonitor";
+		return "monitor/acessarFormularioLogadoMonitor";
 	}
 
 	@RequestMapping("logoutMonitor")
