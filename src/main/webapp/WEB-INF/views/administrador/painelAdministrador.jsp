@@ -45,7 +45,7 @@
 					<div class="panel-body">
 
 						<div class="col-lg-12" id="centro">
-							<div class="col-lg-2" id="centro">
+							<div class="col-lg-3" id="centro">
 								<a href="sobreLivros" class="item link">
 
 									<div id="centraliza" class="centraliza">
@@ -64,8 +64,8 @@
 									</div>
 								</a>
 							</div>
-							
-							<div class="col-lg-4" id="centro">
+
+							<div class="col-lg-3" id="centro">
 								<a href="listarGeneros" class="item">
 									<div id="centraliza" class="centraliza">
 										<center>
@@ -83,7 +83,7 @@
 									</div>
 								</a>
 							</div>
-								
+
 							<div class="col-lg-3" id="centro">
 								<a href="listarProfessores" class="item">
 									<div id="centraliza" class="centraliza">
@@ -123,6 +123,10 @@
 								</a>
 							</div>
 
+
+						</div>
+
+						<div class="col-lg-12" id="centro">
 							<div class="col-lg-3" id="centro">
 								<a href="mostrarEmprestimos" class="item">
 									<div id="centraliza" class="centraliza">
@@ -141,10 +145,10 @@
 									</div>
 								</a>
 							</div>
-						</div>
 
-						<div class="col-lg-12" id="centro">
-							<div class="col-lg-4" id="centro">
+
+
+							<div class="col-lg-3" id="centro">
 								<a href="sobreTurmas" class="item">
 
 									<div id="centraliza" class="centraliza">
@@ -165,7 +169,7 @@
 							</div>
 
 
-							<div class="col-lg-4" id="centro">
+							<div class="col-lg-3" id="centro">
 								<a href="listarMonitores" class="item">
 									<div id="centraliza" class="centraliza">
 										<center>
@@ -184,7 +188,7 @@
 								</a>
 							</div>
 
-							<div class="col-lg-4" id="centro">
+							<div class="col-lg-3" id="centro">
 								<a href="sobreAdministrador" class="item">
 									<div id="centraliza" class="centraliza">
 										<center>
