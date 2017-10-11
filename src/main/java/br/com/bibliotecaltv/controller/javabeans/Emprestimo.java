@@ -155,7 +155,6 @@ public class Emprestimo {
 		try {
 			date.setTime(sd.parse(dataEmprestimo));
 		} catch (ParseException e) {
-		
 			e.printStackTrace();
 		}
 		setDataEmprestimo(date);

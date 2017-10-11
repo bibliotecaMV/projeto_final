@@ -1,5 +1,6 @@
 package br.com.bibliotecaltv.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import javax.servlet.http.HttpServletResponse;
@@ -175,7 +176,16 @@ public class EmprestimosController {
 		if((tombo != null) && (dataEmprestimo != null)){
 			Livro Objlivro = daoLivro.listarPorId(Livro.class, tombo);
 			emprestimo.setLivro(Objlivro);
-			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			Calendar c = Calendar.getInstance();
+			c.setTime(sdf.parse(dataEmprestimo));
+			emprestimo.setDataEmprestimo(c);
+			if(dataDevolucao != null){
+				SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+				Calendar c2 = Calendar.getInstance();
+				c2.setTime(sdf2.parse(dataDevolucao));
+				emprestimo.setDataDevolucao(c2);
+			}
 			if((aluno != null) && (turma != null)){
 				Long turma_id = daoTurma.listarIdPorNome("Turma", turma);
 				Long aluno_id = daoAluno.listarIdPorNomeTurma("Aluno", aluno, turma_id);
