@@ -33,7 +33,6 @@
 	<div id="pesquisa">
 		<form action="listarGenerosNaTable" method="post">
 			Descrição: <input type="text" name="descricao2">
-			Sigla: <input type="text" name="sigla2">
 			<input type="submit" value="Pesquisar">
 		</form>
 	</div>

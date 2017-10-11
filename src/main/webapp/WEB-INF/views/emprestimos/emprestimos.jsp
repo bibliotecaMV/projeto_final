@@ -53,12 +53,12 @@
 					<div class="panel-body">
 						<div id="escolha">
 							<div class="col-sm-3">
-								<input type="radio" name="radio" onclick="habilitarAlunos();"
+								<input type="radio" name="radio" onclick="habilitarAlunosAdicionar();"
 									checked>Aluno
 							</div>
 							<div class="col-sm-3">
 								<input type="radio" name="radio"
-									onclick="habilitarProfessores();">Professor
+									onclick="habilitarProfessoresAdicionar();">Professor
 							</div>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 							<label for="aluno1" class="col-sm-2 control-label">Aluno:</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="aluno1"
-									name="aluno1" required />
+									name="aluno1" required/>
 							</div>
 						</div>
 

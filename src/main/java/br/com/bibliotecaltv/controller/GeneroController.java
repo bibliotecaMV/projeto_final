@@ -44,14 +44,16 @@ public class GeneroController {
 		return "redirect:listarGeneros";
 	}
 	
-	/*@RequestMapping("listarGenerosNaTable")
-	public String listarGenerosNaTable(String descricao, Model model){
-		if((descricao.equals(""))){
+	@RequestMapping("listarGenerosNaTable")
+	public String listarGenerosNaTable(String descricao2, Model model){
+		if((descricao2.equals(""))){
 			return "redirect:listarGeneros";
 		}else{
-			model.addAttribute("generos", dao.);
+			model.addAttribute("generos", 
+			dao.listarEntidadePorNome("Genero", "genero", "descricao", descricao2));
+			return "genero/genero";
 		}
 		
-	}*/
+	}
 	
 }	

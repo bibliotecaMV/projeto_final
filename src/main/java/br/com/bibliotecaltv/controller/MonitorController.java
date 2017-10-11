@@ -106,7 +106,8 @@ public class MonitorController {
 		if(usuario.equals("")) {
 			return "redirect:listarMonitores";
 		}else {
-			model.addAttribute("monitores", dao.listarEntidadePorUsuario("Monitores", usuario));
+			model.addAttribute("monitores", 
+					dao.listarEntidadePorNome("Monitores","monitores", "usuario", usuario));
 		}
 		return "monitor/monitor";
 	}

@@ -52,7 +52,8 @@ public class ProfessorController {
 		if(nome.equals("")) {
 			return "redirect:listarProfessores";
 		}else {
-			model.addAttribute("professores", dao.listarEntidadePorNome("Professor", nome));
+			model.addAttribute("professores", 
+					dao.listarEntidadePorNome("Professor","professor", "nome", nome));
 		}
 		return "professor/Professor";
 	}
