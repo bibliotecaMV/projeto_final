@@ -63,8 +63,8 @@
 							<div class="form-group">
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control" id="senha" name="senha"
-										required />
+									<input type="password" class="form-control" id="senha"
+										name="senha" required />
 								</div>
 							</div>
 
@@ -145,26 +145,28 @@
 
 								<c:forEach items="${monitores}" var="monitor">
 									<form action="alterarMonitores" method="post">
-									<tr>
-										<td><input type="text" name="id" class="form-control"
-											value="${monitor.id}" /></td>
-										<td><input type="text" name="usuario"
-											value="${monitor.usuario}" /></td>
-										<td><input type="text" name="senha"
-											value="${monitor.senha}" /></td>
-										<td><input type="text" name="aluno"
-											value="${monitor.aluno.nome}" /></td>
-										<td><input type="text" name="turma"
-											value="${monitor.aluno.turma.nome}" /></td>
-										<td><a href="deletaMonitores?id=${monitor.id}">Remover</a></td>
-										<td><input type="submit" value="Alterar" /></td>
-									</tr>
+										<tr>
+											<td><input type="text" name="id" class="form-control"
+												value="${monitor.id}" /></td>
+											<td><input type="text" name="usuario"
+												value="${monitor.usuario}" /></td>
+											<td><input type="text" name="senha"
+												value="${monitor.senha}" /></td>
+											<td><input type="text" name="aluno"
+												value="${monitor.aluno.nome}" /></td>
+											<td><input type="text" name="turma"
+												value="${monitor.aluno.turma.nome}" /></td>
+											<td><a href="deletaMonitores?id=${monitor.id}">Remover</a></td>
+											<td><input type="submit" value="Alterar" /></td>
+										</tr>
 									</form>
 								</c:forEach>
 							</table>
 						</div>
 
-
+						<a href="mostrarPainelAdministrador" class="link">
+							<div class="glyphicon glyphicon-triangle-left"></div>
+						</a>
 					</div>
 				</div>
 			</div>

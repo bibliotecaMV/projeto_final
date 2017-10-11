@@ -98,7 +98,7 @@
 							<div class="modal-footer">
 								<button type="reset" class="btn btn-danger">Limpar</button>
 								<button type="submit" class="btn btn-warning">Cadastar
-									Monitor</button>
+									Aluno</button>
 							</div>
 
 						</form>
@@ -167,6 +167,9 @@
 
 					</div>
 				</div>
+				<a href="mostrarPainelAdministrador" class="link">
+				    <div class="glyphicon glyphicon-triangle-left">
+				    </div></a>
 			</div>
 		</div>
 	</div>

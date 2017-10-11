@@ -692,7 +692,10 @@
 					</table>
 
 				</div>
-
+					
+					<a href="mostrarPainelAdministrador" class="link">
+				    <div class="glyphicon glyphicon-triangle-left">
+				    </div></a>
 			</div>
 		</div>
 	</div>
