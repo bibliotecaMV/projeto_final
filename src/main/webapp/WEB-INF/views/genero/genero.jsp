@@ -86,10 +86,10 @@
 					<div class="panel-body">
 						<form action="listarGenerosNaTable" method="post">
 							Descrição: <input type="text" name="descricao2" > <input
-								type="submit" value="Pesquisar">
+								type="submit" value="Pesquisar" class="btn btn-default">
 						</form>
 					</div>
-					<div>
+					<div class="table-responsive">
 						<table class="table table-bordered" border="1">
 							<tr>
 								<td>Id</td>
@@ -106,8 +106,8 @@
 											name="descricao" /></td>
 										<td><input type="text" value="${genero.sigla}"
 											name="sigla" /></td>
-										<td><a href="#" onClick="removerGenero(${genero.id})">Excluir</a></td>
-										<td><input type="submit" value="Alterar" /></td>
+										<td><a href="#" onClick="removerGenero(${genero.id})" class="btn btn-danger">Excluir</a></td>
+										<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 									</tr>
 								</form>
 							</c:forEach>

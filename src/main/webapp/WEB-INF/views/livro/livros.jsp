@@ -178,14 +178,14 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" value="Pesquisar" />
+										<input type="submit" value="Pesquisar" class="btn btn-default"/>
 									</div>
 								</div>
 							</form>
 						</div>
 
 						<br /> <br /> <br /> <br />
-						<div>
+						<div class="table-responsive">
 
 							<table width="600px" class="table table-bordered">
 								<tr>
@@ -219,8 +219,8 @@
 												value="${livro.titulo}" /></td>
 											<td><input type="text" name="genero"
 												value="${livro.genero.descricao}" /></td>
-											<td><a href="deletarLivro?id=${livro.tombo}">Remover</a></td>
-											<td><input type="submit" value="alterar" /></td>
+											<td><a href="deletarLivro?id=${livro.tombo}" class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar" class="btn btn-warning" /></td>
 										</tr>
 									</form>
 								</c:forEach>

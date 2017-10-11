@@ -108,7 +108,7 @@
 						</div>
 
 						<br /> <br /> <br /> <br />
-						<div>
+						<div class="table-responsive">
 
 							<table width="600px" class="table table-bordered">
 								<tr>
@@ -128,8 +128,8 @@
 												value="${professor.matricula}" /></td>
 											<td><input type="text" name="nome"
 												value="${professor.nome}" /></td>
-											<td><a href="deletaProfessores?id=${professor.id}">Remover</a></td>
-											<td><input type="submit" value="Alterar" /></td>
+											<td><a href="deletaProfessores?id=${professor.id}" class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>
 									</form>
 								</c:forEach>

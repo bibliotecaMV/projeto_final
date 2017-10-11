@@ -103,7 +103,7 @@
 
 
 
-						<div>
+						<div class="table-responsive">
 
 
 							<table width="600px" class="table table-bordered">
@@ -120,8 +120,8 @@
 											<td><input type="text" value="${turmas.id}" name="id" /></td>
 											<td><input type="text" value="${turmas.nome}"
 												name="nome" /></td>
-											<td><a href="deletaTurmas?id=${turmas.id}">Remover</a></td>
-											<td><input type="submit" value="Alterar" /></td>
+											<td><a href="deletaTurmas?id=${turmas.id}" class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>
 									</form>
 								</c:forEach>

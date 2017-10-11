@@ -130,7 +130,7 @@
 						</div>
 
 						<br /> <br /> <br /> <br />
-						<div>
+						<div class="table-responsive">
 
 							<table width="600px" class="table table-bordered">
 								<tr>
@@ -157,9 +157,9 @@
 											<td class="col-sm-2"><input type="text"
 												value="${aluno.turma.nome}" name="turma" /></td>
 											<td class="col-sm-1"><a
-												href="deletarAluno?id=${aluno.id}">Remover</a></td>
+												href="deletarAluno?id=${aluno.id}" class="btn btn-danger">Remover</a></td>
 											<td class="col-sm-1"><input type="submit"
-												value="alterar" /></td>
+												value="Alterar" class="btn btn-warning"/></td>
 
 										</tr>
 									</form>

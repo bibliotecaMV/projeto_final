@@ -36,7 +36,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="submit" class="btn btn-warning">
-					<a href="#" class="link">Encerrar a sessão</a>
+					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
 				</button>
 			</form>
 		</div>
@@ -109,7 +109,7 @@
 
 						<br> <br> <br>
 
-
+					<div class="table-responsive">
 						<table class="table table-bordered">
 							<tr>
 								<td class="active">Id</td>
@@ -124,12 +124,13 @@
 										disabled /></td>
 									<td><input type="text" value="${administrador.usuario}"
 										name="usuario" id="usuario" /></td>
-									<td><a href="deletaAdministrador?id=${administrador.id}">Remover</a></td>
+									<td><a href="deletaAdministrador?id=${administrador.id}" class="btn btn-danger">Remover</a></td>
 									<td><a
 										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}">Alterar</a></td>
 								</tr>
 							</c:forEach>
 						</table>
+					</div>
 					</div>
 
 

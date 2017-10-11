@@ -70,7 +70,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/genero.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -89,7 +89,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/professor.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -132,7 +132,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/emprestimo.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -154,7 +154,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/turma.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -174,7 +174,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/monitor.png" border="0">
 											</div>
 										</center>
 									</div>
@@ -193,7 +193,7 @@
 									<div id="centraliza" class="centraliza">
 										<center>
 											<div class="circulo2">
-												<img src="resources/img/adm.png" border="0">
+												<img src="resources/img/admConfig.png" border="0">
 											</div>
 										</center>
 									</div>

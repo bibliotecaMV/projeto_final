@@ -130,7 +130,7 @@
 						</div>
 
 						<br /> <br /> <br /> <br />
-						<div>
+						<div class="table-responsive">
 							<table class="table table-bordered">
 								<tr>
 									<td class="active">Id</td>
@@ -156,8 +156,8 @@
 												value="${monitor.aluno.nome}" /></td>
 											<td><input type="text" name="turma"
 												value="${monitor.aluno.turma.nome}" /></td>
-											<td><a href="deletaMonitores?id=${monitor.id}">Remover</a></td>
-											<td><input type="submit" value="Alterar" /></td>
+											<td><a href="deletaMonitores?id=${monitor.id}" class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>
 									</form>
 								</c:forEach>
