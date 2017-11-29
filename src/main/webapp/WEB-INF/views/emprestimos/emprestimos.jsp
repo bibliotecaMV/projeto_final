@@ -70,7 +70,7 @@
 							<label for="tombo1" class="col-sm-2 control-label">Tombo:</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="tombo1"
-									name="tombo1" required />
+									name="tombo1" required onkeypress="return testeNumeros(event)"/>
 							</div>
 						</div>
 
@@ -87,10 +87,10 @@
 						</div>
 
 						<div class="form-group">
-							<label for="aluno1" class="col-sm-2 control-label">Aluno:</label>
+							<label for="aluno1" class="col-sm-2 control-label">Nome do aluno:</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" id="aluno1"
-									name="aluno1" required />
+									name="aluno1" required onkeypress="return testeLetras(event)"/>
 							</div>
 						</div>
 
@@ -121,7 +121,7 @@
 
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Empréstimos 22</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<form name="formulario2" action="listarEmprestimosDaTable"
@@ -336,13 +336,14 @@
 											<td>
 
 												<center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}"
+													disabled />
 												</center>
 											</td>
 
 											<td>
 												<center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center>
 											</td>
@@ -354,7 +355,7 @@
 											<c:if test="${emprestimos.aluno.nome != null }">
 												<td>
 													<center>
-														<input type="text" name="aluno"
+														<input class="form-control" type="text" name="aluno"
 															value="${emprestimos.aluno.nome}" />
 													</center>
 												</td>
@@ -367,7 +368,7 @@
 											<c:if test="${emprestimos.professor.nome != null }">
 												<td>
 													<center>
-														<input type="text" name="professor"
+														<input class="form-control" type="text" name="professor"
 															value="${emprestimos.professor.nome}" />
 													</center>
 												</td>
@@ -380,7 +381,7 @@
 											<c:if test="${emprestimos.turma.nome != null }">
 												<td>
 													<center>
-														<input type="text" name="turma"
+														<input class="form-control" type="text" name="turma"
 															value="${emprestimos.turma.nome}" />
 													</center>
 												</td>
@@ -388,7 +389,7 @@
 
 											<td>
 												<center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center>
 											</td>
@@ -400,7 +401,7 @@
 
 											<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
 												<td id="campo_devolucao_${emprestimos.id}"><input
-													type="text" name="dataDevolucao"
+													class="form-control" type="text" name="dataDevolucao"
 													value="${emprestimos.dataDevolucaoFormatada}" /></td>
 											</c:if>
 
@@ -441,10 +442,11 @@
 									<form action="alterarEmprestimo" method="post">
 										<tr id="linha_${emprestimos.id}">
 											<td><center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}" 
+													disabled/>
 												</center></td>
 											<td><center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center></td>
 
@@ -453,7 +455,7 @@
 											</c:if>
 											<c:if test="${emprestimos.aluno.nome != null }">
 												<td><center>
-														<input type="text" name="aluno"
+														<input class="form-control" type="text" name="aluno"
 															value="${emprestimos.aluno.nome}" />
 													</center></td>
 											</c:if>
@@ -462,7 +464,7 @@
 											</c:if>
 											<c:if test="${emprestimos.professor.nome != null }">
 												<td><center>
-														<input type="text" name="professor"
+														<input class="form-control" type="text" name="professor"
 															value="${emprestimos.professor.nome}" />
 													</center></td>
 											</c:if>
@@ -471,12 +473,12 @@
 											</c:if>
 											<c:if test="${emprestimos.turma.nome != null }">
 												<td><center>
-														<input type="text" name="turma"
+														<input class="form-control" type="text" name="turma"
 															value="${emprestimos.turma.nome}" />
 													</center></td>
 											</c:if>
 											<td><center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center></td>
 											<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
@@ -512,22 +514,23 @@
 									<form action="alterarEmprestimo" method="post">
 										<tr id="linha_${emprestimos.id}">
 											<td><center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}" 
+													disabled/>
 												</center></td>
 											<td><center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="aluno"
+													<input class="form-control" type="text" name="aluno"
 														value="${emprestimos.aluno.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="turma"
+													<input class="form-control" type="text" name="turma"
 														value="${emprestimos.turma.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center></td>
 											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
@@ -536,7 +539,7 @@
 											</c:if>
 											<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
 												<td id="campo_devolucao_${emprestimos.id}"><input
-													type="text" name="dataDevolucao"
+													class="form-control" type="text" name="dataDevolucao"
 													value="${emprestimos.dataDevolucaoFormatada}" /></td>
 											</c:if>
 											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
@@ -573,22 +576,23 @@
 									<form action="alterarEmprestimo" method="post">
 										<tr id="linha_${emprestimos.id}">
 											<td><center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}" 
+													disabled/>
 												</center></td>
 											<td><center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="aluno"
+													<input class="form-control" type="text" name="aluno"
 														value="${emprestimos.aluno.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="turma"
+													<input class="form-control" type="text" name="turma"
 														value="${emprestimos.turma.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center></td>
 											<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
@@ -620,18 +624,19 @@
 									<form action="alterarEmprestimo" method="post">
 										<tr id="linha_${emprestimos.id}">
 											<td><center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}" 
+													disabled/>
 												</center></td>
 											<td><center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="professor"
+													<input class="form-control" type="text" name="professor"
 														value="${emprestimos.professor.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center></td>
 											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
@@ -640,7 +645,7 @@
 											</c:if>
 											<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
 												<td id="campo_devolucao_${emprestimos.id}"><input
-													type="text" name="dataDevolucao"
+													class="form-control" type="text" name="dataDevolucao"
 													value="${emprestimos.dataDevolucaoFormatada}" /></td>
 											</c:if>
 											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
@@ -676,18 +681,19 @@
 									<form action="alterarEmprestimo" method="post">
 										<tr id="linha_${emprestimos.id}">
 											<td><center>
-													<input type="text" name="id" value="${emprestimos.id}" />
+													<input class="form-control" type="text" name="id" value="${emprestimos.id}" 
+													disabled/>
 												</center></td>
 											<td><center>
-													<input type="text" name="tombo"
+													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="professor"
+													<input class="form-control" type="text" name="professor"
 														value="${emprestimos.professor.nome}" />
 												</center></td>
 											<td><center>
-													<input type="text" name="dataEmprestimo"
+													<input class="form-control" type="text" name="dataEmprestimo"
 														value="${emprestimos.dataEmprestimoFormatada}" />
 												</center></td>
 											<td id="campo_devolucao_${emprestimos.id}">Não devolvido</td>
