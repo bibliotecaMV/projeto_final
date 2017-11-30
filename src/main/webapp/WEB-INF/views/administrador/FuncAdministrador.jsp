@@ -126,7 +126,8 @@
 										name="usuario" id="usuario" /></td>
 									<td><a href="deletaAdministrador?id=${administrador.id}" class="btn btn-danger">Remover</a></td>
 									<td><a
-										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}">Alterar</a></td>
+										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}"
+										class="btn btn-warning">Alterar</a></td>
 								</tr>
 							</c:forEach>
 						</table>

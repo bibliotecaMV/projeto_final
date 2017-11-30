@@ -671,25 +671,24 @@
 														value="${emprestimos.livro.tombo}" required />
 												</center></td>
 											<td><center>
-											<td>
-												<center>
-													<select class="form-control" name="professor"
-														id="professor">
-														<c:forEach items="${professores}" var="professor">
-															<c:if
-																test="${professor.nome == emprestimos.professor.nome }">
-																<option selected>${professor.nome}</option>
-															</c:if>
-															<c:if
-																test="${professor.nome != emprestimos.professor.nome }">
-																<option>${professor.nome}</option>
-															</c:if>
-														</c:forEach>
-													</select>
-												</center>
-											</td>
-											</center>
-											</td>
+													<td>
+														<center>
+															<select class="form-control" name="professor"
+																id="professor">
+																<c:forEach items="${professores}" var="professor">
+																	<c:if
+																		test="${professor.nome == emprestimos.professor.nome }">
+																		<option selected>${professor.nome}</option>
+																	</c:if>
+																	<c:if
+																		test="${professor.nome != emprestimos.professor.nome }">
+																		<option>${professor.nome}</option>
+																	</c:if>
+																</c:forEach>
+															</select>
+														</center>
+													</td>
+												</center></td>
 											<td><center>
 													<input class="form-control" type="text"
 														name="dataEmprestimo"
@@ -745,25 +744,24 @@
 														value="${emprestimos.livro.tombo}" required />
 												</center></td>
 											<td><center>
-											<td>
-												<center>
-													<select class="form-control" name="professor"
-														id="professor">
-														<c:forEach items="${professores}" var="professor">
-															<c:if
-																test="${professor.nome == emprestimos.professor.nome }">
-																<option selected>${professor.nome}</option>
-															</c:if>
-															<c:if
-																test="${professor.nome != emprestimos.professor.nome }">
-																<option>${professor.nome}</option>
-															</c:if>
-														</c:forEach>
-													</select>
-												</center>
-											</td>
-											</center>
-											</td>
+													<td>
+														<center>
+															<select class="form-control" name="professor"
+																id="professor">
+																<c:forEach items="${professores}" var="professor">
+																	<c:if
+																		test="${professor.nome == emprestimos.professor.nome }">
+																		<option selected>${professor.nome}</option>
+																	</c:if>
+																	<c:if
+																		test="${professor.nome != emprestimos.professor.nome }">
+																		<option>${professor.nome}</option>
+																	</c:if>
+																</c:forEach>
+															</select>
+														</center>
+													</td>
+												</center></td>
 											<td><center>
 													<input class="form-control" type="text"
 														name="dataEmprestimo"

@@ -86,6 +86,7 @@ public class LivroController {
 		Long genero_id = daoGenero.listarIdPorNome("Genero", genero);
 		Genero genero1 = daoGenero.listarPorId(Genero.class, genero_id);
 		livro.setGenero(genero1);
+		daoLivro.alterar(livro);
 		return "redirect:listaLivros";
 	}
 	

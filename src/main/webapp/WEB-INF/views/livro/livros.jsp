@@ -109,8 +109,7 @@
 								<label for="forma_aquisicao" class="col-sm-2 control-label">Forma
 									de aquisição:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="forma_aquisicao">
-										<option selected>*Selecione*</option>
+									<select class="form-control" name="forma_aquisicao" required>
 											<option>Doado</option>
 											<option>Comprado</option>
 									</select>
