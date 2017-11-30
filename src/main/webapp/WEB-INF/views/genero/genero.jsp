@@ -42,7 +42,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Genero</h3>
+						<h3 class="panel-title">Generos</h3>
 					</div>
 
 					<div class="panel-body">
@@ -81,14 +81,14 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista de Generos</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<form action="listarGenerosNaTable" method="post">
 							<div class="form-group">
 								<div class="col-sm-6">
-									<input type="text" class="form-control" placeholder="Descrição"
-										name="descricao2" required>
+									<input type="text" class="form-control" placeholder="Pesquisar por descrição"
+										name="descricao2" onkeypress="return testeLetras(event)">
 								</div>
 							</div>
 							<div class="form-group">
@@ -121,13 +121,15 @@
 										<td>
 											<div class="col-sm-10">
 												<input type="text" value="${genero.descricao}"
-													name="descricao" class="form-control" required />
+													name="descricao" class="form-control" 
+													onkeypress="return testeLetras(event)" required />
 											</div>
 										</td>
 										<td>
 											<div class="col-sm-8">
 												<input type="number" class="form-control"
-													value="${genero.sigla}" name="sigla" required />
+													value="${genero.sigla}" name="sigla" 
+													onkeypress="return testeNumeros(event)" required />
 											</div>
 										</td>
 

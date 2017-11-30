@@ -58,6 +58,13 @@ public class AdministradorController {
 		model.addAttribute("administradores", dao.listar(Administrador.class));
 		return "administrador/FuncAdministrador";
 	}
+	
+	@RequestMapping("listarAdministradoresNaTable")
+	public String listarAdministradoresNaTable(String usuario, Model model) {
+		model.addAttribute("administradores", 
+				dao.listarEntidadePorNome("Administrador", "administrador", "usuario", usuario));
+		return "administrador/FuncAdministrador";
+	}
 
 	@RequestMapping("adicionaAdministrador")
 	public String adicionaAdministrador(Administrador administrador, BindingResult result) {
@@ -69,6 +76,15 @@ public class AdministradorController {
 	public String deletaAdministrador(Long id) throws Exception {
 		Administrador administrador = dao.listarPorId(Administrador.class, id);
 		dao.excluir(administrador);
+		return "redirect:listaAdministradores";
+	}
+	
+	@RequestMapping("alterarAdministrador")
+	public String alterarAdministrador(Administrador administrador) throws Exception {
+		Administrador adm = dao.listarPorId(Administrador.class, administrador.getId());
+		adm.setUsuario(administrador.getUsuario());
+		adm.setSenha(administrador.getSenha());
+		dao.alterar(adm);
 		return "redirect:listaAdministradores";
 	}
 	

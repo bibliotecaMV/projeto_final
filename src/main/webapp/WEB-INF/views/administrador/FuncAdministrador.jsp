@@ -17,7 +17,7 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+	src="resources/js/administrador/administrador.js"></script>
 </head>
 
 <body>
@@ -49,7 +49,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Administrador</h3>
+						<h3 class="panel-title">Administradores</h3>
 					</div>
 					<div class="panel-body">
 
@@ -60,15 +60,15 @@
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" title="Digite um nome de usuário"required />
+										name="usuario" required />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
-									<input type="password" class="form-control" id="senha" name="senha"
-										title= "NÃO ESQUEÇA DE SUA SENHA"required />
+									<input type="password" class="form-control" id="senha"
+										name="senha" required />
 								</div>
 							</div>
 
@@ -88,7 +88,7 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista de Administradores</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
@@ -96,12 +96,12 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="usuario"
-											placeholder="Pesquisar" />
+											placeholder="Pesquisar por usuario" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" class="btn btn-danger" value="pesquisar" />
+										<input type="submit" class="btn btn-default" value="Pesquisar" />
 									</div>
 								</div>
 							</form>
@@ -109,29 +109,34 @@
 
 						<br> <br> <br>
 
-					<div class="table-responsive">
-						<table class="table table-bordered">
-							<tr>
-								<td class="active">Id</td>
-								<td class="success">Nome</td>
-								<td class="danger">Excluir</td>
-								<td class="active">Alterar</td>
-							</tr>
-
-							<c:forEach items="${administradores}" var="administrador">
+						<div class="table-responsive">
+							<table class="table table-bordered">
 								<tr>
-									<td><input type="text" value="${administrador.id}" 
-									class="form-control" readonly="false"/></td>
-									<td><input type="text" value="${administrador.usuario}"
-										name="usuario" id="usuario" class="form-control" required /></td>
-									<td><a href="deletaAdministrador?id=${administrador.id}" class="btn btn-danger">Remover</a></td>
-									<td><a
-										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}"
-										class="btn btn-warning">Alterar</a></td>
+									<td class="active">Id</td>
+									<td class="success">Usuário</td>
+									<td class="active">Senha</td>
+									<td class="danger">Excluir</td>
+									<td class="active">Alterar</td>
 								</tr>
-							</c:forEach>
-						</table>
-					</div>
+
+								<c:forEach items="${administradores}" var="administrador">
+									<form action="alterarAdministrador">
+										<tr>
+											<td><input type="text" value="${administrador.id}"
+												class="form-control" readonly name="id"/></td>
+											<td><input type="text" value="${administrador.usuario}"
+												name="usuario" id="usuario" class="form-control" required /></td>
+											<td><input type="text" value="${administrador.senha}"
+												name="senha" id="senha" class="form-control" required /></td>
+											<td><a href="deletaAdministrador?id=${administrador.id}"
+												class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar"
+												class="btn btn-warning" /></td>
+										</tr>
+									</form>
+								</c:forEach>
+							</table>
+						</div>
 					</div>
 
 

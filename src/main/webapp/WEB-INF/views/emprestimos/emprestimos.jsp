@@ -78,7 +78,6 @@
 							<label for="turma1" class="col-sm-2 control-label">Turma:</label>
 							<div class="col-sm-3">
 								<select class="form-control" name="turma1" id="turma1">
-									<option selected>Selecione</option>
 									<c:forEach items="${turmas}" var="turma">
 										<option>${turma.nome}</option>
 									</c:forEach>
@@ -100,7 +99,6 @@
 							<div class="col-sm-3">
 								<select class="form-control" name="professor1" id="professor1"
 									disabled>
-									<option selected>Selecione</option>
 									<c:forEach items="${professores}" var="professor">
 										<option>${professor.nome}</option>
 									</c:forEach>
@@ -136,19 +134,18 @@
 										onclick="habilitarAlunosListar();">Alunos 
 									
 									<select name="turma2" id="turma2" disabled>
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2" disabled>
+									<input type="text" name="aluno2" id="aluno2" disabled
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
 									
 									<select name="professor2" id="professor2" disabled>
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -157,7 +154,7 @@
 									<input type="checkbox" name="selection" value="devolvidos"
 										checked>Devolvidos
 									
-									<input class="btn btn-danger" type="submit" value="Pesquisar">
+									<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 
 								<c:if test="${opcoesMarcadas == '2'}">
@@ -168,19 +165,18 @@
 										onclick="habilitarAlunosListar();">Alunos 
 					
 					<select name="turma2" id="turma2" disabled>
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2" disabled>
+									<input type="text" name="aluno2" id="aluno2" disabled
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
 					
 					<select name="professor2" id="professor2" disabled>
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -188,7 +184,7 @@
 
 									<input type="checkbox" name="selection" value="devolvidos">Devolvidos
 					
-					<input type="submit" value="Pesquisar">
+					<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 								<c:if test="${opcoesMarcadas == '3'}">
 									<input type="radio" name="option" value="todos"
@@ -198,19 +194,18 @@
 										onclick="habilitarAlunosListar();" checked>Alunos 
 					
 					<select name="turma2" id="turma2">
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2">
+									<input type="text" name="aluno2" id="aluno2"
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
 					
 					<select name="professor2" id="professor2" disabled>
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -219,7 +214,7 @@
 									<input type="checkbox" name="selection" value="devolvidos"
 										checked>Devolvidos
 					
-					<input type="submit" value="Pesquisar">
+					<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 								<c:if test="${opcoesMarcadas == '4'}">
 									<input type="radio" name="option" value="todos"
@@ -229,19 +224,18 @@
 										onclick="habilitarAlunosListar();" checked>Alunos 
 							
 							<select name="turma2" id="turma2">
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2">
+									<input type="text" name="aluno2" id="aluno2"
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
 							
 							<select name="professor2" id="professor2" disabled>
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -249,7 +243,7 @@
 
 									<input type="checkbox" name="selection" value="devolvidos">Devolvidos
 							
-							<input type="submit" value="Pesquisar">
+							<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 								<c:if test="${opcoesMarcadas == '5'}">
 									<input type="radio" name="option" value="todos"
@@ -259,19 +253,18 @@
 										onclick="habilitarAlunosListar();">Alunos 
 							
 							<select name="turma2" id="turma2" disabled>
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2" disabled>
+									<input type="text" name="aluno2" id="aluno2" disabled
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
 							
 							<select name="professor2" id="professor2">
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -280,7 +273,7 @@
 									<input type="checkbox" name="selection" value="devolvidos"
 										checked>Devolvidos
 							
-							<input type="submit" value="Pesquisar">
+							<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 								<c:if test="${opcoesMarcadas == '6'}">
 									<input type="radio" name="option" value="todos"
@@ -290,19 +283,18 @@
 										onclick="habilitarAlunosListar();">Alunos 
 							
 							<select name="turma2" id="turma2" disabled>
-										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
-									<input type="text" name="aluno2" id="aluno2" disabled>
+									<input type="text" name="aluno2" id="aluno2" disabled
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
 							
 							<select name="professor2" id="professor2">
-										<option>Professor:</option>
 										<c:forEach items="${professores}" var="professor">
 											<option>${professor.nome}</option>
 										</c:forEach>
@@ -310,7 +302,7 @@
 
 									<input type="checkbox" name="selection" value="devolvidos">Devolvidos
 							
-							<input type="submit" value="Pesquisar">
+							<input class="btn btn-default" type="submit" value="Pesquisar">
 								</c:if>
 
 							</div>
@@ -338,7 +330,7 @@
 
 												<center>
 													<input class="form-control" type="text" name="id"
-														value="${emprestimos.id}" disabled />
+														value="${emprestimos.id}" readonly />
 												</center>
 											</td>
 

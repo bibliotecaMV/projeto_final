@@ -64,8 +64,9 @@ public class LivroController {
 		if(titulo.equals("")) {
 			return "redirect:listaLivros";
 		}else {
-			model.addAttribute("turmas", 
+			model.addAttribute("livros", 
 					daoLivro.listarEntidadePorNome("Livro","livro", "titulo", titulo));
+			model.addAttribute("generos", daoGenero.listar(Genero.class));
 		}
 		return "livro/livros";
 	}

@@ -16,8 +16,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript"
-	src="resources/js/alunos/alunos.js"></script>
+<script type="text/javascript" src="resources/js/alunos/alunos.js"></script>
 </head>
 
 <body>
@@ -48,7 +47,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Alunos</h3>
+						<h3 class="panel-title">Alunos</h3>
 					</div>
 
 					<div class="panel-body">
@@ -61,7 +60,7 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" onkeypress="return testeNumeros(event)" 
+										name="matricula" onkeypress="return testeNumeros(event)"
 										required />
 								</div>
 							</div>
@@ -70,8 +69,7 @@
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										onkeypress="return testeLetras(event)"
-										required />
+										onkeypress="return testeLetras(event)" required />
 								</div>
 							</div>
 
@@ -80,8 +78,7 @@
 								<label for="numero" class="col-sm-2 control-label">Número:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="numero"
-										name="numero" onkeypress="return testeNumeros(event)"
-										required />
+										name="numero" onkeypress="return testeNumeros(event)" required />
 								</div>
 							</div>
 
@@ -90,7 +87,6 @@
 								<div class="col-sm-3">
 									<select class="btn btn-primary dropdown-toggle" name="turma"
 										id="turma">
-										<option selected>Selecione</option>
 										<c:forEach items="${turma}" var="turmas">
 											<option>${turmas.nome}</option>
 										</c:forEach>
@@ -113,7 +109,7 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista de Alunos</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
@@ -121,13 +117,13 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
-											placeholder="Pesquisar por nome" 
-											onkeypress="return testeLetras(event)"/>
+											placeholder="Pesquisar por nome"
+											onkeypress="return testeLetras(event)" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" class="btn btn-danger" value="Pesquisar" />
+										<input type="submit" class="btn btn-default" value="Pesquisar" />
 									</div>
 								</div>
 							</form>
@@ -151,27 +147,34 @@
 									<form action="alterarAluno" method="post">
 										<tr>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.id}" name="id" 
-													class="form-control" disabled/></td>
+												value="${aluno.id}" name="id" class="form-control" readonly /></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.matricula}" name="matricula" 
-													class="form-control" required
-														onkeypress="return testeNumeros(event)"/></td>
+												value="${aluno.matricula}" name="matricula"
+												class="form-control" required
+												onkeypress="return testeNumeros(event)" /></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.nome}" name="nome" 
-													class="form-control" required
-														onkeypress="return testeLetras(event)"/></td>
+												value="${aluno.nome}" name="nome" class="form-control"
+												required onkeypress="return testeLetras(event)" /></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.numero}" name="numero" 
-													class="form-control" required
-														onkeypress="return testeNumeros(event)"/></td>
-											<td class="col-sm-2"><input type="text"
-												value="${aluno.turma.nome}" name="turma" 
-													class="form-control"/></td>
+												value="${aluno.numero}" name="numero" class="form-control"
+												required onkeypress="return testeNumeros(event)" /></td>
+											<td class="col-sm-2"><select
+												class="btn btn-primary dropdown-toggle" name="turma"
+												id="turma">
+													<c:forEach items="${turma}" var="turmas">
+														<c:if test="${aluno.turma.nome == turmas.nome }">
+															<option selected>${turmas.nome}</option>
+														</c:if>
+														<c:if test="${aluno.turma.nome != turmas.nome }">
+															<option>${turmas.nome}</option>
+														</c:if>
+
+													</c:forEach>
+											</select></td>
 											<td class="col-sm-1"><a
 												href="deletarAluno?id=${aluno.id}" class="btn btn-danger">Remover</a></td>
 											<td class="col-sm-1"><input type="submit"
-												value="Alterar" class="btn btn-warning"/></td>
+												value="Alterar" class="btn btn-warning" /></td>
 
 										</tr>
 									</form>
@@ -182,8 +185,8 @@
 					</div>
 				</div>
 				<a href="mostrarPainelAdministrador" class="link">
-				    <div class="glyphicon glyphicon-triangle-left">
-				    </div></a>
+					<div class="glyphicon glyphicon-triangle-left"></div>
+				</a>
 			</div>
 		</div>
 	</div>

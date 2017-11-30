@@ -15,7 +15,7 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+	src="resources/js/monitores/monitores.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -45,7 +45,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Monitor</h3>
+						<h3 class="panel-title">Monitores</h3>
 					</div>
 					<div class="panel-body">
 
@@ -72,7 +72,6 @@
 								<label for="turma" class="col-sm-2 control-label">Turma:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="turma" id="turma">
-										<option selected>*Selecione*</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
@@ -85,7 +84,6 @@
 								<label for="alunos" class="col-sm-2 control-label">Alunos:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="aluno" id="aluno">
-										<option selected>*Selecione*</option>
 										<c:forEach items="${alunos}" var="aluno">
 											<option>${aluno.nome}</option>
 										</c:forEach>
@@ -110,7 +108,7 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista de Monitores</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
@@ -118,7 +116,7 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="usuario"
-											placeholder="digite o nome de usuario" />
+											placeholder="Pesquisar por usuario" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -147,7 +145,7 @@
 									<form action="alterarMonitores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${monitor.id}" readonly="false"/></td>
+												value="${monitor.id}" readonly/></td>
 											<td><input type="text" name="usuario" class="form-control"
 												value="${monitor.usuario}" required /></td>
 											<td><input type="text" name="senha" class="form-control"

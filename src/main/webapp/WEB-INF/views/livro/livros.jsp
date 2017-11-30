@@ -16,8 +16,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+<script type="text/javascript" src="resources/js/livro/livro.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -48,7 +47,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Livro</h3>
+						<h3 class="panel-title">Livros</h3>
 					</div>
 
 					<div class="panel-body">
@@ -59,8 +58,8 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="tombo" 
-									name="tombo" required/>
+									<input type="number" class="form-control" id="tombo"
+										name="tombo" required />
 								</div>
 							</div>
 
@@ -77,7 +76,8 @@
 									editado:</label>
 								<div class="col-sm-4">
 									<input type="number" class="form-control" id="ano_editado"
-										name="ano_editado" required onkeypress="return testeNumeros(event)"/>
+										name="ano_editado" required
+										onkeypress="return testeNumeros(event)" />
 								</div>
 							</div>
 
@@ -85,7 +85,7 @@
 								<label for="autor" class="col-sm-2 control-label">Autor:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="autor" name="autor"
-										required  onkeypress="return testeLetras(event)" />
+										required onkeypress="return testeLetras(event)" />
 								</div>
 							</div>
 
@@ -101,7 +101,8 @@
 								<label for="exemplares" class="col-sm-2 control-label">Exemplares:</label>
 								<div class="col-sm-4">
 									<input type="number" class="form-control" id="exemplares"
-										name="exemplares" required onkeypress="return testeNumeros(event)"/>
+										name="exemplares" required
+										onkeypress="return testeNumeros(event)" />
 								</div>
 							</div>
 
@@ -110,8 +111,8 @@
 									de aquisição:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="forma_aquisicao" required>
-											<option>Doado</option>
-											<option>Comprado</option>
+										<option>Doado</option>
+										<option>Comprado</option>
 									</select>
 								</div>
 
@@ -146,7 +147,6 @@
 								<label for="genero" class="col-sm-2 control-label">Genero:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="genero">
-										<option selected>Selecione</option>
 										<c:forEach items="${generos}" var="genero">
 											<option>${genero.descricao}</option>
 										</c:forEach>
@@ -168,7 +168,7 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista de Livros</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
@@ -176,12 +176,12 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="titulo"
-											placeholder="Pesquisar" />
+											placeholder="Pesquisar por título" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" value="Pesquisar" class="btn btn-default"/>
+										<input type="submit" value="Pesquisar" class="btn btn-default" />
 									</div>
 								</div>
 							</form>
@@ -204,18 +204,31 @@
 								<c:forEach items="${livros}" var="livro">
 									<form action="alterarLivro" method="post">
 										<tr>
-											<td><input class="form-control" type="number" name="tombo"
-											    value="${livro.tombo}" required readonly="false"></td>
+											<td><input class="form-control" type="number"
+												name="tombo" value="${livro.tombo}" required
+												readonly="false"></td>
 											<td><input class="form-control" type="text" name="autor"
-												value="${livro.autor}" required />
-											<td><input class="form-control" type="number" name="exemplares"
-												value="${livro.exemplares}" required /></td>
-											<td><input class="form-control" type="text" name="titulo"
-												value="${livro.titulo}" required /></td>
-											<td><input class="form-control" type="text" name="genero"
-												value="${livro.genero.descricao}" required/></td>
-											<td><a href="deletarLivro?id=${livro.tombo}" class="btn btn-danger">Remover</a></td>
-											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
+												value="${livro.autor}" required
+												onkeypress="return testeLetras(event)" />
+											<td><input class="form-control" type="number"
+												name="exemplares" value="${livro.exemplares}" required /></td>
+											<td><input class="form-control" type="text"
+												name="titulo" value="${livro.titulo}" required
+												onkeypress="return testeLetras(event)" /></td>
+											<td><select class="form-control" name="genero">
+													<c:forEach items="${generos}" var="genero">
+														<c:if test="${livro.genero.descricao == genero.descricao }">
+															<option selected>${genero.descricao}</option>
+														</c:if>
+														<c:if test="${livro.genero.descricao != genero.descricao }">
+															<option>${genero.descricao}</option>
+														</c:if>
+													</c:forEach>
+											</select></td>
+											<td><a href="deletarLivro?id=${livro.tombo}"
+												class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar"
+												class="btn btn-warning" /></td>
 										</tr>
 									</form>
 								</c:forEach>
@@ -225,8 +238,8 @@
 					</div>
 				</div>
 				<a href="mostrarPainelAdministrador" class="link">
-				    <div class="glyphicon glyphicon-triangle-left">
-				    </div></a>
+					<div class="glyphicon glyphicon-triangle-left"></div>
+				</a>
 			</div>
 		</div>
 	</div>

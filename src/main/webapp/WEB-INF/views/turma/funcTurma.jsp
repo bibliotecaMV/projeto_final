@@ -16,7 +16,7 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+	src="resources/js/turma/turma.js"></script>
 <body>
 	<nav class="navbar navbar-default">
 	<div class="container">
@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="panel panel-warning">
 					<div class="panel-heading">
-						<h3 class="panel-title">Cadastrar Turmas</h3>
+						<h3 class="panel-title">Turmas</h3>
 					</div>
 
 					<div class="panel-body">
@@ -58,7 +58,7 @@
 								<label for="nome" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										required />
+										required/>
 								</div>
 							</div>
 
@@ -77,7 +77,7 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">Lista das Turmas</h3>
+						<h3 class="panel-title">Lista</h3>
 					</div>
 					<div class="panel-body">
 						<div id="opcoes">
@@ -85,13 +85,13 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
-											placeholder="Pesquisar" />
+											placeholder="Pesquisar por descrição"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
 
-										<input type="submit" value="pesquisar" class="btn btn-danger" />
+										<input type="submit" value="Pesquisar" class="btn btn-default" />
 
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 											  </div>
 											</td>
 											<td><input type="text" value="${turmas.nome}"
-												name="nome" required class="form-control" /></td>
+												name="nome" required class="form-control"/></td>
 											<td><a href="deletaTurmas?id=${turmas.id}" class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>

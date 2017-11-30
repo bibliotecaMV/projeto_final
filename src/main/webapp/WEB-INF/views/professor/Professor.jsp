@@ -61,8 +61,8 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" placeholder="3456789" required 
-										onkeypress="return testeNumeros(event)"/>
+										name="matricula" placeholder="3456789" required
+										onkeypress="return testeNumeros(event)" />
 								</div>
 							</div>
 
@@ -70,8 +70,8 @@
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Antonio da Silva Pinto" required 
-										onkeypress="return testeLetras(event)"/>
+										placeholder="Antonio da Silva Pinto" required
+										onkeypress="return testeLetras(event)" />
 								</div>
 							</div>
 
@@ -99,14 +99,14 @@
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
 											placeholder="Pesquisar por nome"
-												onkeypress="return testeLetras(event)" />
+											onkeypress="return testeLetras(event)" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" class="btn btn-danger" value="Pesquisar" />
+										<input type="submit" class="btn btn-default" value="Pesquisar" />
 									</div>
-								</div>						
+								</div>
 							</form>
 						</div>
 
@@ -126,15 +126,25 @@
 									<form action="alterarProfessores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${professor.id}" disabled/></td>
-											<td><input type="text" name="matricula" class="form-control"
-												value="${professor.matricula}" required 
-													onkeypress="return testeNumeros(event)"/></td>
-											<td><input type="text" name="nome" class="form-control"
-												value="${professor.nome}" required
-													onkeypress="return testeLetras(event)"/></td>
-											<td><a href="deletaProfessores?id=${professor.id}" class="btn btn-danger">Remover</a></td>
-											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
+												value="${professor.id}" disabled /></td>
+											<td><input type="text" name="matricula"
+												class="form-control" value="${professor.matricula}" required
+												onkeypress="return testeNumeros(event)" /></td>
+											<td><select class="form-control" name="professor">
+													<c:forEach items="${professores}" var="professores">
+														<c:if test="${professores.nome == professor.nome }">
+															<option selected>${professores.nome}</option>
+														</c:if>
+														<c:if test="${professores.nome != professor.nome }">
+															<option>${professores.nome}</option>
+														</c:if>
+														
+													</c:forEach>
+											</select></td>
+											<td><a href="deletaProfessores?id=${professor.id}"
+												class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar"
+												class="btn btn-warning" /></td>
 										</tr>
 									</form>
 								</c:forEach>
@@ -144,8 +154,8 @@
 					</div>
 				</div>
 				<a href="mostrarPainelAdministrador" class="link">
-				    <div class="glyphicon glyphicon-triangle-left">
-				    </div></a>
+					<div class="glyphicon glyphicon-triangle-left"></div>
+				</a>
 			</div>
 		</div>
 	</div>
