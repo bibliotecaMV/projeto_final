@@ -60,15 +60,15 @@
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" required />
+										name="usuario" title="Digite um nome de usuário"required />
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="senha" name="senha"
-										required />
+									<input type="password" class="form-control" id="senha" name="senha"
+										title= "NÃO ESQUEÇA DE SUA SENHA"required />
 								</div>
 							</div>
 
@@ -120,10 +120,10 @@
 
 							<c:forEach items="${administradores}" var="administrador">
 								<tr>
-									<td><input type="text" value="${administrador.id}"
-										disabled /></td>
+									<td><input type="text" value="${administrador.id}" 
+									class="form-control" readonly="false"/></td>
 									<td><input type="text" value="${administrador.usuario}"
-										name="usuario" id="usuario" /></td>
+										name="usuario" id="usuario" class="form-control" required /></td>
 									<td><a href="deletaAdministrador?id=${administrador.id}" class="btn btn-danger">Remover</a></td>
 									<td><a
 										href="alteraAdministrador?id=${administrador.id}&&usuario=${administrador.usuario}"

@@ -59,8 +59,8 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="tombo" name="tombo"
-										required />
+									<input type="number" class="form-control" id="tombo" 
+									name="tombo" required/>
 								</div>
 							</div>
 
@@ -193,11 +193,8 @@
 							<table width="600px" class="table table-bordered">
 								<tr>
 									<td class="active">Tombo</td>
-									<td class="active">CDD</td>
 									<td class="danger">Autor</td>
-									<td class="success">Editora</td>
 									<td class="danger">Exemplares</td>
-									<td class="success">Forma de aquisição</td>
 									<td class="success">Titulo</td>
 									<td class="success">Genero</td>
 									<td class="danger">Excluir</td>
@@ -207,21 +204,15 @@
 								<c:forEach items="${livros}" var="livro">
 									<form action="alterarLivro" method="post">
 										<tr>
-											<td><input type="number" name="tombo"
-											    value="${livro.tombo}" required></td>
-											<td><input type="text" name="CDD" 
-											    value="${livro.CDD}" required /></td>
-											<td><input type="text" name="autor"
+											<td><input class="form-control" type="number" name="tombo"
+											    value="${livro.tombo}" required readonly="false"></td>
+											<td><input class="form-control" type="text" name="autor"
 												value="${livro.autor}" required />
-											<td><input type="text" name="editora"
-												value="${livro.editora}" required /></td>
-											<td><input type="number" name="exemplares"
+											<td><input class="form-control" type="number" name="exemplares"
 												value="${livro.exemplares}" required /></td>
-											<td><input type="text" name="forma_aquisicao"
-												value="${livro.forma_aquisicao}" required /></td>
-											<td><input type="text" name="titulo"
+											<td><input class="form-control" type="text" name="titulo"
 												value="${livro.titulo}" required /></td>
-											<td><input type="text" name="genero"
+											<td><input class="form-control" type="text" name="genero"
 												value="${livro.genero.descricao}" required/></td>
 											<td><a href="deletarLivro?id=${livro.tombo}" class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>

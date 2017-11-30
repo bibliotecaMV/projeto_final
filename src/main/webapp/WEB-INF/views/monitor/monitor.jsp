@@ -72,7 +72,7 @@
 								<label for="turma" class="col-sm-2 control-label">Turma:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="turma" id="turma">
-										<option selected>Selecione</option>
+										<option selected>*Selecione*</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
@@ -85,7 +85,7 @@
 								<label for="alunos" class="col-sm-2 control-label">Alunos:</label>
 								<div class="col-sm-3">
 									<select class="form-control" name="aluno" id="aluno">
-										<option selected>Selecione</option>
+										<option selected>*Selecione*</option>
 										<c:forEach items="${alunos}" var="aluno">
 											<option>${aluno.nome}</option>
 										</c:forEach>
@@ -123,7 +123,7 @@
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" value="Pesquisar" />
+										<input type="submit" class="btn btn-default" value="Pesquisar" />
 									</div>
 								</div>
 							</form>
@@ -147,15 +147,15 @@
 									<form action="alterarMonitores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${monitor.id}"/></td>
-											<td><input type="text" name="usuario"
-												value="${monitor.usuario}" /></td>
-											<td><input type="text" name="senha"
-												value="${monitor.senha}" /></td>
-											<td><input type="text" name="aluno"
-												value="${monitor.aluno.nome}" /></td>
-											<td><input type="text" name="turma"
-												value="${monitor.aluno.turma.nome}" /></td>
+												value="${monitor.id}" readonly="false"/></td>
+											<td><input type="text" name="usuario" class="form-control"
+												value="${monitor.usuario}" required /></td>
+											<td><input type="text" name="senha" class="form-control"
+												value="${monitor.senha}" required /></td>
+											<td><input type="text" name="aluno" class="form-control"
+												value="${monitor.aluno.nome}" required /></td>
+											<td><input type="text" name="turma" class="form-control"
+												value="${monitor.aluno.turma.nome}" required /></td>
 											<td><a href="deletaMonitores?id=${monitor.id}"
 												class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar"
