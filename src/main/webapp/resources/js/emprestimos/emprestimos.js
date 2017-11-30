@@ -38,29 +38,29 @@ function testeLetras(e)
 {
 	var expressao;
 
-	expressao = /[a-zA-Z]/;
+	expressao = /[0-9]/;
 
 	if(expressao.test(String.fromCharCode(e.keyCode)))
 	{
-		return true;
+		return false;
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 }
 function testeNumeros(e)
 {
 	var expressao;
 
-	expressao = /[0-9]/;
+	expressao = /[a-zA-Z]/;
 
 	if(expressao.test(String.fromCharCode(e.keyCode)))
 	{
-		return true;
+		return false;
 	}
 	else
 	{
-		return false;
+		return true;
 	}
 }
