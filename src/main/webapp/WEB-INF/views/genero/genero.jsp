@@ -87,8 +87,17 @@
 					</div>
 					<div class="panel-body">
 						<form action="listarGenerosNaTable" method="post">
-							Descrição: <input type="text" name="descricao2" required  > 
-							<input type="submit" value="Pesquisar" class="btn btn-default">
+						<div class="form-group">
+							<div class="col-sm-6">
+							   <input type="text" class="form-control" placeholder="Descrição"
+							   name="descricao2" required >
+							</div>
+						</div>
+						<div class="form-group">
+						   <div class="col-sm-4">
+							   <input type="submit" value="Pesquisar" class="btn btn-default"> 
+						   </div>
+						</div>
 						</form>
 					</div>
 					<div class="table-responsive">
@@ -99,17 +108,33 @@
 								<td>Sigla</td>
 								<td>Excluir</td>
 								<td>Alterar</td>
+								<td>test</td>
 							</tr>
 							<c:forEach items="${generos}" var="genero">
 								<form action="alterarGenero" method="post">
 									<tr id="linha_${genero.id}">
-										<td><input type="text" value="${genero.id}" name="id" disabled /></td>
-										<td><input type="text" value="${genero.descricao}"
-											name="descricao" required /></td>
-										<td><input type="number" value="${genero.sigla}"
-											name="sigla" required /></td>
+										<td>
+										  <div class="col-sm-5">
+										     <input type="text" value="${genero.id}" class="form-control" name="id" readonly />
+										  </div>
+										</td>
+										
+										<td>
+										 <div class="col-sm-10">
+										   <input type="text" value="${genero.descricao}"
+											name="descricao" class="form-control" required />
+									     </div>
+										</td>
+										<td>
+										<div class="col-sm-8">
+											<input type="number" class="form-control" value="${genero.sigla}"
+												name="sigla" required />
+										</div>
+										</td>
+										
 										<td><a href="#" onClick="removerGenero(${genero.id})" class="btn btn-danger">Excluir</a></td>
 										<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
+										<td></td>
 									</tr>
 								</form>
 							</c:forEach>

@@ -117,9 +117,14 @@
 								<c:forEach items="${turmas}" var="turmas">
 									<form action="alterarTurma" method="post">
 										<tr>
-											<td><input type="text" value="${turmas.id}" name="id" /></td>
+											<td>
+											  <div class="col-sm-5">
+											    <input type="text" class="form-control" value="${turmas.id}" 
+											    name="id" readonly/>
+											  </div>
+											</td>
 											<td><input type="text" value="${turmas.nome}"
-												name="nome" /></td>
+												name="nome" required class="form-control" /></td>
 											<td><a href="deletaTurmas?id=${turmas.id}" class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>
