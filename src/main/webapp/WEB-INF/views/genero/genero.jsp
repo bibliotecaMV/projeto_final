@@ -13,6 +13,8 @@
 <meta charset="utf-8" />
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/generos/generos.js"></script>
+<script type="text/javascript"
+	src="resources/js/generos/generos.js"></script>
 </head>
 <body>
 
@@ -55,7 +57,7 @@
 								<label for="descricao" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="descricao"
-										name="descricao" required />
+										name="descricao" required onkeypress="return testeLetras(event)"/>
 								</div>
 							</div>
 							<div class="form-group">
@@ -85,8 +87,8 @@
 					</div>
 					<div class="panel-body">
 						<form action="listarGenerosNaTable" method="post">
-							Descrição: <input type="text" name="descricao2" > <input
-								type="submit" value="Pesquisar" class="btn btn-default">
+							Descrição: <input type="text" name="descricao2" required  > 
+							<input type="submit" value="Pesquisar" class="btn btn-default">
 						</form>
 					</div>
 					<div class="table-responsive">

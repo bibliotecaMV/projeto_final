@@ -16,7 +16,7 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+	src="resources/js/professores/professores.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -61,7 +61,8 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" placeholder="3456789" required />
+										name="matricula" placeholder="3456789" required 
+										onkeypress="return testeNumeros(event)"/>
 								</div>
 							</div>
 
@@ -69,7 +70,8 @@
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Antonio" required />
+										placeholder="Antonio da Silva Pinto" required 
+										onkeypress="return testeLetras(event)"/>
 								</div>
 							</div>
 
@@ -96,12 +98,13 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
-											placeholder="Pesquisar" />
+											placeholder="Pesquisar por nome"
+												onkeypress="return testeLetras(event)" />
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" value="Pesquisar" />
+										<input type="submit" class="btn btn-danger" value="Pesquisar" />
 									</div>
 								</div>						
 							</form>
@@ -123,11 +126,13 @@
 									<form action="alterarProfessores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${professor.id}" /></td>
-											<td><input type="text" name="matricula"
-												value="${professor.matricula}" /></td>
-											<td><input type="text" name="nome"
-												value="${professor.nome}" /></td>
+												value="${professor.id}" disabled/></td>
+											<td><input type="text" name="matricula" class="form-control"
+												value="${professor.matricula}" required 
+													onkeypress="return testeNumeros(event)"/></td>
+											<td><input type="text" name="nome" class="form-control"
+												value="${professor.nome}" required
+													onkeypress="return testeLetras(event)"/></td>
 											<td><a href="deletaProfessores?id=${professor.id}" class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>

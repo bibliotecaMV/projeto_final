@@ -77,7 +77,7 @@
 									editado:</label>
 								<div class="col-sm-4">
 									<input type="number" class="form-control" id="ano_editado"
-										name="ano_editado" required />
+										name="ano_editado" required onkeypress="return testeNumeros(event)"/>
 								</div>
 							</div>
 
@@ -85,7 +85,7 @@
 								<label for="autor" class="col-sm-2 control-label">Autor:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="autor" name="autor"
-										required />
+										required  onkeypress="return testeLetras(event)" />
 								</div>
 							</div>
 
@@ -101,17 +101,21 @@
 								<label for="exemplares" class="col-sm-2 control-label">Exemplares:</label>
 								<div class="col-sm-4">
 									<input type="number" class="form-control" id="exemplares"
-										name="exemplares" required />
+										name="exemplares" required onkeypress="return testeNumeros(event)"/>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="forma_aquisicao" class="col-sm-2 control-label">Forma
 									de aquisição:</label>
-								<div class="col-sm-4">
-									<input type="text" class="form-control" id="forma_aquisicao"
-										name="forma_aquisicao" required />
+								<div class="col-sm-3">
+									<select class="form-control" name="forma_aquisicao">
+										<option selected>*Selecione*</option>
+											<option>Doado</option>
+											<option>Comprado</option>
+									</select>
 								</div>
+
 							</div>
 
 							<div class="form-group">
@@ -202,25 +206,26 @@
 								</tr>
 
 								<c:forEach items="${livros}" var="livro">
-									<form action="" method="post">
+									<form action="alterarLivro" method="post">
 										<tr>
-											<td><input type="text" name="tombo"
-												value="${livro.tombo}" /></td>
-											<td><input type="text" name="CDD" value="${livro.CDD}" /></td>
+											<td><input type="number" name="tombo"
+											    value="${livro.tombo}" required></td>
+											<td><input type="text" name="CDD" 
+											    value="${livro.CDD}" required /></td>
 											<td><input type="text" name="autor"
-												value="${livro.autor}" />
+												value="${livro.autor}" required />
 											<td><input type="text" name="editora"
-												value="${livro.editora}" /></td>
+												value="${livro.editora}" required /></td>
 											<td><input type="number" name="exemplares"
-												value="${livro.exemplares}" /></td>
+												value="${livro.exemplares}" required /></td>
 											<td><input type="text" name="forma_aquisicao"
-												value="${livro.forma_aquisicao}" /></td>
+												value="${livro.forma_aquisicao}" required /></td>
 											<td><input type="text" name="titulo"
-												value="${livro.titulo}" /></td>
+												value="${livro.titulo}" required /></td>
 											<td><input type="text" name="genero"
-												value="${livro.genero.descricao}" /></td>
+												value="${livro.genero.descricao}" required/></td>
 											<td><a href="deletarLivro?id=${livro.tombo}" class="btn btn-danger">Remover</a></td>
-											<td><input type="submit" value="Alterar" class="btn btn-warning" /></td>
+											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 										</tr>
 									</form>
 								</c:forEach>

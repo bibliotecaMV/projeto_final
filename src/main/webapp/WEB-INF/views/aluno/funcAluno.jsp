@@ -17,7 +17,7 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
-	src="resources/js/emprestimos/emprestimos.js"></script>
+	src="resources/js/alunos/alunos.js"></script>
 </head>
 
 <body>
@@ -61,7 +61,8 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" required />
+										name="matricula" onkeypress="return testeNumeros(event)" 
+										required />
 								</div>
 							</div>
 
@@ -69,6 +70,7 @@
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
+										onkeypress="return testeLetras(event)"
 										required />
 								</div>
 							</div>
@@ -78,7 +80,8 @@
 								<label for="numero" class="col-sm-2 control-label">Número:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="numero"
-										name="numero" required />
+										name="numero" onkeypress="return testeNumeros(event)"
+										required />
 								</div>
 							</div>
 
@@ -118,12 +121,13 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
-											placeholder="Pesquisar" />
+											placeholder="Pesquisar por nome" 
+											onkeypress="return testeLetras(event)"/>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-4">
-										<input type="submit" class="btn btn-danger" value="pesquisar" />
+										<input type="submit" class="btn btn-danger" value="Pesquisar" />
 									</div>
 								</div>
 							</form>
@@ -147,15 +151,23 @@
 									<form action="alterarAluno" method="post">
 										<tr>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.id}" name="id" /></td>
+												value="${aluno.id}" name="id" 
+													class="form-control" disabled/></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.matricula}" name="matricula" /></td>
+												value="${aluno.matricula}" name="matricula" 
+													class="form-control" required
+														onkeypress="return testeNumeros(event)"/></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.nome}" name="nome" /></td>
+												value="${aluno.nome}" name="nome" 
+													class="form-control" required
+														onkeypress="return testeLetras(event)"/></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.numero}" name="numero" /></td>
+												value="${aluno.numero}" name="numero" 
+													class="form-control" required
+														onkeypress="return testeNumeros(event)"/></td>
 											<td class="col-sm-2"><input type="text"
-												value="${aluno.turma.nome}" name="turma" /></td>
+												value="${aluno.turma.nome}" name="turma" 
+													class="form-control"/></td>
 											<td class="col-sm-1"><a
 												href="deletarAluno?id=${aluno.id}" class="btn btn-danger">Remover</a></td>
 											<td class="col-sm-1"><input type="submit"

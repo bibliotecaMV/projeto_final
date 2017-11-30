@@ -70,6 +70,25 @@ public class LivroController {
 		return "livro/livros";
 	}
 	
+	@RequestMapping("alterarLivro")
+	public String alterarLivro(String tombo, String CDD, String forma_aquisicao, String titulo, 
+			String autor, Long volume, Long exemplares, String editora, String local_edicao, Long ano_editado, String genero ) throws Exception {
+		Livro livro = daoLivro.listarPorId(Livro.class, tombo);
+		livro.setCDD(CDD);
+		livro.setForma_aquisicao(forma_aquisicao);
+		livro.setTitulo(titulo);
+		livro.setAutor(autor);
+		livro.setVolume(volume);
+		livro.setExemplares(exemplares);
+		livro.setEditora(editora);
+		livro.setLocal_edicao(local_edicao);
+		livro.setAno_editado(ano_editado);
+		Long genero_id = daoGenero.listarIdPorNome("Genero", genero);
+		Genero genero1 = daoGenero.listarPorId(Genero.class, genero_id);
+		livro.setGenero(genero1);
+		return "redirect:listaLivros";
+	}
+	
 	@RequestMapping("sobreLivros")
 	public String sobreLivro() {
 		return "redirect:listaLivros";
