@@ -7,14 +7,11 @@
 <title>BIBLIOTECA LTV - MV INFORMATICA</title>
 <!-- Bootstrap -->
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 
 <meta charset="utf-8" />
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/generos/generos.js"></script>
-<script type="text/javascript"
-	src="resources/js/generos/generos.js"></script>
 </head>
 <body>
 
@@ -56,15 +53,16 @@
 							<div class="form-group">
 								<label for="descricao" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="descricao"
-										name="descricao" required onkeypress="return testeLetras(event)"/>
+									<input type="text" class="form-control" id="descricao" 
+										name="descricao" required  title="Digite um genero"
+										onkeypress="return testeLetras(event)" />
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="sigla" class="col-sm-2 control-label">Sigla:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="sigla" name="sigla"
-										required />
+									<input type="number" class="form-control" id="sigla"
+										name="sigla" title="Digite uma sigla"required />
 								</div>
 							</div>
 
@@ -87,17 +85,17 @@
 					</div>
 					<div class="panel-body">
 						<form action="listarGenerosNaTable" method="post">
-						<div class="form-group">
-							<div class="col-sm-6">
-							   <input type="text" class="form-control" placeholder="Descrição"
-							   name="descricao2" required >
+							<div class="form-group">
+								<div class="col-sm-6">
+									<input type="text" class="form-control" placeholder="Descrição"
+										name="descricao2" required>
+								</div>
 							</div>
-						</div>
-						<div class="form-group">
-						   <div class="col-sm-4">
-							   <input type="submit" value="Pesquisar" class="btn btn-default"> 
-						   </div>
-						</div>
+							<div class="form-group">
+								<div class="col-sm-4">
+									<input type="submit" value="Pesquisar" class="btn btn-default">
+								</div>
+							</div>
 						</form>
 					</div>
 					<div class="table-responsive">
@@ -108,47 +106,54 @@
 								<td>Sigla</td>
 								<td>Excluir</td>
 								<td>Alterar</td>
-								<td>test</td>
+							
 							</tr>
 							<c:forEach items="${generos}" var="genero">
 								<form action="alterarGenero" method="post">
 									<tr id="linha_${genero.id}">
 										<td>
-										  <div class="col-sm-5">
-										     <input type="text" value="${genero.id}" class="form-control" name="id" readonly />
-										  </div>
+											<div class="col-sm-5">
+												<input type="text" value="${genero.id}" class="form-control"
+													name="id" readonly />
+											</div>
 										</td>
-										
+
 										<td>
-										 <div class="col-sm-10">
-										   <input type="text" value="${genero.descricao}"
-											name="descricao" class="form-control" required />
-									     </div>
+											<div class="col-sm-10">
+												<input type="text" value="${genero.descricao}"
+													name="descricao" class="form-control" required />
+											</div>
 										</td>
 										<td>
-										<div class="col-sm-8">
-											<input type="number" class="form-control" value="${genero.sigla}"
-												name="sigla" required />
-										</div>
+											<div class="col-sm-8">
+												<input type="number" class="form-control"
+													value="${genero.sigla}" name="sigla" required />
+											</div>
 										</td>
+
+										<td><a href="#" onClick="removerGenero(${genero.id})"
+											class="btn btn-danger">Excluir</a></td>
+										<td><input type="submit" value="Alterar"
+											class="btn btn-warning" /></td>
 										
-										<td><a href="#" onClick="removerGenero(${genero.id})" class="btn btn-danger">Excluir</a></td>
-										<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
-										<td></td>
 									</tr>
 								</form>
 							</c:forEach>
 						</table>
 					</div>
 				</div>
-				 <a href="mostrarPainelAdministrador" class="link">
-				    <div class="glyphicon glyphicon-triangle-left">
-				    </div></a>
-				
-				
+				<a href="mostrarPainelAdministrador" class="link">
+					<div class="glyphicon glyphicon-triangle-left"></div>
+				</a>
+
+
 			</div>
 		</div>
 	</div>
-	
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
 </body>
 </html>

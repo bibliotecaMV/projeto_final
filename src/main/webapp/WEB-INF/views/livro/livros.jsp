@@ -59,8 +59,8 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="tombo" name="tombo"
-										/>
+									<input type="number" class="form-control" id="tombo" 
+									name="tombo" required/>
 								</div>
 							</div>
 
