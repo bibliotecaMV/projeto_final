@@ -59,7 +59,7 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="tombo" name="tombo"
+									<input type="number" class="form-control" id="tombo" name="tombo"
 										required />
 								</div>
 							</div>
@@ -67,7 +67,7 @@
 							<div class="form-group">
 								<label for="CDD" class="col-sm-2 control-label">CDD:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="CDD" name="CDD"
+									<input type="number" class="form-control" id="CDD" name="CDD"
 										required />
 								</div>
 							</div>
@@ -76,7 +76,7 @@
 								<label for="ano_editado" class="col-sm-2 control-label">Ano
 									editado:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="ano_editado"
+									<input type="number" class="form-control" id="ano_editado"
 										name="ano_editado" required />
 								</div>
 							</div>
@@ -100,7 +100,7 @@
 							<div class="form-group">
 								<label for="exemplares" class="col-sm-2 control-label">Exemplares:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="exemplares"
+									<input type="number" class="form-control" id="exemplares"
 										name="exemplares" required />
 								</div>
 							</div>
@@ -134,7 +134,7 @@
 							<div class="form-group">
 								<label for="volume" class="col-sm-2 control-label">Volume:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="volume"
+									<input type="number" class="form-control" id="volume"
 										name="volume" required />
 								</div>
 							</div>

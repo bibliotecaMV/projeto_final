@@ -17,17 +17,20 @@ public class GeneroController {
 	public GeneroController(GeneroDAO dao){
 		this.dao = dao;
 	}
+	
 	@RequestMapping("listarGeneros")
 	public String listarGeneros(Model model){
 		model.addAttribute("generos", dao.listar(Genero.class));
 		return "genero/genero";
 	}
+	
 	@RequestMapping("cadastrarGenero")
 	public String cadastrarGenero(Genero genero){
 		dao.salvar(genero);
 		System.out.println("salvo!");
 		return "redirect:listarGeneros";
 	}
+	
 	@RequestMapping("excluirGenero")
 	public void excluirGenero(Long id, HttpServletResponse response) throws Exception{
 		System.out.println(id);
@@ -35,6 +38,7 @@ public class GeneroController {
 		dao.excluir(genero);
 		response.setStatus(200);
 	}
+	
 	@RequestMapping("alterarGenero")
 	public String alterarGenero(Long id, String descricao, String sigla) throws Exception{
 		Genero genero = dao.listarPorId(Genero.class, id);

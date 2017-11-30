@@ -61,7 +61,7 @@
 							<div class="form-group">
 								<label for="sigla" class="col-sm-2 control-label">Sigla:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="sigla" name="sigla"
+									<input type="number" class="form-control" id="sigla" name="sigla"
 										required />
 								</div>
 							</div>
@@ -101,11 +101,11 @@
 							<c:forEach items="${generos}" var="genero">
 								<form action="alterarGenero" method="post">
 									<tr id="linha_${genero.id}">
-										<td><input type="text" value="${genero.id}" name="id" /></td>
+										<td><input type="text" value="${genero.id}" name="id" disabled /></td>
 										<td><input type="text" value="${genero.descricao}"
-											name="descricao" /></td>
-										<td><input type="text" value="${genero.sigla}"
-											name="sigla" /></td>
+											name="descricao" required /></td>
+										<td><input type="number" value="${genero.sigla}"
+											name="sigla" required /></td>
 										<td><a href="#" onClick="removerGenero(${genero.id})" class="btn btn-danger">Excluir</a></td>
 										<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
 									</tr>

@@ -28,7 +28,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Painel do Administrador</a>
+				<a class="navbar-brand">Painel do Monitor</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
@@ -147,7 +147,7 @@
 									<form action="alterarMonitores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${monitor.id}" /></td>
+												value="${monitor.id}"/></td>
 											<td><input type="text" name="usuario"
 												value="${monitor.usuario}" /></td>
 											<td><input type="text" name="senha"
@@ -156,8 +156,10 @@
 												value="${monitor.aluno.nome}" /></td>
 											<td><input type="text" name="turma"
 												value="${monitor.aluno.turma.nome}" /></td>
-											<td><a href="deletaMonitores?id=${monitor.id}" class="btn btn-danger">Remover</a></td>
-											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
+											<td><a href="deletaMonitores?id=${monitor.id}"
+												class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar"
+												class="btn btn-warning" /></td>
 										</tr>
 									</form>
 								</c:forEach>
