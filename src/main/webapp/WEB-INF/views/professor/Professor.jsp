@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -29,7 +29,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand">Painel do Administrador</a>
+			<a class="navbar-brand">Usuário administrador</a>
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
@@ -61,7 +61,7 @@
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="matricula"
-										name="matricula" placeholder="3456789" required
+										name="matricula" required
 										onkeypress="return testeNumeros(event)" />
 								</div>
 							</div>
@@ -69,9 +69,8 @@
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Nome:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="nome" name="nome"
-										placeholder="Antonio da Silva Pinto" required
-										onkeypress="return testeLetras(event)" />
+									<input type="text" class="form-control" id="nome" name="nome" 
+									required onkeypress="return testeLetras(event)" />
 								</div>
 							</div>
 

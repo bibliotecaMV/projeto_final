@@ -20,10 +20,10 @@ public class Genero {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column(unique = true,nullable = false)
-	private String sigla;
+	@Column(unique = true, nullable = false)
+	private String sigla_numerica;
 	
-	@Column(unique = true,nullable = false)
+	@Column(unique = true, nullable = false)
 	private String descricao;
 
 	public Long getId() {
@@ -34,12 +34,12 @@ public class Genero {
 		this.id = id;
 	}
 
-	public String getSigla() {
-		return sigla;
+	public String getSiglaNumerica() {
+		return sigla_numerica;
 	}
 
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setSiglaNumerica(String sigla) {
+		this.sigla_numerica = sigla;
 	}
 
 	public String getDescricao() {
@@ -52,6 +52,6 @@ public class Genero {
 	
 	@Override
 	public String toString() {
-		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla=" + sigla + "]";
+		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla_numerica=" + sigla_numerica + "]";
 	}
 }

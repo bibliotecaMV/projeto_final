@@ -13,7 +13,7 @@ public class TesteInserirLivro {
 		
 		Livro livro = new Livro();
 		livro.setTombo("2017");
-		livro.setCDD(genero.getSigla());
+		livro.setCDD(genero.getSiglaNumerica());
 		livro.setGenero(genero);
 		livro.setAno_editado(2017L);
 		livro.setAutor("Vinicius de Moraes");

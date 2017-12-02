@@ -21,7 +21,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Painel do Administrador</a>
+				<a class="navbar-brand">Usuário administrador</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
@@ -58,7 +58,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Livros</span>
+												<span>Livros</span>
 											</center>
 										</div>
 									</div>
@@ -77,7 +77,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Gêneros</span>
+												<span>Gêneros</span>
 											</center>
 										</div>
 									</div>
@@ -96,7 +96,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Professores</span>
+												<span>Professores</span>
 											</center>
 										</div>
 									</div>
@@ -116,7 +116,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Alunos</span>
+												<span>Alunos</span>
 											</center>
 										</div>
 									</div>
@@ -161,7 +161,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Turmas</span>
+												<span>Turmas</span>
 											</center>
 										</div>
 									</div>
@@ -181,7 +181,7 @@
 									<div class="titulo">
 										<div class="borda">
 											<center>
-												<span>Cadastrar Monitores</span>
+												<span>Monitores</span>
 											</center>
 										</div>
 									</div>

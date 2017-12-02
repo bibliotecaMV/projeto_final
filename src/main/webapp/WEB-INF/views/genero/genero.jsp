@@ -25,7 +25,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Painel do Administrador</a>
+				<a class="navbar-brand">Usuário administrador</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
@@ -59,7 +59,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="sigla" class="col-sm-2 control-label">Sigla:</label>
+								<label for="sigla" class="col-sm-2 control-label">Sigla numérica:</label>
 								<div class="col-sm-4">
 									<input type="number" class="form-control" id="sigla"
 										name="sigla" title="Digite uma sigla"required />
@@ -103,7 +103,7 @@
 							<tr>
 								<td>Id</td>
 								<td>Descrição</td>
-								<td>Sigla</td>
+								<td>Sigla numérica</td>
 								<td>Excluir</td>
 								<td>Alterar</td>
 							

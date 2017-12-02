@@ -38,7 +38,7 @@ public class LivroController {
 		livro.setAno_editado(Long.parseLong(ano_editado));
 		Long genero_id = daoGenero.listarIdPorNome("Genero", genero);
 		Genero genero1 = daoGenero.listarPorId(Genero.class, genero_id);
-		livro.setCDD(genero1.getSigla());
+		livro.setCDD(genero1.getSiglaNumerica());
 		livro.setGenero(genero1);
 		daoLivro.salvar(livro);
 		return "redirect:listaLivros";

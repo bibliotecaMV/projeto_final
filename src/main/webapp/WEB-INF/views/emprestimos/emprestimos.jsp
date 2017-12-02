@@ -28,7 +28,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand">Painel do Administrador</a>
+				<a class="navbar-brand">Usuário administrador</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
@@ -134,13 +134,14 @@
 										onclick="habilitarAlunosListar();">Alunos 
 									
 									<select name="turma2" id="turma2" disabled>
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -165,13 +166,14 @@
 										onclick="habilitarAlunosListar();">Alunos 
 					
 					<select name="turma2" id="turma2" disabled>
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -194,13 +196,14 @@
 										onclick="habilitarAlunosListar();" checked>Alunos 
 					
 					<select name="turma2" id="turma2">
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2"
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -223,14 +226,15 @@
 						<input type="radio" name="option" value="alunos"
 										onclick="habilitarAlunosListar();" checked>Alunos 
 							
-							<select name="turma2" id="turma2">
+							<select name="turma2" id="turma2">	
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2"
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -253,13 +257,14 @@
 										onclick="habilitarAlunosListar();">Alunos 
 							
 							<select name="turma2" id="turma2" disabled>
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
@@ -283,13 +288,14 @@
 										onclick="habilitarAlunosListar();">Alunos 
 							
 							<select name="turma2" id="turma2" disabled>
+										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" required>
+									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
