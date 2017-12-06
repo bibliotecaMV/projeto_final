@@ -32,10 +32,8 @@
 		</div>
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
-				<button type="submit" class="btn btn-warning">
-
-					<a href="logoutAdministrador" class="link">Encerrar a sessão</a>
-				</button>
+				<button type="button" class="btn btn-warning" data-toggle="modal"
+							data-target="#encerrar">Encerrar a sessão</button>
 			</form>
 		</div>
 		<!--/.navbar-collapse -->
@@ -141,5 +139,37 @@
 			</div>
 		</div>
 	</div>
+	
+	
+<!-- Modal -->
+	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Encerrar a sessão</h4>
+				</div>
+				<div class="modal-body">Você realmente quer encerrar sua
+					sessão?</div>
+				<div class="modal-footer">
+					<a href="logoutAdministrador" class="link">
+					<button type="button" class="btn btn-warning">
+						Sim
+					</button></a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>
