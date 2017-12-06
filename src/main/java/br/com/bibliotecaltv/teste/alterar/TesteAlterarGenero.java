@@ -10,7 +10,7 @@ public class TesteAlterarGenero {
 		GeneroDAO dao = new GeneroDAO();
 		Genero genero = dao.listarPorId(Genero.class, 1L);
 		genero.setDescricao("Terror");
-		genero.setSiglaNumerica("005");
+		genero.setSigla("005");
 		dao.alterar(genero);
 	}
 }

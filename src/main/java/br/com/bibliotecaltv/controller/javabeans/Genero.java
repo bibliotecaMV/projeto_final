@@ -21,7 +21,7 @@ public class Genero {
 	private Long id;
 	
 	@Column(unique = true, nullable = false)
-	private String sigla_numerica;
+	private String sigla;
 	
 	@Column(unique = true, nullable = false)
 	private String descricao;
@@ -34,12 +34,12 @@ public class Genero {
 		this.id = id;
 	}
 
-	public String getSiglaNumerica() {
-		return sigla_numerica;
+	public String getSigla() {
+		return sigla;
 	}
 
-	public void setSiglaNumerica(String sigla) {
-		this.sigla_numerica = sigla;
+	public void setSigla(String sigla) {
+		this.sigla = sigla;
 	}
 
 	public String getDescricao() {
@@ -52,6 +52,6 @@ public class Genero {
 	
 	@Override
 	public String toString() {
-		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla_numerica=" + sigla_numerica + "]";
+		return "Genero [id=" + id + ", descricao=" + descricao + ", sigla=" + sigla + "]";
 	}
 }

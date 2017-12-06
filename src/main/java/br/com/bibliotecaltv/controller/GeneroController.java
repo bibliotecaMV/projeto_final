@@ -43,7 +43,7 @@ public class GeneroController {
 	public String alterarGenero(Long id, String descricao, String sigla) throws Exception{
 		Genero genero = dao.listarPorId(Genero.class, id);
 		genero.setDescricao(descricao);
-		genero.setSiglaNumerica(sigla);
+		genero.setSigla(sigla);
 		dao.alterar(genero);
 		return "redirect:listarGeneros";
 	}

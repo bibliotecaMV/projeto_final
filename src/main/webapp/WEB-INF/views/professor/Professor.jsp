@@ -125,21 +125,13 @@
 									<form action="alterarProfessores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${professor.id}" disabled /></td>
+												value="${professor.id}" readonly /></td>
 											<td><input type="text" name="matricula"
 												class="form-control" value="${professor.matricula}" required
 												onkeypress="return testeNumeros(event)" /></td>
-											<td><select class="form-control" name="professor">
-													<c:forEach items="${professores}" var="professores">
-														<c:if test="${professores.nome == professor.nome }">
-															<option selected>${professores.nome}</option>
-														</c:if>
-														<c:if test="${professores.nome != professor.nome }">
-															<option>${professores.nome}</option>
-														</c:if>
-														
-													</c:forEach>
-											</select></td>
+											<td><input type="text" name="nome"
+												class="form-control" value="${professor.nome}" required
+												onkeypress="return testeLetras(event)" /></td>
 											<td><a href="deletaProfessores?id=${professor.id}"
 												class="btn btn-danger">Remover</a></td>
 											<td><input type="submit" value="Alterar"

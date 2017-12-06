@@ -58,16 +58,8 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="tombo"
-										name="tombo" required />
-								</div>
-							</div>
-
-							<div class="form-group">
-								<label for="CDD" class="col-sm-2 control-label">CDD:</label>
-								<div class="col-sm-4">
-									<input type="number" class="form-control" id="CDD" name="CDD"
-										required />
+									<input type="text" class="form-control" id="tombo"
+										name="tombo" onkeypress="return testeNumeros(event)" required />
 								</div>
 							</div>
 
@@ -75,7 +67,7 @@
 								<label for="ano_editado" class="col-sm-2 control-label">Ano
 									editado:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="ano_editado"
+									<input type="text" class="form-control" id="ano_editado"
 										name="ano_editado" required
 										onkeypress="return testeNumeros(event)" />
 								</div>
@@ -100,7 +92,7 @@
 							<div class="form-group">
 								<label for="exemplares" class="col-sm-2 control-label">Exemplares:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="exemplares"
+									<input type="text" class="form-control" id="exemplares"
 										name="exemplares" required
 										onkeypress="return testeNumeros(event)" />
 								</div>
@@ -138,8 +130,8 @@
 							<div class="form-group">
 								<label for="volume" class="col-sm-2 control-label">Volume:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="volume"
-										name="volume" required />
+									<input type="text" class="form-control" id="volume"
+										name="volume" onkeypress="return testeNumeros(event)" required />
 								</div>
 							</div>
 
@@ -204,14 +196,15 @@
 								<c:forEach items="${livros}" var="livro">
 									<form action="alterarLivro" method="post">
 										<tr>
-											<td><input class="form-control" type="number"
+											<td><input class="form-control" type="text"
 												name="tombo" value="${livro.tombo}" required
-												readonly="false"></td>
+												onkeypress="return testeNumeros(event)"></td>
 											<td><input class="form-control" type="text" name="autor"
 												value="${livro.autor}" required
 												onkeypress="return testeLetras(event)" />
 											<td><input class="form-control" type="number"
-												name="exemplares" value="${livro.exemplares}" required /></td>
+												name="exemplares" value="${livro.exemplares}" 
+												required onkeypress="return testeNumeros(event)"/></td>
 											<td><input class="form-control" type="text"
 												name="titulo" value="${livro.titulo}" required
 												onkeypress="return testeLetras(event)" /></td>

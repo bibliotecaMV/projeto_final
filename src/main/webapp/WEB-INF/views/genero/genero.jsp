@@ -61,8 +61,9 @@
 							<div class="form-group">
 								<label for="sigla" class="col-sm-2 control-label">Sigla numérica:</label>
 								<div class="col-sm-4">
-									<input type="number" class="form-control" id="sigla"
-										name="sigla" title="Digite uma sigla"required />
+									<input type="text" class="form-control" id="sigla"
+										name="sigla" title="Digite uma sigla" required
+										onkeypress="return testeNumeros(event)" />
 								</div>
 							</div>
 
@@ -127,7 +128,7 @@
 										</td>
 										<td>
 											<div class="col-sm-8">
-												<input type="number" class="form-control"
+												<input type="text" class="form-control"
 													value="${genero.sigla}" name="sigla" 
 													onkeypress="return testeNumeros(event)" required />
 											</div>
