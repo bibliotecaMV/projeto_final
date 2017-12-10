@@ -2,7 +2,7 @@ function testeLetras(e)
 {
 	var expressao;
 
-	expressao = /[a-zA-Z´~^¨ ]/;
+	expressao = /[a-zA-Z\u00C0-\u00FF ]+/i;
 	
 	if(expressao.test(String.fromCharCode(e.keyCode)))
 	{
