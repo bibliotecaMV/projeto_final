@@ -17,6 +17,8 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/turma/turma.js"></script>
+		
+<script src="resources/js/validator.min.js"></script>
 <body>
 	<nav class="navbar navbar-default">
 	<div class="container">
@@ -51,12 +53,12 @@
 
 
 						<form class="form-horizontal" action="adicionaTurma" method="POST"
-							name="formulario">
+							name="formulario" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="nome" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-										required/>
+									data-minlength="2" required/>
 								</div>
 							</div>
 

@@ -16,6 +16,7 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/monitores/monitores.js"></script>
+<script src="resources/js/validator.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -50,12 +51,13 @@
 
 
 						<form class="form-horizontal" action="adicionarMonitores"
-							method="POST" name="formulario">
+							method="POST" name="formulario" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" required />
+										name="usuario" data-minlength="6" required />
+										<span class="help-block">Mínimo de seis (6) digitos</span>
 								</div>
 							</div>
 
@@ -63,14 +65,15 @@
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control" id="senha"
-										name="senha" required />
+										name="senha" data-minlength="8" required />
+										<span class="help-block">Mínimo de seis (8) digitos</span>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="turma" class="col-sm-2 control-label">Turma:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="turma" id="turma">
+									<select class="form-control" name="turma" id="turma" required>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
@@ -82,7 +85,7 @@
 							<div class="form-group">
 								<label for="alunos" class="col-sm-2 control-label">Alunos:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="aluno" id="aluno">
+									<select class="form-control" name="aluno" id="aluno" required>
 										<c:forEach items="${alunos}" var="aluno">
 											<option>${aluno.nome}</option>
 										</c:forEach>

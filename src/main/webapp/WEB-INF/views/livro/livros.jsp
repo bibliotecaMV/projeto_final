@@ -17,6 +17,8 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/livro/livro.js"></script>
+
+<script src="resources/js/validator.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -53,7 +55,7 @@
 
 
 						<form class="form-horizontal" action="adicionarLivros"
-							method="POST" name="formulario">
+							method="POST" name="formulario" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
@@ -137,7 +139,7 @@
 							<div class="form-group">
 								<label for="genero" class="col-sm-2 control-label">Genero:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="genero">
+									<select class="form-control" name="genero" required>
 										<c:forEach items="${generos}" var="genero">
 											<option>${genero.descricao}</option>
 										</c:forEach>

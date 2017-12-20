@@ -17,6 +17,7 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/professores/professores.js"></script>
+<script src="resources/js/validator.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -55,7 +56,7 @@
 						<form class="form-horizontal"
 							action="
 							adicionaProfessores" method="POST"
-							name="formulario">
+							name="formulario" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
