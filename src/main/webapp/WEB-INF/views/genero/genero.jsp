@@ -12,6 +12,8 @@
 <meta charset="utf-8" />
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/generos/generos.js"></script>
+
+<script src="resources/js/validator.min.js"></script>
 </head>
 <body>
 
@@ -48,7 +50,7 @@
 
 
 						<form action="cadastrarGenero" method="post"
-							class="form-horizontal">
+							class="form-horizontal" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="descricao" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">

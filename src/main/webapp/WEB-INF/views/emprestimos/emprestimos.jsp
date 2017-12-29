@@ -16,6 +16,8 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/emprestimos/emprestimos.js"></script>
+	
+<script src="resources/js/validator.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -64,7 +66,7 @@
 
 
 					<form class="form-horizontal" action="realizarEmprestimos"
-						method="POST" name="formulario">
+						method="POST" name="formulario" data-toggle="validator" role="form">
 						<div class="form-group">
 							<label for="tombo1" class="col-sm-2 control-label">Tombo:</label>
 							<div class="col-sm-4">
@@ -76,7 +78,7 @@
 						<div class="form-group">
 							<label for="turma1" class="col-sm-2 control-label">Turma:</label>
 							<div class="col-sm-3">
-								<select class="form-control" name="turma1" id="turma1">
+								<select class="form-control" name="turma1" id="turma1" required>
 									<c:forEach items="${turmas}" var="turma">
 										<option>${turma.nome}</option>
 									</c:forEach>

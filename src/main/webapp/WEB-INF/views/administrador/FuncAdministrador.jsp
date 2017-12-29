@@ -18,6 +18,8 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript"
 	src="resources/js/administrador/administrador.js"></script>
+	
+<script src="resources/js/validator.min.js"></script>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#encerrar">Encerrar a sessão</button>
+					data-target="#encerrar">Encerrar a sessão</button>
 			</form>
 		</div>
 		<!--/.navbar-collapse -->
@@ -54,12 +56,14 @@
 
 
 						<form class="form-horizontal" action="adicionaAdministrador"
-							method="POST" name="formulario">
+							method="POST" name="formulario" data-toggle="validator" role="form">
+							
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" required />
+										name="usuario" data-minlength="6" required />
+										<span class="help-block">Mínimo de seis (6) digitos</span>
 								</div>
 							</div>
 
@@ -67,7 +71,8 @@
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control" id="senha"
-										name="senha" required />
+										name="senha" data-minlength="8" required />
+										<span class="help-block">Mínimo de oito (8) digitos</span>
 								</div>
 							</div>
 
@@ -122,7 +127,7 @@
 									<form action="alterarAdministrador">
 										<tr>
 											<td><input type="text" value="${administrador.id}"
-												class="form-control" readonly name="id"/></td>
+												class="form-control" readonly name="id" /></td>
 											<td><input type="text" value="${administrador.usuario}"
 												name="usuario" id="usuario" class="form-control" required /></td>
 											<td><input type="text" value="${administrador.senha}"
@@ -146,8 +151,8 @@
 		</div>
 
 	</div>
-	
-<!-- Modal -->
+
+	<!-- Modal -->
 	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -163,15 +168,14 @@
 					sessão?</div>
 				<div class="modal-footer">
 					<a href="logoutAdministrador" class="link">
-					<button type="button" class="btn btn-warning">
-						Sim
-					</button></a>
+						<button type="button" class="btn btn-warning">Sim</button>
+					</a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

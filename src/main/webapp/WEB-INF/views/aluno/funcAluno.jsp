@@ -17,6 +17,8 @@
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/alunos/alunos.js"></script>
+
+<script src="resources/js/validator.min.js"></script>
 </head>
 
 <body>
@@ -56,7 +58,7 @@
 
 						<form class="form-horizontal" action="
 							adicionarAluno"
-							method="POST" name="formulario">
+							method="POST" name="formulario" data-toggle="validator" role="form">
 							<div class="form-group">
 								<label for="matricula" class="col-sm-2 control-label">Matricula:</label>
 								<div class="col-sm-4">
@@ -87,7 +89,7 @@
 								<label for="turma" class="col-sm-2 control-label">Turma:</label>
 								<div class="col-sm-3">
 									<select class="btn btn-primary dropdown-toggle" name="turma"
-										id="turma">
+										id="turma" required>
 										<c:forEach items="${turma}" var="turmas">
 											<option>${turmas.nome}</option>
 										</c:forEach>
