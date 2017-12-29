@@ -33,7 +33,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
 					<button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#encerrar">Encerrar a sessão</button>
+						data-target="#encerrar">Encerrar a sessão</button>
 				</form>
 			</div>
 		</div>
@@ -140,7 +140,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno">
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -172,7 +173,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -202,7 +204,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2"
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -225,7 +228,7 @@
 						<input type="radio" name="option" value="alunos"
 										onclick="habilitarAlunosListar();" checked>Alunos 
 							
-							<select name="turma2" id="turma2">	
+							<select name="turma2" id="turma2">
 										<option>Turma:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
@@ -233,7 +236,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2"
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();">Professores 
@@ -263,7 +267,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
@@ -294,7 +299,8 @@
 									</select>
 
 									<input type="text" name="aluno2" id="aluno2" disabled
-									onkeypress="return testeLetras(event)" placeholder="Nome do aluno" >
+										onkeypress="return testeLetras(event)"
+										placeholder="Nome do aluno">
 
 									<input type="radio" name="option" value="professores"
 										onclick="habilitarProfessorListar();" checked>Professores 
@@ -667,25 +673,23 @@
 													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" required />
 												</center></td>
-											<td><center>
-													<td>
-														<center>
-															<select class="form-control" name="professor"
-																id="professor">
-																<c:forEach items="${professores}" var="professor">
-																	<c:if
-																		test="${professor.nome == emprestimos.professor.nome }">
-																		<option selected>${professor.nome}</option>
-																	</c:if>
-																	<c:if
-																		test="${professor.nome != emprestimos.professor.nome }">
-																		<option>${professor.nome}</option>
-																	</c:if>
-																</c:forEach>
-															</select>
-														</center>
-													</td>
-												</center></td>
+											<td>
+												<center>
+													<select class="form-control" name="professor"
+														id="professor">
+														<c:forEach items="${professores}" var="professor">
+															<c:if
+																test="${professor.nome == emprestimos.professor.nome }">
+																<option selected>${professor.nome}</option>
+															</c:if>
+															<c:if
+																test="${professor.nome != emprestimos.professor.nome }">
+																<option>${professor.nome}</option>
+															</c:if>
+														</c:forEach>
+													</select>
+												</center>
+											</td>
 											<td><center>
 													<input class="form-control" type="text"
 														name="dataEmprestimo"
@@ -694,18 +698,14 @@
 											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
 												<td id="campo_devolucao_${emprestimos.id}">Não
 													devolvido</td>
-											</c:if>
-											<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
-												<td id="campo_devolucao_${emprestimos.id}"><input
-													class="form-control" type="text" name="dataDevolucao"
-													value="${emprestimos.dataDevolucaoFormatada}" required /></td>
-											</c:if>
-											<c:if test="${emprestimos.dataDevolucaoFormatada == null}">
 												<td id="emprestimo_${emprestimos.id}"><a href="#"
 													onClick="realizarDevolucao(${emprestimos.id})">
 														Devolver Agora </a></td>
 											</c:if>
 											<c:if test="${emprestimos.dataDevolucaoFormatada != null}">
+												<td id="campo_devolucao_${emprestimos.id}"><input
+													class="form-control" type="text" name="dataDevolucao"
+													value="${emprestimos.dataDevolucaoFormatada}" required /></td>
 												<td>Devolvido</td>
 											</c:if>
 											<td><a href="#"
@@ -740,25 +740,24 @@
 													<input class="form-control" type="text" name="tombo"
 														value="${emprestimos.livro.tombo}" required />
 												</center></td>
-											<td><center>
-													<td>
-														<center>
-															<select class="form-control" name="professor"
-																id="professor">
-																<c:forEach items="${professores}" var="professor">
-																	<c:if
-																		test="${professor.nome == emprestimos.professor.nome }">
-																		<option selected>${professor.nome}</option>
-																	</c:if>
-																	<c:if
-																		test="${professor.nome != emprestimos.professor.nome }">
-																		<option>${professor.nome}</option>
-																	</c:if>
-																</c:forEach>
-															</select>
-														</center>
-													</td>
-												</center></td>
+											<td>
+												<center>
+													<select class="form-control" name="professor"
+														id="professor">
+														<c:forEach items="${professores}" var="professor">
+															<c:if
+																test="${professor.nome == emprestimos.professor.nome }">
+																<option selected>${professor.nome}</option>
+															</c:if>
+															<c:if
+																test="${professor.nome != emprestimos.professor.nome }">
+																<option>${professor.nome}</option>
+															</c:if>
+														</c:forEach>
+													</select>
+												</center>
+
+											</td>
 											<td><center>
 													<input class="form-control" type="text"
 														name="dataEmprestimo"
@@ -788,8 +787,8 @@
 			</div>
 		</div>
 	</div>
-	
-<!-- Modal -->
+
+	<!-- Modal -->
 	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -805,15 +804,14 @@
 					sessão?</div>
 				<div class="modal-footer">
 					<a href="logoutAdministrador" class="link">
-					<button type="button" class="btn btn-warning">
-						Sim
-					</button></a>
+						<button type="button" class="btn btn-warning">Sim</button>
+					</a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

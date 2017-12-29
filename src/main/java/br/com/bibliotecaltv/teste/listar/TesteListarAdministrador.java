@@ -8,12 +8,14 @@ import br.com.bibliotecaltv.dao.AdministradorDAO;
 public class TesteListarAdministrador {
 
 	public static void main(String[] args) throws Exception {
-		AdministradorDAO dao = new AdministradorDAO();
+		/*AdministradorDAO dao = new AdministradorDAO();
 		List<Administrador> administradores = dao.listar(Administrador.class);
 		
 		for(Administrador administrador: administradores) {
 			System.out.println(administrador);
-		}
+		}*/
+		Integer pessoa[] = {0, 1, 2};
+		System.out.println(pessoa[0]);
 
 	}
 

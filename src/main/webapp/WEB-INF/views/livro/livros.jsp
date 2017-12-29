@@ -34,7 +34,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#encerrar">Encerrar a sessão</button>
+					data-target="#encerrar">Encerrar a sessão</button>
 			</form>
 		</div>
 		<!--/.navbar-collapse -->
@@ -57,8 +57,8 @@
 							<div class="form-group">
 								<label for="tombo" class="col-sm-2 control-label">Tombo:</label>
 								<div class="col-sm-4">
-									<input type="text" class="form-control" id="tombo"
-										name="tombo" onkeypress="return testeNumeros(event)" required />
+									<input type="text" class="form-control" id="tombo" name="tombo"
+										onkeypress="return testeNumeros(event)" required />
 								</div>
 							</div>
 
@@ -195,24 +195,26 @@
 								<c:forEach items="${livros}" var="livro">
 									<form action="alterarLivro" method="post">
 										<tr>
-											<td><input class="form-control" type="text"
-												name="tombo" value="${livro.tombo}" required
-												onkeypress="return testeNumeros(event)"></td>
-											<td><input class="form-control" type="text" name="autor"
-												value="${livro.autor}" required
-												onkeypress="return testeLetras(event)" />
-											<td><input class="form-control" type="number"
-												name="exemplares" value="${livro.exemplares}" 
-												required onkeypress="return testeNumeros(event)"/></td>
-											<td><input class="form-control" type="text"
-												name="titulo" value="${livro.titulo}" required
-												onkeypress="return testeLetras(event)" /></td>
+											<td><input type="text" class="form-control" id="tombo"
+												name="tombo" onkeypress="return testeNumeros(event)"
+												required value="${livro.tombo}" /></td>
+											<td><input type="text" class="form-control" id="autor"
+												name="autor" required onkeypress="return testeLetras(event)"
+												value="${livro.autor}" />
+											<td><input type="text" class="form-control"
+												id="exemplares" name="exemplares" required
+												value="${livro.exemplares}"
+												onkeypress="return testeNumeros(event)" /></td>
+											<td><input type="text" class="form-control" id="titulo"
+												name="titulo" required value="${livro.titulo}" /></td>
 											<td><select class="form-control" name="genero">
 													<c:forEach items="${generos}" var="genero">
-														<c:if test="${livro.genero.descricao == genero.descricao }">
+														<c:if
+															test="${livro.genero.descricao == genero.descricao }">
 															<option selected>${genero.descricao}</option>
 														</c:if>
-														<c:if test="${livro.genero.descricao != genero.descricao }">
+														<c:if
+															test="${livro.genero.descricao != genero.descricao }">
 															<option>${genero.descricao}</option>
 														</c:if>
 													</c:forEach>
@@ -235,9 +237,9 @@
 			</div>
 		</div>
 	</div>
-	
-	
-<!-- Modal -->
+
+
+	<!-- Modal -->
 	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -253,15 +255,14 @@
 					sessão?</div>
 				<div class="modal-footer">
 					<a href="logoutAdministrador" class="link">
-					<button type="button" class="btn btn-warning">
-						Sim
-					</button></a>
+						<button type="button" class="btn btn-warning">Sim</button>
+					</a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
