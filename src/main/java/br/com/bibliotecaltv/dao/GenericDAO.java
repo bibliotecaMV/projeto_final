@@ -139,6 +139,22 @@ public abstract class GenericDAO<T, I extends Serializable> {
 		}
 		return lista;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> listarNomePorFK(String classe, Long fk, String campo) {
+		Transaction transaction = null;
+		List<T> lista = null;
+		try {
+			transaction = session.beginTransaction();
+			Query consulta = session.getNamedQuery(classe + ".listarNomePorFK");
+			consulta.setLong(campo, fk);
+			lista = consulta.list();
+			transaction.commit();
+		} catch (RuntimeException e) {
+			throw e;
+		}
+		return lista;
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<T> listarNotNullEntidade

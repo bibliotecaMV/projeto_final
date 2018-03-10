@@ -8,6 +8,8 @@
 <title>BIBLIOTECA LTV - MV INFORMATICA</title>
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript"
+	src="resources/js/administrador/administrador.js"></script>
 </head>
 <body>
 
@@ -46,7 +48,7 @@
 
 						<div class="col-lg-12" id="centro">
 							<div class="col-lg-3" id="centro">
-								<a href="sobreLivros" class="item link">
+								<a href="listaLivros" class="item link">
 
 									<div id="centraliza" class="centraliza">
 										<center>
@@ -104,7 +106,7 @@
 							</div>
 
 							<div class="col-lg-3" id="centro">
-								<a href="sobreAlunos" class="item">
+								<a href="listarAlunos" class="item">
 
 									<div id="centraliza" class="centraliza">
 										<center>

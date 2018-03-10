@@ -78,7 +78,9 @@
 						<div class="form-group">
 							<label for="turma1" class="col-sm-2 control-label">Turma:</label>
 							<div class="col-sm-3">
-								<select class="form-control" name="turma1" id="turma1" required>
+								<select class="form-control" name="turma1" id="turma1" 
+									onchange="mostrarAlunosDaTurma();">
+									<option>Selecione:</option>
 									<c:forEach items="${turmas}" var="turma">
 										<option>${turma.nome}</option>
 									</c:forEach>
@@ -89,9 +91,14 @@
 						<div class="form-group">
 							<label for="aluno1" class="col-sm-2 control-label">Nome
 								do aluno:</label>
-							<div class="col-sm-4">
-								<input type="text" class="form-control" id="aluno1"
-									name="aluno1" required onkeypress="return testeLetras(event)" />
+							<div class="col-sm-3">
+								<select class="form-control" name="aluno1" id="aluno1" disabled required = "true">
+									<c:if test="${alunos != null})">
+										<c:forEach items="${alunos}" var="aluno">
+											<option>${aluno.nome}</option>
+										</c:forEach>
+									</c:if>
+								</select>
 							</div>
 						</div>
 
@@ -99,7 +106,7 @@
 							<label for="professor1" class="col-sm-2 control-label">Professor:</label>
 							<div class="col-sm-3">
 								<select class="form-control" name="professor1" id="professor1"
-									disabled>
+									disabled required = "false">
 									<c:forEach items="${professores}" var="professor">
 										<option>${professor.nome}</option>
 									</c:forEach>

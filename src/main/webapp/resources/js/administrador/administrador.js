@@ -28,3 +28,14 @@ function testeNumeros(e)
 		return false;
 	}
 }
+function testarAcessibilade(pagina){
+	if(pagina == "livros"){
+		alert("Deu certo, livros!");
+	}else if(pagina == "alunos"){
+		$post("checarConteudoAluno");
+	}else if(pagina == "emprestimos"){
+		alert("Deu certo, empréstimos!");
+	}else if(pagina == "monitores"){
+		alert("Deu certo, monitores");
+	}
+}

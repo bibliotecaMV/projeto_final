@@ -29,6 +29,7 @@ public class EmprestimosController {
 	TurmaDAO daoTurma;
 	AlunoDAO daoAluno;
 	ProfessorDAO daoProfessor;
+	
 	@Autowired
 	public EmprestimosController(EmprestimoDAO daoEmprestimo, LivroDAO daoLivro,
 			TurmaDAO daoTurma, AlunoDAO daoAluno, ProfessorDAO daoProfessor){
@@ -38,15 +39,18 @@ public class EmprestimosController {
 		this.daoAluno = daoAluno;
 		this.daoProfessor = daoProfessor;
 	}
+	
 	@RequestMapping("mostrarEmprestimos")
 	public String mostrarEmprestimos(){
 		return "redirect:listarTodosEmprestimos";
 	}
+	
 	public void setarValoresFormulario(Model model){
 		model.addAttribute("livros", daoLivro.listar(Livro.class));
 		model.addAttribute("turmas", daoTurma.listar(Turma.class));
 		model.addAttribute("professores", daoProfessor.listar(Professor.class));
 	}
+	
 	@RequestMapping("listarTodosEmprestimos")
 	public String listarTodosEmprestimos(Model model){
 		model.addAttribute("opcoesMarcadas", 1L);
@@ -55,6 +59,7 @@ public class EmprestimosController {
 		setarValoresFormulario(model);
 		return "emprestimos/emprestimos";
 	}
+	
 	@RequestMapping("listarEmprestimosDaTable")
 	public String listarEmprestimosDaTable(String option, String turma2,
 			String aluno2, String professor2, String selection, Model model){
@@ -126,6 +131,7 @@ public class EmprestimosController {
 		}
 		return "emprestimos/emprestimos";
 	}
+	
 	@RequestMapping("realizarEmprestimos")
 	public String realizarEmprestimos(String tombo1, String aluno1, 
 			String professor1, String turma1) throws Exception{
@@ -150,6 +156,7 @@ public class EmprestimosController {
 		daoEmprestimo.salvar(emprestimo);
 		return "redirect:listarTodosEmprestimos";
 	}
+	
 	@RequestMapping("realizarDevolucao")
 	public void realizarDevolucao(Long id, HttpServletResponse response) throws Exception{
 		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, id);
@@ -162,12 +169,14 @@ public class EmprestimosController {
 		response.setStatus(200);
 		response.getWriter().write(emprestimo.getDataDevolucaoFormatada().toString());
 	}
+	
 	@RequestMapping("excluirEmprestimo")
 	public void excluirEmprestimo(Long id, HttpServletResponse response) throws Exception{
 		Emprestimo emprestimo = daoEmprestimo.listarPorId(Emprestimo.class, id);
 		daoEmprestimo.excluir(emprestimo);
 		response.setStatus(200);
 	}
+	
 	@RequestMapping("alterarEmprestimo")
 	public String alterarEmprestimo(String id, String tombo, String aluno,String turma, String professor,
 			String dataEmprestimo, String dataDevolucao) throws Exception{
@@ -202,4 +211,11 @@ public class EmprestimosController {
 		return "redirect:listarTodosEmprestimos";
 		
 	}
+	
+	@RequestMapping("mostrarAlunosDaTurma")
+	public void mostrarAlunosDaTurma(String turma, HttpServletResponse response) throws Exception{
+		Long id_turma = daoTurma.listarIdPorNome("Turma", turma);
+		response.getWriter().write((daoAluno.listarNomePorFK("Aluno", id_turma, "turma_id")).toString());
+	}
+	
 }
