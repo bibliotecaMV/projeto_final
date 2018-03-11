@@ -14,8 +14,7 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript"
-	src="resources/js/monitores/monitores.js"></script>
+<script type="text/javascript" src="resources/js/monitores/monitores.js"></script>
 <script src="resources/js/validator.min.js"></script>
 </head>
 <body>
@@ -34,7 +33,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<form class="navbar-form navbar-right">
 					<button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#encerrar">Encerrar a sessão</button>
+						data-target="#encerrar">Encerrar a sessão</button>
 				</form>
 			</div>
 			<!--/.navbar-collapse -->
@@ -51,13 +50,14 @@
 
 
 						<form class="form-horizontal" action="adicionarMonitores"
-							method="POST" name="formulario" data-toggle="validator" role="form">
+							method="POST" name="formulario" data-toggle="validator"
+							role="form">
 							<div class="form-group">
 								<label for="usuario" class="col-sm-2 control-label">Usuario:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="usuario"
-										name="usuario" data-minlength="6" required />
-										<span class="help-block">Mínimo de seis (6) digitos</span>
+										name="usuario" data-minlength="6" required /> <span
+										class="help-block">Mínimo de seis (6) digitos</span>
 								</div>
 							</div>
 
@@ -65,15 +65,17 @@
 								<label for="senha" class="col-sm-2 control-label">Senha:</label>
 								<div class="col-sm-4">
 									<input type="password" class="form-control" id="senha"
-										name="senha" data-minlength="8" required />
-										<span class="help-block">Mínimo de seis (8) digitos</span>
+										name="senha" data-minlength="8" required /> <span
+										class="help-block">Mínimo de seis (8) digitos</span>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="turma" class="col-sm-2 control-label">Turma:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="turma" id="turma" required>
+									<select class="form-control" name="turma" id="turma"
+										onchange="mostrarAlunosDaTurmaMonitor();">
+										<option>Selecione:</option>
 										<c:forEach items="${turmas}" var="turma">
 											<option>${turma.nome}</option>
 										</c:forEach>
@@ -85,10 +87,13 @@
 							<div class="form-group">
 								<label for="alunos" class="col-sm-2 control-label">Alunos:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="aluno" id="aluno" required>
-										<c:forEach items="${alunos}" var="aluno">
-											<option>${aluno.nome}</option>
-										</c:forEach>
+									<select class="form-control" name="aluno" id="aluno" disabled
+										required="true">
+										<c:if test="${alunos != null})">
+											<c:forEach items="${alunos}" var="aluno">
+												<option>${aluno.nome}</option>
+											</c:forEach>
+										</c:if>
 									</select>
 
 								</div>
@@ -147,9 +152,9 @@
 									<form action="alterarMonitores" method="post">
 										<tr>
 											<td><input type="text" name="id" class="form-control"
-												value="${monitor.id}" readonly/></td>
-											<td><input type="text" name="usuario" class="form-control"
-												value="${monitor.usuario}" required /></td>
+												value="${monitor.id}" readonly /></td>
+											<td><input type="text" name="usuario"
+												class="form-control" value="${monitor.usuario}" required /></td>
 											<td><input type="text" name="senha" class="form-control"
 												value="${monitor.senha}" required /></td>
 											<td><input type="text" name="aluno" class="form-control"
@@ -172,37 +177,36 @@
 					</div>
 				</div>
 			</div>
-			
-			
-<!-- Modal -->
-	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Encerrar a sessão</h4>
-				</div>
-				<div class="modal-body">Você realmente quer encerrar sua
-					sessão?</div>
-				<div class="modal-footer">
-					<a href="logoutAdministrador" class="link">
-					<button type="button" class="btn btn-warning">
-						Sim
-					</button></a>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+
+
+			<!-- Modal -->
+			<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
+				aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h4 class="modal-title" id="myModalLabel">Encerrar a sessão</h4>
+						</div>
+						<div class="modal-body">Você realmente quer encerrar sua
+							sessão?</div>
+						<div class="modal-footer">
+							<a href="logoutAdministrador" class="link">
+								<button type="button" class="btn btn-warning">Sim</button>
+							</a>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	
-	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-	<script src="resources/js/bootstrap.min.js"></script>
+
+			<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+			<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>
