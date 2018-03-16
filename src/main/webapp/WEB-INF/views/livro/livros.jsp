@@ -103,10 +103,16 @@
 								<label for="forma_aquisicao" class="col-sm-2 control-label">Forma
 									de aquisição:</label>
 								<div class="col-sm-3">
-									<select class="form-control" name="forma_aquisicao" required>
+									<select class="form-control" id="forma_aquisicao" name="forma_aquisicao"
+										onchange="habilitarBotaoOutro()">
 										<option>Doado</option>
 										<option>Comprado</option>
+										<option>Outro</option>
 									</select>
+								</div>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" id="forma_aquisicao-outro" name="forma_aquisicao2"
+									required="false" disabled>
 								</div>
 
 							</div>

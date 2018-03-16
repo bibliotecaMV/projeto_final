@@ -29,7 +29,7 @@
 		<property name="show_sql">true</property>
 
 		<!-- Drop and re-create the database schema on startup -->
-		<property name="hibernate.hbm2ddl.auto">uptade</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Livro" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Administrador" />
@@ -39,6 +39,7 @@
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Monitores" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Professor" />
 		<mapping class="br.com.bibliotecaltv.controller.javabeans.Turma" />
+		<mapping class="br.com.bibliotecaltv.controller.javabeans.Exemplar" />
 	</session-factory>
 
 </hibernate-configuration>

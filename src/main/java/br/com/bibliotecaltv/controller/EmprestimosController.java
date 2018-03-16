@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.bibliotecaltv.controller.javabeans.Aluno;
 import br.com.bibliotecaltv.controller.javabeans.Emprestimo;
+import br.com.bibliotecaltv.controller.javabeans.Exemplar;
 import br.com.bibliotecaltv.controller.javabeans.Livro;
 import br.com.bibliotecaltv.controller.javabeans.Professor;
 import br.com.bibliotecaltv.controller.javabeans.Turma;
 import br.com.bibliotecaltv.dao.AlunoDAO;
 import br.com.bibliotecaltv.dao.EmprestimoDAO;
+import br.com.bibliotecaltv.dao.ExemplarDAO;
 import br.com.bibliotecaltv.dao.LivroDAO;
 import br.com.bibliotecaltv.dao.ProfessorDAO;
 import br.com.bibliotecaltv.dao.TurmaDAO;
@@ -29,15 +31,17 @@ public class EmprestimosController {
 	TurmaDAO daoTurma;
 	AlunoDAO daoAluno;
 	ProfessorDAO daoProfessor;
+	ExemplarDAO daoExemplar;
 	
 	@Autowired
 	public EmprestimosController(EmprestimoDAO daoEmprestimo, LivroDAO daoLivro,
-			TurmaDAO daoTurma, AlunoDAO daoAluno, ProfessorDAO daoProfessor){
+			TurmaDAO daoTurma, AlunoDAO daoAluno, ProfessorDAO daoProfessor, ExemplarDAO daoExemplar){
 		this.daoEmprestimo = daoEmprestimo;
 		this.daoLivro = daoLivro;
 		this.daoTurma = daoTurma;
 		this.daoAluno = daoAluno;
 		this.daoProfessor = daoProfessor;
+		this.daoExemplar = daoExemplar;
 	}
 	
 	@RequestMapping("mostrarEmprestimos")
@@ -133,9 +137,10 @@ public class EmprestimosController {
 	}
 	
 	@RequestMapping("realizarEmprestimos")
-	public String realizarEmprestimos(String tombo1, String aluno1, 
+	public String realizarEmprestimos(String tombo1, String aluno1, Long exemplares1, 
 			String professor1, String turma1) throws Exception{
 		Emprestimo emprestimo = new Emprestimo();
+		Exemplar exemplar = new Exemplar();		
 		emprestimo.setDataEmprestimoFormatada(Calendar.getInstance().getTime().toString());
 		Livro livro = daoLivro.listarPorId(Livro.class, tombo1);
 		emprestimo.setLivro(livro);
@@ -154,6 +159,10 @@ public class EmprestimosController {
 			return "redirect:listarTodosEmprestimos";
 		}
 		daoEmprestimo.salvar(emprestimo);
+		exemplar.setAlugado(true);
+		exemplar.setId_exemplar(exemplares1);
+		exemplar.setTombo_livro(tombo1);
+		daoExemplar.alterar(exemplar);
 		return "redirect:listarTodosEmprestimos";
 	}
 	
@@ -216,6 +225,12 @@ public class EmprestimosController {
 	public void mostrarAlunosDaTurma(String turma, HttpServletResponse response) throws Exception{
 		Long id_turma = daoTurma.listarIdPorNome("Turma", turma);
 		response.getWriter().write((daoAluno.listarNomePorFK("Aluno", id_turma, "turma_id")).toString());
+	}
+	
+	@RequestMapping("mostrarExemplaresDoTombo")
+	public void mostrarExemplaresDoTombo(String tombo, HttpServletResponse response) throws Exception{
+		response.getWriter().write((daoExemplar.listarIdPorId("Exemplar", "exemplar", "tombo_livro", tombo,
+				"alugado", "false")).toString());
 	}
 	
 }

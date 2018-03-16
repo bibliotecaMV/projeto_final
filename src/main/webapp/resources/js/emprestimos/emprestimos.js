@@ -5,6 +5,36 @@ function realizarDevolucao(id) {
 	});
 }
 
+function mostrarExemplaresDoTombo(){
+	console.log("Entrou");
+	$.post("mostrarExemplaresDoTombo", {"tombo" : document.getElementById("tombo1").value}, function(resposta){
+		var tombo = document.getElementById("tombo1");
+		var exemplar = document.getElementById("exemplares1");
+		var valor_tombo = document.getElementById("tombo1").value;
+		var lista = resposta;
+		var ids;
+
+		var length = exemplar.options.length;        
+		var i;
+		for(i = exemplar.options.length-1 ; i>=0 ; i--)
+		{
+			exemplar.remove(i);
+		}
+
+		ids = lista.toString().replace("[", "");
+		ids = ids.toString().replace("]", "");
+		ids = ids.split(",");
+		for(i=0; i<ids.length; i++){
+			var option = document.createElement('option');
+			option.value = ids[i];
+			option.text = ids[i];
+			exemplar.add(option);
+		}
+		exemplar.disabled = false;
+		exemplar.required = true;
+	});
+}
+
 function mostrarAlunosDaTurma() {
 	if((document.getElementById("turma1").value) == "Selecione:"){
 		var turma = document.getElementById("turma1");
@@ -40,8 +70,8 @@ function mostrarAlunosDaTurma() {
 				var option = document.createElement('option');
 				option.value = nomes[i];
 				option.text = nomes[i];
+				aluno.add(option);
 			}
-			aluno.add(option);
 			aluno.disabled = false;
 			aluno.required = false;
 		});

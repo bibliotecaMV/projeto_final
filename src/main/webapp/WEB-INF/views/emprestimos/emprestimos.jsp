@@ -73,6 +73,17 @@
 								<input type="text" class="form-control" id="tombo1"
 									name="tombo1" required onkeypress="return testeNumeros(event)" />
 							</div>
+							<div class="col-sm-4" onclick="mostrarExemplaresDoTombo();">
+								<input type="button" class="btn btn-success" value="Buscar exemplares" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="exemplares1" class="col-sm-2 control-label">Número do exemplar:</label>
+							<div class="col-sm-1">
+								<select class="form-control" name="exemplares1" id="exemplares1" disabled required>
+								</select>
+							</div>
 						</div>
 
 						<div class="form-group">

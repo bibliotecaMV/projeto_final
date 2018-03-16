@@ -189,6 +189,24 @@ public abstract class GenericDAO<T, I extends Serializable> {
 			throw e;
 		}
 		return lista;
-}
-
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<T> listarIdPorId
+	(String classe,String objeto, String campo, String valor, String campo2, String valor2) {
+		Transaction transaction = null;
+		List<T> lista = null;
+		try{
+			transaction = session.beginTransaction();
+			Query consulta = session.createQuery("select id_"+objeto+" from "+classe 
+					+" "+objeto+" where " +campo
+					+ " = "+ valor+ " and "+ campo2 + " = " + valor2);
+			System.out.println(consulta);
+			lista = consulta.list();
+			transaction.commit();
+		}catch(RuntimeException e){
+			throw e;
+		}
+		return lista;
+	}
 }
