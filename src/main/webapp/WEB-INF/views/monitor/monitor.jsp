@@ -170,43 +170,46 @@
 								</c:forEach>
 							</table>
 						</div>
-
-						<a href="mostrarPainelAdministrador" class="link">
-							<div class="glyphicon glyphicon-triangle-left"></div>
-						</a>
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
 
-
-			<!-- Modal -->
-			<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
-				aria-labelledby="myModalLabel">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">Encerrar a sessão</h4>
-						</div>
-						<div class="modal-body">Você realmente quer encerrar sua
-							sessão?</div>
-						<div class="modal-footer">
-							<a href="logoutAdministrador" class="link">
-								<button type="button" class="btn btn-warning">Sim</button>
-							</a>
-							<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-						</div>
-					</div>
+	<!-- Modal -->
+	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Encerrar a sessão</h4>
+				</div>
+				<div class="modal-body">Você realmente quer encerrar sua
+					sessão?</div>
+				<div class="modal-footer">
+					<a href="logoutAdministrador" class="link">
+						<button type="button" class="btn btn-warning">Sim</button>
+					</a>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
 				</div>
 			</div>
+		</div>
+	</div>
 
-			<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-			<script
-				src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-			<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-			<script src="resources/js/bootstrap.min.js"></script>
+	<a href="mostrarPainelAdministrador"
+		class="link btn btn-warning btn-custom "> <span
+		class="glyphicon glyphicon-chevron-left img-circle text-primary btn-icon"></span>
+		Voltar
+	</a>
+
+	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+	<script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

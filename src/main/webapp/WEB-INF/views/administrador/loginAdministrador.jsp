@@ -63,8 +63,10 @@
 			</div>
 		</div>
 	</div>
-	<a href="main.html" class="link">
-		<div class="glyphicon glyphicon-triangle-left"></div>
+	<a href="mostrarInicio"
+		class="link btn btn-warning btn-custom "> <span
+		class="glyphicon glyphicon-chevron-left img-circle text-primary btn-icon"></span>
+		Voltar
 	</a>
 
 	<!--/.Rodapé -->

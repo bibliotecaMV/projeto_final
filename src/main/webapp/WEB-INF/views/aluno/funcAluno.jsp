@@ -187,9 +187,6 @@
 
 					</div>
 				</div>
-				<a href="mostrarPainelAdministrador" class="link">
-					<div class="glyphicon glyphicon-triangle-left"></div>
-				</a>
 			</div>
 		</div>
 	</div>
@@ -218,6 +215,12 @@
 			</div>
 		</div>
 	</div>
+	
+	<a href="mostrarPainelAdministrador"
+		class="link btn btn-warning btn-custom "> <span
+		class="glyphicon glyphicon-chevron-left img-circle text-primary btn-icon"></span>
+		Voltar
+	</a>
 	
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
 	<script

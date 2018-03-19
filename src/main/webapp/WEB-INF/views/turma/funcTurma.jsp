@@ -15,9 +15,8 @@
 <link rel="stylesheet" type="text/css" href="resources/css/style.css">
 </head>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript"
-	src="resources/js/turma/turma.js"></script>
-		
+<script type="text/javascript" src="resources/js/turma/turma.js"></script>
+
 <script src="resources/js/validator.min.js"></script>
 <body>
 	<nav class="navbar navbar-default">
@@ -35,7 +34,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<form class="navbar-form navbar-right">
 				<button type="button" class="btn btn-warning" data-toggle="modal"
-							data-target="#encerrar">Encerrar a sessão</button>
+					data-target="#encerrar">Encerrar a sessão</button>
 			</form>
 		</div>
 		<!--/.navbar-collapse -->
@@ -58,7 +57,7 @@
 								<label for="nome" class="col-sm-2 control-label">Descrição:</label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control" id="nome" name="nome"
-									data-minlength="2" required/>
+										data-minlength="2" required />
 								</div>
 							</div>
 
@@ -85,7 +84,7 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<input type="text" class="form-control" name="nome"
-											placeholder="Pesquisar por descrição"/>
+											placeholder="Pesquisar por descrição" />
 									</div>
 								</div>
 								<div class="form-group">
@@ -118,15 +117,17 @@
 									<form action="alterarTurma" method="post">
 										<tr>
 											<td>
-											  <div class="col-sm-5">
-											    <input type="text" class="form-control" value="${turmas.id}" 
-											    name="id" readonly/>
-											  </div>
+												<div class="col-sm-5">
+													<input type="text" class="form-control"
+														value="${turmas.id}" name="id" readonly />
+												</div>
 											</td>
 											<td><input type="text" value="${turmas.nome}"
-												name="nome" required class="form-control"/></td>
-											<td><a href="deletaTurmas?id=${turmas.id}" class="btn btn-danger">Remover</a></td>
-											<td><input type="submit" value="Alterar" class="btn btn-warning"/></td>
+												name="nome" required class="form-control" /></td>
+											<td><a href="deletaTurmas?id=${turmas.id}"
+												class="btn btn-danger">Remover</a></td>
+											<td><input type="submit" value="Alterar"
+												class="btn btn-warning" /></td>
 										</tr>
 									</form>
 								</c:forEach>
@@ -135,15 +136,12 @@
 
 					</div>
 				</div>
-					<a href="mostrarPainelAdministrador" class="link">
-				    <div class="glyphicon glyphicon-triangle-left">
-				    </div></a>
 			</div>
 		</div>
 	</div>
-	
-	
-<!-- Modal -->
+
+
+	<!-- Modal -->
 	<div class="modal fade" id="encerrar" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -159,15 +157,20 @@
 					sessão?</div>
 				<div class="modal-footer">
 					<a href="logoutAdministrador" class="link">
-					<button type="button" class="btn btn-warning">
-						Sim
-					</button></a>
+						<button type="button" class="btn btn-warning">Sim</button>
+					</a>
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+	<a href="mostrarPainelAdministrador"
+		class="link btn btn-warning btn-custom "> <span
+		class="glyphicon glyphicon-chevron-left img-circle text-primary btn-icon"></span>
+		Voltar
+	</a>
+
 	<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

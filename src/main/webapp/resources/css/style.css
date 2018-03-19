@@ -79,3 +79,15 @@ a.item{
 #link{
     text-decoration: none;
 }
+
+.btn-custom {
+	margin-left:20px;
+	padding: 1px 15px 3px 2px;
+	border-radius: 50px;
+	
+}
+
+.btn-icon {
+	padding: 13px;
+	background: #ffffff;
+}
